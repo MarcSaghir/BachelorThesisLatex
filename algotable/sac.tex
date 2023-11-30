@@ -1,0 +1,31 @@
+{\SetAlgoNoLine%
+\begin{algorithm}[H]
+\SetKwInOut{Input}{Input}
+\SetKwInOut{Output}{Output}
+\SetKwFor{For}{for}{do}{end for}
+\SetCommentSty{small}
+\DontPrintSemicolon
+% KwIn
+\textbf{Input: }$\theta_1, \theta_2, \phi$ \tcp*[r]{Initial parameters}
+\Indp % einruekung
+$\bar{\theta_1} \leftarrow \theta_1, \bar{\theta_2} \leftarrow \theta_2$\tcp*{Initialize target network weights}
+$\mathcal{D}$ \leftarrow \O \tcp*[r]{Initialize an empty replay pool}
+\ForEach{iteration}{
+    \ForEach{environment step}{
+        $a_t \sim \pi_{\phi}(a_t|s_t)$ \tcp*[r]{Sample action from the policy}
+        $s_{t+1} \sim \p((s_{t+1} |s_t, a_t)$ \tcp*[r]{Sample transition from the environment}
+        $\mathcal{D} \leftarrow \mathcal{D} \{(s_t, a_t, r(s_t, a_t), s_{t+1}  )\}$ \tcp*[r]{Store the transition in the replay pool}
+        }
+    \ForEach{gradient step}{
+        $\theta_i \leftarrow \theta_i - \lambda_{\mathcal{Q}} \hat{\nabla}_{\theta_i} J_{\mathcal{Q}}(\theta_i)$ for $i \in \{1,2\} $\tcp*[r]{Update the Q-function parameters}
+        $\phi \leftarrow \phi - \lambda_{\pi} \hat{\nabla}_{\phi} J_{\pi}(\phi)$\tcp*[r]{Update policy weights}
+        $\alpha \leftarrow \alpha - \lambda \hat{\nabla}_{\alpha} J_{\alpha}(\phi)$\tcp*[r]{Adjust temperature}
+        $\bar{\theta_i} \leftarrow \tau \theta_i + (1-\tau) \bar{\theta}_i$ for $i \in \{1,2\}$ \tcp*[r]{Update target network weights}
+        }
+} 
+\Indm  % undefined control seq error, but it compiles
+\textbf{Output: }$\theta_1, \theta_2, \phi$ \tcp*{Optimized parameters}
+\caption{Soft Actor Critic}
+\label{algorithm:sac}
+\end{algorithm}%
+}
