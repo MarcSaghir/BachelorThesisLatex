@@ -2,4 +2,82 @@
 \label{chap:background}
 This is an algorithm 
 
+
+
+
+
+\section{Classes of Anomaly detection}
+- there are different kinds of approaches to IAD
+- look at tree picture
+ 
+- First important distinction is between supervised and unsupervised
+-> we focus on unsupervised
+-> list problems with supervised approaches and thus advantages of unsupervised ones
+
+- briefly touch on other IAD settings like few shot, along with references
+
+- among unsupervised approaches, there are two more fundamental distinctions
+-> reconstruction based vs representation/feature embedding based
+-> explain difference with lots of references
+
+- for reconstruction based touch on 2-3 base categories like GANs etc and link fundamental papers for GANs etc
+- for representation based important to explain memory bank, teacher student, and distribution map
+- explain normalizing flow somehow somewhere in there
+
+- maybe say which algos we chose and what we covered with that
+
+
+\section{Our own Dataset}
+- repeat motivation why we added additional data in mvtec style
+- say that we went with loco mvtec flair(maybe give reasons)
+- say that we came up with a set of structural and logical anomalies for each category
+- list categories(flat connector, angle and special construct)
+
+- 3 sub sections for the three categories
+
+- flat connector
+- link the exact one we used(or examples of some)
+- give structural anomalies
+- give logical anomalies
+- for both briefly touch on how we produced them
+- show image examples for each
+
+- repeat same for other categories
+
+- also when describing angle:
+- touch on how there is a special case with multi perspective detection
+
+
+
+\section{metrics}
+
+- show metrics from survey papers
+- explain which metrics we used and where the other ones are used
+- explain also why we used the ones we used, and what disadvantages of other ones where
+
+- touch on paul bergmann paper for sPRO score, say how it is better than pixel auroc and normal pro score, also explain saturation thresholds
+
+- some math formula for calculating the important metrics
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \input{algotable/sac}

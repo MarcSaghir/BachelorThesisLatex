@@ -1,3 +1,13 @@
+Things i need to do for pipeline:
+- write script to predict single image for each approach
+- fix DREAM env
+- write function to predict on all approaches
+- write script to download datasets
+
+
+
+
+
 Fragen die ich beantworten will:
 
 Was ist meine Thesis, bzw worum geht es?
