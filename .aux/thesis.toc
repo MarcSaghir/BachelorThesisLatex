@@ -3,10 +3,13 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
 \contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}%
-\contentsline {chapter}{\numberline {3}Related Work}{4}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Method}{5}{chapter.4}%
-\contentsline {chapter}{\numberline {5}Experimental Setup}{6}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Experimental Results}{7}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future work}{8}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Appendix}{10}{appendix.A}%
+\contentsline {section}{\numberline {2.1}Classes of Anomaly detection}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Our own Dataset}{3}{section.2.2}%
+\contentsline {section}{\numberline {2.3}metrics}{4}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Related Work}{5}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Method}{6}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Experimental Setup}{7}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Experimental Results}{8}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future work}{9}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Appendix}{11}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
