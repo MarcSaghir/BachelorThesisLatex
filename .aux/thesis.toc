@@ -3,23 +3,23 @@
 \babel@toc {english}{}\relax 
 \contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
 \contentsline {section}{\numberline {1.1}Contributions}{2}{section.1.1}%
-\contentsline {chapter}{\numberline {2}Background}{3}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Classes of Anomaly detection}{3}{section.2.1}%
-\contentsline {section}{\numberline {2.2}The Datasets}{3}{section.2.2}%
-\contentsline {section}{\numberline {2.3}metrics}{4}{section.2.3}%
-\contentsline {section}{\numberline {2.4}description of patchcore algo}{4}{section.2.4}%
-\contentsline {section}{\numberline {2.5}description of simplenet}{4}{section.2.5}%
-\contentsline {section}{\numberline {2.6}description of AST}{4}{section.2.6}%
-\contentsline {section}{\numberline {2.7}description of DRAEM}{4}{section.2.7}%
-\contentsline {section}{\numberline {2.8}description of another reconstruction based algo}{4}{section.2.8}%
-\contentsline {chapter}{\numberline {3}Related Work}{5}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Method}{6}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Our own Dataset}{7}{section.4.1}%
-\contentsline {section}{\numberline {4.2}pipeline}{7}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Ensemble network}{7}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Different ensemble approaches}{7}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Experimental Setup}{8}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Experimental Results}{9}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future work}{10}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Appendix}{12}{appendix.A}%
+\contentsline {chapter}{\numberline {2}Background}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Classes of Anomaly detection}{4}{section.2.1}%
+\contentsline {section}{\numberline {2.2}The Datasets}{4}{section.2.2}%
+\contentsline {section}{\numberline {2.3}metrics}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}description of patchcore algo}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}description of simplenet}{5}{section.2.5}%
+\contentsline {section}{\numberline {2.6}description of AST}{5}{section.2.6}%
+\contentsline {section}{\numberline {2.7}description of DRAEM}{5}{section.2.7}%
+\contentsline {section}{\numberline {2.8}description of another reconstruction based algo}{5}{section.2.8}%
+\contentsline {chapter}{\numberline {3}Related Work}{6}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Method}{7}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Our own Dataset}{8}{section.4.1}%
+\contentsline {section}{\numberline {4.2}pipeline}{8}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ensemble network}{8}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Different ensemble approaches}{8}{section.4.4}%
+\contentsline {chapter}{\numberline {5}Experimental Setup}{9}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Experimental Results}{10}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future work}{11}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Appendix}{13}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
