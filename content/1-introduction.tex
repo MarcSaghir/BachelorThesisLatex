@@ -14,6 +14,9 @@ This is a figure:
 
 
 
+- It is important to note somewhere in the paper that we are dealing with very high variance in our ensemble since we only have 5 models ish
+
+
 \section{Begin Intro}
 In recent years, image anomaly detection has become significantly more important among many scientific communities, especially in industrial applications. This is no surprise, considering the
 amount of mechanically manufactured parts in factories all over the world. Since in most parts of the world, manufactured items undergo more or less strict regulations and are expected to work
@@ -24,7 +27,9 @@ problematatic regarding the own requirements(letzer part maybe neu formulieren).
 become very popular lately. A likely reason for this are impressively high performance scores with state of the art models achieving an area under the receiver operateor curve of around 0.96 and 
 sometimes even more.
 It is difficult to say what the first deep learning approaches to this topic were(dact checking), but a notable milestone is definetly Bergmann 2021(Referenz). Among blabla, they introduced
-the MVTecAD dataset which is used widely and serves as a dataset to benchmark on for nearly every IAD paper released afterwards.
+the MVTecAD dataset which is used widely and serves as a dataset to benchmark on for nearly every IAD paper released afterwards. - Übergang benötigt
+
+
 
 
 
@@ -37,7 +42,7 @@ including the ones mentioned here. The main contributions thus are:
 1. Creating a pipeline for anomaly detection experiments and inference, utilizing existing IAD approaches. 
 2. Introducing three new categories for the mvtec(LOCO) dataset for anomaly detection experiments.
 3. Researching anomaly detection performance on multi perspective datasets.
-4. Experiment on the usage of different ensemble methods for IAD, including utilizing neural networks to learn proper ensemble weights.
+4. Experiment on the usage of different ensemble methods for IAD, including utilizing stacking and (die stackig paper von discord zitieren).
 
 The above contributions can be used as basis for industrial usage, aswell as a basis for future contributions on ensemble methods in the IAD space. Moreover it gives further insight on the
 efficiency of SOTA IAD methods on different kinds of data than the previous synthetic settings.
