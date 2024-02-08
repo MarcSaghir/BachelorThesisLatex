@@ -57,6 +57,8 @@
 	\input{content/7-conclusion}%
 }
 
+
+
 \input{preamble/packages}
 \input{preamble/glossary}
 \input{preamble/tikzGraphs}
@@ -70,6 +72,7 @@
 
 
 \begin{document}
+
 	\pagenumbering{gobble}                    % suppress page numbering
 	  
 	\Metadata{
@@ -79,12 +82,11 @@
 	
 	\title{Ensemeble Methods for Visual Anomaly Detection in Manufacturing Settings}
 	\subtitle{Toller Thesis Titel}
-	\author[A. Author]{Marc Saghir} %optionales Argument ist die Signatur,
-	\birthplace{Home}%Geburtsort, bei Dissertationen zwingend notwendig
+	\author[M. Saghir]{Marc Saghir} %optionales Argument ist die Signatur,
+	\birthplace{Darmstadt}%Geburtsort, bei Dissertationen zwingend notwendig
 	\reviewer{Super Supervisor}%Gutachter
-	
-	
-	%Diese Felder erden untereinander auf der Titelseite platziert.
+
+	%Diese Felder werden untereinander auf der Titelseite platziert.
 	%\department ist eine notwendige Angabe, siehe auch dem Abschnitt `Abweichunsg von den Vorgaben für die Titelseite'
 	\department{inf} % Das Kürzel wird automatisch ersetzt und als Studienfach gewählt, siehe Liste der Kürzel im Dokument.
 	%\institute{Intelligent Autonomous Systems}
@@ -99,6 +101,16 @@
 	%\dedication{Für alle, die \TeX{} nutzen.}
 	
 	\maketitle
+
+
+
+	% Use \areaset to set up a new text area (this does not change the layout)
+	\areaset{\textwidth}{\textheight}
+
+	% Now you can access the calculated margins
+	\typeout{Left margin: \the\oddsidemargin}
+	\typeout{Right margin: \the\evensidemargin}
+
 
 	\affidavit
 	

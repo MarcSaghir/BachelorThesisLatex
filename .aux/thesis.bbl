@@ -1,10 +1,9 @@
 \begin{thebibliography}{1}
 
-\bibitem{Vaswani2017}
-A.~Vaswani, N.~Shazeer, N.~Parmar, J.~Uszkoreit, L.~Jones, A.~N. Gomez, L.~u.
-  Kaiser, and I.~Polosukhin, ``Attention is all you need,'' in {\em Advances in
-  Neural Information Processing Systems} (I.~Guyon, U.~V. Luxburg, S.~Bengio,
-  H.~Wallach, R.~Fergus, S.~Vishwanathan, and R.~Garnett, eds.), vol.~30,
-  Curran Associates, Inc., 2017.
+\bibitem{patchCore2022}
+K.~Roth, L.~Pemula, J.~Zepeda, B.~Scholkopf, T.~Brox, and P.~Gehler, ``Towards
+  total recall in industrial anomaly detection,'' {\em 2022 IEEE/CVF Conference
+  on Computer Vision and Pattern Recognition (CVPR)}, p.~14318–14328, Jun
+  2022.
 
 \end{thebibliography}
