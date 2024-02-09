@@ -5,6 +5,32 @@ This is an table:
 
 
 \section{Our own Dataset}
+As previously mentioned in the introduction, this work will also discuss the introduction of three new dataset classes as an addition to the current ones present in the MVTecAD LOCO dataset.
+This was to extent the range of objects represented in datasets (referenz auf mvted und loco) and further investigate model performance on industrial manufacturing parts, as this is the 
+mein setting for this work. Shaping the dataset in form of the MVTecAD LOCO dataset has multiple advantages. Firstly we get to make statements about the ability of SOTA algorithms detectig 
+logical anomalies on industrial parts. Moreover we can easily infer our new datasets with all relevant IAD approaches, since they are nearly all published with MVTecAD benchmarkings, meaning 
+they are all released with code to infer on the dataset. As discussed in section (dataset section) the only technical difference between the MVTecAD and LOCO dataset is the storage of the masks, 
+which can be accounted for with a few minor changes in the dataset code representation. Since this work also compares AD performances of approaches between both datasets, the functionality 
+is already implemented in the linked repository as a result. This makes for uncomplicated inference on the new dataset. Lastly these dataset classes may serve as a base for future benchmarking 
+and research of different new IAD approaches. Therefore it is sensible to release the new dataset in the shape of if not the most referenced image anomaly detection dataset(beweis oder umformulieren). 
+The three classes are each representing a metal part, namely a flat connector, an angle and ... . For the first to classes, each part that was acquired for the images is available in a 
+usual hardware store. The third class was a self crafted composite part made of screws and metal sheets, which were also available to buy at similar stores as the other parts. All of the classes 
+meet certain criteria in regards to their material nature, aswell as the possibilities of structural and logical anomalies both occuring with the same part. A solid block of steel for example 
+would make a difficult part to represent logical anomalies.
+Regarding the recording of images for the dataset, we used (kamera specs) from a birds eye view (nachschauen ob das so heißt) with black cloth (maybe cloth ersetzen und spezifizieren dass es 
+dichtes schwarzes material war) as background. The anomalies were handcrafted in the facilities of the university(suchen wie der werkzeugraum heißt und satz neu formulieren). The labels 
+were done in the same style as the labels of the MVTecAD LOCO classes, meaning black and white segmentation images, with slightly differing pixel values to match according saturation scores. 
+
+!Subsection mit flat connector!:
+For the flat connector we used (maße angeben) regulatory flat connectors (wenn ich lustig bin noch DIN angeben) which are widely available (maybe link referenz). 
+Examplary images of anomalous and good images can be seen in figure x. The structural anomalies consisted of damages to the edge of the part, cut off corners and deep scratches on the surface. 
+Logical anomalies contained missing holes, additional holes and differently sized holes. For simulating missing holes, the holes were stuffed and then the part was spraypainted wholly. 
+Additional holes were simply produced with a drill, likewhise the differently sized holes. 
+The corresponding exemplary masks are also seen in fiure x, as an illustration of how the segmentation of the anomalies was held. If compared with the sample images of figure y(mvtedc loco images) 
+the similarity is visible. The saturation scores for the anomalies, as discussed in section (dataset section loco) were put at (saturation scores) for all above listed anomalies respectively.
+
+
+
 - repeat motivation why we added additional data in mvtec style
 - say that we went with loco mvtec flair(maybe give reasons)
 - say that we came up with a set of structural and logical anomalies for each category
