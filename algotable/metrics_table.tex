@@ -1,0 +1,31 @@
+\begin{table}[htbp]
+    \tiny
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|}%{|c|p{5cm}|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Metric/Level} & \textbf{Formula} & \textbf{Remarks/Usage} \\
+        \hline
+        Precision (P) $\uparrow$ & $P = TP/(TP + FP)$ & True Positive (TP), False Positive (FP) \\
+        \hline
+        Recall (R) $\uparrow$ & $R = TP/(TP + FN)$ & False Negative (FN), True Positive Rate (TPR) \\
+        \hline
+        True Positive Rate (TPR) $\uparrow$ & $TPR = TP/(TP + TN)$ & True Negative (TN) \\
+        \hline
+        False Positive Rate (FPR) $\downarrow$ & $FPR = FP/(FP + TN)$ & True Negative (TN) \\
+        \hline
+        Area Under the Receiver Operating Characteristic curve (AU-ROC) $\uparrow$ & $ \int_{0}^{1} (TPR) \: d(FPR)$ & Classification \\
+        \hline
+        Area Under Precision-Recall (AU-PR) $\uparrow$ & $\int_{0}^{1} P \: d(R)$ & Localization, Segmentation \\
+        \hline
+        Per-Region Overlap (PRO) $\uparrow$ & $PRO = \frac{1}{N} \sum_{i} \sum_{k} \frac{P_i \cap C_{i,k}}{C_{i,k}}$ & Total ground-truth number (\(N\)), Predicted abnormal pixels (\(P\)), Defect ground-truth regions (\(C\)) \\
+        \hline
+        Saturated Per-Region Overlap (sPRO) $\uparrow$ & $sPRO(P) = \frac{1}{m} \sum_{i=1}^{m} \min(\frac{A_i \cap P}{s_i}, 1)$ & Total ground-truth number (\(m\)), Predicted abnormal pixels (\(P\)), Defect ground-truth regions (\(A\)), Corresponding saturation thresholds (\(s\)) \\
+        \hline
+        F1 Score $\uparrow$ & $F1 = 2(P \cdot R)/(P + R)$ & Classification \\
+        \hline
+        Intersection over Union (IoU) $\uparrow$ & $IoU = (H \cap G)/(H \cup G)$ & Prediction (H), Ground truth (G)/ Localization, Segmentation \\
+        \hline
+    \end{tabularx}
+    \caption{Description of metrics}
+    \label{tab:metrics}
+\end{table}

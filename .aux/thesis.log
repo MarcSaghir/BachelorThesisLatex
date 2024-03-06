@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  25 FEB 2024 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  6 MAR 2024 00:31
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1508,7 +1508,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 121
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...Conclusion and Future work}{18}{chapter.7}
+l.24 ...ne {6}Experimental Results}{17}{chapter.6}
                                                   % [4
 
 ])
@@ -1562,42 +1562,34 @@ l.136 ...ssary[type=symbol,style=iasThesisGeneral]
 
 ] (content/1-introduction.tex [1]
 chapter 1.
-<figures/AgentEnviornment.png, id=127, 435.6275pt x 175.65625pt>
+<figures/AgentEnviornment.png, id=129, 435.6275pt x 175.65625pt>
 File: figures/AgentEnviornment.png Graphic file (type png)
 <use figures/AgentEnviornment.png>
 Package pdftex.def Info: figures/AgentEnviornment.png  used on input line 10.
 (pdftex.def)             Requested size: 209.12778pt x 84.32475pt.
 [2
 
- <./figures/AgentEnviornment.png>] [3]) (content/2-background.tex [4]
+ <./figures/AgentEnviornment.png>] (algotable/metrics_table.tex
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 2.
+) [3]) (content/2-background.tex [4] [5]
 chapter 2.
-[5
+[6
 
-] [6]
+] [7]
 Overfull \hbox (30.57191pt too wide) in paragraph at lines 64--90
 \T1/XCharter-TLF/m/n/10.95 (-20) loosely re-lated to their orig-i-nal MVTecAD dataset, namely the MVTecAD LOCO dataset(reference).
  []
 
-[7] [8] (algotable/sac.tex)) (content/3-relatedwork.tex [9] [10]
+[8] [9] (algotable/sac.tex)) (content/3-relatedwork.tex [10] [11]
 chapter 3.
-) (content/4-method.tex [11
+) (content/4-method.tex [12
 
 ]
 chapter 4.
-(algotable/table.tex
-LaTeX Font Info:    Trying to load font information for U+euf on input line 4.
- (C:\Users\Marc\Documents\MikeTeX\tex/latex/amsfonts\ueuf.fd
-File: ueuf.fd 2013/01/14 v3.01 Euler Fraktur
-) (C:\Users\Marc\Documents\MikeTeX\tex/latex/microtype\mt-euf.cfg
-File: mt-euf.cfg 2006/07/03 v1.1 microtype config. file: AMS Euler Fraktur (RS)
-)
-Overfull \hbox (14.45786pt too wide) in paragraph at lines 3--17
- [][] 
- []
+[13
 
-) [12
-
-] [13] [14]) (content/5-experimentsetup.tex [15]
+] [14]) (content/5-experimentsetup.tex [15]
 chapter 5.
 ) (content/6-results.tex [16
 
@@ -1631,17 +1623,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 51473 strings out of 475246
- 1095321 string characters out of 5763892
- 1952785 words of memory out of 5000000
- 71813 multiletter control sequences out of 15000+600000
- 664646 words of font info for 215 fonts, out of 8000000 for 9000
+ 51470 strings out of 475246
+ 1095480 string characters out of 5763892
+ 1942785 words of memory out of 5000000
+ 71791 multiletter control sequences out of 15000+600000
+ 678273 words of font info for 226 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11004b,2909s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/euler/eufm10.pfb>
-Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (27 pages, 909648 bytes).
+{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (27 pages, 957337 bytes).
 PDF statistics:
- 355 PDF objects out of 1000 (max. 8388607)
- 72 named destinations out of 1000 (max. 500000)
- 48344 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 382 PDF objects out of 1000 (max. 8388607)
+ 73 named destinations out of 1000 (max. 500000)
+ 56544 words of extra memory for PDF output out of 61914 (max. 10000000)
 

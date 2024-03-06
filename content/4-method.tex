@@ -1,7 +1,5 @@
 \chapter{Method}
 \label{chap:method}
-This is an table:
-\input{algotable/table}
 
 
 \section{Our own Dataset}
@@ -51,14 +49,30 @@ the similarity is visible. The saturation scores for the anomalies, as discussed
 - touch on how there is a special case with multi perspective detection
 
 
+
+
+
 \section{pipeline}
 - explain brief structure of the pipeline
 - ???
 
 
 \section{Ensemble network}
-- network architecture
-- specifics
+- talk about different ensemble approaches we discussed: ensemble model outputs and ensemble model feature maps
+
+feature ensemble:
+- ground idea: have different algos extract features, and then ensemble them. Afterwards train discriminator on the ensembled features like in simplenet
+- reference paper that quses PCA and global block transformation
+- global transformation block:
+-> resize all feature maps to same dimensions
+-> append feature maps
+-> PCA: keep either percentage or set amount
+
+- individual transformation block:
+-> first apply PCA
+-> sagen wann das am besten anwendbar ist, auch sagen dass für uns probably der global transformation block reicht
+-> dann zusammenführen mit resize und appnden
+
 
 \section{Different ensemble approaches}
 - weighted, random forest etc 
