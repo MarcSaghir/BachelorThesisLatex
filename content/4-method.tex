@@ -58,6 +58,23 @@ the similarity is visible. The saturation scores for the anomalies, as discussed
 
 
 \section{Ensemble network}
+%TO-DO: irgendwo bneispielhaft erklären dass manche approaches manche sachen besser verstehen und umgekehrt, deswegen ensemble gut ist, muss maybe in die background oder introduction
+
+There are multiple approaches to ensembling models in general. When combining a heterogeneous set of classifiers, a common approach is to first calibrate(referenz) and then ensemble each models 
+output (beweis dafür dass das normal ist). There are also approaches to collectively calibrate a heterogeneous ensemble of classifiers while classifying. While performance varies, combining 
+the models is generally not regarded as inherently robust, especially when the classifiers work with features or some other form of representation. This stems from the fact that the model outputs 
+do not necessarily reflect their learned representations(neu formulieren) in detail, which in turn means that you cannot obtain the optimal aspects of each part of the ensemble. A more robust 
+approach would be to ensemble the mentioned feature maps or other representations to in turn train a discriminator for the final classification. To obtain the different feature representations 
+we would use the corresponding training methods of each IAD apporoach and then cut the model of at the respective time. Figures abc show a schematic view of each approachs respective model 
+architecture, together with an indication of where the representations would be extracted. Proceeding in this way, we would keep all important features of each representation, resulting in a 
+maxmium gain of information and robust predictions over all different classes.
+Creating such heterogeneous model ensembles on a feature map level was for instance done in (paper ref). Among other results they investigate the performance of heterogeneous models being 
+combined and provide two main approaches to doing so:
+\textbf{General Transformation Block}
+
+
+
+
 - talk about different ensemble approaches we discussed: ensemble model outputs and ensemble model feature maps
 
 feature ensemble:

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  6 MAR 2024 00:31
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  18 MAR 2024 12:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1508,7 +1508,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 121
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.24 ...ne {6}Experimental Results}{17}{chapter.6}
+l.24 ...ne {6}Experimental Results}{18}{chapter.6}
                                                   % [4
 
 ])
@@ -1572,7 +1572,7 @@ Package pdftex.def Info: figures/AgentEnviornment.png  used on input line 10.
  <./figures/AgentEnviornment.png>] (algotable/metrics_table.tex
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 2.
-) [3]) (content/2-background.tex [4] [5]
+) [3] [4]) (content/2-background.tex [5]
 chapter 2.
 [6
 
@@ -1589,28 +1589,28 @@ chapter 3.
 chapter 4.
 [13
 
-] [14]) (content/5-experimentsetup.tex [15]
+] [14] [15]) (content/5-experimentsetup.tex [16]
 chapter 5.
-) (content/6-results.tex [16
+) (content/6-results.tex [17
 
 ]
 chapter 6.
-) (content/7-conclusion.tex [17
+) (content/7-conclusion.tex [18
 
 ]
 chapter 7.
-) [18
+) [19
 
 ] (c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.bbl
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 5.
-) [19
+) [20
 
 
 
 ] (meta/appendix.tex
 chapter A.
-) [20
+) [21
 
 
 
@@ -1623,17 +1623,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 51470 strings out of 475246
- 1095480 string characters out of 5763892
+ 51477 strings out of 475246
+ 1095640 string characters out of 5763892
  1942785 words of memory out of 5000000
  71791 multiletter control sequences out of 15000+600000
- 678273 words of font info for 226 fonts, out of 8000000 for 9000
+ 678933 words of font info for 230 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11004b,2909s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (27 pages, 957337 bytes).
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (28 pages, 961933 bytes).
 PDF statistics:
- 382 PDF objects out of 1000 (max. 8388607)
- 73 named destinations out of 1000 (max. 500000)
+ 386 PDF objects out of 1000 (max. 8388607)
+ 74 named destinations out of 1000 (max. 500000)
  56544 words of extra memory for PDF output out of 61914 (max. 10000000)
 
