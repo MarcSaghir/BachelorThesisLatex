@@ -2,6 +2,28 @@
 \label{chap:method}
 
 
+\section{Discriminator}
+Our approach to use a small, compact discriminator to differentiate between regular and anomalous image features is inspired by the approach 
+presented in SimpleNet \cite{liu2023simplenet}. Since the discriminators inputs in the ensemble pipeline will be of the same nature as 
+the inputs for SimpleNet's discriminator, it is reasonable to utilize their network architeture for this work. Looking back at section 
+(simplenet section) and moreso figure xyz(simplenet architecture), we thus will adapt the SimpleNet pipeline after the feature adapter step. 
+This means the discriminator, shown as the labelled circle will conceptualy be equal to ours. Instead of the merely adpated features, 
+the ensembled features from section (ensemble feature section from methdos) will substitute. The artificial anomalous features, 
+depicted as the red tiled pane in the figure will also be provided during training time. Here we also adapt SimpleNet's approach of 
+gaussian noise for producing those artificial features. (satz ob wir mit simplex noise arbeiten wenn ja dann erwähnen) As also stated in 
+SimpleNet (googlen wie man wörtliche Zitate korrekt benutzt), this discriminator "works as a normality scorer [...] estimating the normality 
+at each location (h, w)". Moreover are positive and negative outputs expected for regular and anomalous features respectively.
+As to the discriminator network specifics, a regular "two-layer multi-layer perceptron"(zitat markieren) is used. As optimizer a regular 
+adam optiizer by pytorch with a learn rate of (werte erst sauber aufschreiben bevor ich es hier hinschreibe)
+
+
+
+- say that this is the binary discriminator for detcting the anomalies from ensembled feature maps
+- repeat that this is largely based of simplenets discriminator
+- describe model architecture as described in simplenet paper
+- list parameters from code like optimizer, learn rate, etc.
+- also describe loss
+
 \section{Our own Dataset}
 As previously mentioned in the introduction, this work will also discuss the introduction of three new dataset classes as an addition to the current ones present in the MVTecAD LOCO dataset.
 This was to extent the range of objects represented in datasets (referenz auf mvted und loco) and further investigate model performance on industrial manufacturing parts, as this is the 
@@ -58,7 +80,7 @@ the similarity is visible. The saturation scores for the anomalies, as discussed
 
 
 \section{Ensemble network}
-%TO-DO: irgendwo bneispielhaft erklären dass manche approaches manche sachen besser verstehen und umgekehrt, deswegen ensemble gut ist, muss maybe in die background oder introduction
+%TO-DO: irgendwo beispielhaft erklären dass manche approaches manche sachen besser verstehen und umgekehrt, deswegen ensemble gut ist, muss maybe in die background oder introduction
 
 There are multiple approaches to ensembling models in general. When combining a heterogeneous set of classifiers, a common approach is to first calibrate(referenz) and then ensemble each models 
 output (beweis dafür dass das normal ist). There are also approaches to collectively calibrate a heterogeneous ensemble of classifiers while classifying. While performance varies, combining 
@@ -94,3 +116,44 @@ feature ensemble:
 \section{Different ensemble approaches}
 - weighted, random forest etc 
 - specifics
+
+
+
+\section{Logical Anomaly Detection Using Conventional Approaches}
+As discussed in the related works section, logical anomalies represent a signifacant part of image anomaly detection in modern
+manufacturing settings. The experiments also serve as an extensive comparison of SOTA methods for IAD versus recent approches that where 
+introduced with special mind to logical anomalies, like GCAD \cite{LOCODentsAndScratchesBergmann2022}(GCAD reference von Paul Bergmann). 
+Moreover, for a qualitative evaluation of the performance change when using feature level ensembles, one first needs to evaluate the base performance 
+of each relevant classifier of the set. 
+Hence this work features experiments to evaluate IAD approaches mainly evaluated on the classical MVTecAD dataset. To do so, the original 
+code from each paper was taken and not modified in regards to any reportet parameters and/or arguments. This was to prevent possible unwanted deviations 
+in original performance by changing up synergies. This paper recognizes the possibility of improved performances on the logical anomalies dataset 
+with different combinations of model parameters. Yet this work focusses on the performance(synonym) of current unmodified apporoaches and 
+more importantly the increased robustness through the use of ensembles. Therefore research regarding this hypothetical improvement would 
+have to be done in another work. Metrics that are specifically looked at in this context are the AUROC, pixel AUROC(weitere maybe einfpgen) and the sPRO. 
+If the functionality to evaluate these metrics was already given, the results of inference were (übernommen), else the according functionality 
+was implemented in this work and used to produce the according metrics. 
+Papers whose approaches were evaluated using the MVTecAD LOCO dataset were: SimpleNet \cite{liu2023simplenet}, PatchCore \cite{patchCore2022} (list of paper references with names). 
+These papers were discussed in depth in the backgrounds section and any specifics like 
+hyperparameters can be viewed in the corresponding paper. Furthermore all named classifiers were including, among other variable measures, 
+a preprocessing step to resize the input image. This makes for a variable model input and also the ability to process rectangular images, 
+which is important due to MVTecAD LOCO images being rectangular unlike the squared input from the standard MVTecAD dataset. The only 
+necessary modification to the whole process of anomaly detection was the generation of image masks. The MVTecAD LOCO dataset stores its 
+masks in multiple seperate black and white images, one for each individual anomaly. To fix errors stemming from this fact, additional 
+code was added that pastes all masks belonging to one image into a single mask before iterating through the data.
+
+
+Überschrift reformulieren!
+
+What i wanna say in this section:
+- what we did to do the survey on LOCO IAD detection
+- what we did to the methods(nothing)
+- aspekte anhand welcher wir die experimente analyiert haben
+
+- wenn ich es actually auch mache dann ablation experiments nennen in welchen ich die images square
+
+
+
+
+
+

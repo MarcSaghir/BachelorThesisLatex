@@ -6,4 +6,22 @@ K.~Roth, L.~Pemula, J.~Zepeda, B.~Scholkopf, T.~Brox, and P.~Gehler, ``Towards
   on Computer Vision and Pattern Recognition (CVPR)}, p.~14318–14328, Jun
   2022.
 
+\bibitem{EnsembleHeller2023}
+G.~Heller, E.~Perrin, V.~Vrabie, C.~Dusart, M.-L. Panon, M.~Loyaux, and
+  S.~Le~Roux, ``Multisource neural network feature map fusion: An efficient
+  strategy to detect plant diseases,'' {\em Intelligent Systems with
+  Applications}, vol.~19, p.~200264, Sept. 2023.
+
+\bibitem{LOCODentsAndScratchesBergmann2022}
+P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Beyond
+  dents and scratches: Logical constraints in unsupervised anomaly detection
+  and localization,'' {\em International Journal of Computer Vision}, vol.~130,
+  p.~947–969, Feb. 2022.
+
+\bibitem{liu2023simplenet}
+Z.~Liu, Y.~Zhou, Y.~Xu, and Z.~Wang, ``Simplenet: A simple network for image
+  anomaly detection and localization,'' in {\em Proceedings of the IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition}, pp.~20402--20411,
+  2023.
+
 \end{thebibliography}

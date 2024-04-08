@@ -16,6 +16,42 @@ This is a figure:
 
 - It is important to note somewhere in the paper that we are dealing with very high variance in our ensemble since we only have 5 models ish
 
+Concept for introduction:
+- General approach -> Start very wide and narrow it down
+
+- we are in manuacturing setting -> quality control of metal parts
+-> write one sentence about industrial revolution and address the rising needs for metal parts lately(find credible numbers of metal parts production) 
+- say that most things we engineer nowadays has strict requirements and needs to be functioning properly to avoid dangerous situations/fatalities etc
+- one of many problems of this requirement is that parts may be insufficiently produced which can lead to unecpected breakage/ausfällen
+
+- to combat this, people have startet inspecting produced parts with different approaches. Yet all approaches required extensive human labor
+- in recent decades with the rise of computers alongside computer vision advancements, this quality controll process has often been automated 
+  whereever possible
+- Mention that the striving for increasingly accurate controls brought forth the field of anomaly detection which has been a very popular 
+  and ectensively researched topic in the last couple of years
+- The subfield of specifically image anomaly detection aims at successfullly distinguishing between images of good /normal and 
+  anomalous parts.
+- nochmal bezug auf manufacturing
+
+- erklären dass es verschiedene arten von IAD gibt -> bspw. image detection and anomaly localization
+- auch logical vs structural anomalies anreißen
+
+- sagen dass IAD best performance eig unsupervised sind weil Gründe(= große data imbalance, wenig data overall, etc...(maybe noch einer aber 3 gründe reichen))
+- irgendwo erwähnen dass IAD aktuell sehr gute ergebnisse erzielt
+
+- Eventuell kurz auch arten von IAD (embedding vs reconstruction) anschneiden? aber nicht zu detailiert weil der rest kommt in background
+
+- gegen ende aber probleme aufzählen 
+-> gute ergebnisse sind meist in sehr klinischen settings nur beobachtbar
+-> localization bislang schwieriger als image detection
+-> ansätze welche gut sind performen doch deutlich schlehter bei logical anomalies, ergebnisse oft inkonsistent
+-> logical anomalies sind aber wichtig weil sie neue felder der quality control ermöglichen
+
+- Damit einleiten in die contributions
+
+
+
+
 
 \section{Begin Intro}
 In recent years, image anomaly detection has become significantly more important among many scientific communities, especially in industrial applications. This is no surprise, considering the
@@ -40,23 +76,32 @@ This is a table:
 
 
 \section{Contributions}
-This work builds upon the researched anomaly detection methods that were established as state of the art over the last years. Papers like survey1 and survey2 provide extensive overviews of all SOTA methods,
-including the ones mentioned in this thesis. The main contributions thus are:
-1. Creating a pipeline for anomaly detection experiments and inference, utilizing existing IAD approaches. 
-2. Introducing three??? new categories for the mvtec(LOCO) dataset for anomaly detection experiments.
-3. Researching anomaly detection performance on multi perspective datasets. ???
-4. Research on incresed robustness in anomaly detection using feature map level ensembles.
+This research provides multiple contributions to the field of image anomaly detection, in an effort to further push the progress of 
+robust anomaly localization in differnt domains. 
 
-The contributions mentioned firstly benefit faster research with a streamlined(synonym) experiment setup. Furthermore they give more insight into the capabilities of existing methods in a 
-industrial setting and thus also provide a more various and practical setting than the prior categories in the mvtec(zitat) dataset. The same methods are also testet on their limitations 
-regarding logical anomalies which is(synonym) a relevant aspect of anomaly detection in current manufacturing quality control. Lastly through the use of a robust ensemble approach for heterogeneous 
-classifers, this opens up possibilities for expanding the field of application of SOTA IAD methods to other domains with robust performance and may also produce more usable results in real world 
-IAD settings.
+1. To address the problems mentioned at the end of the last section, we attempt (vllt ohne attempt wenn der ansatz funzt) 
+to build a heterogeneous feature level ensemble network, combining differnt state of the art IAD approaches, with the goal to improve 
+general performance but also robustness in image localization. This ensemble network is tested on its performance regarding structural 
+but also logical anomalies from differnt parts. 
+2. Furtheremore an extensive study on the performance of a wide ranging selection of IDA methods on the MVTecAD LOCO dataset is performed. 
+This serves to highlight the current state of anomaly detection in logical problems, and also investigate the application potential of 
+those approaches in such domains(den satz mag ich nicht). (vllt noch einbauen dass diese experimente ggf noch nie durchgeführt wurden und auch code bereitgestellt wird)
+3. Lastly we introduce a new category to the MVTecAD LOCO dataset to further increase the diversity of this dataset and strengthen the focus 
+of this thesis on metal maufactured parts.
+4. The mentioned network and experiments are also streamlined(checken ob ich das wort richtig benutzt hab) into an easy to use pipeline 
+to be used for future experiments in that area.
 
-%Experiment on the performance of different ensemble methods for IAD, including utilizing majority voting, stacking, CAWPE and (die anderen ensemble paper von discord zitieren).
+The contributions mentioned firstly benefit faster research entry and an accelerated experimentation process, with an intuitive setup, 
+as well as potential industrial applications. 
+Furthermore they give more insight into the capabilities of existing methods in an industrial setting and thus also provide a more 
+various and practical setting than the prior categories in the MVTecAD(referenz) dataset. The same methods are also testet on their limitations 
+regarding logical anomalies which was earlier made out to be a relevant aspect of anomaly detection in current manufacturing quality control 
+settings. Lastly through the use of a robust ensemble approach for heterogeneous classifers, this opens up possibilities for expanding 
+the field of application of SOTA IAD methods to other domains with robust performance and may also produce more usable results in real 
+world IAD settings. The presented network can also be used as ground work(fundament oder synonym oder so) for future experiments in 
+different directions. For example, the pipeline may be efficiently used to start investigations on multiperspective datasets in anomaly 
+detection, a topic that also could further advance current IAD applciations.
 
-The above contributions can be used as basis for industrial usage, aswell as a basis for future contributions on ensemble methods in the IAD space. Moreover it gives further insight on the
-efficiency of SOTA IAD methods on different kinds of data than the previous synthetic settings.
 
 
 
