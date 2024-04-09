@@ -143,51 +143,53 @@ distribution maps, autoencoder, memory banks, teacher-student models, diffusion 
 
 
 
-\section{The Datasets}
-The datasets used in image anomaly detection are scarce, especially when it comes to anomaly detection in a manufacturing setting. There are a few that specialize on certain textures(references) 
-and some that can be used for wide ranging categories. What currently stands out as a gold standard among IAD datasets is the MVTecAD(referenz) dataset. It was designed by Bergman et al.(referenz) 
-as a highly representative and standardized set of anomalous images along with training images. It has 15 classes from (some examples) to (...). It provides image labels aswell as segmentation 
-ground truths, making it versatile and applicable for multiple algorithms. The masks come as black and white grayscale images, while the iamge labels are given through its folder structure. 
-Its paradigmatic structure tree can be seen in figure xy.(hier ein satz der die ordner struktur beschreibt) Example images of the dataset are to be seen in figure z. They typically are of a rectangular shape and their resolutions range from 
-blabla to blabla. More specifications can be found in (mvtec reference) and the whole dataset is publicly available at (dataset link).\newline
-The MVTecAD(referenz) dataset is regarded as the go to dataset(wissenschaftlich formulieren) among IAD papers, and has since its introduction been used in nearly every paper as a dataaset 
-to benchmark ones approaches on. This is also likely to remain the trend, since many important algorithms in the recent years have primarily been benmarked on it, forcing new approaches 
-to also be benchmarked on this dataset to be comparable to the current SOTA approaches. Due to its importance MVTecAD is one of only two datasets relevant to this work, and serves as a 
-comparison to investigate SOTA algoithm performances of the second dataset, which will be our main focus.
+\section{Datasets}
+The datasets used in image anomaly detection are scarce, especially when it comes to anomaly detection in a manufacturing setting. There are many datsets and approaches that specialize on certain materials \cite{FabricDataset_Tsang_2016} 
+\cite{SteeltubeDataset_Yang_2021} \cite{magnetictiles_Huang_2018}
+and often only one classs. What currently stands out as a gold standard among IAD datasets is the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The authors created it  
+as a highly representative and standardized set of anomalous images along with training images. It has 15 classes from capsules to screws. Moreover the dataset provides image labels aswell as segmentation 
+ground truths, making it versatile and applicable for multiple algorithms. The masks come as black and white grayscale images, while the image labels are given through its folder structure. 
+Its paradigmatic structure tree can be seen in figure xy. As shown, each class contain train images, which only consist of regular examples, 
+and test images. The data among the testing images is categorized by a title describing the anomaly. The ground truth folder contains 
+according ground truths on a pixel level. Example images of the dataset are to be seen in figure z. They typically are of a rectangular shape and their resolutions range from 
+(pixel min) to (pixel max). More specifications can be found in Bergmann et al. \cite{MVTEC_Bergmann_2021} and the whole dataset is publicly available at the official website\cite{mvtecdownload}.\newline
+The MVTecAD(referenz) dataset is regarded highly among IAD papers, and has since its introduction been used in most relevant papers as a dataaset 
+to benchmark the respective approaches on. This is also likely to remain the trend, since many state of the art algorithms in the recent years have primarily been benmarked on it, forcing new approaches 
+to also be benchmarked on this dataset to be comparable to the current highest performance holding approaches. Despite this work focussing on manufacturing settings MVTecAD is one of only two datasets relevant to this work, 
+and serves as a comparison for the performance investigation of this papers approaches on the second dataset. This is mainly due to the dataset's importance and 
+its relation to the second dataset.
 \newline
-Later in (loco year) Bergman et al(referenz) has introduced another IAD dataset that is loosely related to their original MVTecAD dataset, namely the MVTecAD LOCO dataset(reference). 
+Later in 2022 Bergman et al. has introduced another IAD dataset that is loosely related to their original MVTecAD dataset, namely the MVTecAD LOCO dataset \cite{LOCODentsAndScratchesBergmann2022}. 
 This dataset works with the same ground ideas as their original MVTecAD set, but extends the conceptual contents of the dataset by logical anomalies(neu formulieren das klingt scheiße). 
-It consists of five class:(class names). The difference to the other dataset is that the anomalous categories for each class are only seperated into good images, images with structural anomalies 
-and images with logical anomalies. Structural anomalies being visible damages to the objects, similar to the MVTecAD dataset. Logical anomalies denote violations against arbitrary restrictions 
-imposed by Bergmann et al.(referenz). To illustrate this by an example: The class of pushpins represents a birds view of a compartmentised box of pushpins(see figure a). A rule added was, 
-that each compartment is only to contain one pushpin. This means that if one region were to miss their contents, or contain two pushpins, it would constitute a logical anomaly. If on the 
-other hand a pushpin would have a crooked or broken tip, it would be a structural anomaly. The addition of logical constraints opened an interesting area of research, since the high performance 
-of current SOTA algorithms were only measured on structural anomalies so far. Yet it would be insightful to see if those models could also detect logical anomalies, since those also ocurr 
-in real life settings, such as manufacturing settings. (Noch ansprechen dass LOCO eine neue metric -> sPRO ermöglicht und die saturation configs ansprechen)
-Bergmann et al.(referenz) also released a new IAD model together with the new dataset. The model uses autoencoders(bissi besser beschreiben hier). Unfortunately the code has not been made public. 
-Aside from approaches tailored specifically towards the detection of logical anomalies, it would be interesting to see how SOTA methods of structural anomaly detection perform on the LOCO dataset. 
-The performance of previous methods on the LOCO dataset is already partially evaluated in some papers like(referenzen von benchmark papers), but will comprehensively be investigated later in this work.
-Moreover the novel dataset categories introduced later are composed of structural aswell as logical anomalies and formatted in the MVTecAD LOCO dataset style.
-Aside from the conceptual differences in the two datasets, there are slight changes to the structure tree aswell. The anomaly classes are only changed by name, since it is irrellevant for 
-the models whether the anomaly name is ""
+It consists of five classes: breakfast box, juice bottle, pushpins, screw bag and splicing connectors. The difference to the other dataset is that the anomalous categories for each class are only seperated into good images, images with structural anomalies 
+and images with logical anomalies. As mentioned in the introduction structural anomalies are visible damages to the objects, similar to the MVTecAD dataset. Logical anomalies denote violations against arbitrary restrictions 
+imposed by the authors. To illustrate this by an example: The class of pushpins represents a birds view of a compartmentised box of pushpins(see figure a). A rule added was, 
+that each compartment is only to contain one pushpin. This means that if one region were to miss their contents, or contain more than one pushpin, it would constitute a logical anomaly. If on the 
+other hand a pushpin would have a crooked or broken tip, it would be  labelled a structural anomaly. Structurally the differences of the 
+MVTecAD and the MVTecAD LOCO dataset can be seen when comparing figures a and b, which showcases the anomaly classification, aswell as 
+the method of storing segmentations. Here there eixists an image file for each anomalous ground truth area, which are mapped to the image 
+by the folder name they are in. Lastly there exists a validation set in this dataset,
+\newline
+The addition of logical constraints opened an interesting area of research, since the high performance 
+of current state of the art algorithms were only measured on structural anomalies so far. Yet it would be insightful to see if those models could also detect logical anomalies, since those also ocurr 
+in real life settings, such as manufacturing settings. Another concept introduced in \cite{LOCODentsAndScratchesBergmann2022} is the 
+saturated per-region overlap score, also sPRO. The metric is further analysed in setion (metrics section), but in short gives a measure 
+on how well two regions overlap, while also accounting for regions overlapping in a way, that is seen as sufficient. The criterion of 
+sufficiency is given by a file in the respective class, which maps a saturation score to each kind of anomaly.
+Bergmann et al.\cite{LOCODentsAndScratchesBergmann2022} lastly also released a new IAD model together with the new dataset. The model uses autoencoders(bissi besser beschreiben hier). Since the source code has not been made public, 
+this work refrains from using the method proposed in the paper.
 
-
-
-
-anmerkungen für text oben:
-- beschreiben was mvtec neu bringt: zb dass es näher an real world ist
-- saturation thesholds ansprechen
 
 
 
 \section{metrics}
-Metrics are (bekannterweise (auf englisch)) an important part of developing any artificial intelligence related models. Many of them 
-(sagen aus) different aspects of model performance and should be used in different appropriate circumstances, depending on which aspect 
-of the results is important for the current application. Therefore, before the actual developing, one must first choose appropriate metrics 
-to optimize and evaluate on later. IAD as a community(synonym!) also has certain metrics that are the main performance evaluation tool 
-across papers. 
-A (zusammentragung (auf englisch)) of different metrics in this domain are displayed in table \ref{tab:metrics}, which is taken from 
-(paper aus dem ich das table hab). Visible are well known 
+Metrics are known to be an important part of developing any artificial intelligence related models. Many of them are used to infer 
+different characteristics of model performance and should be used in different appropriate circumstances, depending on which aspect 
+is important for the current application. Therefore, before the actual developing, one must first choose appropriate metrics 
+to optimize and evaluate on later. IAD as a research area themselves has certain metrics that are the main performance evaluation tool 
+across most papers. 
+A collection of different metrics in this domain are displayed in table \ref{tab:metrics}, which is taken from 
+\cite{liu2024deep}. Visible are well known 
 ones from many other machine learning models like precision, recall, TPR, FPR and the F1-Score. These are generally applicable in most 
 cases, but are not listed in any recent important papers and thus are not important for any analyses in this work. The other metrics are 
 more IAD specific. The undisputed(synonym)/most popular scoring method is the AUROC. This metric is normally(synonym) used for image level 

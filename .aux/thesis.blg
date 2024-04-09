@@ -5,44 +5,47 @@ Reallocating 'name_of_file' (item size: 1) to 7 items.
 The style file: ieeetr.bst
 Reallocating 'name_of_file' (item size: 1) to 15 items.
 Database file #1: literature/lit.bib
-You've used 4 entries,
+Warning--entry type for "mvtecdownload" isn't style-file defined
+--line 111 of file literature/lit.bib
+You've used 10 entries,
             1876 wiz_defined-function locations,
-            507 strings with 4675 characters,
-and the built_in function-call counts, 1676 in all, are:
-= -- 171
-> -- 74
+            547 strings with 5790 characters,
+and the built_in function-call counts, 3580 in all, are:
+= -- 364
+> -- 157
 < -- 0
-+ -- 26
-- -- 22
-* -- 101
-:= -- 214
-add.period$ -- 4
-call.type$ -- 4
-change.case$ -- 4
++ -- 56
+- -- 46
+* -- 217
+:= -- 452
+add.period$ -- 9
+call.type$ -- 10
+change.case$ -- 10
 chr.to.int$ -- 0
-cite$ -- 4
-duplicate$ -- 105
-empty$ -- 120
-format.name$ -- 22
-if$ -- 421
+cite$ -- 10
+duplicate$ -- 225
+empty$ -- 271
+format.name$ -- 46
+if$ -- 905
 int.to.chr$ -- 0
-int.to.str$ -- 4
-missing$ -- 4
-newline$ -- 15
-num.names$ -- 4
-pop$ -- 14
+int.to.str$ -- 10
+missing$ -- 9
+newline$ -- 33
+num.names$ -- 9
+pop$ -- 34
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 111
+skip$ -- 233
 stack$ -- 0
-substring$ -- 104
-swap$ -- 72
+substring$ -- 198
+swap$ -- 147
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 10
-width$ -- 5
-write$ -- 40
+while$ -- 21
+width$ -- 12
+write$ -- 95
+(There was 1 warning)
