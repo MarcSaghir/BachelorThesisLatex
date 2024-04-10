@@ -192,43 +192,47 @@ A collection of different metrics in this domain are displayed in table \ref{tab
 \cite{liu2024deep}. Visible are well known 
 ones from many other machine learning models like precision, recall, TPR, FPR and the F1-Score. These are generally applicable in most 
 cases, but are not listed in any recent important papers and thus are not important for any analyses in this work. The other metrics are 
-more IAD specific. The undisputed(synonym)/most popular scoring method is the AUROC. This metric is normally(synonym) used for image level 
-binary classification and gives an indication on how good the model an distinguish between both classes. Its calculation can be seein in 
-table \ref{tab:metrics} and it can also be used on a pixel level, which is done in some papers like (paper refernzen) but not everywhere.
-Next in importance is the PRO score or also the area under the PRO score(AU-PRO). This metric denotes the per-region overlap of two areas 
+more IAD specific. By a large margin, the most important scoring standard is the AUROC. This metric is usually referenced for image level 
+binary classification and gives an indication on how good the model is able to distinguish between both classes. Its calculation can be seein in 
+table \ref{tab:metrics}. Moreover it can be used on a pixel level, which is also a popular approach but not utilized everywhere.
+Next in importance is the per-region overlap(PRO) score or also the area under the PRO score(AU-PRO). This metric denotes the per-region overlap of two areas 
 on a pixel level and can be calculated using (PRO formel hier hin, im satz rechts dann ggf bezug auf formel zeichen nehmen). The two areas 
 compared are generally an image mask and the according segmentation by the model. The AU-PRO is then calculated by plotting the PRO score 
-at different threholds levels for the segmentations, and reporting the area under this curve. This can be 
-used to rate the segmentation performance of different models and is also a metric featured frequently in IAD related research. 
+at different threholds for the segmentations, and reporting the area under the curve. This can be 
+used to rate the segmentation performance of different models and is also a frequently featured metric in IAD related research. 
 Related to this score is the saturated per-region overlap (sPRO) and also the according are under the curve, the AU-sPRO. This metric was 
-introduced in (bergmanns paper) \cite{LOCODentsAndScratchesBergmann2022}
+introduced in \cite{LOCODentsAndScratchesBergmann2022} and briefly mentioned in section (dataset section). The method of deriving the sPRO 
+score is shown again in equation abc, where $m$ denotes the amount of anomalous regions in an image, $A_i | i \in \{1, ... , m\}$ an anomalous 
+region among them and $s_i | i \in \{1, ... , m\}$ a respective saturation threshold. $P$ is considered to be the pixels classified as anomalous 
+in the target image. The sPRO score is the calculated by averaging the intersections of all predictions and ground truths of an image, 
+while norming the values by the saturation threshold and proividing an upper limit of 1 per region. It is to be said that this gives a similar 
+view on the segmentation performance as the PRO score, as it is a generalized form of it and can producet the same results if the saturation 
+threshold would be equal to the amount of anomalous pixels per region. However, due to its cap of 1, it also rates differently large segmentations equally in cases 
+where the anomalous position posesses some uncertainty. Figure xy demonstrates this behaviour in the case of a logical anomaly of the pushpin class. 
+As visible, the logical anomaly consists of an empty pushpin compartment. The missing pushpin could be placed in any place of this smaller 
+box for it to be valid, therefore an amount of pixels equal to the amount a visual pushpin posesses would suffice. Yet the conventional PRO score 
+would keep on rising as the segmented area gets larger within the anomalous region. Due to the saturation score and limit. this is prevented 
+by the sPRO metric as figure xy shows it to be already saturated once the minimum required amount of pixels is achieved. The saturation 
+scores for each anomaly have to be individually set for each anomaly, and are given for the five classes of MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022}.
 
 
-- show metrics from survey papers
-- some metrics are well known from other ML applications
-- metrics that are important for our work/in most recent published papers are:
--> auroc: image/instance and pixel level
--> Area under PRO
--> explain formula
 
--> sPRO for LOCO and also Area under sPRO
---> Extra section where i explain sPRO on basis of dents and scratches paper
---> very detailed with saturation threshold and also include figure of comparison for PRO
+\section{Anomaly Detection Methods}
+
+\subsection{PatchCore}
 
 
 
-
-\section{description of patchcore algo}
-
-
-\section{description of simplenet}
+\subsection{SimpleNet}
 - highlight the use of the discriminator because its important for mine
 
-\section{description of AST}
+\subsection{AST}
 
-\section{description of DRAEM}
+\subsection{DRAEM}
 
-\section{description of another reconstruction based algo}
+\subsection{RevDist}
+
+\subsection{CSFlow}
 
 
 

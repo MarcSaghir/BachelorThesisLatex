@@ -9,22 +9,24 @@
 \contentsline {section}{\numberline {2.2}Classes of Anomaly detection}{10}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Datasets}{12}{section.2.3}%
 \contentsline {section}{\numberline {2.4}metrics}{14}{section.2.4}%
-\contentsline {section}{\numberline {2.5}description of patchcore algo}{15}{section.2.5}%
-\contentsline {section}{\numberline {2.6}description of simplenet}{15}{section.2.6}%
-\contentsline {section}{\numberline {2.7}description of AST}{15}{section.2.7}%
-\contentsline {section}{\numberline {2.8}description of DRAEM}{15}{section.2.8}%
-\contentsline {section}{\numberline {2.9}description of another reconstruction based algo}{15}{section.2.9}%
-\contentsline {chapter}{\numberline {3}Related Work}{16}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Method}{17}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Discriminator}{17}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Our own Dataset}{18}{section.4.2}%
-\contentsline {section}{\numberline {4.3}pipeline}{20}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Ensemble network}{20}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Different ensemble approaches}{21}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Logical Anomaly Detection Using Conventional Approaches}{21}{section.4.6}%
-\contentsline {chapter}{\numberline {5}Experimental Setup}{23}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Experimental Results}{24}{chapter.6}%
-\contentsline {section}{\numberline {6.1}SOTA Methods Performance on classical LOCO Dataset}{24}{section.6.1}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future work}{26}{chapter.7}%
-\contentsline {chapter}{\numberline {A}Appendix}{29}{appendix.A}%
+\contentsline {section}{\numberline {2.5}Anomaly Detection Methods}{16}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}PatchCore}{16}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}SimpleNet}{16}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}AST}{16}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}DRAEM}{16}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}RevDist}{16}{subsection.2.5.5}%
+\contentsline {subsection}{\numberline {2.5.6}CSFlow}{16}{subsection.2.5.6}%
+\contentsline {chapter}{\numberline {3}Related Work}{17}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Method}{18}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Discriminator}{18}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Our own Dataset}{19}{section.4.2}%
+\contentsline {section}{\numberline {4.3}pipeline}{21}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Ensemble network}{21}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Different ensemble approaches}{22}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Logical Anomaly Detection Using Conventional Approaches}{22}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Experimental Setup}{24}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Experimental Results}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}SOTA Methods Performance on classical LOCO Dataset}{25}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future work}{27}{chapter.7}%
+\contentsline {chapter}{\numberline {A}Appendix}{30}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
