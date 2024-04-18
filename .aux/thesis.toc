@@ -6,29 +6,29 @@
 \contentsline {section}{\numberline {1.2}Table Test Viz}{6}{section.1.2}%
 \contentsline {chapter}{\numberline {2}Background}{8}{chapter.2}%
 \contentsline {section}{\numberline {2.1}Ensembles}{8}{section.2.1}%
-\contentsline {section}{\numberline {2.2}Categorization of Anomaly detection}{11}{section.2.2}%
+\contentsline {section}{\numberline {2.2}Methods of Anomaly detection}{11}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Datasets}{13}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Metrics}{15}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Anomaly Detection Methods}{16}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}PatchCore}{16}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}SimpleNet}{17}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}AST}{18}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}DRAEM}{18}{subsection.2.5.4}%
-\contentsline {subsection}{\numberline {2.5.5}RevDist}{18}{subsection.2.5.5}%
-\contentsline {subsection}{\numberline {2.5.6}CSFlow}{18}{subsection.2.5.6}%
-\contentsline {chapter}{\numberline {3}Related Work}{19}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Method}{20}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Discriminator}{20}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Flat Connector Class}{21}{section.4.2}%
-\contentsline {section}{\numberline {4.3}pipeline}{23}{section.4.3}%
-\contentsline {section}{\numberline {4.4}Ensemble network}{23}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Different ensemble approaches}{24}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Logical Anomaly Detection Using Conventional Approaches}{24}{section.4.6}%
-\contentsline {chapter}{\numberline {5}Experimental Setup}{26}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Experimental Results}{27}{chapter.6}%
-\contentsline {section}{\numberline {6.1}SOTA Methods Performance on classical LOCO Dataset}{27}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ensemble Performance}{28}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future work}{29}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Ensemble Network}{29}{section.7.1}%
-\contentsline {chapter}{\numberline {A}Appendix}{30}{appendix.A}%
+\contentsline {section}{\numberline {2.5}Anomaly Detection Methods}{17}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}PatchCore}{17}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}SimpleNet}{18}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}AST}{19}{subsection.2.5.3}%
+\contentsline {subsection}{\numberline {2.5.4}DRAEM}{19}{subsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.5.5}RevDist}{19}{subsection.2.5.5}%
+\contentsline {subsection}{\numberline {2.5.6}CSFlow}{19}{subsection.2.5.6}%
+\contentsline {chapter}{\numberline {3}Related Work}{20}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Method}{21}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Discriminator}{21}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Flat Connector Class}{22}{section.4.2}%
+\contentsline {section}{\numberline {4.3}pipeline}{24}{section.4.3}%
+\contentsline {section}{\numberline {4.4}Ensemble network}{24}{section.4.4}%
+\contentsline {section}{\numberline {4.5}Different ensemble approaches}{25}{section.4.5}%
+\contentsline {section}{\numberline {4.6}Logical Anomaly Detection Using Conventional Approaches}{25}{section.4.6}%
+\contentsline {chapter}{\numberline {5}Experimental Setup}{27}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Experimental Results}{28}{chapter.6}%
+\contentsline {section}{\numberline {6.1}SOTA Methods Performance on classical LOCO Dataset}{28}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ensemble Performance}{29}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future work}{30}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Ensemble Network}{30}{section.7.1}%
+\contentsline {chapter}{\numberline {A}Appendix}{33}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

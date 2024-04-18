@@ -89,58 +89,53 @@ feature ensemble:
 
 
 
-\section{Categorization of Anomaly detection}
+\section{Methods of Anomaly detection}
 \label{sec:IADcategs}
-When trying to understand the choices of IAD approaches for the pipeline and ensemble, one first has to learn about a few important distinctions of models on this topic.
-The deep learning approaches that have established themselves as state of the art in image anomaly detection are almost exclusively unsupervised approaches. This partiall stems from the fact 
-that naturally anomalous images occurr far less than normal images, hence the word "normal". This is especially true in industrial settings, due to the high performance of production factories 
-nowadays. Therefore if one were to consider using a supervised learning approach to detect anomalies, either a strong class imbalance or an unrepresentative class distribution would occur.
-While there are some solutions for this, they often are either not goo enough for imbalances this high(synonym klänge cool) or far to extensive. Some papers like (supervised papers zitieren)
-utilize supervised approaches with some success, but still yield a worse performance than the popular unsupervised approaches generally used. Consequently the biggest model distinction is 
-between unsupervised and supervised ones. Here it has to be said that there are technically also other settings of IAD one could talk about at this level of observation, but since we are also 
-directing our focus to to RGB images, they will not be talked about. Moreover one has to make some simplifications to allow such sharp categorizations of partially interwoven approaches.
+Over the last years a great amount of different approaches to solving IAD have been published. In order to compare different anomaly detection methods, categorizing them with respect to different 
+aspects serves a better comparative analysis in regards of strengths and weaknesses.  It also helps gain a better understanding of the different approaches in the global IAD context and
+is useful detect possible patterns in performance correlated to categories. This obviously also holds true for IAD approaches. Survey papers like (namen nennen) \cite{Xie_2024benchmarking} 
+\cite{liu2024deep} primarily compare but also categorize IAD approaches, leading to the conclusion that there are effective and generally applicable ways to group certain approaches, as 
+visualized in Figure xyz. Here it has to be said that the following categorizations naturally are a generalization, as there may be different niche settings or even approaches who combine multiple categories.
+\newline
+The first distinction relevant to our work is between supervised and unsupervised settings. Current deep learning approaches that have established themselves as state of the art in image anomaly detection 
+are almost exclusively unsupervised approaches. This partially stems from the fact 
+that in practical situations, anomalous images occur far less than normal images, hence the word "normal". This is especially true in industrial settings, due to the high performance of 
+production sites nowadays. Therefore if one were to consider using a classical supervised learning approach to detect anomalies, either a strong class imbalance or a nonrepresentative class 
+distribution would constitute a problem. While there are some solutions for this, they often either do not suffice for imbalances of this magnitude or far to resource extensive. To overcome 
+these issues, some supervised approaches \cite{Chu_2020supervised} operate in a few-shot setting which limit the training data amount needed for proper training. Nevertheless as the focus on 
+unsupervised IAD methods in current research persists, 
+this work will also restrict itself to such approaches. This also facilitates the execution of the ensemble approach presented in chapter \ref{chap:method}(methods).
+\newline
+Looking into the unsupervised anomaly setting, the next important distinction is between reconstruction based approaches and representation based ones. They differ in the sense, that the former 
+are comparing the distances between two images and the latter measure distances between feature representations. \newline
+Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data, aswell as noisy data. Noisy data are are 
+which are altered by methods like gaussian noise(rephrase), although the exact noise application is depending on the specific approach. During testing, after having successfully learnt to 
+reconstruct anomaly free images, the method is then given an input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in figure xyz. 
+Representation approaches on the other hand use feature embedding methods to obtain feature representations of images and compare those. As shown in figure xyz, during training the model is 
+learning to correctly extract features of input images. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
+prior feature level representations of the class object. A decision is then made aswell using a distance measure.
+Both classes of IAD methods have shown to produce state of the art results. Yet currently more approaches are representation based \cite{liu2024deep} as they have shown SOTA performance more 
+consistently. Nevertheless it is reasonable to focus on both kinds of IAD, as they may excel at different regions of anomaly detection and evaluation criteria.
+\newline
+(noch zu jedem approach einen vor und einen nachteil schreiben, zb bei memory bank dass es speicherplatz intensiv/langsam sein kann und so(patchcore als lösung erwähnen))
+Again, looking at the representation based approaches, some distinctions can be made on exactly how the method implements a representation based procedure.
+The main approaches in this category are ones featuring a memory bank, teacher-student architecture, distribution map and ones employ a one-class classification strategy. The characteristics of 
+each strategy are visualized in figure xyz. The subcategory of 
+memory bank denotes the procedure to store feature representations, that are extracted from training images, into a data collection structure. This structure is then used to compare new 
+features from input images to the stored ones to form a decision. Teacher-student architectures reference the use of two networks for anomaly detection. Here the teacher model is usually a pretrained 
+backbone, that transfers knowledge onto the student model during training time, whereas the student model is simultaneously learning representations from the teacher model aswell as learning 
+how to represent the input data by itself. During testing, the extracted features of teacher and student are compared, which would then be similar for normal images but have larger differences 
+when presented an anomalous data point.
+Next, distribution map approaches try to map the features into a more suitable distribution, to then decide whether those features 
+are abnormal or not. More often that not, a variation of normalizing flow is utilized for the distribution mapping \cite{liu2024deep}. Lastly, one-class classificaiton is 
+somewhat similar to a distribution map procedure, but aims at learning a feature projection that helps to find a boundary to discriminate normal features from abnormal ones.
+\newline
+Circling back to representation based methods, they also can be parted into subcategories. Here the most predominating one is the use of autoencoders to 
 
-The supervised learning category could also further be split up into sub-categories at a lower level. But seeing as the performances of unsupervised approaches dominantely outweigh the 
-performance and cost of the former, this work will solely focus on the latter kind of approaches. In the unsupervised IAD setting we then normally distinguish between reconstruction and 
-representation based models. One of the key differences between those two is(hier dringend auch paper zitieren die das untersuchen), 
-
-
-... 
-
-
-If we now consider the classification of algorithms above, aswell as figure x, we can see that there are quite a lot of unique models and approaches to the same end. To ensure that the built 
-pipeline is able to help experiment on images from different points of view, so to say, aswell as ensure that our ensemble approaches cover as various different aspects as possible, it is 
-crucial to select approaches from majorly different branches. Here it may be noted that the performance of the single models is not completely disregarded, as those models may prove themselves 
-not very useful in the ensemble setting or even as a point of view for experimentation. Therefore certain approaches from the survey papers ...., which yielded performances that were not 
-remotely comparable with the highest performing models, were not considered, even if they might cover a previously unrepresented class of IAD setting. 
-The main choices were:
-- patchcore + paper
-- DRAEM + paper
-- CSFlow + paper
-
-With this choice we still represent reconstruction and representation based settings somewhat comparably, aswell as providing different examples for a variety of subclasses, namely
-distribution maps, autoencoder, memory banks, teacher-student models, diffusion models and ...
-
-
-
-- there are different kinds of approaches to IAD
-- look at tree picture
- 
-- First important distinction is between supervised and unsupervised
--> we focus on unsupervised
--> list problems with supervised approaches and thus advantages of unsupervised ones
-
-- briefly touch on other IAD settings like few shot, along with references
-
-- among unsupervised approaches, there are two more fundamental distinctions
--> reconstruction based vs representation/feature embedding based
--> explain difference with lots of references
-
-- for reconstruction based touch on 2-3 base categories like GANs etc and link fundamental papers for GANs etc
-- for representation based important to explain memory bank, teacher student, and distribution map
-- explain normalizing flow somehow somewhere in there
-
-- maybe say which algos we chose and what we covered with that
+%reconstruction methods beschreiben
+%sagen welche methods vorzeige approaches in den einzelnen categorien sind(vllt)
+%sagen welche kategorien wir ausgewählt haben zum testen und dass diese genauer ausgeführt sind in den according sections
+%bissi vor und nachteile der ansätze reinstreuen
 
 
 
