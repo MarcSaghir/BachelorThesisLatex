@@ -1,10 +1,10 @@
 \chapter{Background}
 \label{chap:background}
-This is an algorithm 
 
 
 
 \section{Ensembles}
+\label{sec:ensembles}
 %TO-DO: irgendwo beispielhaft erklären dass manche approaches manche sachen besser verstehen und umgekehrt, deswegen ensemble gut ist, muss maybe in die background oder introduction
 
 When it comes to ensembling classification models, there are multiple approaches to do so. Many ensembling methods are focussed on combining homogeneous 
@@ -89,7 +89,8 @@ feature ensemble:
 
 
 
-\section{Classes of Anomaly detection}
+\section{Categorization of Anomaly detection}
+\label{sec:IADcategs}
 When trying to understand the choices of IAD approaches for the pipeline and ensemble, one first has to learn about a few important distinctions of models on this topic.
 The deep learning approaches that have established themselves as state of the art in image anomaly detection are almost exclusively unsupervised approaches. This partiall stems from the fact 
 that naturally anomalous images occurr far less than normal images, hence the word "normal". This is especially true in industrial settings, due to the high performance of production factories 
@@ -144,6 +145,7 @@ distribution maps, autoencoder, memory banks, teacher-student models, diffusion 
 
 
 \section{Datasets}
+\label{sec:datasets}
 The datasets used in image anomaly detection are scarce, especially when it comes to anomaly detection in a manufacturing setting. There are many datsets and approaches that specialize on certain materials \cite{FabricDataset_Tsang_2016} 
 \cite{SteeltubeDataset_Yang_2021} \cite{magnetictiles_Huang_2018}
 and often only one classs. What currently stands out as a gold standard among IAD datasets is the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The authors created it  
@@ -182,7 +184,8 @@ this work refrains from using the method proposed in the paper.
 
 
 
-\section{metrics}
+\section{Metrics}
+\label{sec:metrics}
 Metrics are known to be an important part of developing any artificial intelligence related models. Many of them are used to infer 
 different characteristics of model performance and should be used in different appropriate circumstances, depending on which aspect 
 is important for the current application. Therefore, before the actual developing, one must first choose appropriate metrics 
@@ -218,32 +221,80 @@ scores for each anomaly have to be individually set for each anomaly, and are gi
 
 
 \section{Anomaly Detection Methods}
+\label{sec:IADmethods}
+- hier noch auflisten welche algos wir durchgehen
+
 
 \subsection{PatchCore}
+\label{subsec:patchcore}
+Notizen zu erklärung von patchcore/dinge die in diesem abschnitt stehen sollen:
+- PatchCore it ein representation based approach -> auf einteilung in section zu IAD methods klassen verweisen
+- noch spezifischer ein memory bank one
 
+- vllt nochmal recap: was genau memory bank bedeutet
+
+- anhand von figure das vorgehen der patchcore pipeline erläutern:
+-> normale images werden bei training gegeben
+-> mit pretrained backbones werden features extrahiert und zu locally aware patch features, aka patches unmgewandelt -> sagen was das heißt
+-> 1-2 Formeln aus patchcore übernehmen für patch erklärung damit alles mathematischer aussieht
+-> hinzufügen der patches zu memory bank
+-> das coreset/die bank subsampling danach erwähnen, passiert glaube ich aus effizienzgründen
+
+-> zur inference wird input bild auch zu patches verarbeitet genauso wie training images
+-> nearest neighbor search für nächste patches, jeder patch kriegt eine distance
+-> anhand von distanzen werden anomaly scores ermittet wobei der größte score unter den patches gleich dem anomaly score ist
+-> Formel für distanzen aus patchcore zeigen und erklären
+-> segmentations auch anhand von distances durch interpolation und smoothing
+
+- Leistung von patchcore:
+-> super gut, mitunter bester ansatz sowohl detection as auch localization, AUROC, PRO und alles von patchcore reporten und auf example segmentations verweisen
+-> geschwindigkeit: ???(probably sehr gut, subsampling beschleunigt NN suche)
+-> geringe storage cost wegen subsampling
+
+
+- Limitations: patchcore limited by pretrained extraction backbones -> sollte ich auch noch bie introduction zu den problems schreiben oder bei background zu representation dingsies
 
 
 \subsection{SimpleNet}
-- highlight the use of the discriminator because its important for mine
+\label{subsec:simplenet}
+Notizen für simpenet/sachen die ich sagen will:
+
+- simplenet ist auch representation based aber ein feature projection approach(factchecken!!)
+- erklären was das heißt, zb dass die features in eine bestimmte dimension projected werden um aussagekräftiger zu sein
+- published as easy to use and application friendly approach by blabla
+
+- simplenet pipeline:
+-> training:
+-> features werden auch hier mit pretrained backbones extracted und wie bei patchcore zu locally aware patches gemacht
+-> features werden projected wobei die projection auch erlernt wird(sagen dass single layer network genügt hierfür)
+-> fake features werden generiert. simplenet disst hier die bisherigen ansätze von synthetischer data(referenzen) und schwört auf gaussian noise
+-> fake features sind dann richtige features + gaussian noise
+-> discriminator: 2 layer MLP, kept very simple
+-> features are appended and all batch is fed to discriminator per epoch
+-> discriminator then learns on them
+-> loss beschreiben auch mit formel
+-> discriminator spuckt werte aus(scoring formel zeigen)
+-> anomaly map ist discriminator pro patch, hochinterpoliert, image score ist höchster map score
+
+Leistung von simpenet:
+- sehr gute results, auroc und pro bitte raussuchen
+- geschwindigkeit vergleichsweise langsamer als zb patchcore und padim welche representation based sind aber auch langsamer als reconstruction 
+based DRAEM -> around 79 FPS für simplenet und nur ca 10 für patchcore und ca 67 für DRAEM
+
+
+
 
 \subsection{AST}
+\label{subsec:AST}
 
 \subsection{DRAEM}
+\label{subsec:DRAEM}
 
 \subsection{RevDist}
+\label{subsec:revdist}
 
 \subsection{CSFlow}
-
-
-
-
-
-
-
-
-
-
-
+\label{subsec:csflow}
 
 
 

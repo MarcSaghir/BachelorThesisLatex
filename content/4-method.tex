@@ -3,6 +3,7 @@
 
 
 \section{Discriminator}
+\label{sec:discriminator}
 Our approach to use a small, compact discriminator to differentiate between regular and anomalous image features is inspired by the approach 
 presented in SimpleNet \cite{liu2023simplenet}. Since the discriminators inputs in the ensemble pipeline will be of the same nature as 
 the inputs for SimpleNet's discriminator, it is reasonable to utilize their network architeture for this work. Looking back at section 
@@ -21,10 +22,13 @@ adam optiizer by pytorch with a learn rate of (werte erst sauber aufschreiben be
 - say that this is the binary discriminator for detcting the anomalies from ensembled feature maps
 - repeat that this is largely based of simplenets discriminator
 - describe model architecture as described in simplenet paper
-- list parameters from code like optimizer, learn rate, etc.
+- list parameters from code like optimizer, learn rate, epochs, etc. 
+-> basically die ganze run_ensemble auflisten
 - also describe loss
 
-\section{Our own Dataset}
+
+\section{Flat Connector Class}
+\label{sec:ourdata}
 As previously mentioned in the introduction, this work will also discuss the introduction of three new dataset classes as an addition to the current ones present in the MVTecAD LOCO dataset.
 This was to extent the range of objects represented in datasets (referenz auf mvted und loco) and further investigate model performance on industrial manufacturing parts, as this is the 
 mein setting for this work. Shaping the dataset in form of the MVTecAD LOCO dataset has multiple advantages. Firstly we get to make statements about the ability of SOTA algorithms detectig 
@@ -80,6 +84,7 @@ the similarity is visible. The saturation scores for the anomalies, as discussed
 
 
 \section{Ensemble network}
+\label{sec:ourensemblenetwork}
 %TO-DO: irgendwo beispielhaft erklären dass manche approaches manche sachen besser verstehen und umgekehrt, deswegen ensemble gut ist, muss maybe in die background oder introduction
 
 There are multiple approaches to ensembling models in general. When combining a heterogeneous set of classifiers, a common approach is to first calibrate(referenz) and then ensemble each models 
@@ -113,14 +118,15 @@ feature ensemble:
 -> dann zusammenführen mit resize und appnden
 
 
+%brauche ich die section??
 \section{Different ensemble approaches}
 - weighted, random forest etc 
 - specifics
 
 
-
+%neu formulieren das kling scheiße 
 \section{Logical Anomaly Detection Using Conventional Approaches}
-As discussed in the related works section, logical anomalies represent a signifacant part of image anomaly detection in modern
+As discussed in the introduction section(\ref{chap:introduction}), logical anomalies represent a signifacant part of image anomaly detection in modern
 manufacturing settings. The experiments also serve as an extensive comparison of SOTA methods for IAD versus recent approches that where 
 introduced with special mind to logical anomalies, like GCAD \cite{LOCODentsAndScratchesBergmann2022}(GCAD reference von Paul Bergmann). 
 Moreover, for a qualitative evaluation of the performance change when using feature level ensembles, one first needs to evaluate the base performance 
