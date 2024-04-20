@@ -30,5 +30,7 @@
 \contentsline {section}{\numberline {6.2}Ensemble Performance}{30}{section.6.2}%
 \contentsline {chapter}{\numberline {7}Conclusion and Future work}{31}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Ensemble Network}{31}{section.7.1}%
+\contentsline {section}{\numberline {7.2}SOTA performance}{31}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Flat connector}{31}{section.7.3}%
 \contentsline {chapter}{\numberline {A}Appendix}{35}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
