@@ -39,6 +39,49 @@ W.-H. Chu and K.~M. Kitani, {\em Neural Batch Sampling with Reinforcement
   Learning for Semi-supervised Anomaly Detection}, p.~751–766.
 \newblock Springer International Publishing, 2020.
 
+\bibitem{Kobyzev_2021normalizingflowexplanation}
+I.~Kobyzev, S.~J. Prince, and M.~A. Brubaker, ``Normalizing flows: An
+  introduction and review of current methods,'' {\em IEEE Transactions on
+  Pattern Analysis and Machine Intelligence}, vol.~43, p.~3964–3979, Nov.
+  2021.
+
+\bibitem{liu2023simplenet}
+Z.~Liu, Y.~Zhou, Y.~Xu, and Z.~Wang, ``Simplenet: A simple network for image
+  anomaly detection and localization,'' in {\em Proceedings of the IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition}, pp.~20402--20411,
+  2023.
+
+\bibitem{Zavrtanik_2021DRAEM}
+V.~Zavrtanik, M.~Kristan, and D.~Skocaj, ``DrÆm – a discriminatively trained
+  reconstruction embedding for surface anomaly detection,'' in {\em 2021
+  IEEE/CVF International Conference on Computer Vision (ICCV)}, IEEE, Oct.
+  2021.
+
+\bibitem{xie2020benchmarking}
+G.~Xie, J.~Wang, J.~Liu, J.~Lyu, Y.~Liu, C.~Wang, F.~Zheng, and Y.~Jin,
+  ``Benchmarking anomaly detection algorithms,'' {\em Journal of LaTeX Class
+  Files}, vol.~18, no.~9, 2020.
+
+\bibitem{You_2023transformer}
+Z.~You, K.~Yang, W.~Luo, L.~Cui, Y.~Zheng, and X.~Le, {\em ADTR: Anomaly
+  Detection Transformer with Feature Reconstruction}, p.~298–310.
+\newblock Springer International Publishing, 2023.
+
+\bibitem{ho2020denoisingdiffusionOG}
+J.~Ho, A.~Jain, and P.~Abbeel, ``Denoising diffusion probabilistic models,''
+  {\em arXiv preprint arxiv:2006.11239}, 2020.
+
+\bibitem{Wyatt_2022diffusionfirstapproach}
+J.~Wyatt, A.~Leach, S.~M. Schmon, and C.~G. Willcocks, ``Anoddpm: Anomaly
+  detection with denoising diffusion probabilistic models using simplex
+  noise,'' in {\em 2022 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition Workshops (CVPRW)}, IEEE, June 2022.
+
+\bibitem{zhang2023diffusionaddiffusionmodern}
+H.~Zhang, Z.~Wang, Z.~Wu, and Y.-G. Jiang, ``Diffusionad: Norm-guided one-step
+  denoising diffusion for anomaly detection,'' {\em arXiv preprint
+  arXiv:2303.08730}, 2023.
+
 \bibitem{FabricDataset_Tsang_2016}
 C.~S. Tsang, H.~Y. Ngan, and G.~K. Pang, ``Fabric inspection based on the elo
   rating method,'' {\em Pattern Recognition}, vol.~51, p.~378–394, Mar. 2016.
@@ -55,11 +98,5 @@ Y.~Huang, C.~Qiu, Y.~Guo, X.~Wang, and K.~Yuan, ``Surface defect saliency of
 
 \bibitem{mvtecdownload}
 ``Download page of the mvtec ad dataset.''
-
-\bibitem{liu2023simplenet}
-Z.~Liu, Y.~Zhou, Y.~Xu, and Z.~Wang, ``Simplenet: A simple network for image
-  anomaly detection and localization,'' in {\em Proceedings of the IEEE/CVF
-  Conference on Computer Vision and Pattern Recognition}, pp.~20402--20411,
-  2023.
 
 \end{thebibliography}

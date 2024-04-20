@@ -115,22 +115,53 @@ Representation approaches on the other hand use feature embedding methods to obt
 learning to correctly extract features of input images. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
 prior feature level representations of the class object. A decision is then made aswell using a distance measure.
 Both classes of IAD methods have shown to produce state of the art results. Yet currently more approaches are representation based \cite{liu2024deep} as they have shown SOTA performance more 
-consistently. Nevertheless it is reasonable to focus on both kinds of IAD, as they may excel at different regions of anomaly detection and evaluation criteria.
+consistently. Nevertheless it is reasonable to focus on both kinds of IAD, as they may excel at different regions of anomaly detection and evaluation criteria. Namely reconstruction methods are 
+often showing a better performance at pixel level anomaly detection in comparison to feature embedding/representation methods, as their principle is based on pixelwise comparisons of input 
+and reconstructed data.
 \newline
-(noch zu jedem approach einen vor und einen nachteil schreiben, zb bei memory bank dass es speicherplatz intensiv/langsam sein kann und so(patchcore als lösung erwähnen))
 Again, looking at the representation based approaches, some distinctions can be made on exactly how the method implements a representation based procedure.
 The main approaches in this category are ones featuring a memory bank, teacher-student architecture, distribution map and ones employ a one-class classification strategy. The characteristics of 
 each strategy are visualized in figure xyz. The subcategory of 
 memory bank denotes the procedure to store feature representations, that are extracted from training images, into a data collection structure. This structure is then used to compare new 
-features from input images to the stored ones to form a decision. Teacher-student architectures reference the use of two networks for anomaly detection. Here the teacher model is usually a pretrained 
+features from input images to the stored ones to form a decision. Memory bank approaches offer the upside of little training time and quick construction, yet the usually suffer from high memory 
+usage and costly inference, due to the feature representations being stored into memory. Some papers have addressed this problem. Famously patchcore \cite{patchCore2022} introduced a coreset-subsampled 
+memory bank, greatly improving on said bottlenecks and setting precedent for more efficient memory bank approaches. Teacher-student architectures reference the use of two networks for anomaly detection. 
+This architecture has also been one of the more effective ones and its performance greatly depends on factors like the selection of the teacher model and way 
+of knowledge transfer between the two networks. Here the teacher model is usually a pretrained 
 backbone, that transfers knowledge onto the student model during training time, whereas the student model is simultaneously learning representations from the teacher model aswell as learning 
 how to represent the input data by itself. During testing, the extracted features of teacher and student are compared, which would then be similar for normal images but have larger differences 
 when presented an anomalous data point.
-Next, distribution map approaches try to map the features into a more suitable distribution, to then decide whether those features 
-are abnormal or not. More often that not, a variation of normalizing flow is utilized for the distribution mapping \cite{liu2024deep}. Lastly, one-class classificaiton is 
-somewhat similar to a distribution map procedure, but aims at learning a feature projection that helps to find a boundary to discriminate normal features from abnormal ones.
+Next, distribution map approaches try to map the features from their original distribution into a more suitable one. This vastly facilitates a identification of anomalous features as shown in 
+figure xyz. Such an approach requires a method to map the features between distributions. Often times a variation of normalizing flow is utilized for this \cite{liu2024deep}. 
+Normalizing flows as a class of generative models \cite{Kobyzev_2021normalizingflowexplanation} are advantageous for transforming probability distributions because they provide a flexible 
+framework to model complex distributions and efficient sampling. This enables accurate distribution mapping aswell as sampling. 
+Lastly, one-class classificaiton is 
+somewhat similar to a distribution mapping approach. The key difference is that the latter maps features into a desired distribution and the former focusses on finding boundaries between normal 
+and anomalous features. To efficiently do that, features are projected into a suited space using a network. To learn an accurate boundary, the approaches generate fake anomalous features to 
+then differentiate from normal ones. This method greatly relys on the the quality of generated features and as such may be variyngly effective. A typical approach for generating fake samples 
+in this works context is with the use of gaussian noise \cite{liu2023simplenet}.
 \newline
-Circling back to representation based methods, they also can be parted into subcategories. Here the most predominating one is the use of autoencoders to 
+Circling back to reconstruction based methods, they also can be parted into subcategories. Here the most predominating one is the use of autoencoders to obtain a generated image. Many 
+reconstruction approaches make use of typical AE encoder and decoder structures. They are mainly seperated by the method of resolving differences between the input image and the reconstructed one. 
+While there are too many difference evaluation approaches to name, DRAEM \cite{Zavrtanik_2021DRAEM} can be named here as one of the most famous reconstruction autoencoder approaches. It uses 
+the output of the reconstructive network in combination with the original image as the input for a discriminative subnetwork and achieves very good results and demonstrated a nearly equal effectiveness 
+of reconstruction based methods to representation based ones.(nachteile von DRAEM/AE nennen)
+Another, albeit less popular, approach in this category would be the use of GAN architectures/concepts to try and solve the detection problem. While we don't cover the basic principles of GANs in 
+this chapter, GANs applied in IAD may still suffer the same disadvantages of regular ones, which include training instability, high computational demand and a higher difficulty of correct training and 
+evaluation. Hence the use of GANs for IAD is not commonly seen, although the nature of them may promise more realistic and higher quality training data than other approaches.
+Another kind of reconstruction based IAD involves the use of transformer structures. They allow for good caputiring of spatial relationships and long distance feature extraction \cite{xie2020benchmarking},
+making them useful for not only structural but also logical anomaly detection. Papers like \cite{You_2023transformer} make use of transformers for feature reconstruction and as they are very 
+limited in reconstructing anomalous features well, making for an easy distinction. They show in their experiments that their approach ADTR is able to outperform all shown baselines, including 
+a variety of different autoencoder apporoaches.
+Finally there also exists an approach that has been gaining popularity lately: the usage of the diffuion model \cite{ho2020denoisingdiffusionOG}. Papers like \cite{Wyatt_2022diffusionfirstapproach} 
+leverage the models ability to capture complex dependencies to detect anomalies in IAD, and other papers \cite{zhang2023diffusionaddiffusionmodern} further improved its efficiency by speeding up 
+the denoising process.
+\newline
+After carefully categorizing the important classes of unsupervised IAD, it is now discernible how many different approaches towards anomaly detection exist, and may yield differnt merits. 
+Below(maybe sections auzählen/zitieren?) we further elaborate on a few select IAD approaches from different categories who were utilized for the MVTecAD LOCO performance analysis or the ensemble 
+model. 
+
+
 
 %reconstruction methods beschreiben
 %sagen welche methods vorzeige approaches in den einzelnen categorien sind(vllt)

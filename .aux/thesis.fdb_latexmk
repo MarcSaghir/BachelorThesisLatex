@@ -1,21 +1,21 @@
 # Fdb version 4
-["bibtex .aux/thesis"] 1713471756 ".aux/thesis.aux" ".aux/thesis.bbl" ".aux/thesis" 1713471762 0
-  "./literature/lit.bib" 1713466961 7083 57c52ef8c4fd0365b20b6f54cfe78331 ""
-  ".aux/thesis.aux" 1713471761 17041 eb6d66740c329ff8c1a3186e3f212d91 "pdflatex"
+["bibtex .aux/thesis"] 1713630025 ".aux/thesis.aux" ".aux/thesis.bbl" ".aux/thesis" 1713630031 0
+  "./literature/lit.bib" 1713629667 9974 cad1a95c380571c63d5f3806747b90bd ""
+  ".aux/thesis.aux" 1713630030 17659 bebe0ade05c6326eaf7c80963da5c38f "pdflatex"
   "C:/Users/Marc/Documents/MikeTeX/bibtex/bst/bibtex/ieeetr.bst" 1291867944 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
   (generated)
   ".aux/thesis.bbl"
   ".aux/thesis.blg"
   (rewritten before read)
-["pdflatex"] 1713471757 "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" ".aux/thesis.pdf" "thesis" 1713471762 0
-  ".aux/pdfa.xmpi" 1713471759 5352 447dff856f0a75a20e08c0c60ad6ece5 "pdflatex"
-  ".aux/thesis.aux" 1713471761 17041 eb6d66740c329ff8c1a3186e3f212d91 "pdflatex"
-  ".aux/thesis.bbl" 1713471757 2966 b3f9494f5fedb4513f51080d1d2cc380 "bibtex .aux/thesis"
-  ".aux/thesis.lof" 1713471761 345 c014dfacafd30bc7b28b05e64aa7bd54 "pdflatex"
-  ".aux/thesis.lot" 1713471761 351 670d2fda3a4b8e2db7fc80e1b2098c13 "pdflatex"
-  ".aux/thesis.out" 1713471760 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  ".aux/thesis.toc" 1713471761 2491 2d14987ee091400af4caa29ba886e820 "pdflatex"
-  ".aux/thesis.xmpdata" 1713471760 156 7625225de524fc182788bc8165d9bdf3 "pdflatex"
+["pdflatex"] 1713630025 "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" ".aux/thesis.pdf" "thesis" 1713630031 0
+  ".aux/pdfa.xmpi" 1713630027 5352 2ef9f79df6badd8a6965b394ebb8839a "pdflatex"
+  ".aux/thesis.aux" 1713630030 17659 bebe0ade05c6326eaf7c80963da5c38f "pdflatex"
+  ".aux/thesis.bbl" 1713630025 4681 f53c6692ab53bd538186e7a5b187fbca "bibtex .aux/thesis"
+  ".aux/thesis.lof" 1713630030 345 c014dfacafd30bc7b28b05e64aa7bd54 "pdflatex"
+  ".aux/thesis.lot" 1713630030 351 670d2fda3a4b8e2db7fc80e1b2098c13 "pdflatex"
+  ".aux/thesis.out" 1713630029 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  ".aux/thesis.toc" 1713630030 2491 16ae6170fcbfffb407f575146ddf3f97 "pdflatex"
+  ".aux/thesis.xmpdata" 1713630029 156 7625225de524fc182788bc8165d9bdf3 "pdflatex"
   "<pdfa.xmpi" 1701615181 5400 0 ""
   "C:/Users/Marc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1701617033 406948 f00ee10c0f47365afc777a762ea862bb ""
   "C:/Users/Marc/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1700406096 24135773 aae61aac971fd122a4112c3229286075 ""
@@ -356,7 +356,7 @@
   "algotable/sac.tex" 1701617209 65 f4b6a91f5e904a0d92fdf4dac328788f ""
   "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" 1713289945 5154 0e717127eb620db92414af3e2b50cc77 ""
   "content/1-introduction.tex" 1713461724 10167 e71a73f32edeb891b632b96eca2211a9 ""
-  "content/2-background.tex" 1713471750 27184 553b210b205b2236c3e53723241f2630 ""
+  "content/2-background.tex" 1713630018 31605 a517021f1e638a52fd0c67d5a182569c ""
   "content/3-relatedwork.tex" 1701615181 50 943a921860e00579443f4d3aa6831be9 ""
   "content/4-method.tex" 1713461747 12817 f02e7cbb1811788677e7385f44c9acbd ""
   "content/5-experimentsetup.tex" 1713289945 239 a9ec27bc8a05d50f07b596f587869d40 ""
