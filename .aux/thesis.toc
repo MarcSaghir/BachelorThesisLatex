@@ -8,14 +8,15 @@
 \contentsline {section}{\numberline {2.1}Ensembles}{8}{section.2.1}%
 \contentsline {section}{\numberline {2.2}Methods of Anomaly detection}{11}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Datasets}{15}{section.2.3}%
-\contentsline {section}{\numberline {2.4}Metrics}{17}{section.2.4}%
-\contentsline {section}{\numberline {2.5}Anomaly Detection Methods}{18}{section.2.5}%
-\contentsline {subsection}{\numberline {2.5.1}PatchCore}{18}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}SimpleNet}{19}{subsection.2.5.2}%
-\contentsline {subsection}{\numberline {2.5.3}AST}{20}{subsection.2.5.3}%
-\contentsline {subsection}{\numberline {2.5.4}DRAEM}{20}{subsection.2.5.4}%
-\contentsline {subsection}{\numberline {2.5.5}RevDist}{20}{subsection.2.5.5}%
-\contentsline {subsection}{\numberline {2.5.6}CSFlow}{20}{subsection.2.5.6}%
+\contentsline {section}{\numberline {2.4}Model Calibration}{17}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Metrics}{17}{section.2.5}%
+\contentsline {section}{\numberline {2.6}Anomaly Detection Methods}{18}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}PatchCore}{18}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}SimpleNet}{19}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}AST}{20}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}DRAEM}{20}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}RevDist}{20}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}CSFlow}{20}{subsection.2.6.6}%
 \contentsline {chapter}{\numberline {3}Related Work}{21}{chapter.3}%
 \contentsline {chapter}{\numberline {4}Method}{22}{chapter.4}%
 \contentsline {section}{\numberline {4.1}Discriminator}{22}{section.4.1}%
