@@ -28,64 +28,45 @@ model outputs. A more robust approach to address that problem, would be to ensem
 and in turn train another classifier for the final meaningful output.
 %----nachfolgender satz maybe raus mal gucken oder anders einbauen
 Another limitation of both kinds of ensembles, being homogeneous and heterogeneous, is that all models have to actually be trained 
-seperately to then utilize the different classification ouputs. This leads to a highger training time and thus also higher computational 
+seperately to then utilize the different classification ouputs. This leads to a higher training time and thus also higher computational 
 cost, which is desirable to be reduced in real world manufacturing firms.
+It should be said that while offering a potential increase in robustness and overall performance, naturally feature level ensemble may also 
+come with certain disadvantages. For instance, it is more difficult to calibrate features from the ensemble members if possible, which may 
+be necessary depending on the nature of the data. An example of our context would be that certain IAD approache project their features into a 
+different space to be effective, making it difficult to ensure that all features are in the same space when dealing with an ensemble. 
+Moreover feature level ensembles also are vulnerable to and reliant on the quality of the input features. This makes the decision on where 
+to cut off the base models very important.
 %-------
-The robustness and efficiency has been demonstrated in \cite{EnsembleHeller2023} (ensemble referenz). The authors utilize a feature level ensemble of multiple 
+The robustness and efficiency has been demonstrated in \cite{EnsembleHeller2023}. The authors utilize a feature level ensemble of multiple 
 convolutional neural networks with different architectures and tasks to improve inference speed and accuracy in plant disease detection.
-(Heller referenz) show that cutting off several, potentially heterogeneous, classifiers after a couple of network layers and ensembling the 
+Heller et al.(Heller referenz) show that cutting off several, potentially heterogeneous, classifiers after a couple of network layers and ensembling the 
 resulting feature maps yields firstly a significant improvement in training time compared to classical output ensembles. This stems from 
 the fact, that all base classifiers of the ensemble only have to be trained once for every following training approach. During this the 
-model still stays compact(zitat aus ensemble paper markieren), giving it an advantage over most supervised approaches(satz klingt scheiße)(irgendwas mit 
-lightweight hinschreiben? -> nochmal paper gucken). Moreover they compared the performance of different ensemble combinations with conventional 
-output ensembles via softmax and reported in all cases no significant drop in performance. In cases where this approach allowed for 
+model still stays compact(zitat aus ensemble paper markieren), giving it an memory usage advantage over many supervised approaches. 
+Moreover they compared the performance of different ensemble combinations with conventional 
+output ensembles via the softmax function and reported in all cases no significant drop in performance. In cases where this approach allowed for 
 different inputs via multispectral cameras(zitat markieren) there even was a similar performance of this ensemble to other state of the 
 art ensembles visible. Keeping in mind the compactness of this new ensemble model combined with an equal performance and possible 
 increased robustness, as argued prior, it is a promising ensemble approach for this work.
 To obtain ensembled feature maps the paper proposes to bring all feature maps to the same sizes using bilinear interpolation. Since 
-it is not desirable to keep every available feature map, as this would create inputs with way too many features, the amount of feature 
-maps is reduced using principle component analysis. This allows for the ensemble to focus only on the most important features, while maintaining 
-an equal amount of maps as if it were composed of a single classifier. To be more specific (Heller+co) \cite{EnsembleHeller2023} introduced two different 
+it is not necessarily desirable to keep every available feature map, as this would create inputs with way too many features, the amount of feature 
+maps is reduced using principle component analysis(PCA). This allows for the ensemble to focus only on the most important features, while maintaining 
+an equal amount of maps as if it were composed of a single classifier. To be more specific Heller et al. \cite{EnsembleHeller2023} introduced two different 
 approaches to perform this ensemble. The first is a global transformation block as seen in figure xyz(figure mit global transformation block). 
 Here the features are first all resized to the same dimensions and then connected along their channels through a concatenation layer.
 Afterwards PCA is applied along the channel dimension to obtain a result with N remaining feature maps, where N can be adjusted for ones 
-needs.
-
-
-
-- soll ich die transformation blocks erst bei den methods genauer beschreiben?
-
-- hier vorgehensweise und findings von ensemble paper schreiben
-- erster ansatz für vorgehensweise:
-The actual combination of features from different level 1 classif
-
-
-%part below maybe in methods
-To obtain the different feature representations 
-we would use the corresponding training methods of each IAD apporoach and then cut the model of at the respective time. Figures abc show a schematic view of each approachs respective model 
-architecture, together with an indication of where the representations would be extracted. Proceeding in this way, we would keep all important features of each representation, resulting in a 
-maxmium gain of information and robust predictions over all different classes.
-Creating such heterogeneous model ensembles on a feature map level was for instance done in (paper ref). Among other results they investigate the performance of heterogeneous models being 
-combined and provide two main approaches to doing so:
-\textbf{General Transformation Block}
-
-
-
-
-- talk about different ensemble approaches we discussed: ensemble model outputs and ensemble model feature maps
-
-feature ensemble:
-- ground idea: have different algos extract features, and then ensemble them. Afterwards train discriminator on the ensembled features like in simplenet
-- reference paper that quses PCA and global block transformation
-- global transformation block:
--> resize all feature maps to same dimensions
--> append feature maps
--> PCA: keep either percentage or set amount
-
-- individual transformation block:
--> first apply PCA
--> sagen wann das am besten anwendbar ist, auch sagen dass für uns probably der global transformation block reicht
--> dann zusammenführen mit resize und appnden
+needs. This method offers the advantage of efficiency, as PCA is only run once per feature ensembling, and may be applied when there is 
+an almost even number of feature maps per classifier with same input representations(erklärlicher schreiben?). Yet this approach is also 
+prone to a couple disadvantages. If the different input data is collected from fundamentally different sources, there may be a significant 
+loss of information when globally applying PCA. Furthermore this approach cannot be balanced when confronted with classifiers with large 
+discrepancies in channel number. If the amount of feature maps from one classifier completely predominates, there is a high likelihood 
+that most feature maps that are selected are from this classifier, if not all.
+To combat this at a cost of lesser efficiency Heller et al. also introduced a second approach, namely the independent transformation block, 
+visualized in figure xyz. 
+This procedure is only differing in the sequencing of the actions. Therefore PCA is firstly applied to every set of feature maps, keeping 
+a certain number of feature map components per classifier. They are then all resized to the desired dimensions and concatenated through 
+the concatenation layer. This sequencing allows for maximum information preservation through individual PCA and also to predefine the number 
+of feature maps to be kept per classifier, preventing larger imbalances.
 
 
 
