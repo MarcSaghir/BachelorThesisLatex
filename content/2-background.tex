@@ -274,9 +274,10 @@ At test time, the input images are processed exactly like the training images we
 in equation xyz: %equation mit distance calculation
 
 \begin{equation}
+\label{ew:patchcoredistance}
 \begin{split}
-m^{test, *}, m^{*} &=  \\
- & = \frac{1}{2} \pi r^2
+m^{test, *}, m^{*} &= \argmax_{m^{test} \in \mathcal{P}(x^{test})} \argmin_{m \in \mathcal{M}} \| m^{test} - m \|_{2} \\
+s^{*} &= \| m^{test, *} - m^{*} \|_{2}
 \end{split}
 
 \end{equation}
