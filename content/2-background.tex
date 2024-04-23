@@ -272,6 +272,15 @@ utilized.
 
 At test time, the input images are processed exactly like the training images were, and afterwards the model searches for the nearest neighbor of each patch, and calculates a distance measument as 
 in equation xyz: %equation mit distance calculation
+
+\begin{equation}
+\begin{split}
+m^{test, *}, m^{*} &=  \\
+ & = \frac{1}{2} \pi r^2
+\end{split}
+
+\end{equation}
+
 The distance scores are then used twofold: The maximum distance indicates the anomaly score on an image level, while the patchwise distances are reshaped, interpolatesd and smoothed to a segmentation 
 map for pixelwise anomaly detection.
 \newline
