@@ -191,7 +191,23 @@ this work refrains from using the method proposed in the paper.
 
 \section{Model Calibration}
 \label{sec:modelcalibration}
+Calibration or rather confidence calibration is the process of adjusting/scaling your models ouput so that it indicates how likely it is to be correct. This is an important action, as nowadays 
+models demonstrate increasingly good performance, scoring very high accuracies on classification tasks. Models that show to be correct that often, generally also have porential to be deployed in 
+real world use cases, which especially holds true in IAD research for manufacturing contents. \cite{Guo_2017_tempscalingetc} reports that most modern neural networks are poorly calibrated in regard 
+to their confidence. Current IAD methods investigated in this work confirm this, only returning anomaly scores devoid of any confidence indication. Correct confidence calibration can help evaluate 
+models using new metrics, increase the users trust into the application and also help to decide on how to utilize the predictions of the model in ones context \cite{whyUncertaintyIsImportant}. 
+\newline
+\cite{Guo_2017_tempscalingetc} review multiple promising ways to calibrate the confidence of a model. %Hier noch satz hin mit formeln für bestandteile
+On a top level, the authors distinguish between calibrating binary classification models and multiclass 
+ones. For binary models they present histogram binning, isotonic regression, bayesian binning into quantiles (BBQ) and lastly platt scaling. 
+Histogram binning is a non-parametric approach and involves binning the uncalibrated prediction possibilities into distinct bins. Each bin $B_m$ is then assigned a confidence score $\theta _m$. During 
+test time the models prediction probability $\hat{p}_i$ is mapped the score $\theta _m$ of the bin $B_m$ it falls into, resulting in a calibrated confidence $\hat{q}_m = \theta _m$. The 
+boundaries of the bins are here chosen so that they minimize the bin-wise squared loss in accord to:
+%Hier formel einfügen
 
+
+
+%noch formeln hinschreiben für logs, possibilities etc?
 
 
 \section{Metrics}
@@ -232,37 +248,38 @@ scores for each anomaly have to be individually set for each anomaly, and are gi
 
 \section{Anomaly Detection Methods}
 \label{sec:IADmethods}
-- hier noch auflisten welche algos wir durchgehen
-
+In this section we further dive into some of the IAD approaches that can be viewed as class representative to some extent. All following methods have demonstrated SOTA performance in 
+at least some categories and are participants/candidates/(synonyms) in the performance study on the MVTecAD LOCO dataset. In the this work we investigated the most widely popular categories of 
+IAD, namely memory bank, one-class classification, teacher-student, distribution maps, autoencoders and diffusion models.
 
 \subsection{PatchCore}
 \label{subsec:patchcore}
-Notizen zu erklärung von patchcore/dinge die in diesem abschnitt stehen sollen:
-- PatchCore it ein representation based approach -> auf einteilung in section zu IAD methods klassen verweisen
-- noch spezifischer ein memory bank one
+As the memory bank approach patchcore \cite{patchCore2022} has been chosen. It has demonstrated very high accuracy in both image and pixel level anomaly detection and set a high standard for 
+performance after its release. The fundemental principle of patchcore is visualized in figure \ref{fig:patchcorearchitecture} and is according to the basic memory bank principle. First a pretrained feature extractor is used 
+to retreive features of the input data. Next in this paper, the features are turned into locally aware feature patches, meaning the feature maps are cut into small fields and applied preprocessing operations like pooling to ensure 
+the patches to be locally aware and also of similar dimension throughout the training. This results in patches that adhere to equation(patchcore patch equation benutztne). The effectiveness of this patchwise approach is justified with each patch, despite being small, having a large enough receptive field size to provide a meaningful anomalous context when learned. 
+Before commiting the resulting patches to the memory bank, patchcore first induces coreset subsampling on the set of feature vecotrs. This ensures a reasonably small memory bank size that is 
+large enough to offer good results, and yet is not to time and memory consuming when performing nearest neighbor search. As a memory bank structure, patchcore utilizes a search index by FaissNN(referenz) 
+which offers the application of kNN with great speed, performance and even a desired tradeoff if necessary for a task. Since performance is the main criterion in IAD research though, this tradeoff is not 
+utilized. 
 
-- vllt nochmal recap: was genau memory bank bedeutet
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth]{figures/pathcore_architecture.png}
+    \caption{Hier korrekt zitieren}
+    \label{fig:patchcorearchitecture}
+\end{figure}
 
-- anhand von figure das vorgehen der patchcore pipeline erläutern:
--> normale images werden bei training gegeben
--> mit pretrained backbones werden features extrahiert und zu locally aware patch features, aka patches unmgewandelt -> sagen was das heißt
--> 1-2 Formeln aus patchcore übernehmen für patch erklärung damit alles mathematischer aussieht
--> hinzufügen der patches zu memory bank
--> das coreset/die bank subsampling danach erwähnen, passiert glaube ich aus effizienzgründen
-
--> zur inference wird input bild auch zu patches verarbeitet genauso wie training images
--> nearest neighbor search für nächste patches, jeder patch kriegt eine distance
--> anhand von distanzen werden anomaly scores ermittet wobei der größte score unter den patches gleich dem anomaly score ist
--> Formel für distanzen aus patchcore zeigen und erklären
--> segmentations auch anhand von distances durch interpolation und smoothing
-
-- Leistung von patchcore:
--> super gut, mitunter bester ansatz sowohl detection as auch localization, AUROC, PRO und alles von patchcore reporten und auf example segmentations verweisen
--> geschwindigkeit: ???(probably sehr gut, subsampling beschleunigt NN suche)
--> geringe storage cost wegen subsampling
-
-
-- Limitations: patchcore limited by pretrained extraction backbones -> sollte ich auch noch bie introduction zu den problems schreiben oder bei background zu representation dingsies
+At test time, the input images are processed exactly like the training images were, and afterwards the model searches for the nearest neighbor of each patch, and calculates a distance measument as 
+in equation xyz: %equation mit distance calculation
+The distance scores are then used twofold: The maximum distance indicates the anomaly score on an image level, while the patchwise distances are reshaped, interpolatesd and smoothed to a segmentation 
+map for pixelwise anomaly detection.
+\newline
+Patchcore has greatly improved the status of prior thought slow and rarther inefficient memory bank approaches throough its subsampling approach. It moreover offers to train a model with little time 
+since the only training that is really done is to fit the memory bank structure with patch vectors. Besides low training time it also requires low storage cost and offers very high and state of the art 
+performance that can also be boosted using simple majority voting(checken obs nicht doch averaging war) ensembles in its paper. Yet due to its nature as a representation based approach, patchcores 
+efficiency is limited by the the pretrained feature extractors acting as its backbones. This problem persists but is also approached by the paper, as they offer a implementation to train the backbone 
+extractor alongside the actual training.
 
 
 \subsection{SimpleNet}
