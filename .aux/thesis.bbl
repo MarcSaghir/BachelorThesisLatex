@@ -109,6 +109,17 @@ S.~McGrath, P.~Mehta, A.~Zytek, I.~Lage, and H.~Lakkaraju, ``When does
   assisted decision making,'' p.~1237–1249, Transactions on Machine Learning
   Research, 2023.
 
+\bibitem{Defard_2021PADIM}
+T.~Defard, A.~Setkov, A.~Loesch, and R.~Audigier, {\em PaDiM: A Patch
+  Distribution Modeling Framework for Anomaly Detection and Localization},
+  p.~475–489.
+\newblock Springer International Publishing, 2021.
+
+\bibitem{Wang_2004SSIM}
+Z.~Wang, A.~Bovik, H.~Sheikh, and E.~Simoncelli, ``Image quality assessment:
+  From error visibility to structural similarity,'' {\em IEEE Transactions on
+  Image Processing}, vol.~13, p.~600–612, Apr. 2004.
+
 \bibitem{Wu_2021_shouldbecalibrated}
 X.~Wu and M.~Gales, ``Should ensemble members be calibrated?,'' ICLR, 2021.
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  23 APR 2024 15:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  24 APR 2024 18:19
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1508,7 +1508,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 121
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...ne {6}Experimental Results}{31}{chapter.6}
+l.30 ...ne {6}Experimental Results}{33}{chapter.6}
                                                   % [4
 
 ])
@@ -1571,52 +1571,42 @@ LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
 chapter 2.
 [7
 
-] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18]
-<figures/pathcore_architecture.png, id=283, 1818.795pt x 488.82625pt>
+] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
+<figures/pathcore_architecture.png, id=289, 1818.795pt x 488.82625pt>
 File: figures/pathcore_architecture.png Graphic file (type png)
 <use figures/pathcore_architecture.png>
-Package pdftex.def Info: figures/pathcore_architecture.png  used on input line 268.
+Package pdftex.def Info: figures/pathcore_architecture.png  used on input line 284.
 (pdftex.def)             Requested size: 418.25555pt x 112.40529pt.
- [19 <./figures/pathcore_architecture.png>]
-Overfull \hbox (4.58519pt too wide) in paragraph at lines 289--292
-[]\T1/XCharter-TLF/m/n/10.95 (-20) - sim-plenet ist auch rep-re-sen-ta-tion based aber ein fea-ture pro-jec-tion ap-proach(factchecken!!)
- []
-
-
-Overfull \hbox (1.27962pt too wide) in paragraph at lines 306--310
-[]\T1/XCharter-TLF/m/n/10.95 (-20) Leistung von sim-penet: - sehr gute re-sults, au-roc und pro bitte raus-suchen - geschwindigkeit
- []
-
-[20] (algotable/sac.tex)) (content/3-relatedwork.tex [21]
+ [20 <./figures/pathcore_architecture.png>] [21] [22] (algotable/sac.tex)) (content/3-relatedwork.tex [23]
 chapter 3.
-) (content/4-method.tex [22
+) (content/4-method.tex [24
 
 ]
 chapter 4.
-[23
+[25
 
-] [24] [25] [26] [27] [28]) (content/5-experimentsetup.tex [29]
+] [26] [27] [28] [29] [30]) (content/5-experimentsetup.tex [31]
 chapter 5.
-) (content/6-results.tex [30
+) (content/6-results.tex [32
 
 ]
 chapter 6.
-[31
+[33
 
-]) (content/7-conclusion.tex [32]
+]) (content/7-conclusion.tex [34]
 chapter 7.
-) [33
+) [35
 
 ] (c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.bbl
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 6.
- [34
+ [36
 
 
 
-] [35]) [36] (meta/appendix.tex
+] [37]) [38] (meta/appendix.tex
 chapter A.
-) [37
+) [39
 
 
 
@@ -1629,17 +1619,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 51652 strings out of 475246
- 1099075 string characters out of 5763892
+ 51671 strings out of 475246
+ 1099418 string characters out of 5763892
  1949785 words of memory out of 5000000
- 71878 multiletter control sequences out of 15000+600000
- 683128 words of font info for 253 fonts, out of 8000000 for 9000
+ 71889 multiletter control sequences out of 15000+600000
+ 683513 words of font info for 255 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,20n,121p,11004b,2907s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb>
-Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (44 pages, 1355735 bytes).
+{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (46 pages, 1392624 bytes).
 PDF statistics:
- 574 PDF objects out of 1000 (max. 8388607)
- 128 named destinations out of 1000 (max. 500000)
+ 609 PDF objects out of 1000 (max. 8388607)
+ 133 named destinations out of 1000 (max. 500000)
  56592 words of extra memory for PDF output out of 61914 (max. 10000000)
 

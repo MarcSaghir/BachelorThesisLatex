@@ -197,7 +197,9 @@ real world use cases, which especially holds true in IAD research for manufactur
 to their confidence. Current IAD methods investigated in this work confirm this, only returning anomaly scores devoid of any confidence indication. Correct confidence calibration can help evaluate 
 models using new metrics, increase the users trust into the application and also help to decide on how to utilize the predictions of the model in ones context \cite{whyUncertaintyIsImportant}. 
 \newline
-\cite{Guo_2017_tempscalingetc} review multiple promising ways to calibrate the confidence of a model. %Hier noch satz hin mit formeln für bestandteile
+\cite{Guo_2017_tempscalingetc} review multiple promising ways to calibrate the confidence of a model. The paper assumes certain components as method input. For a sample $x_i$ there exists the 
+prediction probability $\hat{p}_i$ that $y_i = 1$, which is poorly calibrated. Moreover we are given the according non probabilistic output or logit $z_i$ for the input. The goal is to derive a 
+well calibrated output confidence $\hat{q}_i$.
 On a top level, the authors distinguish between calibrating binary classification models and multiclass 
 ones. For binary models they present histogram binning, isotonic regression, bayesian binning into quantiles (BBQ) and lastly platt scaling. 
 Histogram binning is a non-parametric approach and involves binning the uncalibrated prediction possibilities into distinct bins. Each bin $B_m$ is then assigned a confidence score $\theta _m$. During 
@@ -206,8 +208,22 @@ boundaries of the bins are here chosen so that they minimize the bin-wise square
 %Hier formel einfügen
 
 
+Another non parametric approach is the solution with isotonic regression. This means to learn a piecewise constrant function $\mathcal{f} \ni \hat{q}_m = \mathcal{f}(x_i)$. This may serve as a 
+optimized strict generalization of the histogram binning approach as the function can be written as: %formel und boundaries erwähnen
+Another extension of histogram binnning would be BBQ, which marginalizers out all possible binning schemes to produce $\hat{q}_i$ (entweder zutat kennzeichen oder neu formulieren). A binning schemes 
+is denoted by \cite{Guo_2017_tempscalingetc} to be a pair $(M, \mathcal{I})$, with $M$ being the number of bins and $\mathcal{I}$ a corresponding partition of $[0, 1]$ into disjoint intervals. 
+%noch bissi beschreiben, kb jetzt
 
-%noch formeln hinschreiben für logs, possibilities etc?
+
+Lastly there is the parametric approach for binray prediction classifiers called platt scaling. This is the only approach that doesn't require the uncalibrated predicted probabilty and solely utilizes 
+the classifiers' logits to infer a calibrated confidence. The approach can be summarized with fitting a logistic regression model on the uncalibrated non-probabilistic model outputs. An exemplary 
+solution in the context of neural networks may be to optimize two scalar parameters $a, b \in \mathcal{R}$ so that $\hat{q}_i = \sigma(az_i + b)$ achieves an optimal fit. \cite{Guo_2017_tempscalingetc} 
+stress that this method only calibrates the output after training, while the networks parameters stay fixed during this calibration aswell as thereafter.
+\newline
+As mentioned the paper also touches on model calibration for multi class prediction models, like certain binning method extensions or matrix and vector scalings. These will not be discussed here, 
+since the problem context of this work revolves around binary classificaion methods.
+
+
 
 
 \section{Metrics}
@@ -279,7 +295,6 @@ in equation xyz: %equation mit distance calculation
 m^{test, *}, m^{*} &= \argmax_{m^{test} \in \mathcal{P}(x^{test})} \argmin_{m \in \mathcal{M}} \| m^{test} - m \|_{2} \\
 s^{*} &= \| m^{test, *} - m^{*} \|_{2}
 \end{split}
-
 \end{equation}
 
 The distance scores are then used twofold: The maximum distance indicates the anomaly score on an image level, while the patchwise distances are reshaped, interpolatesd and smoothed to a segmentation 
@@ -287,38 +302,35 @@ map for pixelwise anomaly detection.
 \newline
 Patchcore has greatly improved the status of prior thought slow and rarther inefficient memory bank approaches throough its subsampling approach. It moreover offers to train a model with little time 
 since the only training that is really done is to fit the memory bank structure with patch vectors. Besides low training time it also requires low storage cost and offers very high and state of the art 
-performance that can also be boosted using simple majority voting(checken obs nicht doch averaging war) ensembles in its paper. Yet due to its nature as a representation based approach, patchcores 
+performance that can also be boosted using simple majority voting(checken obs nicht doch averaging war) ensembles in its paper. Its performance on the MVTecAD dataset is documented in table xyz. Yet due to its nature as a representation based approach, patchcores 
 efficiency is limited by the the pretrained feature extractors acting as its backbones. This problem persists but is also approached by the paper, as they offer a implementation to train the backbone 
 extractor alongside the actual training.
 
 
 \subsection{SimpleNet}
 \label{subsec:simplenet}
-Notizen für simpenet/sachen die ich sagen will:
+SimpleNet \cite{liu2023simplenet} is a recent one-class classification approach that has also shown to compete with other state of the art methods. Table xyz records its performance to be on the same standard as patchcore 
+for most of the categories, %extra satz der es spezifiziert
+Moreover it was introduced by (authors of simplenet) as a easy to use or application friendly approach, (nebensatz hier).
+As a one-class classificaion or feature projection approach, SimpleNet utilizes a sub network to project extracet features into another space, to then find a decision criterion between nomral and 
+abnormal features. The exact pipeline of simplenet is illustrated in figure xyz. While training, a pretrained feature extractor is used to retreive features from the input data. Here it is noteworthy, 
+that SinmpleNet adopts PatchCores approach of transforming extracted features into locally aware patches. This means in figure xyz, the blue tiled pane represents features in form patch vectors 
+that represent the characteristics of the image. On the basis of SimpleNet being a one-class classification approahc, the features are projected in the next step, visually at the green tiled pane. 
+\cite{liu2023simplenet} conducts multiple ablation experiments on different implementations of the feature adapter. They conclude that a single fully connected layer network yield the best 
+performance. The extracted features are then projected using the feature adapter, which is also simultaneously trained during the training session. Before training the discriminator, the resulting 
+features are used in combination with gaussian noise to produce fake features. This is done by adding the generated noise onto the features. Afterwards the discriminator is trained by giving it 
+the normal patch vectors of the input data aswell as the artificial fake features, to then learn to differentiate between them. For the discriminator, the paper reports the use of a two-layer 
+MLP to be very effective. The training objective for the discriminator is composed of a truncated $l1$ loss and batchwise normalization:
 
-- simplenet ist auch representation based aber ein feature projection approach(factchecken!!)
-- erklären was das heißt, zb dass die features in eine bestimmte dimension projected werden um aussagekräftiger zu sein
-- published as easy to use and application friendly approach by blabla
+%simplenet loss function
 
-- simplenet pipeline:
--> training:
--> features werden auch hier mit pretrained backbones extracted und wie bei patchcore zu locally aware patches gemacht
--> features werden projected wobei die projection auch erlernt wird(sagen dass single layer network genügt hierfür)
--> fake features werden generiert. simplenet disst hier die bisherigen ansätze von synthetischer data(referenzen) und schwört auf gaussian noise
--> fake features sind dann richtige features + gaussian noise
--> discriminator: 2 layer MLP, kept very simple
--> features are appended and all batch is fed to discriminator per epoch
--> discriminator then learns on them
--> loss beschreiben auch mit formel
--> discriminator spuckt werte aus(scoring formel zeigen)
--> anomaly map ist discriminator pro patch, hochinterpoliert, image score ist höchster map score
+At test time the features from the input image are undergoing the described process and the projected patch vectors are given to the discriminator, resulting in a score for each patch. Similar to 
+PatchCore, to generate segmentations, the scores are reshaped, bilinearly interpolated and smoothened. Also the largest score acts as the image anomaly score.
 
-Leistung von simpenet:
-- sehr gute results, auroc und pro bitte raussuchen
-- geschwindigkeit vergleichsweise langsamer als zb patchcore und padim welche representation based sind aber auch langsamer als reconstruction 
-based DRAEM -> around 79 FPS für simplenet und nur ca 10 für patchcore und ca 67 für DRAEM
-
-
+SimpleNet offers great results as to be seen in table xyz, in anomaly detection and localization. According to \cite{liu2023simplenet} its inference speed is with 79 frames per second (FPS) 
+not only comparably slower that PatchCore \cite{patchCore2022} with only 10 FPS 
+and PaDiM \cite{Defard_2021PADIM} (1 FPS), all being representation based approaches, but also slower than many reconstruction based approaches like DRAEM with 67 FPS. As other representation 
+approaches its performance is also dependent on the quality of the backbone feature extractor.
 
 
 \subsection{AST}
@@ -326,6 +338,23 @@ based DRAEM -> around 79 FPS für simplenet und nur ca 10 für patchcore und ca 
 
 \subsection{DRAEM}
 \label{subsec:DRAEM}
+
+DRAEM \cite{Zavrtanik_2021DRAEM} is one of the reconstruction based approaches that were selected for this work. This paper is one of the more representative ones for the reconstruction branch of 
+IAD techniques. The method is based on the reconstruction abilities of autoencoders to recreate normal images from altered ones. While in recent research representation based approaches did 
+show SOTA performance more often, DRAEM demonstrated that representation based methods are able to compete in the same region. Tabel xyz shows DRAEMs results on the MVTecAD dataset as reported 
+in their(/authors name) paper.\newline
+DRAEM utilizes two subnetworks in their anomaly detection pipeline as seen in figure xyz. The first on is the so called reconstructive sub-network and is an encoder-decoder structure. The network is trained 
+to receive an image with artificial noise and reconstruct it into its original state. As the distance measurement between the reconstructed image and the original one, the second network is used, 
+namely the discriminative sub-network. This network consists of a u-net (u net referenz) like architecture. Input is a channel-wise concatenation of the altereed input image and the reconstructed 
+one. Since the reconstructed image is supposed to be anomaly free, the two inputs should differ to some extent, which is to be learned by the second sub-network. The network outputs a segmentation map, 
+which can be used as the pixelwise anomaly detection map. Moreover the resulting map is further used for image level detection. To be interpretable, the map is smoothed by a convolution filter 
+and the maximum value is taken as the image anomaly score. Reconstruction methods often utilize similarity functions such as SSIM \cite{Wang_2004SSIM} to obtain segmentation masks \cite{Zavrtanik_2021DRAEM} 
+\cite{liu2024deep}. While the first 
+sub-network makes SSIM as part of their loss function, the discriminative sub-network breaks free of this as it automatically learns an appropriate distance measure, making it much more robust.
+
+DRAEM offers a exemplary good performance, robustness and moderate speed with around 67 frames per second at inference time \cite{liu2023simplenet}. Still this approach may struggle on the reconstructive 
+part of its pipeline when synthesizing near-in-distribution anomalies on the original input images \cite{liu2024deep} (rausfinden was das heißt und umschreiben).
+
 
 \subsection{RevDist}
 \label{subsec:revdist}
