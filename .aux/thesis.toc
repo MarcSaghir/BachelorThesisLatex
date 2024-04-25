@@ -17,23 +17,23 @@
 \contentsline {subsection}{\numberline {2.6.4}DRAEM}{22}{subsection.2.6.4}%
 \contentsline {subsection}{\numberline {2.6.5}RevDist}{23}{subsection.2.6.5}%
 \contentsline {subsection}{\numberline {2.6.6}CSFlow}{23}{subsection.2.6.6}%
-\contentsline {chapter}{\numberline {3}Related Work}{24}{chapter.3}%
-\contentsline {chapter}{\numberline {4}Method}{25}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Calibration}{25}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Discriminator}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Flat Connector Class}{26}{section.4.3}%
-\contentsline {section}{\numberline {4.4}pipeline}{28}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Ensemble network}{28}{section.4.5}%
-\contentsline {section}{\numberline {4.6}Different ensemble approaches}{29}{section.4.6}%
-\contentsline {section}{\numberline {4.7}Logical Anomaly Detection Using Conventional Approaches}{30}{section.4.7}%
-\contentsline {chapter}{\numberline {5}Experimental Setup}{32}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Experimental Results}{33}{chapter.6}%
-\contentsline {section}{\numberline {6.1}SOTA Methods Performance on classical LOCO Dataset}{33}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ensemble Performance}{34}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future work}{35}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Ensemble Network}{35}{section.7.1}%
-\contentsline {section}{\numberline {7.2}SOTA performance}{35}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Flat connector}{35}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Outlook}{35}{section.7.4}%
-\contentsline {chapter}{\numberline {A}Appendix}{39}{appendix.A}%
+\contentsline {chapter}{\numberline {3}Related Work}{25}{chapter.3}%
+\contentsline {chapter}{\numberline {4}Methods}{26}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Logical Anomaly Detection}{26}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Flat Connector Class}{28}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ensemble network}{29}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Ensemble Members}{30}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Feature Level Ensembling}{31}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Discriminator}{31}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Calibration}{32}{subsection.4.3.4}%
+\contentsline {chapter}{\numberline {5}Experimental Setup}{34}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Experimental Results}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}SOTA Methods Performance on classical LOCO Dataset}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ensemble Performance}{36}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future work}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Ensemble Network}{37}{section.7.1}%
+\contentsline {section}{\numberline {7.2}SOTA performance}{37}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Flat connector}{37}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Outlook}{37}{section.7.4}%
+\contentsline {chapter}{\numberline {A}Appendix}{41}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

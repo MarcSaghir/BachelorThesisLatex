@@ -1,13 +1,128 @@
-\chapter{Method}
+\chapter{Methods}
 \label{chap:method}
 
+This chapter will cover the specific implementation details of the concepts researched in this thesis. To reiterate, this work conducts a systematic investigation on performance of previous state 
+of the art IAD approaches on logical anonomalies and interprets the results. Moreover we introduce a novel dataset category that can be viewed as an unofficial extension (klingt scheiße) of the 
+MVTecAD LOCO dataset. Finally this paper introduces a feature level ensemble approach for combining heterogeneous anomaly detection methods to achieve greater robustness. The named contributions 
+are thematized in regards to their execution in the respective sections \ref{sec:lcocsurveymethods}, \ref{sec:ourflatconnectclass} and \ref{sec:ourensemblenetwork} of this chapter.
 
-\section{Calibration}
-\label{sec:Calibration}
-- say that IAD methods only give anomaly score that is not saying anything relevant regarding confidence
-- cite  \cite{Wu_2021_shouldbecalibrated} that says that well calibrated ensemble members do not need to yield calibrated output
 
-\section{Discriminator}
+\section{Logical Anomaly Detection}
+\label{sec:lcocsurveymethods}
+
+As discussed in the introductory chhapter \ref{chap:introduction}, logical anomalies represent a signifacant part of image anomaly detection in modern
+manufacturing settings. The experiments also serve as an extensive comparison of SOTA methods for IAD versus recent approches that where 
+introduced with special mind to logical anomalies, like GCAD \cite{LOCODentsAndScratchesBergmann2022}. 
+Moreover, for a qualitative evaluation of the performance change when using feature level ensembles, one first needs to evaluate the base performance 
+of each relevant classifier of the set. 
+Hence this work features experiments to evaluate IAD approaches mainly evaluated on the classical MVTecAD dataset. To do so, the original 
+code from each paper was taken and not modified in regards to any reportet parameters and/or arguments. This was to prevent possible unwanted deviations 
+in original performance by changing up synergies of hyperparameters. This paper recognizes the possibility of improved performances on the logical anomalies dataset 
+with different combinations of model parameters. Yet this work focusses on the result assessment of current unmodified apporoaches and 
+more importantly the increased robustness through the use of ensembles. Therefore research regarding this hypothetical improvement would 
+have to be done in a future work. Metrics that are specifically looked at in this context are the AUROC, pixel AUROC(weitere maybe einfpgen) and the sPRO. 
+If the functionality to evaluate these metrics was already given, the results of inference were taken from the original code, else the according functionality 
+was implemented in this work and used to produce the according metrics. Moreover the results investigate possible causes and effects regarding the segmentation/localization results of the 
+classifiers. This is not done according to an official metric but in a more descriptive sense.
+Papers whose approaches were evaluated using the MVTecAD LOCO dataset were: SimpleNet \cite{liu2023simplenet}, PatchCore \cite{patchCore2022}, \cite{csflow2022} and \cite{Zavrtanik_2021DRAEM}. (list of paper references with names). 
+These papers were discussed in more depth in the backgrounds section and any specifics like 
+hyperparameters can be viewed in the corresponding paper. Furthermore all named classifiers were including, among other variable measures, 
+a preprocessing step to resize the input image. This makes for a variable model input and also the ability to process rectangular images, 
+which is important due to MVTecAD LOCO images being rectangular unlike the squared input from the standard MVTecAD dataset. The only 
+necessary modification to the whole process of anomaly detection was the generation of image masks. The MVTecAD LOCO dataset stores its 
+masks in multiple seperate black and white images, one for each individual anomaly. To fix errors stemming from this fact, additional 
+code was added that pastes all masks belonging to one image into a single mask before iterating through the data. 
+%nachfolgender satz drinnen lassen?
+There also exists a minor ablation experiment experimenting with the elimination 
+of possible background artifact removal on images of our novel dataset category. For this we programmatically set every pixel in a certain radius around the main object to black, to investigate 
+segmentation artifacts of certain classifier methods. The results can be viewed in section xyz.
+
+
+
+\section{Flat Connector Class}
+\label{sec:ourflatconnectclass}
+
+As mentioned prior to this section, this work will also discuss the introduction of a novel dataset class as an addition to the current ones present in the MVTecAD LOCO dataset.
+This was to extend the range of objects represented in datasets \cite{MVTEC_Bergmann_2021} and \cite{LOCODentsAndScratchesBergmann2022} and further investigate model performance on industrial manufacturing parts, as this is the 
+main setting for this work. for this, adhering to the dataset standards of the MVTecAD LOCO dataset has multiple advantages. Firstly we get to make further statements about the ability of SOTA algorithms detectig 
+logical anomalies on industrial parts. Moreover we can easily infer our new datasets with all relevant IAD approaches, since they are nearly all published with MVTecAD benchmarkings, meaning 
+they are mostly released with code to infer on the dataset. As discussed in section \ref{sec:datasets} the only technical difference between the MVTecAD and LOCO dataset is the storage of the masks, 
+which can be accounted for with a few minor changes in the dataset code representation. Since this work also compares IAD performances of approaches between both datasets, the functionality 
+is already implemented in this works repository as a result. This makes for uncomplicated inference on the new dataset. Lastly these dataset classes may serve as a base for future benchmarking 
+and research of different new IAD approaches. Therefore it is sensible to release the new dataset in the shape of one of the more frequently addressed datasets in recent IAD research. 
+The class is representing a flat connector from a birds eye view. Each part that was acquired for the images is available in a 
+usual hardware store. The novel class also 
+meets similar criteria to the MVTecAD LOCO dataset categories, in regards to their material quality, aswell as the number of possibilities of structural and logical anomalies both occuring with the same part. A solid block of steel for example 
+would make a difficult part to represent logical anomalies, whereas the flat connector posesses multiple characteristics that deliver opportunities for logical anomalies, like the formation of drilled holes in it.
+Regarding the recording of images for the dataset, the camera specifications can be viewed in section/chapter \ref{chap:experimentsetup}. The photos were shot as an overhead shot with the camera being firmly 
+mounted above the object. Lastly a black cloth-like material was used 
+as the background of the image. The anomalies were handcrafted in the facilities of the university. The labels 
+were done in the same style as the labels of the MVTecAD LOCO classes, meaning black and white segmentation images, with slightly differing pixel values to match according saturation scores. 
+
+Further regarding the flat connectors, we used regulatory flat connectors of size $100x35 mm$ which are widely available at hardware stores. The surface of the flat connectors is galvanized 
+and displays a CE-label acoording to DIN EN 14545.
+Examplary images of anomalous and good images can be seen in figure x. The structural anomalies consisted of damages to the edge of the part, cut off corners and deep scratches on the surface. 
+Logical anomalies contained missing holes, additional holes and differently sized holes. For simulating missing holes, the holes were stuffed and then the part was spraypainted wholly. 
+Additional holes were simply produced with a metal drill, likewhise the differently sized holes. 
+The corresponding exemplary masks are also seen in fiure xyz, as an illustration of how the segmentation of the anomalies was conducted. If compared with the sample images of figure xyz(mvtedc loco images) 
+the similarity is visible. The saturation scores for the anomalies, as discussed in section \ref{sec:datasets} were put at the amount of pixels in the anomalous region for all above listed anomalies respectively.
+This was because the nature of presented anomalies of this categories calls for a full segmentation of the respective anomaly for a perfect result. Unlike in the pushpin example given in that section 
+there are no cases that warrant multiple possible placements of anomalies.
+
+
+\section{Ensemble network}
+\label{sec:ourensemblenetwork}
+
+The following subsections deal with the individual components of our ensemble network pipeline, referencing concepts discussed in chapter \ref{chap:background}. This network is conceptually based on 
+different approaches. First we produce cut off models and an ensembling mechanism in accord to \cite{EnsembleHeller2023}. For the actual IAD process, this approach is based on the SimpleNet method \cite{liu2023simplenet}. 
+The discriminator presented there potentially makes for an easy to implement, yet powerfull method of differentiating between anomalous and normal images, as seen by the performance of the original 
+SimpleNet approach. 
+
+Komponentensammlung:
+- Discriminator
+- Feature Ensemble part
+- cut of models
+- calibration
+
+Aufbau:
+- cut of models
+- ensemble part
+- discriminator
+- calibration
+
+
+
+\subsection{Ensemble Members}
+\label{sec:ensemblecandidates}
+
+The first exploration of the ensemble method is done with the IAD methods PatchCore \cite{patchCore2022} and SimpleNet \cite{liu2023simplenet} as ensemble members. These two 
+are conveniently both creating features in form of locally aware patches, making for easy preprocessing before ensembling. For combining them on a 
+feature level, we need to intersect the trained models somewhere during the inference process to then exctract accurate representations that can be used. 
+For SimpleNet this cut-off is happening after the extracted features are projected through the trained feature adapter (the green tiled pane in figure xyz). 
+PatchCore requires more work, as the feature extraction and patch converting steps are essentially the same to the ones in SimpleNet. Moreover there are no alterings of resulting feature vectors 
+after these steps, only nearest neighbor search. Yet solely utilizing features extracted 
+from the pretrained feature extractor would not be sensible, since it would not add any new information to the ensemble that was not already represented in SimpleNets patch vectors. 
+The approach realized in this work is based on the way patchcore scores its image anomalies. Since its decisions are fundamentally based on the L2 norm of the difference between newly extracted 
+features and the nearest feature vector in the memory bank (see equation \ref{ew:patchcoredistance}), it is to be assumed that there is information in the differences of the vectors. Thus the 
+feature representation $m^{final}_i$ for a image patch $p_i$ is derived as $m^{final}_i = | m_i^{test} - m |$ where $m \in \mathcal{M}$ with $\mathcal{M}$ as the memory bank, $m_i^{test}$ as the 
+according input patch vector and $m$ as the neirest neighbor of $m_i^{test}$. Additionally we introduce a projection layer similar to \cite{liu2023simplenet} which is supposed to help project the 
+features taken from this ensemble member to be in a similar space as the ones by SimpleNet, which are already projected from the start. The nature of this projection layer is again a single 
+layer network, being applied to the difference vectors.
+
+
+
+\subsection{Feature Level Ensembling}
+\label{sec:featurelevelensemble}
+
+For combining the feature representations from different ensemble members, we chose the approach of the individual transformation block (see figure xyz, section \ref{sec:ensembles}). This means 
+PCA was first performed on each set of feature vectors, before then resizing and concatenating them. The PCA was performed via the scipy library and fitted on the training data. As for resizing, 
+the feature vectors were bilinearly interpolated to the largest diimensions of the ensemble candidates. Moreover the amount of feature maps kept per classifier, namely $\alpha$ in figure xyz 
+(igure mit IFT), was derived by dividing up the number of feature maps from the first classifier in the list of ensemble members, which in this instance also was the maximum amount. If the number 
+was not evenly divisible, excess maps would be split up among the remaining classifiers as evenly as possible. (vllt mal weniger maps nehmen? und anhand von explained variance gucken).
+
+
+
+\subsection{Discriminator}
 \label{sec:discriminator}
 Our approach to use a small, compact discriminator to differentiate between regular and anomalous image features is inspired by the approach 
 presented in SimpleNet \cite{liu2023simplenet}. Since the discriminators inputs in the ensemble pipeline will be of the same nature as 
@@ -32,136 +147,28 @@ adam optiizer by pytorch with a learn rate of (werte erst sauber aufschreiben be
 - also describe loss
 
 
-\section{Flat Connector Class}
-\label{sec:ourdata}
-As previously mentioned in the introduction, this work will also discuss the introduction of three new dataset classes as an addition to the current ones present in the MVTecAD LOCO dataset.
-This was to extent the range of objects represented in datasets (referenz auf mvted und loco) and further investigate model performance on industrial manufacturing parts, as this is the 
-mein setting for this work. Shaping the dataset in form of the MVTecAD LOCO dataset has multiple advantages. Firstly we get to make statements about the ability of SOTA algorithms detectig 
-logical anomalies on industrial parts. Moreover we can easily infer our new datasets with all relevant IAD approaches, since they are nearly all published with MVTecAD benchmarkings, meaning 
-they are all released with code to infer on the dataset. As discussed in section (dataset section) the only technical difference between the MVTecAD and LOCO dataset is the storage of the masks, 
-which can be accounted for with a few minor changes in the dataset code representation. Since this work also compares AD performances of approaches between both datasets, the functionality 
-is already implemented in the linked repository as a result. This makes for uncomplicated inference on the new dataset. Lastly these dataset classes may serve as a base for future benchmarking 
-and research of different new IAD approaches. Therefore it is sensible to release the new dataset in the shape of if not the most referenced image anomaly detection dataset(beweis oder umformulieren). 
-The three classes are each representing a metal part, namely a flat connector, an angle and ... . For the first to classes, each part that was acquired for the images is available in a 
-usual hardware store. The third class was a self crafted composite part made of screws and metal sheets, which were also available to buy at similar stores as the other parts. All of the classes 
-meet certain criteria in regards to their material nature, aswell as the possibilities of structural and logical anomalies both occuring with the same part. A solid block of steel for example 
-would make a difficult part to represent logical anomalies.
-Regarding the recording of images for the dataset, we used (kamera specs) from a birds eye view (nachschauen ob das so heißt) with black cloth (maybe cloth ersetzen und spezifizieren dass es 
-dichtes schwarzes material war) as background. The anomalies were handcrafted in the facilities of the university(suchen wie der werkzeugraum heißt und satz neu formulieren). The labels 
-were done in the same style as the labels of the MVTecAD LOCO classes, meaning black and white segmentation images, with slightly differing pixel values to match according saturation scores. 
+\subsection{Calibration}
+\label{sec:Calibration}
 
-!Subsection mit flat connector!:
-For the flat connector we used (maße angeben) regulatory flat connectors (wenn ich lustig bin noch DIN angeben) which are widely available (maybe link referenz). 
-Examplary images of anomalous and good images can be seen in figure x. The structural anomalies consisted of damages to the edge of the part, cut off corners and deep scratches on the surface. 
-Logical anomalies contained missing holes, additional holes and differently sized holes. For simulating missing holes, the holes were stuffed and then the part was spraypainted wholly. 
-Additional holes were simply produced with a drill, likewhise the differently sized holes. 
-The corresponding exemplary masks are also seen in fiure x, as an illustration of how the segmentation of the anomalies was held. If compared with the sample images of figure y(mvtedc loco images) 
-the similarity is visible. The saturation scores for the anomalies, as discussed in section (dataset section loco) were put at (saturation scores) for all above listed anomalies respectively.
+As discussed in section \ref{sec:Calibration}, calibration can greatly improve understanding and usability of classifiers. Anomaly models researched in this work only return non-probabilistic 
+outputs. These can be thresholded to derive decision critera but do not represent any confidence of the model at all. When looking back at \cite{Guo_2017_tempscalingetc}, the only calibration 
+methods for binary classifiers that did not need a probabilstic output was the platt scaling attempt. Therefore this basic principle was the method of choice for calibrating the ensemble networks 
+outputs. It is to be noted here, that we merely calibrate the models final outputs after everything has been predicted. This stems from the fact, that \cite{Wu_2021_shouldbecalibrated} demonstrated 
+how calibrated ensemble members do not necessarily yield a well calibrated final output, shifting our focus for calibration application. During the process, it became apparent that the platt 
+scaling approach from \cite{Guo_2017_tempscalingetc} was not necessarily sufficient, as figure xyz demonstrates. Due to the high performance of some IAD algorithms it is possible that some categories 
+of the datasets are fully correctly classified, which the image shows from the example of the class bottle of the MVTecAD dataset. This would mean, that the optimal fitted sigmoid curve on the points 
+is a step curve, yielding either 0 or 100 percent confidence. This of course does not seem well calibrated, especially not looking at the score distribution in figure xyz.a. To overcome this problem 
+we propose a generalized bounded sigmoid function 
+
+%formel hier hin
+
+Parameters erklären
+
+Beispiel Bild
+
+Kein Bock mehr
 
 
-
-- repeat motivation why we added additional data in mvtec style
-- say that we went with loco mvtec flair(maybe give reasons)
-- say that we came up with a set of structural and logical anomalies for each category
-- list categories(flat connector, angle and special construct)
-
-- 3 sub sections for the three categories
-
-- flat connector
-- link the exact one we used(or examples of some)
-- give structural anomalies
-- give logical anomalies
-- for both briefly touch on how we produced them
-- show image examples for each
-
-- repeat same for other categories
-
-- also when describing angle:
-- touch on how there is a special case with multi perspective detection
-
-
-
-
-
-\section{pipeline}
-- explain brief structure of the pipeline
-- ???
-
-
-\section{Ensemble network}
-\label{sec:ourensemblenetwork}
-%TO-DO: irgendwo beispielhaft erklären dass manche approaches manche sachen besser verstehen und umgekehrt, deswegen ensemble gut ist, muss maybe in die background oder introduction
-
-There are multiple approaches to ensembling models in general. When combining a heterogeneous set of classifiers, a common approach is to first calibrate(referenz) and then ensemble each models 
-output (beweis dafür dass das normal ist). There are also approaches to collectively calibrate a heterogeneous ensemble of classifiers while classifying. While performance varies, combining 
-the models is generally not regarded as inherently robust, especially when the classifiers work with features or some other form of representation. This stems from the fact that the model outputs 
-do not necessarily reflect their learned representations(neu formulieren) in detail, which in turn means that you cannot obtain the optimal aspects of each part of the ensemble. A more robust 
-approach would be to ensemble the mentioned feature maps or other representations to in turn train a discriminator for the final classification. To obtain the different feature representations 
-we would use the corresponding training methods of each IAD apporoach and then cut the model of at the respective time. Figures abc show a schematic view of each approachs respective model 
-architecture, together with an indication of where the representations would be extracted. Proceeding in this way, we would keep all important features of each representation, resulting in a 
-maxmium gain of information and robust predictions over all different classes.
-Creating such heterogeneous model ensembles on a feature map level was for instance done in (paper ref). Among other results they investigate the performance of heterogeneous models being 
-combined and provide two main approaches to doing so:
-\textbf{General Transformation Block}
-
-
-
-
-- talk about different ensemble approaches we discussed: ensemble model outputs and ensemble model feature maps
-
-feature ensemble:
-- ground idea: have different algos extract features, and then ensemble them. Afterwards train discriminator on the ensembled features like in simplenet
-- reference paper that quses PCA and global block transformation
-- global transformation block:
--> resize all feature maps to same dimensions
--> append feature maps
--> PCA: keep either percentage or set amount
-
-- individual transformation block:
--> first apply PCA
--> sagen wann das am besten anwendbar ist, auch sagen dass für uns probably der global transformation block reicht
--> dann zusammenführen mit resize und appnden
-
-
-%brauche ich die section??
-\section{Different ensemble approaches}
-- weighted, random forest etc 
-- specifics
-
-
-%neu formulieren das kling scheiße 
-\section{Logical Anomaly Detection Using Conventional Approaches}
-As discussed in the introduction section(\ref{chap:introduction}), logical anomalies represent a signifacant part of image anomaly detection in modern
-manufacturing settings. The experiments also serve as an extensive comparison of SOTA methods for IAD versus recent approches that where 
-introduced with special mind to logical anomalies, like GCAD \cite{LOCODentsAndScratchesBergmann2022}(GCAD reference von Paul Bergmann). 
-Moreover, for a qualitative evaluation of the performance change when using feature level ensembles, one first needs to evaluate the base performance 
-of each relevant classifier of the set. 
-Hence this work features experiments to evaluate IAD approaches mainly evaluated on the classical MVTecAD dataset. To do so, the original 
-code from each paper was taken and not modified in regards to any reportet parameters and/or arguments. This was to prevent possible unwanted deviations 
-in original performance by changing up synergies. This paper recognizes the possibility of improved performances on the logical anomalies dataset 
-with different combinations of model parameters. Yet this work focusses on the performance(synonym) of current unmodified apporoaches and 
-more importantly the increased robustness through the use of ensembles. Therefore research regarding this hypothetical improvement would 
-have to be done in another work. Metrics that are specifically looked at in this context are the AUROC, pixel AUROC(weitere maybe einfpgen) and the sPRO. 
-If the functionality to evaluate these metrics was already given, the results of inference were (übernommen), else the according functionality 
-was implemented in this work and used to produce the according metrics. 
-Papers whose approaches were evaluated using the MVTecAD LOCO dataset were: SimpleNet \cite{liu2023simplenet}, PatchCore \cite{patchCore2022} (list of paper references with names). 
-These papers were discussed in depth in the backgrounds section and any specifics like 
-hyperparameters can be viewed in the corresponding paper. Furthermore all named classifiers were including, among other variable measures, 
-a preprocessing step to resize the input image. This makes for a variable model input and also the ability to process rectangular images, 
-which is important due to MVTecAD LOCO images being rectangular unlike the squared input from the standard MVTecAD dataset. The only 
-necessary modification to the whole process of anomaly detection was the generation of image masks. The MVTecAD LOCO dataset stores its 
-masks in multiple seperate black and white images, one for each individual anomaly. To fix errors stemming from this fact, additional 
-code was added that pastes all masks belonging to one image into a single mask before iterating through the data.
-
-
-Überschrift reformulieren!
-
-What i wanna say in this section:
-- what we did to do the survey on LOCO IAD detection
-- what we did to the methods(nothing)
-- aspekte anhand welcher wir die experimente analyiert haben
-
-- wenn ich es actually auch mache dann ablation experiments nennen in welchen ich die images square
 
 
 

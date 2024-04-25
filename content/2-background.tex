@@ -297,8 +297,8 @@ s^{*} &= \| m^{test, *} - m^{*} \|_{2}
 \end{split}
 \end{equation}
 
-The distance scores are then used twofold: The maximum distance indicates the anomaly score on an image level, while the patchwise distances are reshaped, interpolatesd and smoothed to a segmentation 
-map for pixelwise anomaly detection.
+The distance scores are then used twofold: The maximum distance in addition to a weighting relative to other neighbors distances, indicates the anomaly score on an image level. Meanwhile the patchwise distances are reshaped, 
+interpolatesd and smoothed to a segmentation map for pixelwise anomaly detection.
 \newline
 Patchcore has greatly improved the status of prior thought slow and rarther inefficient memory bank approaches throough its subsampling approach. It moreover offers to train a model with little time 
 since the only training that is really done is to fit the memory bank structure with patch vectors. Besides low training time it also requires low storage cost and offers very high and state of the art 
@@ -361,6 +361,17 @@ part of its pipeline when synthesizing near-in-distribution anomalies on the ori
 
 \subsection{CSFlow}
 \label{subsec:csflow}
+
+CSFlow \cite{csflow2022} is one of the more robust distribution map approaches for IAD. As a distribution map approach its pipeline can be seen in figure xyz. One of the concepts that make 
+approaches like CSFlow stand out of other distribution mapping methods is the feature extraction and mapping on different image scales. This cross-scale flow is using cross-convolutional 
+blocks \cite{liu2024deep} to make use of context between different scales. The goal of optimization is to find out of distribution features which are assumed to have a small likelihood. 
+With normalizing flow \cite{Kobyzev_2021normalizingflowexplanation} as mapping approach on a cross scale level, this makes it possible to infere likelihood information of between scales contexts, 
+leading to a much more improved and robust localization of anomalies. The blocks used to map between scales 
+are convolutional to preserve spatial dimensions. This method automatically results in an interpretable segmentation map at different scales. The values of the segmentation map are then used to produce an 
+image score for classical anomaly detection as usual.
+\newline
+CSFlow has proven state of the art performance on the MVTecAD dataset like the other approaches (table xyz), and makes for precise localization on this dataset. Additionally the cross-scale flow allows 
+for convenient handling of high dimensionality input with little training data \cite{csflow2022}, which has been a previously reported problem in works like \cite{Rudolph_2021badNF}.
 
 
 

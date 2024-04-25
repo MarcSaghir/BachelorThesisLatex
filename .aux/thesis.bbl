@@ -120,6 +120,17 @@ Z.~Wang, A.~Bovik, H.~Sheikh, and E.~Simoncelli, ``Image quality assessment:
   From error visibility to structural similarity,'' {\em IEEE Transactions on
   Image Processing}, vol.~13, p.~600–612, Apr. 2004.
 
+\bibitem{csflow2022}
+M.~Rudolph, T.~Wehrbein, B.~Rosenhahn, and B.~Wandt, ``Fully convolutional
+  cross-scale-flows for image-based defect detection,'' in {\em Winter
+  Conference on Applications of Computer Vision (WACV)}, Jan. 2022.
+
+\bibitem{Rudolph_2021badNF}
+M.~Rudolph, B.~Wandt, and B.~Rosenhahn, ``Same same but differnet:
+  Semi-supervised defect detection with normalizing flows,'' in {\em 2021 IEEE
+  Winter Conference on Applications of Computer Vision (WACV)}, IEEE, Jan.
+  2021.
+
 \bibitem{Wu_2021_shouldbecalibrated}
 X.~Wu and M.~Gales, ``Should ensemble members be calibrated?,'' ICLR, 2021.
 

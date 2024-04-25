@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  24 APR 2024 18:19
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  25 APR 2024 21:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1508,7 +1508,7 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 121
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.30 ...ne {6}Experimental Results}{33}{chapter.6}
+l.33 ...Conclusion and Future work}{37}{chapter.7}
                                                   % [4
 
 ])
@@ -1572,41 +1572,41 @@ chapter 2.
 [7
 
 ] [8] [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19]
-<figures/pathcore_architecture.png, id=289, 1818.795pt x 488.82625pt>
+<figures/pathcore_architecture.png, id=281, 1818.795pt x 488.82625pt>
 File: figures/pathcore_architecture.png Graphic file (type png)
 <use figures/pathcore_architecture.png>
 Package pdftex.def Info: figures/pathcore_architecture.png  used on input line 284.
 (pdftex.def)             Requested size: 418.25555pt x 112.40529pt.
- [20 <./figures/pathcore_architecture.png>] [21] [22] (algotable/sac.tex)) (content/3-relatedwork.tex [23]
+ [20 <./figures/pathcore_architecture.png>] [21] [22] [23] (algotable/sac.tex)) (content/3-relatedwork.tex [24]
 chapter 3.
-) (content/4-method.tex [24
+) (content/4-method.tex [25
 
 ]
 chapter 4.
-[25
+[26
 
-] [26] [27] [28] [29] [30]) (content/5-experimentsetup.tex [31]
+] [27] [28] [29] [30] [31] [32]) (content/5-experimentsetup.tex [33]
 chapter 5.
-) (content/6-results.tex [32
+) (content/6-results.tex [34
 
 ]
 chapter 6.
-[33
+[35
 
-]) (content/7-conclusion.tex [34]
+]) (content/7-conclusion.tex [36]
 chapter 7.
-) [35
+) [37
 
 ] (c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.bbl
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 6.
- [36
+ [38
 
 
 
-] [37]) [38] (meta/appendix.tex
+] [39]) [40] (meta/appendix.tex
 chapter A.
-) [39
+) [41
 
 
 
@@ -1619,17 +1619,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 51671 strings out of 475246
- 1099418 string characters out of 5763892
- 1949785 words of memory out of 5000000
- 71889 multiletter control sequences out of 15000+600000
- 683513 words of font info for 255 fonts, out of 8000000 for 9000
+ 51679 strings out of 475246
+ 1099659 string characters out of 5763892
+ 1950785 words of memory out of 5000000
+ 71890 multiletter control sequences out of 15000+600000
+ 683898 words of font info for 257 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,20n,121p,11004b,2907s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (46 pages, 1392624 bytes).
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (48 pages, 1403776 bytes).
 PDF statistics:
- 609 PDF objects out of 1000 (max. 8388607)
- 133 named destinations out of 1000 (max. 500000)
- 56592 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 629 PDF objects out of 1000 (max. 8388607)
+ 137 named destinations out of 1000 (max. 500000)
+ 56560 words of extra memory for PDF output out of 61914 (max. 10000000)
 
