@@ -2,8 +2,10 @@
 \babel@toc {ngerman}{}\relax 
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {1.1}{\ignorespaces Description of metrics}}{6}{table.caption.12}%
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Collection of image auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {csflow2022} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}}}{18}{table.caption.16}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}. The numbers for \cite {csflow2022} were not recorded}}{19}{table.caption.17}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Description of metrics}}{21}{table.caption.18}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

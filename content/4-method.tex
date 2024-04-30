@@ -54,7 +54,7 @@ The class is representing a flat connector from a birds eye view. Each part that
 usual hardware store. The novel class also 
 meets similar criteria to the MVTecAD LOCO dataset categories, in regards to their material quality, aswell as the number of possibilities of structural and logical anomalies both occuring with the same part. A solid block of steel for example 
 would make a difficult part to represent logical anomalies, whereas the flat connector posesses multiple characteristics that deliver opportunities for logical anomalies, like the formation of drilled holes in it.
-Regarding the recording of images for the dataset, the camera specifications can be viewed in section/chapter \ref{chap:experimentsetup}. The photos were shot as an overhead shot with the camera being firmly 
+Regarding the recording of images for the dataset, the camera specifications can be viewed in section/chapter \ref{chap:experiments}. The photos were shot as an overhead shot with the camera being firmly 
 mounted above the object. Lastly a black cloth-like material was used 
 as the background of the image. The anomalies were handcrafted in the facilities of the university. The labels 
 were done in the same style as the labels of the MVTecAD LOCO classes, meaning black and white segmentation images, with slightly differing pixel values to match according saturation scores. 
@@ -78,19 +78,6 @@ different approaches. First we produce cut off models and an ensembling mechanis
 The discriminator presented there potentially makes for an easy to implement, yet powerfull method of differentiating between anomalous and normal images, as seen by the performance of the original 
 SimpleNet approach. 
 
-Komponentensammlung:
-- Discriminator
-- Feature Ensemble part
-- cut of models
-- calibration
-
-Aufbau:
-- cut of models
-- ensemble part
-- discriminator
-- calibration
-
-
 
 \subsection{Ensemble Members}
 \label{sec:ensemblecandidates}
@@ -103,7 +90,7 @@ PatchCore requires more work, as the feature extraction and patch converting ste
 after these steps, only nearest neighbor search. Yet solely utilizing features extracted 
 from the pretrained feature extractor would not be sensible, since it would not add any new information to the ensemble that was not already represented in SimpleNets patch vectors. 
 The approach realized in this work is based on the way patchcore scores its image anomalies. Since its decisions are fundamentally based on the L2 norm of the difference between newly extracted 
-features and the nearest feature vector in the memory bank (see equation \ref{ew:patchcoredistance}), it is to be assumed that there is information in the differences of the vectors. Thus the 
+features and the nearest feature vector in the memory bank (see equation \ref{eq:patchcoredistance}), it is to be assumed that there is information in the differences of the vectors. Thus the 
 feature representation $m^{final}_i$ for a image patch $p_i$ is derived as $m^{final}_i = | m_i^{test} - m |$ where $m \in \mathcal{M}$ with $\mathcal{M}$ as the memory bank, $m_i^{test}$ as the 
 according input patch vector and $m$ as the neirest neighbor of $m_i^{test}$. Additionally we introduce a projection layer similar to \cite{liu2023simplenet} which is supposed to help project the 
 features taken from this ensemble member to be in a similar space as the ones by SimpleNet, which are already projected from the start. The nature of this projection layer is again a single 
@@ -166,7 +153,7 @@ Parameters erklären
 
 Beispiel Bild
 
-Kein Bock mehr
+%Kein Bock mehr
 
 
 

@@ -6,27 +6,44 @@ P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``The mvtec
   unsupervised anomaly detection,'' {\em International Journal of Computer
   Vision}, vol.~129, p.~1038–1059, Jan. 2021.
 
+\bibitem{liu2024deep}
+J.~Liu, G.~Xie, J.~Wang, S.~Li, C.~Wang, F.~Zheng, and Y.~Jin, ``Deep
+  industrial image anomaly detection: A survey,'' {\em Machine Intelligence
+  Research}, vol.~21, no.~1, pp.~104--135, 2024.
+
+\bibitem{liu2023simplenet}
+Z.~Liu, Y.~Zhou, Y.~Xu, and Z.~Wang, ``Simplenet: A simple network for image
+  anomaly detection and localization,'' in {\em Proceedings of the IEEE/CVF
+  Conference on Computer Vision and Pattern Recognition}, pp.~20402--20411,
+  2023.
+
+\bibitem{csflow2022}
+M.~Rudolph, T.~Wehrbein, B.~Rosenhahn, and B.~Wandt, ``Fully convolutional
+  cross-scale-flows for image-based defect detection,'' in {\em Winter
+  Conference on Applications of Computer Vision (WACV)}, Jan. 2022.
+
+\bibitem{Zavrtanik_2021DRAEM}
+V.~Zavrtanik, M.~Kristan, and D.~Skocaj, ``DrÆm – a discriminatively trained
+  reconstruction embedding for surface anomaly detection,'' in {\em 2021
+  IEEE/CVF International Conference on Computer Vision (ICCV)}, IEEE, Oct.
+  2021.
+
+\bibitem{revdist2023}
+T.~D. Tien, A.~T. Nguyen, N.~H. Tran, T.~D. Huy, S.~T. Duong, C.~D.~T. Nguyen,
+  and S.~Q.~H. Truong, ``Revisiting reverse distillation for anomaly
+  detection,'' in {\em Proceedings of the IEEE/CVF Conference on Computer
+  Vision and Pattern Recognition (CVPR)}, pp.~24511--24520, June 2023.
+
 \bibitem{LOCODentsAndScratchesBergmann2022}
 P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Beyond
   dents and scratches: Logical constraints in unsupervised anomaly detection
   and localization,'' {\em International Journal of Computer Vision}, vol.~130,
   p.~947–969, Feb. 2022.
 
-\bibitem{EnsembleHeller2023}
-G.~Heller, E.~Perrin, V.~Vrabie, C.~Dusart, M.-L. Panon, M.~Loyaux, and
-  S.~Le~Roux, ``Multisource neural network feature map fusion: An efficient
-  strategy to detect plant diseases,'' {\em Intelligent Systems with
-  Applications}, vol.~19, p.~200264, Sept. 2023.
-
 \bibitem{Xie_2024benchmarking}
 G.~Xie, J.~Wang, J.~Liu, J.~Lyu, Y.~Liu, C.~Wang, F.~Zheng, and Y.~Jin,
   ``Im-iad: Industrial image anomaly detection benchmark in manufacturing,''
   {\em IEEE Transactions on Cybernetics}, vol.~54, p.~2720–2733, May 2024.
-
-\bibitem{liu2024deep}
-J.~Liu, G.~Xie, J.~Wang, S.~Li, C.~Wang, F.~Zheng, and Y.~Jin, ``Deep
-  industrial image anomaly detection: A survey,'' {\em Machine Intelligence
-  Research}, vol.~21, no.~1, pp.~104--135, 2024.
 
 \bibitem{Chu_2020supervised}
 W.-H. Chu and K.~M. Kitani, {\em Neural Batch Sampling with Reinforcement
@@ -43,18 +60,6 @@ K.~Roth, L.~Pemula, J.~Zepeda, B.~Scholkopf, T.~Brox, and P.~Gehler, ``Towards
 I.~Kobyzev, S.~J. Prince, and M.~A. Brubaker, ``Normalizing flows: An
   introduction and review of current methods,'' {\em IEEE Transactions on
   Pattern Analysis and Machine Intelligence}, vol.~43, p.~3964–3979, Nov.
-  2021.
-
-\bibitem{liu2023simplenet}
-Z.~Liu, Y.~Zhou, Y.~Xu, and Z.~Wang, ``Simplenet: A simple network for image
-  anomaly detection and localization,'' in {\em Proceedings of the IEEE/CVF
-  Conference on Computer Vision and Pattern Recognition}, pp.~20402--20411,
-  2023.
-
-\bibitem{Zavrtanik_2021DRAEM}
-V.~Zavrtanik, M.~Kristan, and D.~Skocaj, ``DrÆm – a discriminatively trained
-  reconstruction embedding for surface anomaly detection,'' in {\em 2021
-  IEEE/CVF International Conference on Computer Vision (ICCV)}, IEEE, Oct.
   2021.
 
 \bibitem{xie2020benchmarking}
@@ -82,6 +87,28 @@ H.~Zhang, Z.~Wang, Z.~Wu, and Y.-G. Jiang, ``Diffusionad: Norm-guided one-step
   denoising diffusion for anomaly detection,'' {\em arXiv preprint
   arXiv:2303.08730}, 2023.
 
+\bibitem{Defard_2021PADIM}
+T.~Defard, A.~Setkov, A.~Loesch, and R.~Audigier, {\em PaDiM: A Patch
+  Distribution Modeling Framework for Anomaly Detection and Localization},
+  p.~475–489.
+\newblock Springer International Publishing, 2021.
+
+\bibitem{Deng_2022basicrevdist}
+H.~Deng and X.~Li, ``Anomaly detection via reverse distillation from one-class
+  embedding,'' in {\em 2022 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, IEEE, June 2022.
+
+\bibitem{Rudolph_2021badNF}
+M.~Rudolph, B.~Wandt, and B.~Rosenhahn, ``Same same but differnet:
+  Semi-supervised defect detection with normalizing flows,'' in {\em 2021 IEEE
+  Winter Conference on Applications of Computer Vision (WACV)}, IEEE, Jan.
+  2021.
+
+\bibitem{Wang_2004SSIM}
+Z.~Wang, A.~Bovik, H.~Sheikh, and E.~Simoncelli, ``Image quality assessment:
+  From error visibility to structural similarity,'' {\em IEEE Transactions on
+  Image Processing}, vol.~13, p.~600–612, Apr. 2004.
+
 \bibitem{FabricDataset_Tsang_2016}
 C.~S. Tsang, H.~Y. Ngan, and G.~K. Pang, ``Fabric inspection based on the elo
   rating method,'' {\em Pattern Recognition}, vol.~51, p.~378–394, Mar. 2016.
@@ -99,9 +126,25 @@ Y.~Huang, C.~Qiu, Y.~Guo, X.~Wang, and K.~Yuan, ``Surface defect saliency of
 \bibitem{mvtecdownload}
 ``Download page of the mvtec ad dataset.''
 
+\bibitem{Opitz_1999ensemblebasics}
+D.~Opitz and R.~Maclin, ``Popular ensemble methods: An empirical study,'' {\em
+  Journal of Artificial Intelligence Research}, vol.~11, p.~169–198, Aug.
+  1999.
+
+\bibitem{Large_2019CAPE}
+J.~Large, J.~Lines, and A.~Bagnall, ``A probabilistic classifier ensemble
+  weighting scheme based on cross-validated accuracy estimates,'' {\em Data
+  Mining and Knowledge Discovery}, vol.~33, p.~1674–1709, June 2019.
+
 \bibitem{Guo_2017_tempscalingetc}
 C.~Guo, G.~Pleiss, Y.~Sun, and K.~Q. Weinberger, ``On calibration of modern
   neural networks,'' ICML, 2017.
+
+\bibitem{EnsembleHeller2023}
+G.~Heller, E.~Perrin, V.~Vrabie, C.~Dusart, M.-L. Panon, M.~Loyaux, and
+  S.~Le~Roux, ``Multisource neural network feature map fusion: An efficient
+  strategy to detect plant diseases,'' {\em Intelligent Systems with
+  Applications}, vol.~19, p.~200264, Sept. 2023.
 
 \bibitem{whyUncertaintyIsImportant}
 S.~McGrath, P.~Mehta, A.~Zytek, I.~Lage, and H.~Lakkaraju, ``When does
@@ -109,29 +152,12 @@ S.~McGrath, P.~Mehta, A.~Zytek, I.~Lage, and H.~Lakkaraju, ``When does
   assisted decision making,'' p.~1237–1249, Transactions on Machine Learning
   Research, 2023.
 
-\bibitem{Defard_2021PADIM}
-T.~Defard, A.~Setkov, A.~Loesch, and R.~Audigier, {\em PaDiM: A Patch
-  Distribution Modeling Framework for Anomaly Detection and Localization},
-  p.~475–489.
-\newblock Springer International Publishing, 2021.
-
-\bibitem{Wang_2004SSIM}
-Z.~Wang, A.~Bovik, H.~Sheikh, and E.~Simoncelli, ``Image quality assessment:
-  From error visibility to structural similarity,'' {\em IEEE Transactions on
-  Image Processing}, vol.~13, p.~600–612, Apr. 2004.
-
-\bibitem{csflow2022}
-M.~Rudolph, T.~Wehrbein, B.~Rosenhahn, and B.~Wandt, ``Fully convolutional
-  cross-scale-flows for image-based defect detection,'' in {\em Winter
-  Conference on Applications of Computer Vision (WACV)}, Jan. 2022.
-
-\bibitem{Rudolph_2021badNF}
-M.~Rudolph, B.~Wandt, and B.~Rosenhahn, ``Same same but differnet:
-  Semi-supervised defect detection with normalizing flows,'' in {\em 2021 IEEE
-  Winter Conference on Applications of Computer Vision (WACV)}, IEEE, Jan.
-  2021.
-
 \bibitem{Wu_2021_shouldbecalibrated}
 X.~Wu and M.~Gales, ``Should ensemble members be calibrated?,'' ICLR, 2021.
+
+\bibitem{clusterdocs}
+``Overview of the cluster.''
+  \url{https://pointed-wakeboard-5f3.notion.site/Overview-of-the-Cluster-c74c945e34274f4ea9a964a805cc7d7f}.
+\newblock Accessed: 2024-04-30.
 
 \end{thebibliography}

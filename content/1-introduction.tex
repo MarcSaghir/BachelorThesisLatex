@@ -2,20 +2,19 @@
 \label{chap:introduction}
 
 Image Anomaly detection as a form of quality control is a widely popular practice in modern manuacturing processes. This also holds true for 
-industrial settings. Ever since the industrial revolution, the need for manufactured metal parts has skyrocketed to a current level 
-of roughly xyz parts of blabla being produced per year(quelle). With rising innovation and production also comes a high need for quality 
-assurance alongside raised standards and requirements. This strict environment(synonym für rahmenbedingungen?) serves among other things 
+industrial settings. Ever since the industrial revolution, the need for manufactured metal parts has skyrocketed to alltime highs, due to new innovation and a growing usage of metal in modern applications. 
+With rising innovation and production also comes a high need for quality 
+assurance alongside raised standards and requirements. These strict conditions serve among other things 
 to avoid product failure in situations that could cause fatal consequences. Here the quality control in form of anomaly detection often 
 starts at the individual parts manufactured for a single purpose, which demands a large effort and lots of resources due to factors like 
 the named increasing production rate. 
 In earlier days this meant procedures like manual stochastic quality checks of produced parts, a practice that in its nature cannot give 
 complete certainty and requires lots of human labour and thus time and money. Later with the rise of computers and especially sophisticated computer vision methods 
-this process of quality control was more and more being automated using methods like IAD(abkürzung auch erklären wenn in vokabular?), to create 
+this process of quality control was more and more being automated using methods like IAD, to create 
 a more efficient and easier quality control process. This 
-alongside the striving for even higher reliability and recent developments in artificial intelligence (hier vllt eine refernz für KI geschichte?) 
-brought forth IAD(synonym) as the popular research field that it is today. IAD in our context is a subcategory of general anomaly detection 
-and aims at distinguishing images of a category that conform to some chosen norm from anomalous images of the same category that dont 
-(sollte ich hier eine formel reinpacken? so a la input image i produce score etc). 
+alongside the striving for even higher reliability and recent developments in artificial intelligence 
+brought forth IAD as the popular research field that it is today. IAD in our context is a subcategory of general anomaly detection 
+and aims at distinguishing images of a category that conform to some chosen norm from anomalous images of the same category that dont . 
 An example would be creating a classifier that is given the image of a screw and can detect whether or not it conforms to our expectations, 
 which in a manufacturing setting likely means to meet the companies quality standards.
 \newline
@@ -44,16 +43,14 @@ anomalies, namey the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} datas
 set of rules. More concretely this can mean instances like a metal part with an irregular number of holes, or a label missing. Whereas 
 state of the art approaches regurlarly produce performance metrics of up to $99.6 \% $ on classification of structural anomalies, they 
 strongly differ in anomaly localization performance. Moreso does the performance plummet when approaching to classify and localize logaical 
-anomalies. Additionally models often show inconsitencies between differnt subtypes of structura and logical anomalies, especially during 
-localization. These inconsitencies and perforance gabs demonstrate that IAD as such is not yet solved and still has a need for improved 
+anomalies. Additionally models often show inconsitencies between different subtypes of structural and logical anomalies, especially during 
+localization. Another important consideration is, that many different anomaly detection approaches have different distinct weaknesses, which worsens most 
+of their performances in certain situations. These inconsitencies and perforance gabs demonstrate that IAD as such is not yet solved and still has a need for improved 
 robustness and generalizability. This need also holds true due to logical anomalies making up an important new domain of automated 
 quality control, as more complex parts could be tested for requirements. Moreover the showcasing of performance inconsistencies between 
 structual and logical anomalies indicate logical anomalies of being a differnt problem domain. Achieving better translation between those 
-domains(synonym) could serve as a basis for tackling other problems in this field that may present themselves in the future(ist der satz 
-inhaltlich gut?)
+settings could serve as a basis for tackling other problems in this field that may arise in future settings.
 
----- Noch irgendwo erwähnen um notwendigkeit für ensemble zu unterstreichen: oft sind anätze limitiert durch sachen wie pretrained backbones 
-und so -------------------------
 
 \section{Contributions}
 \label{sec:contributions}
@@ -61,43 +58,52 @@ This research provides multiple contributions to the field of image anomaly dete
 robust anomaly localization in differnt domains. 
 
 \begin{enumerate}
-  \item To address the problems mentioned at the end of the last section, we attempt (vllt ohne attempt wenn der ansatz funzt) 
+  \item To address the problems mentioned at the end of the last section, we attempt 
   to build a heterogeneous feature level ensemble network, combining differnt state of the art IAD approaches, with the goal to improve 
   general performance but also robustness in image localization and logical anomaly detection. This ensemble network is then tested on 
   the MVTecAD LOCO dataset to observe its performance regarding both anomaly types.
-  \item Furtheremore an extensive study on the performance of a wide ranging selection of IDA methods on the MVTecAD LOCO dataset is performed. 
-  This serves to highlight the current state of anomaly detection in logical problems, and also investigate the application potential of 
-  those approaches in such domains(den satz mag ich nicht). (vllt noch einbauen dass diese experimente ggf noch nie durchgeführt wurden und auch code bereitgestellt wird)
+  \item Furtheremore an extensive study on the performance of a diverse selection of IDA methods on the MVTecAD LOCO dataset is performed. 
+  This serves to highlight the current state of anomaly detection with respect to logical problems, and also investigate the application potential of 
+  those approaches a form of transfer learning setting.
   \item Second to last we introduce a new category to the MVTecAD LOCO dataset to further increase the diversity of this dataset and strengthen the focus 
   of this thesis on metal maufactured parts. Many datasets either use synthetic data or images in a very linical setting, therefore this 
   attempt for variance is also a step towards IAD on more realistic datasets.
-  \item Finally the mentioned network and experiments are also streamlined(checken ob ich das wort richtig benutzt hab) into an easy to use pipeline 
+  \item Finally the mentioned network and experiments are also streamlined into an easy to use pipeline 
   to be used for future experiments in that area.
 \end{enumerate}
 
 The contributions mentioned firstly benefit faster research entry and an accelerated experimentation process, with an intuitive setup, 
 as well as potential industrial applications. Here it is to be mentioned that since the ensemble already is of heterogeneous nature, it 
-is particularly uncomplicated to experiment using various IAD apporaches.
+is particularly uncomplicated to experiment using various IAD apporaches.\newline
 Furthermore they give more insight into the capabilities of existing methods in an industrial setting and thus also provide a more 
-various and practical setting than the prior categories in the MVTecAD(referenz) dataset. The same methods are also testet on their limitations 
+various and practical setting than the prior categories in the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The same methods are also testet on their limitations 
 regarding logical anomalies which was earlier made out to be a relevant aspect of anomaly detection in current manufacturing quality control 
 settings. Lastly through the use of a robust ensemble approach for heterogeneous classifers, this opens up possibilities for expanding 
 the field of application of SOTA IAD methods to other domains with robust performance and may also produce more usable results in real 
 world IAD settings. The presented network can also be used as a foundation for future experiments in 
 different directions. For example, the pipeline may be efficiently used to start investigations on multiperspective datasets in anomaly 
 detection, a topic that also could further advance current IAD applciations.
+\newline
+\newline
 
-
-
+In this work we will firstly discuss relevant background knowledge to get a grasp on the latest important IAD research, aswell as fundamental principles that are relevant to the ensemble 
+approach presented here. Section \ref{sec:IADcategs} and section \ref{sec:IADmethods} give a broad overview of state of the art IAD approaches aswell as intuitive knowledge on how to 
+view them. Afterwards sections \ref{sec:metrics} and \ref{sec:datasets} offer in insight into the testing and evaluation environments of this context. Lastly section \ref{sec:ensembles} and 
+section \ref{sec:Calibration} are focussed on background knowledge to common approaches regarding the ensemble model talked about before.\newline
+In chapter \ref{chap:method} we present the concrete implementation of this works contributions, starting with section \ref{sec:lcocsurveymethods} dealing with the survey on logical anomalies. 
+Section \ref{sec:flatconnector} presents the novel dataset category introduced in this paper and finally section \ref{sec:ourensemblenetwork} concerns the realisation of this ensemble approach.
+\newline 
+Chapters \ref{chap:results} and \ref{chap:conclusion} afterwards deal with an in depth analysis of our findings as well as an outlook on how to interprete these results and what future research 
+in this topic may look like.
 %ANMERKUNG:
 %noch kurz(0.5 Seiten) sagen wie man in der arbeit vorgeht(ablauf nach contributions)
 
 
 
-\section{Table Test Viz}
+%\section{Table Test Viz}
 
-This is a table:
-\input{algotable/metrics_table}
+%This is a table:
+%\input{algotable/metrics_table}
 
 
 
