@@ -15,30 +15,30 @@
 \contentsline {section}{\numberline {2.4}Datasets}{21}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Ensembles}{23}{section.2.5}%
 \contentsline {section}{\numberline {2.6}Model Calibration}{26}{section.2.6}%
-\contentsline {chapter}{\numberline {3}The Datasets}{29}{chapter.3}%
-\contentsline {section}{\numberline {3.1}The MVTecAD Dataset}{29}{section.3.1}%
-\contentsline {section}{\numberline {3.2}The MVTecAD LOCO Dataset}{29}{section.3.2}%
-\contentsline {section}{\numberline {3.3}The Flat Connector Class}{29}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Methods}{30}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Logical Anomaly Detection}{30}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Flat Connector Class}{32}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Ensemble network}{33}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Ensemble Members}{34}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Feature Level Ensembling}{34}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Discriminator}{35}{subsection.4.3.3}%
-\contentsline {subsection}{\numberline {4.3.4}Calibration}{36}{subsection.4.3.4}%
-\contentsline {chapter}{\numberline {5}Experiments}{37}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Experimental Setup}{37}{section.5.1}%
-\contentsline {section}{\numberline {5.2}MVTecAD LOCO Experiments}{38}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Flat Connector Experiments}{39}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Ensemble Network}{39}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Experimental Results}{40}{chapter.6}%
-\contentsline {section}{\numberline {6.1}SOTA Methods Performance on classical LOCO Dataset}{40}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Ensemble Performance}{41}{section.6.2}%
-\contentsline {chapter}{\numberline {7}Conclusion and Future work}{42}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Ensemble Network}{42}{section.7.1}%
-\contentsline {section}{\numberline {7.2}SOTA performance}{42}{section.7.2}%
-\contentsline {section}{\numberline {7.3}Flat connector}{42}{section.7.3}%
-\contentsline {section}{\numberline {7.4}Outlook}{42}{section.7.4}%
-\contentsline {chapter}{\numberline {A}Appendix}{47}{appendix.A}%
+\contentsline {chapter}{\numberline {3}Novel Dataset Class}{29}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Flat Connector}{29}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Data Acquisition Setup}{31}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Anomalies}{31}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Methods}{32}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Logical Anomaly Detection}{32}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Flat Connector Class}{34}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Ensemble network}{35}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Ensemble Members}{36}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Feature Level Ensembling}{36}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Discriminator}{37}{subsection.4.3.3}%
+\contentsline {subsection}{\numberline {4.3.4}Calibration}{38}{subsection.4.3.4}%
+\contentsline {chapter}{\numberline {5}Experiments}{39}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Experimental Setup}{39}{section.5.1}%
+\contentsline {section}{\numberline {5.2}MVTecAD LOCO Experiments}{40}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Flat Connector Experiments}{41}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Ensemble Network}{41}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Experimental Results}{42}{chapter.6}%
+\contentsline {section}{\numberline {6.1}SOTA Methods Performance on classical LOCO Dataset}{42}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Ensemble Performance}{43}{section.6.2}%
+\contentsline {chapter}{\numberline {7}Conclusion and Future work}{44}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Ensemble Network}{44}{section.7.1}%
+\contentsline {section}{\numberline {7.2}SOTA performance}{44}{section.7.2}%
+\contentsline {section}{\numberline {7.3}Flat connector}{44}{section.7.3}%
+\contentsline {section}{\numberline {7.4}Outlook}{44}{section.7.4}%
+\contentsline {chapter}{\numberline {A}Appendix}{49}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

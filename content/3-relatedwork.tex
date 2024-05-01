@@ -1,25 +1,59 @@
-\chapter{The Datasets}
+\chapter{Novel Dataset Class}
 \label{chap:datasets}
 
-Hier introduction
+In this chapter we present the novel dataset category representing a flat connector. Mainly the sections will revolve around the specifics of the flat connector object, the setup used to 
+record the data and produce labels, as well as the anomalies that can be incorporated into this object. Section \ref{sec:flatconnectoranomalies} also reviews the steps that went into producing the specific anomalies 
+and how to recreate them.
 
 
-\section{The MVTecAD Dataset}
-\label{sec:mvtecaddataset}
+\section{Flat Connector}
+\label{sec:faltconnectordesscription}
+
+As mentioned prior to this section, this work will also discuss the introduction of a novel dataset class as an addition to the current ones present in the MVTecAD LOCO dataset.
+This was to extend the range of objects represented in datasets \cite{MVTEC_Bergmann_2021} and \cite{LOCODentsAndScratchesBergmann2022} and further investigate model performance on industrial manufacturing parts, as this is the 
+main setting for this work. for this, adhering to the dataset standards of the MVTecAD LOCO dataset has multiple advantages. Firstly we get to make further statements about the ability of SOTA algorithms detectig 
+logical anomalies on industrial parts. Moreover we can easily infer our new datasets with all relevant IAD approaches, since they are nearly all published with MVTecAD benchmarkings, meaning 
+they are mostly released with code to infer on the dataset. As discussed in section \ref{sec:datasets} the only technical difference between the MVTecAD and LOCO dataset is the storage of the masks, 
+which can be accounted for with a few minor changes in the dataset code representation. Since this work also compares IAD performances of approaches between both datasets, the functionality 
+is already implemented in this works repository as a result. This makes for uncomplicated inference on the new dataset. Lastly these dataset classes may serve as a base for future benchmarking 
+and research of different new IAD approaches. Therefore it is sensible to release the new dataset in the shape of one of the more frequently addressed datasets in recent IAD research. 
+The class is representing a flat connector from a birds eye view. Each part that was acquired for the images is available in a 
+usual hardware store. The novel class also 
+meets similar criteria to the MVTecAD LOCO dataset categories, in regards to their material quality, aswell as the number of possibilities of structural and logical anomalies both occuring with the same part. A solid block of steel for example 
+would make a difficult part to represent logical anomalies, whereas the flat connector posesses multiple characteristics that deliver opportunities for logical anomalies, like the formation of drilled holes in it.
+
+Further regarding the flat connectors, we used regulatory flat connectors of size $100x35 mm$ which are widely available at hardware stores. The surface of the flat connectors is galvanized 
+and displays a CE-label acoording to DIN EN 14545.
 
 
 
 
-\section{The MVTecAD LOCO Dataset}
-\label{sec:mvtecadlocodataset}
+\section{Data Acquisition Setup}
+\label{sec:faltconnectordataacquisiton}
+
+The images for the dataset were taken in the university facilities. An exemplary setup for image acquisition can be viewed in figure xyz(images von setup). The contraption to capture images was 
+done by mounting a camera on to a pole that was attached to a small table, pointing the camera lens at the table from an overhead perspective. The distance between camera lens and the table surface was approximately (angabe) cm and the main light source in the 
+images was delivered by a softbox(stimmt das?). Regarding the background of the object, a black cloth was chosen to be layed flat on the table, where the object would then be put. For 
+an increased variety, multiple flat connectors were bought and filmed. Here each one was manually rotated after each shot, to acheive different object orientations and thus a more robust training 
+set. Each flat connector was rotated a total of six times per side, resulting in 12 normal images per flat connector object. \newline
+The camera used to take pictures was a (camera modell) which produced the images of the flat connectors in a (pixel angaben) resolution. (guccken obs stimmt) Due to the large size of the resulting 
+images, they were resized to (pixel angaben) with amounts to roughly (prozen angabe) \% of the original image size.\newline
+To obtain segmentation labels, a free polygon annotation software was used to then label anomalous regions in the images. The annotations were done by hand and by the author of this work. In accord to 
+MVTecAD LOCO standards \cite{LOCODentsAndScratchesBergmann2022} each kind of anomaly would be assigned a different pixel value to differentiate them when working with saturation thresholds 
+as mentioned in setion \ref{sec:datasets}. Example annotations can be viewed in figure xyz, where several original images are depicted next to the produced segmentation labels. Just like in the 
+original MVTecAD LOCO dataset, image labels were not explicitly given since they can be inferred by the anomaly class.
 
 
+\section{Anomalies}
+\label{sec:flatconnectoranomalies}
 
-
-\section{The Flat Connector Class}
-\label{sec:flatconnectordescription}
-
-
+Examplary images of anomalous and good images can be seen in figure x. The structural anomalies consisted of damages to the edge of the part, cut off corners and deep scratches on the surface. 
+Logical anomalies contained missing holes, additional holes and differently sized holes. For simulating missing holes, the holes were stuffed and then the part was spraypainted wholly. 
+Additional holes were simply produced with a metal drill, likewhise the differently sized holes. 
+The corresponding exemplary masks are also seen in fiure xyz, as an illustration of how the segmentation of the anomalies was conducted. If compared with the sample images of figure xyz(mvtedc loco images) 
+the similarity is visible. The saturation scores for the anomalies, as discussed in section \ref{sec:datasets} were put at the amount of pixels in the anomalous region for all above listed anomalies respectively.
+This was because the nature of presented anomalies of this categories calls for a full segmentation of the respective anomaly for a perfect result. Unlike in the pushpin example given in that section 
+there are no cases that warrant multiple possible placements of anomalies.
 
 
 
