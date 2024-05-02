@@ -9,6 +9,28 @@ and how to recreate them.
 \section{Flat Connector}
 \label{sec:faltconnectordesscription}
 
+content:
+- class soll typisch für loco dataset sein und gute Vogelperspektive 
+- Teil auch Metall weil Fokus der Thesis ist manufacturing setup
+-> schrauben Beutel als einziges wirkliches Metallteil im loco set und dies ist etwas verändert wegen plastikbeutel
+- flat connector ist gute Wahl weil:
+-> erfüllt Anforderungen
+-> leichter bearbeitbar als andere Metal parts, Vergleich zu Block of steel
+-> löcher bieten viel Spielraum für logische Anomalien ohne mehrere Einzelteile für die Klasse zu benötigen (vergleiche loco classes wie breakfast box oder pushpins wo viele Objekte benötigt sind um logische Anomalien in der Anordnung durch Regelbruch zu erzeugen
+
+
+- extra dataset category ermöglicht die Performance noch weitreichender bzw gefestigter zu beurteilen
+- auch potentielle aufschlüsse bzgl Arten von Anomalien die leicht/schwer zu erkennen sind
+- class in loco mvtec oder generell mbtec Form zu haben ist gut weil wir haben ja in section mit mvtec Dataset Wichtigkeit von dem besprochem
+
+- über flat connector spezifisch reden
+ -> maße + farbe
+-> Satz mit CE Kennzeichnung nach DIN
+-> Bilder referenzieren die normale Images zeigen 
+-> Link geben
+
+
+
 As mentioned prior to this section, this work will also discuss the introduction of a novel dataset class as an addition to the current ones present in the MVTecAD LOCO dataset.
 This was to extend the range of objects represented in datasets \cite{MVTEC_Bergmann_2021} and \cite{LOCODentsAndScratchesBergmann2022} and further investigate model performance on industrial manufacturing parts, as this is the 
 main setting for this work. for this, adhering to the dataset standards of the MVTecAD LOCO dataset has multiple advantages. Firstly we get to make further statements about the ability of SOTA algorithms detectig 
@@ -47,6 +69,42 @@ original MVTecAD LOCO dataset, image labels were not explicitly given since they
 \section{Anomalies}
 \label{sec:flatconnectoranomalies}
 
+Content :
+- haben möglichst versucht logische und strukturelle Anomalien zu balancieren und ungefähre Anzahl wie in loco zu nehmen 
+- Anomalien kann man sehen in figure mit Anomalie - Maske vergleiche
+- Arten der Anomalien auch bissi im Style von anderen Anomalien (Satz maybe doof)
+
+
+- Strukturelle Anomalien
+-> Fehlende Corner
+--> eine Ecke, anomalie ist schön klar und sauber abgetrennt, eher großflächiger
+--> Ecke abgeschnitten mit metallsäge
+
+-> Beschädigte Edges 
+--> mehrere Stellen an Edges beschädigt, eher kleine régions
+--> auch mit metallsäge 
+
+-> Scratch
+-->Säge genommen und auf flacher oberfläche tieferen Kratzer reingemacht
+--> nicht großflächig aber sauber abtennbare anomalie
+
+
+- Logische Anomalien
+-> Fehlendes Loch
+--> Loch zugemacht mit knete(nicht wirklich knete benutzen als wort) und dann die ganze Oberfläche im selben Ton gespraypainted(ansätze mit lötzinn sagen?? warsch nicht...)
+--> größere logische Anomalie
+
+-> extra loch:
+--> metal drill genommen und extra loch an untypischer Stelle gebohrt
+--> Loch gröse genauso groß wie eins der kleinen löcher
+
+-> Differently sized hole 
+--> drill genommen und bissi gröseren Aufsatz drauf gemacht und gebohrt um Radius des Lochs zu vergrößern
+--> im Gegensatz zu anderen Anomalien eher subtiler Unterschied
+
+- Pixelwerte bzw saturation thresholds ansprechen wie im letzten Satz von Blocktext unten
+
+
 Examplary images of anomalous and good images can be seen in figure x. The structural anomalies consisted of damages to the edge of the part, cut off corners and deep scratches on the surface. 
 Logical anomalies contained missing holes, additional holes and differently sized holes. For simulating missing holes, the holes were stuffed and then the part was spraypainted wholly. 
 Additional holes were simply produced with a metal drill, likewhise the differently sized holes. 
@@ -54,6 +112,11 @@ The corresponding exemplary masks are also seen in fiure xyz, as an illustration
 the similarity is visible. The saturation scores for the anomalies, as discussed in section \ref{sec:datasets} were put at the amount of pixels in the anomalous region for all above listed anomalies respectively.
 This was because the nature of presented anomalies of this categories calls for a full segmentation of the respective anomaly for a perfect result. Unlike in the pushpin example given in that section 
 there are no cases that warrant multiple possible placements of anomalies.
+
+
+
+
+%felix fragen ob hier auch section für mögliche weitere Objekte?? oder lieber in Outlook am ende
 
 
 
