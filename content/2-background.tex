@@ -166,6 +166,15 @@ the normal patch vectors of the input data aswell as the artificial fake feature
 MLP to be very effective. The training objective for the discriminator is composed of a truncated $l1$ loss and batchwise normalization:
 
 %simplenet loss function
+\begin{equation}
+    \label{eq:simplenetloss}
+    \begin{split}
+        \mathcal{L} &= min \sum_{x^{i}\in \mathcal{X}_{train}} \sum_{h, w} \frac{l^{i}_{h,w}}{H_{O} * W_{0}} \\
+        l^{i}_{h,w} &= max(0, th^{+} - D_{\psi}(q^{i}_{h,w})) + max(0, -th^{-} - D_{\psi}(q^{-i}_{h,w}))
+    \end{split}
+\end{equation}    
+
+Here $$th^{+}$$ and $$th^{-}$$ are truncation terms preventing potential overfitting, and $$D_{\psi}(q^{i}_{h,w})$$ represents the estimated normality of adapted features by the discriminator.
 
 At test time the features from the input image are undergoing the described process and the projected patch vectors are given to the discriminator, resulting in a score for each patch. Similar to 
 PatchCore, to generate segmentations, the scores are reshaped, bilinearly interpolated and smoothened. Also the largest score acts as the image anomaly score.

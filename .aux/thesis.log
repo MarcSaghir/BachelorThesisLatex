@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  2 MAY 2024 16:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  3 MAY 2024 16:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1576,23 +1576,23 @@ File: figures/simplenet_architecture.png Graphic file (type png)
 <use figures/simplenet_architecture.png>
 Package pdftex.def Info: figures/simplenet_architecture.png  used on input line 153.
 (pdftex.def)             Requested size: 512.14963pt x 202.18094pt.
- [8 <./figures/pathcore_architecture.png>] [9 <./figures/simplenet_architecture.png>]
-<figures/csflow_pipeline.png, id=287, 188.20313pt x 82.05656pt>
+ [8 <./figures/pathcore_architecture.png>] [9 <./figures/simplenet_architecture.png>] [10]
+<figures/csflow_pipeline.png, id=296, 188.20313pt x 82.05656pt>
 File: figures/csflow_pipeline.png Graphic file (type png)
 <use figures/csflow_pipeline.png>
-Package pdftex.def Info: figures/csflow_pipeline.png  used on input line 208.
+Package pdftex.def Info: figures/csflow_pipeline.png  used on input line 217.
 (pdftex.def)             Requested size: 153.64644pt x 66.99507pt.
- [10 <./figures/csflow_pipeline.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 221--225
+
+Underfull \hbox (badness 10000) in paragraph at lines 230--234
 
  []
 
-<figures/DRAEM_pipeline.png, id=299, 870.25125pt x 283.0575pt>
+<figures/DRAEM_pipeline.png, id=300, 870.25125pt x 283.0575pt>
 File: figures/DRAEM_pipeline.png Graphic file (type png)
 <use figures/DRAEM_pipeline.png>
-Package pdftex.def Info: figures/DRAEM_pipeline.png  used on input line 228.
+Package pdftex.def Info: figures/DRAEM_pipeline.png  used on input line 237.
 (pdftex.def)             Requested size: 512.14963pt x 166.59215pt.
-(algotable/mvtecimageauroc.tex
+[11 <./figures/csflow_pipeline.png> <./figures/DRAEM_pipeline.png>] (algotable/mvtecimageauroc.tex
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 2.
 
@@ -1705,16 +1705,16 @@ Overfull \hbox (1.58246pt too wide) in paragraph at lines 18--18
 []|\T1/XCharter-TLF/m/n/6 (-20) RevDist
  []
 
-) [11 <./figures/DRAEM_pipeline.png>] [12] (algotable/metrics_table.tex) [13] [14] [15]
-<figures/global_transformation_block.jpg, id=420, 458.33633pt x 200.9106pt>
+) [12] (algotable/metrics_table.tex) [13] [14] [15]
+<figures/global_transformation_block.jpg, id=422, 458.33633pt x 200.9106pt>
 File: figures/global_transformation_block.jpg Graphic file (type jpg)
 <use figures/global_transformation_block.jpg>
-Package pdftex.def Info: figures/global_transformation_block.jpg  used on input line 394.
+Package pdftex.def Info: figures/global_transformation_block.jpg  used on input line 403.
 (pdftex.def)             Requested size: 153.64644pt x 67.34914pt.
-<figures/independent_transformation_block.jpg, id=422, 482.32999pt x 197.2971pt>
+<figures/independent_transformation_block.jpg, id=424, 482.32999pt x 197.2971pt>
 File: figures/independent_transformation_block.jpg Graphic file (type jpg)
 <use figures/independent_transformation_block.jpg>
-Package pdftex.def Info: figures/independent_transformation_block.jpg  used on input line 408.
+Package pdftex.def Info: figures/independent_transformation_block.jpg  used on input line 417.
 (pdftex.def)             Requested size: 153.64644pt x 62.84735pt.
  [16 <./figures/global_transformation_block.jpg> <./figures/independent_transformation_block.jpg>]) (content/3-relatedwork.tex [17]
 chapter 3.
@@ -1729,7 +1729,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--30
 chapter 4.
 [21
 
-] [22] [23]) (content/5-experimentsetup.tex [24]
+] [22] [23]
+<figures/soft_sigmoidt05.png, id=508, 462.528pt x 346.896pt>
+File: figures/soft_sigmoidt05.png Graphic file (type png)
+<use figures/soft_sigmoidt05.png>
+Package pdftex.def Info: figures/soft_sigmoidt05.png  used on input line 137.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+<figures/soft_sigmoidt25.png, id=509, 462.528pt x 346.896pt>
+File: figures/soft_sigmoidt25.png Graphic file (type png)
+<use figures/soft_sigmoidt25.png>
+Package pdftex.def Info: figures/soft_sigmoidt25.png  used on input line 143.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+<figures/anomaly_calibration_soft.png, id=510, 462.528pt x 346.896pt>
+File: figures/anomaly_calibration_soft.png Graphic file (type png)
+<use figures/anomaly_calibration_soft.png>
+Package pdftex.def Info: figures/anomaly_calibration_soft.png  used on input line 148.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+) (content/5-experimentsetup.tex [24 <./figures/soft_sigmoidt05.png> <./figures/soft_sigmoidt25.png> <./figures/anomaly_calibration_soft.png>]
 chapter 5.
 [25
 
@@ -1772,7 +1788,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 156--159
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 164--167
+Overfull \hbox (58.78702pt too wide) in paragraph at lines 164--167
+\T1/RobotoMono-TLF/regular/n/10.95 1832177 / sigmoid-[]function-[]with-[]fixed-[]bounds-[]and-[]variable-[]steepness-[]partially-[]solved$[]\T1/XCharter-TLF/m/n/10.95 (-20) .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 169--172
 []\T1/XCharter-TLF/m/n/10.95 (+20) ``Overview of the clus-ter.'' []$\T1/RobotoMono-TLF/regular/n/10.95 https : / / pointed-[]wakeboard-[]5f3 . notion . site /
  []
 
@@ -1791,17 +1812,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 52368 strings out of 475246
- 1113504 string characters out of 5763892
- 1980785 words of memory out of 5000000
- 72564 multiletter control sequences out of 15000+600000
+ 52409 strings out of 475246
+ 1114642 string characters out of 5763892
+ 1982785 words of memory out of 5000000
+ 72602 multiletter control sequences out of 15000+600000
  682652 words of font info for 250 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 122i,20n,121p,11004b,2723s stack positions out of 10000i,1000n,20000p,200000b,200000s
-{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_e24joy.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/RobotoMono-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (38 pages, 2808684 bytes).
+ 122i,21n,121p,11004b,2723s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_e24joy.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/RobotoMono-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (38 pages, 2931342 bytes).
 PDF statistics:
- 784 PDF objects out of 1000 (max. 8388607)
- 152 named destinations out of 1000 (max. 500000)
- 57145 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 798 PDF objects out of 1000 (max. 8388607)
+ 155 named destinations out of 1000 (max. 500000)
+ 57152 words of extra memory for PDF output out of 61914 (max. 10000000)
 

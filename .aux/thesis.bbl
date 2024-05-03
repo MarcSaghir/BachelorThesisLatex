@@ -160,6 +160,11 @@ S.~McGrath, P.~Mehta, A.~Zytek, I.~Lage, and H.~Lakkaraju, ``When does
 \bibitem{Wu_2021_shouldbecalibrated}
 X.~Wu and M.~Gales, ``Should ensemble members be calibrated?,'' ICLR, 2021.
 
+\bibitem{bounded_sigmoid}
+``Bounded sigmoid curve with varibal slope.''
+  \url{https://math.stackexchange.com/questions/1832177/sigmoid-function-with-fixed-bounds-and-variable-steepness-partially-solved}.
+\newblock Accessed: 2024-05-03.
+
 \bibitem{clusterdocs}
 ``Overview of the cluster.''
   \url{https://pointed-wakeboard-5f3.notion.site/Overview-of-the-Cluster-c74c945e34274f4ea9a964a805cc7d7f}.
