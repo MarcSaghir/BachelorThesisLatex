@@ -40,6 +40,7 @@ achieved the highest scoring
 
 Interpretation of results hier, weiß nicht in welche section das eigentlich muss:
 
+\input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
 
 \section{Flat Connector Experiments}
 \label{sec:faltconnectorxperiments}
@@ -48,6 +49,26 @@ Interpretation of results hier, weiß nicht in welche section das eigentlich mus
 \section{Ensemble Network}
 \label{sec:ensembleresults}
 
+This section reports the results of the ensemble network approach on the class flat connector %austauchen? 
+as a flagship experiment for the rest of the dataset. More results from other classes of the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} set are to be found in appendix (referenz). All conclusions drawn from this 
+experiment are also applicable to the other classes. Firstly the results from the primary ensemble approach from section \ref{sec:featurelevelensemble} are reported. Afterwards 
+the results of the secondary ensemble approach are presented, supported by according metrics and segmentation examples.
 
+
+\subsection{Independent Transformation Block}
+\label{subsec:ITBfail}
+
+When performing the ensemble training process using the approach by \cite{EnsembleHeller2023}, the results were generally not usable. Looking at the exemplary plot of the segmentation 
+results in figure \ref{fig:pca_res}, it becomes obvious why no metrics are reported for this experiment. When investigating image level metrics, they were highly inconsistent thorughout 
+the training process and are regarded as not meaningful and representative.
+
+\input{figures/pca_results/pca_results_figure.tex}
+
+As visible in figure \ref{fig:pca_res}, the segmentation results appeared to be not more meaningful than gaussian noise, strongly suggesting that this method has failed. Subsection 
+\ref{subsec:ITBfailconc} will go into possible reasons for the suboptimal experiments results. Concludingly it is to be said that these results are, besides the failure analysis 
+in the conclusion, not relevant and will not be part of further review. Thus no results of other classes using this method are posted in the appendix.
+
+\subsection{Stacking Ensemble}
+\label{subsec:stacking}
 
 
