@@ -3,9 +3,9 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Collection of image auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {csflow2022} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}}}{12}{table.caption.16}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}. The numbers for \cite {csflow2022} were not recorded}}{12}{table.caption.17}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Description of metrics}}{13}{table.caption.18}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Collection of image auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {csflow2022} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}}}{13}{table.caption.19}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}. The numbers for \cite {csflow2022} were not recorded}}{13}{table.caption.20}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Description of metrics}}{14}{table.caption.21}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

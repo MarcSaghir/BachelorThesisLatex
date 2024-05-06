@@ -104,6 +104,11 @@ M.~Rudolph, B.~Wandt, and B.~Rosenhahn, ``Same same but differnet:
   Winter Conference on Applications of Computer Vision (WACV)}, IEEE, Jan.
   2021.
 
+\bibitem{Ronneberger_2015UNET}
+O.~Ronneberger, P.~Fischer, and T.~Brox, {\em U-Net: Convolutional Networks for
+  Biomedical Image Segmentation}, p.~234–241.
+\newblock Springer International Publishing, 2015.
+
 \bibitem{Wang_2004SSIM}
 Z.~Wang, A.~Bovik, H.~Sheikh, and E.~Simoncelli, ``Image quality assessment:
   From error visibility to structural similarity,'' {\em IEEE Transactions on
@@ -156,6 +161,19 @@ S.~McGrath, P.~Mehta, A.~Zytek, I.~Lage, and H.~Lakkaraju, ``When does
 ``Link to the flat connector that was recorded.''
   \url{https://www.hornbach.de/p/flachverbinder-100-x-35-mm-sendzimirverzinkt-1-stueck/735660/}.
 \newblock Accessed: 2024-04-30.
+
+\bibitem{wideresnet}
+S.~Zagoruyko and N.~Komodakis, ``Wide residual networks,'' in {\em BMVC}, 2016.
+
+\bibitem{VGG}
+K.~Simonyan and A.~Zisserman, ``Very deep convolutional networks for
+  large-scale image recognition,'' {\em ICLR}, 2015.
+
+\bibitem{VIT}
+A.~Dosovitskiy, L.~Beyer, A.~Kolesnikov, D.~Weissenborn, X.~Zhai,
+  T.~Unterthiner, M.~Dehghani, M.~Minderer, G.~Heigold, S.~Gelly, J.~Uszkoreit,
+  and N.~Houlsby, ``An image is worth 16x16 words: Transformers for image
+  recognition at scale,'' {\em ICLR}, 2021.
 
 \bibitem{Wu_2021_shouldbecalibrated}
 X.~Wu and M.~Gales, ``Should ensemble members be calibrated?,'' ICLR, 2021.

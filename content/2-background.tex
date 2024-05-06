@@ -25,15 +25,18 @@ Looking into the unsupervised anomaly setting, the next important distinction is
 are comparing the distances between two images and the latter measure distances between feature representations. \newline
 Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data, aswell as noisy data. Noisy data are are 
 which are altered using noise, although the exact noise application is depending on the specific approach. During testing, after having successfully learnt to 
-reconstruct anomaly free images, the method is then given an input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in figure xyz. 
-Representation approaches on the other hand use feature embedding methods to obtain feature representations of images and compare those. As shown in figure xyz, during training the model is 
+reconstruct anomaly free images, the method is then given an input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in figure \ref{subfig:recbased}. 
+Representation approaches on the other hand use feature embedding methods to obtain feature representations of images and compare those. As shown in figure \ref{subfig:repbased}, during training the model is 
 learning to correctly extract features of input images. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
 prior feature level representations of the class object. A decision is then made aswell using a distance measure.
 Both classes of IAD methods have shown to produce state of the art results. Yet currently more approaches are representation based \cite{liu2024deep} as they have shown SOTA performance more 
 consistently. Nevertheless it is reasonable to focus on both kinds of IAD, as they may excel at different regions of anomaly detection and evaluation criteria. Namely reconstruction methods are 
 often showing a notable performance at pixel level anomaly detection in comparison to feature embedding/representation methods, as their principle is based on pixelwise comparisons of input 
 and reconstructed data.
-\newline
+
+\input{figures/recon_and_repres_based_diagram.tex}
+
+
 Again, looking at the representation based approaches, some distinctions can be made on exactly how the method implements a representation based procedure.
 The main approaches in this category are ones featuring a memory bank, teacher-student architecture, distribution map and ones employ a one-class classification strategy. The characteristics of 
 each strategy are visualized in figure xyz. The subcategory of 
@@ -190,16 +193,32 @@ approaches its performance is also dependent on the quality of the backbone feat
 
 As a teacher student model, \cite{revdist2023} has shown to produce state of the art results on current datasets. The paper is an extension of a previous reverse distillation approach from 
 \cite{Deng_2022basicrevdist}. The base paper utilizes knowledge distillation through a classical teacher student architecture as explained in section \ref{sec:IADcategs}, though they stand out 
-due to two key differences visualized in figure xyz. Firstly they present a unconventional knowledge distillation flow as shown. The direct distillation through the teacher network still exists, 
+due to two key differences visualized in figure \ref{fig:revdistbottleneck}. Firstly they present a unconventional knowledge distillation flow as shown. The direct distillation through the teacher network still exists, 
 yert the input image does not directly influence the student learning anymore. This results in increased compactness as the low dinmensional output of the teacher model is fed to the student, 
 whereas the student model has to predict the teachers feature representation. This mimics the encoder - decoder structure and therefore may yield advantges that come with this approach. Secondly 
 the paper introduces a further one-class bottleneck embedding module. This is comprised of a multi-scale feature fusion block to aggregate low and high level features, and a one-calss embedding 
-for retaining essential information important to the students decoding process. \newline
+for retaining essential information important to the students decoding process. 
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/revdist_bottleneck.png}
+    \caption{Hier korrekt zitieren}
+    \label{fig:revdistbottleneck}
+\end{figure}
+
 Circling back to \cite{revdist2023}, the paper extends the prior reverse distillation approach in a way that limits possible abnormal patterns to heavily impact student learning. To do so they 
 introduce firtly a multiscale teacher architecture aswell as projection blocks after each respective teacher block. Those multiscale projection blocks are made of stacked convolutional blocks 
-and are designed to regulate possible abnormal information patterns that might flow from teacher blocks to the student. This is depicted in figure xyz, which shows the image to describe the 
+and are designed to regulate possible abnormal information patterns that might flow from teacher blocks to the student. This is depicted in figure \ref{fig:revdistpipeline}, which shows the image to describe the 
 approaches training pipeline. For inference the teachers informations are passed to the respective multilayer projection blocks, as well as their students counterparts informations after the 
 reverse distillation process.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/revdistpipeline.png}
+    \caption{Hier korrekt zitieren}
+    \label{fig:revdistpipeline}
+\end{figure}
+
 
 \subsection{CSFlow}
 \label{subsec:csflow}
@@ -241,7 +260,7 @@ in their(/authors name) paper.\newline
 
 DRAEM utilizes two subnetworks in their anomaly detection pipeline as seen in figure \ref{fig:draempipeline}. The first on is the so called reconstructive sub-network and is an encoder-decoder structure. The network is trained 
 to receive an image with artificial noise and reconstruct it into its original state. As the distance measurement between the reconstructed image and the original one, the second network is used, 
-namely the discriminative sub-network. This network consists of a u-net (u net referenz) like architecture. Input is a channel-wise concatenation of the altereed input image and the reconstructed 
+namely the discriminative sub-network. This network consists of a u-net \cite{Ronneberger_2015UNET} like architecture. Input is a channel-wise concatenation of the altereed input image and the reconstructed 
 one. Since the reconstructed image is supposed to be anomaly free, the two inputs should differ to some extent, which is to be learned by the second sub-network. The network outputs a segmentation map, 
 which can be used as the pixelwise anomaly detection map. Moreover the resulting map is further used for image level detection. To be interpretable, the map is smoothed by a convolution filter 
 and the maximum value is taken as the image anomaly score. Reconstruction methods often utilize similarity functions such as SSIM \cite{Wang_2004SSIM} to obtain segmentation masks \cite{Zavrtanik_2021DRAEM} 
@@ -260,21 +279,23 @@ part of its pipeline when synthesizing near-in-distribution anomalies on the ori
 
 
 
-
-
 \section{Metrics}
 \label{sec:metrics}
 Metrics are known to be an important part of developing any artificial intelligence related models. Many of them are used to infer 
 different characteristics of model performance and should be used in different appropriate circumstances, depending on which aspect 
 is important for the current application. Therefore, before the actual developing, one must first choose appropriate metrics 
 to optimize and evaluate on later. IAD as a research area themselves has certain metrics that are the main performance evaluation tool 
-across most papers. 
+across most papers.\newline 
 A collection of different metrics in this domain are displayed in table \ref{tab:metrics}, which is taken from 
 \cite{liu2024deep}. Visible are well known 
 ones from many other machine learning models like precision, recall, TPR, FPR and the F1-Score. These are generally applicable in most 
 cases, but are not listed in any recent important papers and thus are not important for any analyses in this work. The other metrics are 
 more IAD specific. By a large margin, the most important scoring standard is the AUROC. This metric is usually referenced for image level 
-binary classification and gives an indication on how good the model is able to distinguish between both classes. Its calculation can be seein in 
+binary classification and gives an indication on how good the model is able to distinguish between both classes. 
+
+\input{algotable/metrics_table}
+
+Its calculation can be seein in 
 table \ref{tab:metrics}. Moreover it can be used on a pixel level, which is also a popular approach but not utilized everywhere.
 Next in importance is the per-region overlap(PRO) score or also the area under the PRO score(AU-PRO). This metric denotes the per-region overlap of two areas 
 on a pixel level and can be calculated using the averaged sum of the ratio between true positives and ground truth pixels per predicted area. The two areas 
@@ -296,8 +317,6 @@ would keep on rising as the segmented area gets larger within the anomalous regi
 by the sPRO metric as figure xy shows it to be already saturated once the minimum required amount of pixels is achieved. The saturation 
 scores for each anomaly have to be individually set for each anomaly, and are given for the five classes of MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022}.
 
-
-\input{algotable/metrics_table}
 
 
 \section{Datasets}
@@ -340,19 +359,18 @@ this work refrains from using the method proposed in the paper.
 
 \section{Ensembles}
 \label{sec:ensembles}
-%TO-DO: irgendwo beispielhaft erklären dass manche approaches manche sachen besser verstehen und umgekehrt, deswegen ensemble gut ist, muss maybe in die background oder introduction
 
 When it comes to ensembling classification models, there are multiple approaches to do so. Many ensembling methods are focussed on combining homogeneous 
 models, meaning a set of related models with similar architecture but different parameters or initializations. Typical methods \cite{Opitz_1999ensemblebasics} include 
 averaging, channel stacking, bagging, boosting, and more. There are also new approaches like the CAWPE \cite{Large_2019CAPE} who try to improve on standard methods. They extend averaging ensembles by 
 a weighted average that is depending on the ensemble members accuracy, yet balances the relevancy of all classifiers so that no strong classifier completely outweighs the rest.\newline
-Homogeneous ensembles are popular, since they tend to boost the performance and robustness of a base classifier without lots 
-of additional work, since the ensemble is normally created by initializing the models in different ways.
-%kann der teil über diesem kommentar in die introduction?
+Homogeneous ensembles are popular, since they tend to boost the performance and robustness of a base classifier without 
+much work, since the ensemble is normally created by initializing the same model in different ways.
+
 Heterogeneous classifier ensembles on the other hand are not necessarily combinable that easily, since they usually consist of models with 
 different network architectures. This can lead to results, that should be interpreted as the same but differ by large margins. Yet 
 ensembles of such variety are often desirable since they offer loads of information from different perspectives or domains when done right. 
-% Kann der satz weg? Combining knowledge from different domains with such an ensemble is an effective way to improve a models performance in foreign domains.
+\newline
 Thus to bridge this gap at the output, a common approach is to first calibrate \cite{Guo_2017_tempscalingetc} and then ensemble each models 
 output. For the last combination step, all ensemble techniques suited for homogeneous ensembling can 
 be applied, due to the outputs being in a comparable state then. There are also approaches to collectively calibrate the hyperparameters 
@@ -362,28 +380,30 @@ This stems from the fact that the model outputs are merely a small result of lar
 of information among the inputs. Therefore in turn, you cannot obtain all relevant information that can be offered by simply calibrating the 
 model outputs. A more robust approach to address that problem, would be to ensemble the aforementioned inner representations, i.e. feature maps 
 and in turn train another classifier for the final meaningful output.
-%----nachfolgender satz maybe raus mal gucken oder anders einbauen
-Another limitation of both kinds of ensembles, being homogeneous and heterogeneous, is that all models have to actually be trained 
-seperately to then utilize the different classification ouputs. This leads to a higher training time and thus also higher computational 
+\newline
+Another current problem of both kinds of ensembles, homogeneous and heterogeneous, is that all models have to actually be trained 
+seperately in each training attempt, to then utilize the different classification ouputs. This leads to a higher training time and thus also higher computational 
 cost, which is desirable to be reduced in real world manufacturing firms.
 It should be said that while offering a potential increase in robustness and overall performance, naturally feature level ensemble may also 
 come with certain disadvantages. For instance, it is more difficult to calibrate features from the ensemble members if possible, which may 
-be necessary depending on the nature of the data. An example of our context would be that certain IAD approache project their features into a 
+be necessary depending on the nature of the data. An example of our context would be that certain IAD approaches project their features into a 
 different space to be effective, making it difficult to ensure that all features are in the same space when dealing with an ensemble. 
+%We discuss this problem in the methods section 
+%as a possible solution is to ensure projection into the same space for all differnt feature representations thorugh addition of certain intermediary projection models.
 Moreover feature level ensembles also are vulnerable to and reliant on the quality of the input features. This makes the decision on where 
 to cut off the base models very important.
-%-------
-The robustness and efficiency has been demonstrated in Heller et al. \cite{EnsembleHeller2023} The authors utilize a feature level ensemble of multiple 
+\newline
+A desirable level of robustness and efficiency has been demonstrated in Heller et al. \cite{EnsembleHeller2023}. The authors utilize a feature level ensemble of multiple 
 convolutional neural networks with different architectures and tasks to improve inference speed and accuracy in plant disease detection.
 They show that cutting off several, potentially heterogeneous, classifiers after a couple of network layers and ensembling the 
 resulting feature maps yields firstly a significant improvement in training time compared to classical output ensembles. This stems from 
-the fact, that all base classifiers of the ensemble only have to be trained once for every following training approach. During this the 
-model still stays compact(zitat aus ensemble paper markieren), giving it an memory usage advantage over many supervised approaches. 
+the fact, that all base classifiers of the ensemble only have to be trained once for every following training approach. During this the ensemble 
+model remains compact, giving it an memory usage advantage over many supervised approaches. 
 Moreover they compared the performance of different ensemble combinations with conventional 
 output ensembles via the softmax function and reported in all cases no significant drop in performance. In cases where this approach allowed for 
-different inputs via multispectral cameras(zitat markieren) there even was a similar performance of this ensemble to other state of the 
-art ensembles visible. Keeping in mind the compactness of this new ensemble model combined with an equal performance and possible 
-increased robustness, as argued prior, it is a promising ensemble approach for this work.
+different inputs via multispectral cameras \cite{EnsembleHeller2023} there even was a similar performance of this ensemble to other state of the 
+art ensembles visible. Here it is emphaiszed, the compactness of this new ensemble model combined with an equal performance and possible 
+increased robustness, as argued prior, it is a promising ensemble approach for this work.\newline
 To obtain ensembled feature maps the paper proposes to bring all feature maps to the same sizes using bilinear interpolation. Since 
 it is not necessarily desirable to keep every available feature map, as this would create inputs with way too many features, the amount of feature 
 maps is reduced using principle component analysis(PCA). This allows for the ensemble to focus only on the most important features, while maintaining 
@@ -392,7 +412,7 @@ approaches to perform this ensemble. The first is a global transformation block 
 Here the features are first all resized to the same dimensions and then connected along their channels through a concatenation layer.
 Afterwards PCA is applied along the channel dimension to obtain a result with N remaining feature maps, where N can be adjusted for ones 
 needs. This method offers the advantage of efficiency, as PCA is only run once per feature ensembling, and may be applied when there is 
-an almost even number of feature maps per classifier with same input representations(erklärlicher schreiben?). Yet this approach is also 
+an almost even number of feature maps per classifier from similar input sources. Yet this approach is also 
 prone to a couple disadvantages. If the different input data is collected from fundamentally different sources, there may be a significant 
 loss of information when globally applying PCA. Furthermore this approach cannot be balanced when confronted with classifiers with large 
 discrepancies in channel number. If the amount of feature maps from one classifier completely predominates, there is a high likelihood 
