@@ -34,6 +34,11 @@ T.~D. Tien, A.~T. Nguyen, N.~H. Tran, T.~D. Huy, S.~T. Duong, C.~D.~T. Nguyen,
   detection,'' in {\em Proceedings of the IEEE/CVF Conference on Computer
   Vision and Pattern Recognition (CVPR)}, pp.~24511--24520, June 2023.
 
+\bibitem{worldsteel}
+``2023 world steel in figures.''
+  \url{https://worldsteel.org/wp-content/uploads/World-Steel-in-Figures-2023-4.pdf}.
+\newblock Accessed: 2024-05-07.
+
 \bibitem{LOCODentsAndScratchesBergmann2022}
 P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Beyond
   dents and scratches: Logical constraints in unsupervised anomaly detection

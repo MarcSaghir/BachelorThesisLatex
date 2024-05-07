@@ -42,7 +42,11 @@ segmentation artifacts of certain classifier methods. The results can be viewed 
 
 \section{Ensemble network}
 \label{sec:ourensemblenetwork}
+
+!BILD von pipeline machen!
+
 !abändern!
+- schreiben dass wir hier verschiedene feature representations leveragen wollen
 
 The following subsections deal with the individual components of our ensemble network pipeline, referencing concepts discussed in chapter \ref{chap:background}. This network is conceptually based on 
 different approaches. First we produce cut off models and an ensembling mechanism in accord to \cite{EnsembleHeller2023}. For the actual IAD process, this approach is based on the SimpleNet method \cite{liu2023simplenet}. 
@@ -63,6 +67,11 @@ One aspect to keep in mind is that the backbones are pretrained and do not neces
 and may also not produce inherently useful ones. To bridge this problem we trained a feature adapter from SimpleNet for each of the backbones, before ensembling the features. 
 This ensures that all feature representations are in the same space and can be properly ensembled. The resulting feature vectors are also projectred with an additional global 
 feature adapter
+
+- schreiben dass wir auch wideresnet50 nehmen mit verschiedenen hierarchies weil wir uns dadurch erhoffen die verschiedenen levels an feature representations zu leveragen
+
+\input{figures/featurelayersviz/feature_layers_viz.tex}
+
 
 !unten neu schreiben!
 
@@ -119,7 +128,7 @@ which is according to equation \ref{eq:simplenetloss}.
 \subsection{Calibration}
 \label{sec:Calibration}
 
-As discussed in section \ref{sec:Calibration}, calibration can greatly improve understanding and usability of classifiers. Anomaly models researched in this work only return non-probabilistic 
+As discussed in section \ref{sec:modelcalibration}, calibration can greatly improve understanding and usability of classifiers. Anomaly models researched in this work only return non-probabilistic 
 outputs. These can be thresholded to derive decision critera but do not represent any confidence of the model at all. When looking back at \cite{Guo_2017_tempscalingetc}, the only calibration 
 methods for binary classifiers that did not need a probabilstic output was the platt scaling attempt. Therefore this basic principle was the method of choice for calibrating the ensemble networks 
 outputs. It is to be noted here, that we merely calibrate the models final outputs after everything has been predicted. This stems from the fact, that \cite{Wu_2021_shouldbecalibrated} demonstrated 

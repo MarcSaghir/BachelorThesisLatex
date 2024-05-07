@@ -54,7 +54,7 @@ figure xyz. Such an approach requires a method to map the features between distr
 Normalizing flows as a class of generative models \cite{Kobyzev_2021normalizingflowexplanation} are advantageous for transforming probability distributions because they provide a flexible 
 framework to model complex distributions and efficient sampling. This enables accurate distribution mapping aswell as sampling. 
 Lastly, one-class classification is 
-somewhat similar to a distribution mapping approach. The key difference is that the latter maps features into a desired distribution and the former focusses on finding boundaries between normal 
+similar to a distribution mapping approach. The key difference is that the latter maps features into a desired distribution and the former focusses on finding boundaries between normal 
 and anomalous features. To efficiently do that, features are projected into a suited space using a network. To learn an accurate boundary, the approaches generate fake anomalous features to 
 then differentiate from normal ones. This method greatly relys on the the quality of generated features and as such may be variyngly effective. A typical approach for generating fake samples 
 in this works context is with the use of gaussian noise \cite{liu2023simplenet}.
@@ -76,7 +76,7 @@ Finally there also exists an approach that has been gaining popularity lately: t
 leverage the models ability to capture complex dependencies to detect anomalies in IAD, and other papers \cite{zhang2023diffusionaddiffusionmodern} further improved its efficiency by speeding up 
 the denoising process.
 \newline
-After carefully categorizing the important classes of unsupervised IAD, it is now discernible how many different approaches towards anomaly detection exist, and may yield differnt merits. 
+After carefully categorizing the important classes of unsupervised IAD, it is now discernible how many different approaches towards anomaly detection exist, and may yield different merits. 
 In section \ref{sec:IADmethods} we further elaborate on a few select IAD approaches from different categories who were utilized for the MVTecAD LOCO performance analysis or the ensemble 
 model. 
 
@@ -396,7 +396,7 @@ come with certain disadvantages. For instance, it is more difficult to calibrate
 be necessary depending on the nature of the data. An example of our context would be that certain IAD approaches project their features into a 
 different space to be effective, making it difficult to ensure that all features are in the same space when dealing with an ensemble. 
 %We discuss this problem in the methods section 
-%as a possible solution is to ensure projection into the same space for all differnt feature representations thorugh addition of certain intermediary projection models.
+%as a possible solution is to ensure projection into the same space for all different feature representations thorugh addition of certain intermediary projection models.
 Moreover feature level ensembles also are vulnerable to and reliant on the quality of the input features. This makes the decision on where 
 to cut off the base models very important.
 \newline
