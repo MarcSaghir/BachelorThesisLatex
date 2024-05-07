@@ -310,12 +310,19 @@ in the target image. The sPRO score is the calculated by averaging the intersect
 while norming the values by the saturation threshold and proividing an upper limit of 1 per region. It is to be said that this gives a similar 
 view on the segmentation performance as the PRO score, as it is a generalized form of it and can producet the same results if the saturation 
 threshold would be equal to the amount of anomalous pixels per region. However, due to its cap of 1, it also rates differently large segmentations equally in cases 
-where the anomalous position posesses some uncertainty. Figure xy demonstrates this behaviour in the case of a logical anomaly of the pushpin class. 
+where the anomalous position posesses some uncertainty. Figure \ref{fig:sprovspro} demonstrates this behaviour in the case of a logical anomaly of the pushpin class. 
 As visible, the logical anomaly consists of an empty pushpin compartment. The missing pushpin could be placed in any place of this smaller 
 box for it to be valid, therefore an amount of pixels equal to the amount a visual pushpin posesses would suffice. Yet the conventional PRO score 
 would keep on rising as the segmented area gets larger within the anomalous region. Due to the saturation score and limit. this is prevented 
-by the sPRO metric as figure xy shows it to be already saturated once the minimum required amount of pixels is achieved. The saturation 
+by the sPRO metric as figure \ref{fig:sprovspro} shows it to be already saturated once the minimum required amount of pixels is achieved. The saturation 
 scores for each anomaly have to be individually set for each anomaly, and are given for the five classes of MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.3\textwidth]{figures/spro_vs_pro_bergmann.png}
+    \caption{Hier korrekt zitieren}
+    \label{fig:sprovspro}
+\end{figure}
 
 
 
