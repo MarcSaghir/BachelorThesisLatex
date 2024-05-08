@@ -1,47 +1,46 @@
-\chapter{Conclusion and Future work}
+\chapter{Conclusion and Outlook}
 \label{chap:conclusion}
 
-\section{Ensemble Network}
-\label{sec:ensembleconclusion}
 
-- einleitungssatz dass hier die ensemble analyse für den flachverbinder kommt
+\section{Conclusion}
+\label{sec:realconclusion}
 
-\subsection{Independent Transformation Block}
-\label{subsec:ITBfailconc}
+- conclusion performance change of state of the art methods/current capabilities of detecting logical anomalies
 
-- sagen dass analyse ergeben hat dass pca hier gefailt hat. testweise wurde auch pca auf nur die simplenet features angewandt, und zeigte ähnliche ergebnisse.
-- das heißt fehler liegt wahrscheinlich bei pca
--> gründe nennen, zB: pca ist nicht immer anwendbar, nur bei linearen dependencies
--> belegen mit quelle wo grenze von PCA ist
-- sagen was potentiell getan werden kann, zb tSNE und Kernel PCA als verfahren nennen um so probleme zu überbrücken plus quellen
+- conclusion of flat connector as a class
+-> was it challenging
+-> were the results similar to other classes
+-> were the anomalies picked well%(im bezug auf wie man weitere hätte machen können)
+
+- conlusion of ensemble approach + pipeline
+-> did it work
+-> were the improvements significant/promising
+-> current state of the pipeline
 
 
-\subsection{Stacking Ensemble}
-\label{subsec:stackingconc}
 
-\section{SOTA performance}
-\label{sec:sotaperformanceconc}
-
-\section{Flat connector}
-\label{sec:flatconnectorconc}
-
-- performance von den ansätzen auf flat connector bewerten
-- vergleiche zum restlichen loco dataset ziehen bzgl performance
-- wenn ich das gemacht habe dann auch vergleiche zwischen strukturellen und logischen anomalien performance machen
-
-- schlussendlich sagen ob die klasse sich gelohnt hat, oder zu einfach war und welche aspekte sehr herausfordernd waren(zb der loch größen unterschied)
 
 \section{Outlook}
-\label{sec:outlook}
+\label{sec:finaloutlook}
 
+- how to proceed with findings from survey
+-> either here or below in ensemble section: mention idea of fusing patchcore and simplenet
 
-- schreiben was es noch für coole dataset categories gab -> multiperspective angle und blech konstruktion mit schrauben
+- how to possibly extend/modify the flat connector class/LOCO dataset
+-> different anomalies?
+-> different logical rules with multiple objects?
+-> new class ideas?
+--> angle for multiperspective class
+--> metal plate with screws
 
-subsection ensemble network
-- schreiben dass man an der feature ensembling methode arbeiten kann, zb halt mit tsne oder kernel PCA da neue sachen probieren kann, sonst auch anderen methoden außer stacking(beispiel)
-- man kann die layer der verschiedenen backbones optimieren plus die kombi
-- schreiben die einbindung von andern approaches ins ensemble wie das füttern von patchcore mit diesen features
-- generelles hinzufügen von anderen feature approaches weil ensemble ja blackbox mäßig ist.
+- how to improve the ensemble
+-> experiment more with different backbones/other hierarchies of different backbones
 
+-> ensemble as double black box
 
+--> use another method to ensemble the feature maps
+---> fix/replace PCA like mentioned in Discussion
+---> other approach like learn with specialized ensembling network
+
+--> find differnt kinds of feature representations and input them to the network
 

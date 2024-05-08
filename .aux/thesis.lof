@@ -3,26 +3,34 @@
 \babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Visualizations for Representation and Reconstruction Based IAD Approaches}}{6}{figure.caption.12}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Hier korrekt zitieren}}{9}{figure.caption.13}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Hier korrekt zitieren}}{10}{figure.caption.14}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Hier korrekt zitieren}}{11}{figure.caption.15}%
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Hier korrekt zitieren}}{11}{figure.caption.16}%
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Hier korrekt zitieren}}{12}{figure.caption.17}%
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Hier korrekt zitieren}}{12}{figure.caption.18}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Hier korrekt zitieren}}{15}{figure.caption.22}%
-\contentsline {figure}{\numberline {2.9}{\ignorespaces Hier korrekt zitieren}}{17}{figure.caption.23}%
-\contentsline {figure}{\numberline {2.10}{\ignorespaces Hier korrekt zitieren}}{18}{figure.caption.24}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Overview of IAD methods in a global context. Hier noch ein Satz}}{5}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Hier korrekt zitieren}}{7}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Hier korrekt zitieren}}{7}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Hier korrekt zitieren}}{8}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Hier korrekt zitieren}}{8}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Hier korrekt zitieren}}{9}{figure.caption.17}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Hier korrekt zitieren}}{10}{figure.caption.18}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Hier korrekt zitieren}}{11}{figure.caption.19}%
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Hier korrekt zitieren}}{13}{figure.caption.20}%
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Hier korrekt zitieren}}{13}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Hier korrekt zitieren}}{14}{figure.caption.22}%
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Hier korrekt zitieren}}{14}{figure.caption.23}%
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Hier korrekt zitieren}}{17}{figure.caption.27}%
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Examplary image showcasing from the MVTecAD Dataset \cite {MVTEC_Bergmann_2021}. The images are labelled with their corresponding class names.}}{17}{figure.caption.28}%
+\contentsline {figure}{\numberline {2.15}{\ignorespaces Logical anomalous image of the pushpin class from the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset. It contains two pushpin in a single department which violates the ruleset of the class.}}{18}{figure.caption.29}%
+\contentsline {figure}{\numberline {2.16}{\ignorespaces Hier korrekt zitieren}}{20}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.17}{\ignorespaces Hier korrekt zitieren}}{20}{figure.caption.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Anomalous Flat Connector Images and the Corresponding Masks}}{21}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Images of the Environment of Data Collection}}{22}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Anomalous Flat Connector Images and the Corresponding Masks}}{23}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Images of the Environment of Data Collection}}{24}{figure.caption.33}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Illustration of Feature Representations at Different Levels}}{26}{figure.caption.27}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Sorted Normed Anomaly Scores for MVTecAD Class Broken Bottle and Applied Platt Scaling Calibration}}{27}{figure.caption.28}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Different Effects of Changing Parameters k and t and Exemplary Calibration for MVTecAD Class Broken Bottle}}{28}{figure.caption.29}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Illustration of Feature Representations at Different Levels}}{28}{figure.caption.34}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sorted Normed Anomaly Scores for MVTecAD Class Broken Bottle and Applied Platt Scaling Calibration}}{29}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Different Effects of Changing Parameters k and t and Exemplary Calibration for MVTecAD Class Broken Bottle}}{30}{figure.caption.36}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Exemplary Results of PatchCore on the Breakfast Box Class}}{30}{figure.caption.30}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Results of Independent Transformation Block Ensembles Section \ref {sec:featurelevelensemble}}}{31}{figure.caption.31}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Exemplary Results of PatchCore on the Breakfast Box Class}}{32}{figure.caption.37}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Results of Independent Transformation Block Ensembles Section \ref {sec:featurelevelensemble}}}{33}{figure.caption.38}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Visualizations for Representation and Reconstruction Based IAD Approaches}}{42}{figure.caption.40}%

@@ -1,41 +1,70 @@
-\chapter{Experimental Results}
+\chapter{Discussion}
 \label{chap:results}
 
+- describe function of this chapter
+
+at reader: I have some text/images for this but it is very scattered. Therefore i firstly just included the bullet points so you can comment on the contents.
 
 
-- analysis on how methods worked on own dataset individually
--> if poor performance error analysis and also address different subclasses
-
-- analysis of how ensemble model worked and if it improved performance
-
-
-
-\section{SOTA Methods Performance on classical LOCO Dataset}
+\section{Current Approaches Performance on Classical LOCO Dataset}
 \label{sec:locoresultssota}
-In this section we review the performance of prior introduced anomaly detection methods. All experiments were performed with the same 
-experimental setup as explained in section (referenz of experimental setup section), the conditions explained in section (referenz von methods section über loco) 
-and on the mvtec LOCO dataset \cite{LOCODentsAndScratchesBergmann2022}. 
-The results of inference on the test set can be seen in table x (tabelle mit ergebnissen). As it can be seen, all models scored a significantly 
-lower result on the MVTecAD LOCO dataset than on the normal MVTecAD one(exemplary scores seen in table xy(table mit normalen mvtec scores)). 
-A lower performance is generally to be expected, since firstly logial anomalies are regarded as a more difficult problem than structual 
-ones and secondly the average SOTA performances as seen in table x(tabelle mit ergebnissen) is already closing in on an AUROC of of 1. 
-(den satz rechts von hier müsste man maybe rausmachen oder umschreiben)Therefore there is not much room for further improvement in similar settings, and a worse performance still aknowledgeable as very good. 
-Yet there is an drop in cross-model average AUROC of approcimately (durchschnitts drop ausrechnen), which is a remarkable(synonym) difference. 
-Most other metrics, namely (metrics names), also declined with an respective average of (respective averages). As explained in section 
-(referenz zu metrics section von background), the sPRO (or rather AU-sPRO) was a score introduced in \cite{LOCODentsAndScratchesBergmann2022} to gain an 
-advanced insight on the quality of segmentations. This means that all approaches who either were published before or did not include this 
-paper in their research likely did not include this metric, which holds true for the approahces used for this experiment. Therefore no comparison 
-in sPRO/AU-sPRO can be shown(vllt einfach spro auch für allte ansätze implementieren?? dann kann ich den satz ändern). Comparing the sPRO 
-scores of the SOTA methods in this experiment with the ones from compared to GCAD \cite{LOCODentsAndScratchesBergmann2022} shows asignificantly 
-(abchecken ob wirklich) worse performance.
-Among the different models, the highest scoring one was PatchCore \cite{patchCore2022}. It scored an average (metrics einfügen) feature embedding based approaches like  
-achieved the highest scoring
 
-Interpretation of results hier, weiß nicht in welche section das eigentlich muss:
+- describe trend seen in experiments section
+- review classes with generally good performance
+- review (nature of) anomalies that were especially easy/hard
+
+- discuss differences in performance among IAD approaches
+-> also if some classifiers were better/had more weaknesses in specific regions that others
+
+- compare sPRO of classifiers to sPRO of approaches specifically designed for LOCO like \cite{LOCODentsAndScratchesBergmann2022}
+
+%In this section we review the performance of prior introduced anomaly detection methods. All experiments were performed with the same 
+%experimental setup as explained in section (referenz of experimental setup section), the conditions explained in section (referenz von methods section über loco) 
+%and on the mvtec LOCO dataset \cite{LOCODentsAndScratchesBergmann2022}. 
+%The results of inference on the test set can be seen in table x (tabelle mit ergebnissen). As it can be seen, all models scored a significantly 
+%lower result on the MVTecAD LOCO dataset than on the normal MVTecAD one(exemplary scores seen in table xy(table mit normalen mvtec scores)). 
+%A lower performance is generally to be expected, since firstly logial anomalies are regarded as a more difficult problem than structual 
+%ones and secondly the average SOTA performances as seen in table x(tabelle mit ergebnissen) is already closing in on an AUROC of of 1. 
+%(den satz rechts von hier müsste man maybe rausmachen oder umschreiben)Therefore there is not much room for further improvement in similar settings, and a worse performance still aknowledgeable as very good. 
+%Yet there is an drop in cross-model average AUROC of approcimately (durchschnitts drop ausrechnen), which is a remarkable(synonym) difference. 
+%Most other metrics, namely (metrics names), also declined with an respective average of (respective averages). As explained in section 
+%(referenz zu metrics section von background), the sPRO (or rather AU-sPRO) was a score introduced in \cite{LOCODentsAndScratchesBergmann2022} to gain an 
+%advanced insight on the quality of segmentations. This means that all approaches who either were published before or did not include this 
+%paper in their research likely did not include this metric, which holds true for the approahces used for this experiment. Therefore no comparison 
+%in sPRO/AU-sPRO can be shown(vllt einfach spro auch für allte ansätze implementieren?? dann kann ich den satz ändern). Comparing the sPRO 
+%scores of the SOTA methods in this experiment with the ones from compared to GCAD \cite{LOCODentsAndScratchesBergmann2022} shows asignificantly 
+%(abchecken ob wirklich) worse performance.
+%Among the different models, the highest scoring one was PatchCore \cite{patchCore2022}. It scored an average (metrics einfügen) feature embedding based approaches like  
+%achieved the highest scoring
+
+%Interpretation of results hier, weiß nicht in welche section das eigentlich muss:
+
+
+\section{Flat Connector}
+\label{sec:flatconnectordiscussion}
+
+- same analysis of metrics as above
+- also analyse different anomaly types
+
+- first analyse only with above approaches
 
 
 
 \section{Ensemble Performance}
+\label{sec:ensemblediscussion}
+
+\subsection{Independent Transformation Block}
+\label{subsec:ITBfaildiscussion}
+
+- give possible reasons for failure of this methods
+-> explain that applying pca to non ensemble features also resulted in this noise, therefore fault must lie with pca
+-> give reasons why pca can fail(non linear dependency, ...)
+
+
+\subsection{Stacking Ensemble}
+\label{subsec:stackingdiscussion}
+
+
 Notizen für diese section:
 - hier soll reportet werden wie das ensemble sich geschlagen hat
 - dazu brauche ich:
@@ -51,4 +80,44 @@ Notizen für diese section:
 
 
 
+\section{Ensemble Network}
+\label{sec:ensembleconclusion}
 
+- einleitungssatz dass hier die ensemble analyse für den flachverbinder kommt
+
+\subsection{Independent Transformation Block}
+\label{subsec:ITBfailconc}
+
+- sagen dass analyse ergeben hat dass pca hier gefailt hat. testweise wurde auch pca auf nur die simplenet features angewandt, und zeigte ähnliche ergebnisse.
+- das heißt fehler liegt wahrscheinlich bei pca
+-> gründe nennen, zB: pca ist nicht immer anwendbar, nur bei linearen dependencies
+-> belegen mit quelle wo grenze von PCA ist
+- sagen was potentiell getan werden kann, zb tSNE und Kernel PCA als verfahren nennen um so probleme zu überbrücken plus quellen
+
+
+\subsection{Stacking Ensemble}
+\label{subsec:stackingconc}
+
+\section{SOTA performance}
+\label{sec:sotaperformanceconc}
+
+\section{Flat connector}
+\label{sec:flatconnectorconc}
+
+- performance von den ansätzen auf flat connector bewerten
+- vergleiche zum restlichen loco dataset ziehen bzgl performance
+- wenn ich das gemacht habe dann auch vergleiche zwischen strukturellen und logischen anomalien performance machen
+
+- schlussendlich sagen ob die klasse sich gelohnt hat, oder zu einfach war und welche aspekte sehr herausfordernd waren(zb der loch größen unterschied)
+
+\section{Outlook}
+\label{sec:outlook}
+
+
+- schreiben was es noch für coole dataset categories gab -> multiperspective angle und blech konstruktion mit schrauben
+
+subsection ensemble network
+- schreiben dass man an der feature ensembling methode arbeiten kann, zb halt mit tsne oder kernel PCA da neue sachen probieren kann, sonst auch anderen methoden außer stacking(beispiel)
+- man kann die layer der verschiedenen backbones optimieren plus die kombi
+- schreiben die einbindung von andern approaches ins ensemble wie das füttern von patchcore mit diesen features
+- generelles hinzufügen von anderen feature approaches weil ensemble ja blackbox mäßig ist.

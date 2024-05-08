@@ -6,6 +6,12 @@ P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``The mvtec
   unsupervised anomaly detection,'' {\em International Journal of Computer
   Vision}, vol.~129, p.~1038–1059, Jan. 2021.
 
+\bibitem{LOCODentsAndScratchesBergmann2022}
+P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Beyond
+  dents and scratches: Logical constraints in unsupervised anomaly detection
+  and localization,'' {\em International Journal of Computer Vision}, vol.~130,
+  p.~947–969, Feb. 2022.
+
 \bibitem{liu2024deep}
 J.~Liu, G.~Xie, J.~Wang, S.~Li, C.~Wang, F.~Zheng, and Y.~Jin, ``Deep
   industrial image anomaly detection: A survey,'' {\em Machine Intelligence
@@ -38,12 +44,6 @@ T.~D. Tien, A.~T. Nguyen, N.~H. Tran, T.~D. Huy, S.~T. Duong, C.~D.~T. Nguyen,
 ``2023 world steel in figures.''
   \url{https://worldsteel.org/wp-content/uploads/World-Steel-in-Figures-2023-4.pdf}.
 \newblock Accessed: 2024-05-07.
-
-\bibitem{LOCODentsAndScratchesBergmann2022}
-P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Beyond
-  dents and scratches: Logical constraints in unsupervised anomaly detection
-  and localization,'' {\em International Journal of Computer Vision}, vol.~130,
-  p.~947–969, Feb. 2022.
 
 \bibitem{Xie_2024benchmarking}
 G.~Xie, J.~Wang, J.~Liu, J.~Lyu, Y.~Liu, C.~Wang, F.~Zheng, and Y.~Jin,

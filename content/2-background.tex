@@ -1,17 +1,25 @@
 \chapter{Background}
 \label{chap:background}
 
-
+This chapter provides the background knowledge necessary for further understanding. Topics include general categorization of IAD methods, detailed explanations of relevant 
+state of the art methods and IAD specific datasets. Lastly it will cover relevant ensembling and calibration techniques, also utilized in later chapters.
 
 \section{Categorization of Anomaly detection}
 \label{sec:IADcategs}
 Over the last years a great amount of different approaches to solving IAD have been published. In order to compare different anomaly detection methods, categorizing them with respect to different 
-aspects serves a better comparative analysis in regards of strengths and weaknesses.  It also helps gain a better understanding of the different approaches in the global IAD context and
-is useful detect possible patterns in performance correlated to categories. This obviously also holds true for IAD approaches. Survey papers like Xie et al. \cite{Xie_2024benchmarking} and 
+aspects serves an improved comparative analysis in regards of strengths and weaknesses. It also helps gain a better understanding of the different approaches in the global IAD context and
+is useful detect possible patterns in performance correlated to categories. Survey papers like Xie et al. \cite{Xie_2024benchmarking} and 
 Liu et al.
-\cite{liu2024deep} primarily compare but also categorize IAD approaches, leading to the conclusion that there are effective and generally applicable ways to group certain approaches, as 
-visualized in Figure xyz. Here it has to be said that the following categorizations naturally are a generalization, as there may be different niche settings or even approaches who combine multiple categories.
-\newline
+\cite{liu2024deep} primarily compare but also categorize IAD approaches, leading to the conclusion that there are applicable ways to group certain approaches, as 
+visualized in Figure \ref{fig:IADcategstree}. Here it has to be said that the following categorizations naturally are a generalization, as there may be different niche settings or even approaches who combine multiple categories.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/baumtree.drawio.png}
+    \caption{Overview of IAD methods in a global context. Hier noch ein Satz}
+    \label{fig:IADcategstree}
+\end{figure}
+
 The first distinction relevant to our work is between supervised and unsupervised settings. Current deep learning approaches that have established themselves as state of the art in image anomaly detection 
 are almost exclusively unsupervised approaches. This partially stems from the fact 
 that in practical situations, anomalous images occur far less than normal images, hence the word "normal". This is especially true in industrial settings, due to the high performance of 
@@ -22,49 +30,94 @@ unsupervised IAD methods in current research persists,
 this work will also restrict itself to such approaches. This also facilitates the execution of the ensemble approach presented in chapter \ref{chap:method}.
 \newline
 Looking into the unsupervised anomaly setting, the next important distinction is between reconstruction based approaches and representation based ones. They differ in the sense, that the former 
-are comparing the distances between two images and the latter measure distances between feature representations. \newline
+are comparing the distances between two images and the latter measure distances between feature representations.
 Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data, aswell as noisy data. Noisy data are are 
 which are altered using noise, although the exact noise application is depending on the specific approach. During testing, after having successfully learnt to 
-reconstruct anomaly free images, the method is then given an input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in figure \ref{subfig:recbased}. 
-Representation approaches on the other hand use feature embedding methods to obtain feature representations of images and compare those. As shown in figure \ref{subfig:repbased}, during training the model is 
+reconstruct anomaly free images, the method is then given an input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in the appenix with figure \ref{subfig:recbased}. 
+Representation approaches on the other hand use feature embedding methods to obtain feature representations of images and compare those. As shown in appendix figure \ref{subfig:repbased}, during training the model is 
 learning to correctly extract features of input images. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
-prior feature level representations of the class object. A decision is then made aswell using a distance measure.
+prior feature level representations of the class object. A decision is then made aswell using a distance measure.\newline
 Both classes of IAD methods have shown to produce state of the art results. Yet currently more approaches are representation based \cite{liu2024deep} as they have shown SOTA performance more 
 consistently. Nevertheless it is reasonable to focus on both kinds of IAD, as they may excel at different regions of anomaly detection and evaluation criteria. Namely reconstruction methods are 
 often showing a notable performance at pixel level anomaly detection in comparison to feature embedding/representation methods, as their principle is based on pixelwise comparisons of input 
 and reconstructed data.
-
-\input{figures/recon_and_repres_based_diagram.tex}
+\newline
 
 
 Again, looking at the representation based approaches, some distinctions can be made on exactly how the method implements a representation based procedure.
-The main approaches in this category are ones featuring a memory bank, teacher-student architecture, distribution map and ones employ a one-class classification strategy. The characteristics of 
-each strategy are visualized in figure xyz. The subcategory of 
+The main approaches in this category are ones featuring a memory bank, teacher-student architecture, distribution map and ones employ a one-class classification strategy. The subcategory of 
 memory bank denotes the procedure to store feature representations, that are extracted from training images, into a data collection structure. This structure is then used to compare new 
-features from input images to the stored ones to form a decision. Memory bank approaches offer the upside of little training time and quick construction, yet the usually suffer from high memory 
+features from input images to the stored ones to form a decision(see figure \ref{fig:memorybankviz}). Memory bank approaches offer the upside of little training time and quick construction, yet the usually suffer from high memory 
 usage and costly inference, due to the feature representations being stored into memory. Some papers have addressed this problem. Famously patchcore \cite{patchCore2022} introduced a coreset-subsampled 
-memory bank, greatly improving on said bottlenecks and setting precedent for more efficient memory bank approaches. Teacher-student architectures reference the use of two networks for anomaly detection. 
+memory bank, greatly improving on said bottlenecks and setting precedent for more efficient memory bank approaches. \newline
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/memorybankviz.jpg}
+    \caption{Hier korrekt zitieren}
+    \label{fig:memorybankviz}
+\end{figure}
+
+
+Teacher-student architectures(figure \ref{fig:TSviz}) reference the use of two networks for anomaly detection. 
 This architecture has also been one of the more effective ones and its performance greatly depends on factors like the selection of the teacher model and way 
 of knowledge transfer between the two networks. Here the teacher model is usually a pretrained 
 backbone, that transfers knowledge onto the student model during training time, whereas the student model is simultaneously learning representations from the teacher model aswell as learning 
 how to represent the input data by itself. During testing, the extracted features of teacher and student are compared, which would then be similar for normal images but have larger differences 
-when presented an anomalous data point.
+when presented an anomalous data point.\newline
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/TSviz.jpg}
+    \caption{Hier korrekt zitieren}
+    \label{fig:TSviz}
+\end{figure}
+
+
+
 Next, distribution map approaches try to map the features from their original distribution into a more suitable one. This vastly facilitates a identification of anomalous features as shown in 
-figure xyz. Such an approach requires a method to map the features between distributions. Often times a variation of normalizing flow is utilized for this \cite{liu2024deep}. 
+figure \ref{fig:distmapviz}. Such an approach requires a method to map the features between distributions. Often times a variation of normalizing flow is utilized for this \cite{liu2024deep}. 
 Normalizing flows as a class of generative models \cite{Kobyzev_2021normalizingflowexplanation} are advantageous for transforming probability distributions because they provide a flexible 
-framework to model complex distributions and efficient sampling. This enables accurate distribution mapping aswell as sampling. 
-Lastly, one-class classification is 
+framework to model complex distributions and efficient sampling. This enables accurate distribution mapping aswell as sampling. \newline
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/distmapviz.jpg}
+    \caption{Hier korrekt zitieren}
+    \label{fig:distmapviz}
+\end{figure}
+
+Lastly, one-class classification(figure \ref{fig:OCCviz}) is 
 similar to a distribution mapping approach. The key difference is that the latter maps features into a desired distribution and the former focusses on finding boundaries between normal 
 and anomalous features. To efficiently do that, features are projected into a suited space using a network. To learn an accurate boundary, the approaches generate fake anomalous features to 
-then differentiate from normal ones. This method greatly relys on the the quality of generated features and as such may be variyngly effective. A typical approach for generating fake samples 
+then differentiate from normal ones. This method greatly relys on the the quality of generated features and as such its effectiveness may vary. A typical approach for generating fake samples 
 in this works context is with the use of gaussian noise \cite{liu2023simplenet}.
-\newline
-Circling back to reconstruction based methods, they also can be parted into subcategories. Here the most predominating one is the use of autoencoders to obtain a generated image. Many 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/OCCviz.jpg}
+    \caption{Hier korrekt zitieren}
+    \label{fig:OCCviz}
+\end{figure}
+
+
+Circling back to reconstruction(figure \ref{fig:autoencoderviz}) based methods, they also can be parted into subcategories. Here the most predominating one is the use of autoencoders to obtain a generated image. Many 
 reconstruction approaches make use of typical AE encoder and decoder structures. They are mainly seperated by the method of resolving differences between the input image and the reconstructed one. 
 While there are too many difference evaluation approaches to name, DRAEM \cite{Zavrtanik_2021DRAEM} can be named here as one of the most famous reconstruction autoencoder approaches. It uses 
 the output of the reconstructive network in combination with the original image as the input for a discriminative subnetwork and achieves very good results and demonstrated a nearly equal effectiveness 
 of reconstruction based methods to representation based ones. Autoencoder approaches like DRAEM are, despite being popular, often computationally expensive to train for IAD, as they require a lot of 
 training epochs and memory. %stimmt das???
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/autoencoderbiz.jpg}
+    \caption{Hier korrekt zitieren}
+    \label{fig:autoencoderviz}
+\end{figure}
+
+
 Another, albeit less popular, approach in this category would be the use of GAN architectures/concepts to try and solve the detection problem. While we don't cover the basic principles of GANs in 
 this chapter, GANs applied in IAD may still suffer the same disadvantages of regular ones, which include training instability, high computational demand and a higher difficulty of correct training and 
 evaluation. Hence the use of GANs for IAD is not commonly seen, although the nature of them may promise more realistic and higher quality training data than other approaches.
@@ -333,31 +386,36 @@ The datasets used in image anomaly detection are scarce, especially when it come
 and often only one classs. What currently stands out as a gold standard among IAD datasets is the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The authors created it  
 as a highly representative and standardized set of anomalous images along with training images. It has 15 classes from capsules to screws. Moreover the dataset provides image labels aswell as segmentation 
 ground truths, making it versatile and applicable for multiple algorithms. The masks come as black and white grayscale images, while the image labels are given through its folder structure. 
-Its paradigmatic structure tree can be seen in figure xy. As shown, each class contain train images, which only consist of regular examples, 
+Each class contain train images, which only consist of regular examples, 
 and test images. The data among the testing images is categorized by a title describing the anomaly. The ground truth folder contains 
-according ground truths on a pixel level. Example images of the dataset are to be seen in figure z. They typically are of a rectangular shape and their resolutions range from 
+according ground truths on a pixel level.\newline
+Example images of the dataset are to be seen in figure \ref{fig:mvtecexampleimages}. They typically are of a rectangular shape and their resolutions range from 
 700x700 to 1024x1024. More specifications can be found in Bergmann et al. \cite{MVTEC_Bergmann_2021} and the whole dataset is publicly available at the official website\cite{mvtecdownload}.\newline
 The MVTecAD\cite{MVTEC_Bergmann_2021} dataset is regarded highly among IAD papers, and has since its introduction been used in most relevant papers as a dataaset 
 to benchmark the respective approaches on. This is also likely to remain the trend, since many state of the art algorithms in the recent years have primarily been benmarked on it, forcing new approaches 
 to also be benchmarked on this dataset to be comparable to the current highest performance holding approaches. Despite this work focussing on manufacturing settings MVTecAD is one of only two datasets relevant to this work, 
 and serves as a comparison for the performance investigation of this papers approaches on the second dataset. This is mainly due to the dataset's importance and 
 its relation to the second dataset.
-\newline
+
+\input{figures/mvtecadexampleimages/mvtecadexampleimages.tex}
+
 Later in 2022 Bergman et al. has introduced another IAD dataset that is loosely related to their original MVTecAD dataset, namely the MVTecAD LOCO dataset \cite{LOCODentsAndScratchesBergmann2022}. 
-This dataset works with the same ground ideas as their original MVTecAD set, but extends the conceptual contents of the dataset by logical anomalies(neu formulieren das klingt scheiße). 
+This dataset works with the same ground ideas as their original MVTecAD set, but extends the testing contents of the dataset by logical anomalies. 
 It consists of five classes: breakfast box, juice bottle, pushpins, screw bag and splicing connectors. The difference to the other dataset is that the anomalous categories for each class are only seperated into good images, images with structural anomalies 
 and images with logical anomalies. As mentioned in the introduction structural anomalies are visible damages to the objects, similar to the MVTecAD dataset. Logical anomalies denote violations against arbitrary restrictions 
-imposed by the authors. To illustrate this by an example: The class of pushpins represents a birds view of a compartmentised box of pushpins(see figure a). A rule added was, 
+imposed by the authors. To illustrate this by an example: The class of pushpins represents a birds view of a compartmentised box of pushpins(see figure \ref{fig:pushpinviz}). A rule added was, 
 that each compartment is only to contain one pushpin. This means that if one region were to miss their contents, or contain more than one pushpin, it would constitute a logical anomaly. If on the 
-other hand a pushpin would have a crooked or broken tip, it would be  labelled a structural anomaly. Structurally the differences of the 
-MVTecAD and the MVTecAD LOCO dataset can be seen when comparing figures a and b, which showcases the anomaly classification, aswell as 
-the method of storing segmentations. Here there eixists an image file for each anomalous ground truth area, which are mapped to the image 
-by the folder name they are in. Lastly there exists a validation set in this dataset,
-\newline
+other hand a pushpin would have a crooked or broken tip, it would be  labelled a structural anomaly. Fundamentally the differences of the 
+MVTecAD and the MVTecAD LOCO dataset consist of the method to store segmentations. While the former dataset provides one segmentation file per image, here there exists an image 
+file for each anomalous ground truth area, which is mapped to the image by the folder name they are in.
+
+\input{figures/pushpinviz/pushpinviz.tex}
+
+
 The addition of logical constraints opened an interesting area of research, since the high performance 
 of current state of the art algorithms were only measured on structural anomalies so far. Yet it would be insightful to see if those models could also detect logical anomalies, since those also ocurr 
 in real life settings, such as manufacturing settings. Another concept introduced in \cite{LOCODentsAndScratchesBergmann2022} is the 
-saturated per-region overlap score, also sPRO. The metric is further analysed in setion (metrics section), but in short gives a measure 
+saturated per-region overlap score, also sPRO. The metric is further analysed in section \ref{sec:metrics}, but in short gives a measure 
 on how well two regions overlap, while also accounting for regions overlapping in a way, that is seen as sufficient. The criterion of 
 sufficiency is given by a file in the respective class, which maps a saturation score to each kind of anomaly.
 Bergmann et al.\cite{LOCODentsAndScratchesBergmann2022} lastly also released a new IAD model together with the new dataset. The model uses autoencoders(bissi besser beschreiben hier). Since the source code has not been made public, 
