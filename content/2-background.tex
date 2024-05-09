@@ -16,7 +16,7 @@ visualized in Figure \ref{fig:IADcategstree}. Here it has to be said that the fo
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/baumtree.drawio.png}
-    \caption{Overview of IAD methods in a global context. Hier noch ein Satz}
+    \caption{Overview of IAD methods in a global context. The categorization primarily focusses on unsupervised approaches.}
     \label{fig:IADcategstree}
 \end{figure}
 
@@ -54,7 +54,7 @@ memory bank, greatly improving on said bottlenecks and setting precedent for mor
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/memorybankviz.jpg}
-    \caption{Hier korrekt zitieren}
+    \caption{Abstract visualization of the functionality of the memory bank concept. Image taken from \cite{liu2024deep}}
     \label{fig:memorybankviz}
 \end{figure}
 
@@ -70,7 +70,7 @@ when presented an anomalous data point.\newline
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/TSviz.jpg}
-    \caption{Hier korrekt zitieren}
+    \caption{Abstract visualization of the functionality of the teacher-student concept. Image taken from \cite{liu2024deep}}
     \label{fig:TSviz}
 \end{figure}
 
@@ -85,7 +85,7 @@ framework to model complex distributions and efficient sampling. This enables ac
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/distmapviz.jpg}
-    \caption{Hier korrekt zitieren}
+    \caption{Abstract visualization of the functionality of the distribution map concept. Image taken from \cite{liu2024deep}}
     \label{fig:distmapviz}
 \end{figure}
 
@@ -98,7 +98,7 @@ in this works context is with the use of gaussian noise \cite{liu2023simplenet}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/OCCviz.jpg}
-    \caption{Hier korrekt zitieren}
+    \caption{Abstract visualization of the functionality of the one-class classification concept. Image taken from \cite{liu2024deep}}
     \label{fig:OCCviz}
 \end{figure}
 
@@ -113,7 +113,7 @@ training epochs and memory. %stimmt das???
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/autoencoderbiz.jpg}
-    \caption{Hier korrekt zitieren}
+    \caption{Abstract visualization of the functionality of the autoencoder concept. Image taken from \cite{liu2024deep}}
     \label{fig:autoencoderviz}
 \end{figure}
 
@@ -173,7 +173,7 @@ utilized.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/pathcore_architecture.png}
-    \caption{Hier korrekt zitieren}
+    \caption{Structure of PatchCore architecture for training and testing. Image taken from \cite{patchCore2022}.}
     \label{fig:patchcorearchitecture}
 \end{figure}
 
@@ -207,7 +207,7 @@ Moreover it was introduced by (authors of simplenet) as a easy to use or applica
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/simplenet_architecture.png}
-    \caption{Hier korrekt zitieren}
+    \caption{Structure from SimpleNet architecture. Image taken from \cite{liu2023simplenet}.}
     \label{fig:simplenetpipeline}
 \end{figure}
 
@@ -252,25 +252,36 @@ whereas the student model has to predict the teachers feature representation. Th
 the paper introduces a further one-class bottleneck embedding module. This is comprised of a multi-scale feature fusion block to aggregate low and high level features, and a one-calss embedding 
 for retaining essential information important to the students decoding process. 
 
-\begin{figure}[ht]
+
+\begin{figure}[htbp]
+    \captionsetup[subfigure]{justification=centering}
     \centering
-    \includegraphics[width=0.3\textwidth]{figures/revdist_bottleneck.png}
-    \caption{Hier korrekt zitieren}
-    \label{fig:revdistbottleneck}
+    \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
+        \centering
+        \includegraphics[width=0.45\textwidth]{figures/revdist_bottleneck.png}
+        \caption{Image taken from \cite{Deng_2022basicrevdist}.}
+        \label{fig:revdistbottleneck}
+    \end{subfigure}
+    \hspace{0.05\textwidth} % Add space between subfigures
+    \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
+        \centering
+        \includegraphics[width=0.45\textwidth]{figures/revdistpipeline.png}
+        \caption{Image taken from \cite{Deng_2022basicrevdist}.}
+        \label{fig:revdistpipeline}
+    \end{subfigure}
+    
+    \caption{Visualization of reverse distillation approaches \cite{Deng_2022basicrevdist} and \cite{revdist2023}. The former shows 
+    the foundational concept of the bottleneck module used for reverse distillation approaches. The other shows the structural 
+    architecture of the approach used in this works context.}
+    \label{fig:revdistviz}
 \end{figure}
+
 
 Circling back to \cite{revdist2023}, the paper extends the prior reverse distillation approach in a way that limits possible abnormal patterns to heavily impact student learning. To do so they 
 introduce firtly a multiscale teacher architecture aswell as projection blocks after each respective teacher block. Those multiscale projection blocks are made of stacked convolutional blocks 
 and are designed to regulate possible abnormal information patterns that might flow from teacher blocks to the student. This is depicted in figure \ref{fig:revdistpipeline}, which shows the image to describe the 
 approaches training pipeline. For inference the teachers informations are passed to the respective multilayer projection blocks, as well as their students counterparts informations after the 
 reverse distillation process.
-
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.3\textwidth]{figures/revdistpipeline.png}
-    \caption{Hier korrekt zitieren}
-    \label{fig:revdistpipeline}
-\end{figure}
 
 
 \subsection{CSFlow}
@@ -292,7 +303,7 @@ image score for classical anomaly detection as usual.
 \end{figure}
 
 %\newline
-CSFlow has proven state of the art performance on the MVTecAD dataset like the other approaches (table xyz), and makes for precise localization on this dataset. Additionally the cross-scale flow allows 
+CSFlow has proven state of the art performance on the MVTecAD dataset like the other approaches (table \ref{tab:imageaurocmvtec}), and makes for precise localization on this dataset. Additionally the cross-scale flow allows 
 for convenient handling of high dimensionality input with little training data \cite{csflow2022}, which has been a previously reported problem in works like \cite{Rudolph_2021badNF}.
 
 
@@ -301,13 +312,14 @@ for convenient handling of high dimensionality input with little training data \
 
 DRAEM \cite{Zavrtanik_2021DRAEM} is one of the reconstruction based approaches that were selected for this work. This paper is one of the more representative ones for the reconstruction branch of 
 IAD techniques. The method is based on the reconstruction abilities of autoencoders to recreate normal images from altered ones. While in recent research representation based approaches did 
-show SOTA performance more often, DRAEM demonstrated that representation based methods are able to compete in the same region. Tabel xyz shows DRAEMs results on the MVTecAD dataset as reported 
-in their(/authors name) paper.\newline
+show SOTA performance more often, DRAEM demonstrated that representation based methods are able to compete in the same region. Tables \ref{tab:imageaurocmvtec} and 
+\ref{tab:pixelaurocmvtec} shows DRAEMs results on the MVTecAD dataset as reported 
+in their paper.\newline
 
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/DRAEM_pipeline.png}
-    \caption{Hier korrekt zitieren}
+    \caption{Visualization of DRAEM architecture for testing. Image taken from \cite{Zavrtanik_2021DRAEM}.}
     \label{fig:draempipeline}
 \end{figure}
 
@@ -373,7 +385,10 @@ scores for each anomaly have to be individually set for each anomaly, and are gi
 \begin{figure}[ht]
     \centering
     \includegraphics[width=0.3\textwidth]{figures/spro_vs_pro_bergmann.png}
-    \caption{Hier korrekt zitieren}
+    \caption{Example on difference between sPRO and normal PRO through saturation. It shows that for an larger anomalous region, that has no required 
+             position for the anomalous object to be placed, the sPRO already reaches the maximum performance when a sufficiently large 
+             region is segmented. Meanwhile the conventional sPRO metric is strictly rising by the ration of the segmented region to the larger one.
+             Image taken from \cite{LOCODentsAndScratchesBergmann2022}.}
     \label{fig:sprovspro}
 \end{figure}
 
@@ -483,12 +498,30 @@ loss of information when globally applying PCA. Furthermore this approach cannot
 discrepancies in channel number. If the amount of feature maps from one classifier completely predominates, there is a high likelihood 
 that most feature maps that are selected are from this classifier, if not all.
 
-\begin{figure}[ht]
+\begin{figure}[htbp]
+    \captionsetup[subfigure]{justification=centering}
     \centering
-    \includegraphics[width=0.3\textwidth]{figures/global_transformation_block.jpg}
-    \caption{Hier korrekt zitieren}
-    \label{fig:GTBheller}
+    \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
+        \centering
+        \includegraphics[width=0.3\textwidth]{figures/global_transformation_block.jpg}
+        \caption{Global transformation block. The feature maps first get resized and concatenated before PCA is applied.}
+        \label{fig:GTBheller}
+    \end{subfigure}
+    \hspace{0.05\textwidth} % Add space between subfigures
+    \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
+        \centering
+        \includegraphics[width=0.3\textwidth]{figures/independent_transformation_block.jpg}
+        \caption{Independent transformation block. The feature maps are subjected to PCA for cahnnel reduction, before resized and concatenated.}
+        \label{fig:ITBheller}
+    \end{subfigure}
+    
+    \caption{Visualizations of the proposed transformation blocks in \cite{EnsembleHeller2023}. The images show the global transformation 
+             block in comparison to the independent transformation block. Images taken from \cite{EnsembleHeller2023}}
+    \label{fig:hellerensembleblocks}
 \end{figure}
+
+
+
 
 To combat this at a cost of lesser efficiency Heller et al. also introduced a second approach, namely the independent transformation block, 
 visualized in figure \ref{fig:ITBheller}. 
@@ -497,12 +530,6 @@ a certain number of feature map components per classifier. They are then all res
 the concatenation layer. This sequencing allows for maximum information preservation through individual PCA and also to predefine the number 
 of feature maps to be kept per classifier, preventing larger imbalances.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.3\textwidth]{figures/independent_transformation_block.jpg}
-    \caption{Hier korrekt zitieren}
-    \label{fig:ITBheller}
-\end{figure}
 
 
 \section{Model Calibration}

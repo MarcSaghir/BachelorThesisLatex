@@ -1,21 +1,15 @@
 \begin{thebibliography}{10}
 
-\bibitem{MVTEC_Bergmann_2021}
-P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``The mvtec
-  anomaly detection dataset: A comprehensive real-world dataset for
-  unsupervised anomaly detection,'' {\em International Journal of Computer
-  Vision}, vol.~129, p.~1038–1059, Jan. 2021.
-
-\bibitem{LOCODentsAndScratchesBergmann2022}
-P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Beyond
-  dents and scratches: Logical constraints in unsupervised anomaly detection
-  and localization,'' {\em International Journal of Computer Vision}, vol.~130,
-  p.~947–969, Feb. 2022.
-
 \bibitem{liu2024deep}
 J.~Liu, G.~Xie, J.~Wang, S.~Li, C.~Wang, F.~Zheng, and Y.~Jin, ``Deep
   industrial image anomaly detection: A survey,'' {\em Machine Intelligence
   Research}, vol.~21, no.~1, pp.~104--135, 2024.
+
+\bibitem{patchCore2022}
+K.~Roth, L.~Pemula, J.~Zepeda, B.~Scholkopf, T.~Brox, and P.~Gehler, ``Towards
+  total recall in industrial anomaly detection,'' {\em 2022 IEEE/CVF Conference
+  on Computer Vision and Pattern Recognition (CVPR)}, p.~14318–14328, Jun
+  2022.
 
 \bibitem{liu2023simplenet}
 Z.~Liu, Y.~Zhou, Y.~Xu, and Z.~Wang, ``Simplenet: A simple network for image
@@ -23,10 +17,16 @@ Z.~Liu, Y.~Zhou, Y.~Xu, and Z.~Wang, ``Simplenet: A simple network for image
   Conference on Computer Vision and Pattern Recognition}, pp.~20402--20411,
   2023.
 
-\bibitem{csflow2022}
-M.~Rudolph, T.~Wehrbein, B.~Rosenhahn, and B.~Wandt, ``Fully convolutional
-  cross-scale-flows for image-based defect detection,'' in {\em Winter
-  Conference on Applications of Computer Vision (WACV)}, Jan. 2022.
+\bibitem{Deng_2022basicrevdist}
+H.~Deng and X.~Li, ``Anomaly detection via reverse distillation from one-class
+  embedding,'' in {\em 2022 IEEE/CVF Conference on Computer Vision and Pattern
+  Recognition (CVPR)}, IEEE, June 2022.
+
+\bibitem{revdist2023}
+T.~D. Tien, A.~T. Nguyen, N.~H. Tran, T.~D. Huy, S.~T. Duong, C.~D.~T. Nguyen,
+  and S.~Q.~H. Truong, ``Revisiting reverse distillation for anomaly
+  detection,'' in {\em Proceedings of the IEEE/CVF Conference on Computer
+  Vision and Pattern Recognition (CVPR)}, pp.~24511--24520, June 2023.
 
 \bibitem{Zavrtanik_2021DRAEM}
 V.~Zavrtanik, M.~Kristan, and D.~Skocaj, ``DrÆm – a discriminatively trained
@@ -34,11 +34,33 @@ V.~Zavrtanik, M.~Kristan, and D.~Skocaj, ``DrÆm – a discriminatively trained
   IEEE/CVF International Conference on Computer Vision (ICCV)}, IEEE, Oct.
   2021.
 
-\bibitem{revdist2023}
-T.~D. Tien, A.~T. Nguyen, N.~H. Tran, T.~D. Huy, S.~T. Duong, C.~D.~T. Nguyen,
-  and S.~Q.~H. Truong, ``Revisiting reverse distillation for anomaly
-  detection,'' in {\em Proceedings of the IEEE/CVF Conference on Computer
-  Vision and Pattern Recognition (CVPR)}, pp.~24511--24520, June 2023.
+\bibitem{LOCODentsAndScratchesBergmann2022}
+P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Beyond
+  dents and scratches: Logical constraints in unsupervised anomaly detection
+  and localization,'' {\em International Journal of Computer Vision}, vol.~130,
+  p.~947–969, Feb. 2022.
+
+\bibitem{MVTEC_Bergmann_2021}
+P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``The mvtec
+  anomaly detection dataset: A comprehensive real-world dataset for
+  unsupervised anomaly detection,'' {\em International Journal of Computer
+  Vision}, vol.~129, p.~1038–1059, Jan. 2021.
+
+\bibitem{EnsembleHeller2023}
+G.~Heller, E.~Perrin, V.~Vrabie, C.~Dusart, M.-L. Panon, M.~Loyaux, and
+  S.~Le~Roux, ``Multisource neural network feature map fusion: An efficient
+  strategy to detect plant diseases,'' {\em Intelligent Systems with
+  Applications}, vol.~19, p.~200264, Sept. 2023.
+
+\bibitem{openaifeaturerepres}
+``Open ai microscope.''
+  \url{https://microscope.openai.com/models/resnetv2_50_slim?models.technique=deep_dream}.
+\newblock Accessed: 2024-05-08.
+
+\bibitem{csflow2022}
+M.~Rudolph, T.~Wehrbein, B.~Rosenhahn, and B.~Wandt, ``Fully convolutional
+  cross-scale-flows for image-based defect detection,'' in {\em Winter
+  Conference on Applications of Computer Vision (WACV)}, Jan. 2022.
 
 \bibitem{worldsteel}
 ``2023 world steel in figures.''
@@ -54,12 +76,6 @@ G.~Xie, J.~Wang, J.~Liu, J.~Lyu, Y.~Liu, C.~Wang, F.~Zheng, and Y.~Jin,
 W.-H. Chu and K.~M. Kitani, {\em Neural Batch Sampling with Reinforcement
   Learning for Semi-supervised Anomaly Detection}, p.~751–766.
 \newblock Springer International Publishing, 2020.
-
-\bibitem{patchCore2022}
-K.~Roth, L.~Pemula, J.~Zepeda, B.~Scholkopf, T.~Brox, and P.~Gehler, ``Towards
-  total recall in industrial anomaly detection,'' {\em 2022 IEEE/CVF Conference
-  on Computer Vision and Pattern Recognition (CVPR)}, p.~14318–14328, Jun
-  2022.
 
 \bibitem{Kobyzev_2021normalizingflowexplanation}
 I.~Kobyzev, S.~J. Prince, and M.~A. Brubaker, ``Normalizing flows: An
@@ -97,11 +113,6 @@ T.~Defard, A.~Setkov, A.~Loesch, and R.~Audigier, {\em PaDiM: A Patch
   Distribution Modeling Framework for Anomaly Detection and Localization},
   p.~475–489.
 \newblock Springer International Publishing, 2021.
-
-\bibitem{Deng_2022basicrevdist}
-H.~Deng and X.~Li, ``Anomaly detection via reverse distillation from one-class
-  embedding,'' in {\em 2022 IEEE/CVF Conference on Computer Vision and Pattern
-  Recognition (CVPR)}, IEEE, June 2022.
 
 \bibitem{Rudolph_2021badNF}
 M.~Rudolph, B.~Wandt, and B.~Rosenhahn, ``Same same but differnet:
@@ -149,12 +160,6 @@ J.~Large, J.~Lines, and A.~Bagnall, ``A probabilistic classifier ensemble
 \bibitem{Guo_2017_tempscalingetc}
 C.~Guo, G.~Pleiss, Y.~Sun, and K.~Q. Weinberger, ``On calibration of modern
   neural networks,'' ICML, 2017.
-
-\bibitem{EnsembleHeller2023}
-G.~Heller, E.~Perrin, V.~Vrabie, C.~Dusart, M.-L. Panon, M.~Loyaux, and
-  S.~Le~Roux, ``Multisource neural network feature map fusion: An efficient
-  strategy to detect plant diseases,'' {\em Intelligent Systems with
-  Applications}, vol.~19, p.~200264, Sept. 2023.
 
 \bibitem{whyUncertaintyIsImportant}
 S.~McGrath, P.~Mehta, A.~Zytek, I.~Lage, and H.~Lakkaraju, ``When does

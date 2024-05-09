@@ -26,7 +26,7 @@ rules as logical constraints, whereas the flat conenctor as such may posess mult
 \newline
 Further regarding the flat size specifications, we used regulatory flat 
 connectors of size $100x35 mm$ which are widely available at hardware stores and at \cite{flatconnectorlink}. The surface of the flat connectors is galvanized 
-and displays a CE-label acoording to DIN EN 14545. Images of normal flat connectors without manipulations can be viewed in figure xyz.
+and displays a CE-label acoording to DIN EN 14545. Images of normal flat connectors without manipulations can be viewed in appendix figure \ref{fig:flatgoodimages}.
 
 
 \input{figures/flatconnectordatasetimages/faltdatasetfigure.tex}
@@ -36,16 +36,16 @@ and displays a CE-label acoording to DIN EN 14545. Images of normal flat connect
 \section{Data Acquisition Setup}
 \label{sec:faltconnectordataacquisiton}
 
-The images for the dataset were taken in the university facilities. An exemplary setup for image acquisition can be viewed in figure xyz(images von setup). The contraption to capture images was 
-done by mounting a camera on to a pole that was attached to a small table, pointing the camera lens at the table from an overhead perspective. The distance between camera lens and the table surface was approximately (angabe) cm and the main light source in the 
-images was delivered by a softbox(stimmt das?). Regarding the background of the object, a black cloth was chosen to be layed flat on the table, where the object would then be put. For 
+The images for the dataset were taken in the university facilities. An exemplary setup for image acquisition can be viewed in figure \ref{fig:setupofdatacollection}. The contraption to capture images was 
+done by utilizing a camera mounted to an robotic arm, pointing the camera lens at the table from an overhead perspective. The distance between camera lens and the table surface was approximately 15 cm and the main light source in the 
+images was delivered by a built in flash light of the arm. Regarding the background of the object, a black cloth was chosen to be layed flat on the table, where the object would then be put. For 
 an increased variety, multiple flat connectors were bought and filmed. Here each one was manually rotated after each shot, to acheive different object orientations and thus a more robust training 
 set. Each flat connector was rotated a total of six times per side, resulting in 12 normal images per flat connector object. \newline
-The camera used to take pictures was a (camera modell) which produced the images of the flat connectors in a (pixel angaben) resolution. (guccken obs stimmt) Due to the large size of the resulting 
-images, they were resized to (pixel angaben) with amounts to roughly (prozen angabe) \% of the original image size.\newline
+The camera used to take pictures produced the images of the flat connectors in a 4k resolution. Due to the large size of the resulting 
+images, their size was adjusted by half of the original image size.\newline
 To obtain segmentation labels, a free polygon annotation software was used to then label anomalous regions in the images. The annotations were done by hand and by the author of this work. In accord to 
 MVTecAD LOCO standards \cite{LOCODentsAndScratchesBergmann2022} each kind of anomaly would be assigned a different pixel value to differentiate them when working with saturation thresholds 
-as mentioned in setion \ref{sec:datasets}. Example annotations can be viewed in figure xyz, where several original images are depicted next to the produced segmentation labels. Just like in the 
+as mentioned in setion \ref{sec:datasets}. Example annotations can be viewed in figure \ref{sec:flatconnectoranomalies}, where several original images are depicted next to the produced segmentation labels. Just like in the 
 original MVTecAD LOCO dataset, image labels were not explicitly given since they can be inferred by the anomaly class.
 
 
@@ -56,7 +56,7 @@ original MVTecAD LOCO dataset, image labels were not explicitly given since they
 \label{sec:flatconnectoranomalies}
 
 To a certain degree the common MVTecAD LOCO clases all posess a balanced amount of logical and structural anomalies. Therefore the collection of possible anomalies for this class was kept at an even structural 
-to logical ratio. The anomalies listed below can be viewed in figure xyz where exemplary anomalous images are displayed next to their corresponding ground truth mask.
+to logical ratio. The anomalies listed below can be viewed in figure \ref{fig:flatconnectorexampleimages} where exemplary anomalous images are displayed next to their corresponding ground truth mask.
 
 \subsection{Structural Anomalies}
 Structural anomalies in this case were comparably simple to think of an execute since they only involved damaging some area of the flat connector. Here we also tried to represent a variety of 
@@ -64,7 +64,7 @@ certain characteristics of anomalies among the ones we chose. An example would b
 First of we produced the structural anomaly of a cut off corner. Ths was done by simply using a metal saw to remove a corner of the flat connector. This is an anomaly with a comparably large 
 surface area and clean edges to predict. Next we again used a etal saw to damage the edges of the flat connector by cutting out pieces of or simply sawing into the edges of the object. One image 
 of this anomaly type contained multiple damages spots on multiple edges. Due to the cuts partially being very small, this makes for an anomaly with very small ground truth areas as seen in figure 
-xyz. As a last structural anomaly the saw was used to apply deep scratches on the object. This is mimicing another type of anomaly sometimes found in the classes of splicing connectors and pushpins 
+\ref{fig:damagededgesubfig}. As a last structural anomaly the saw was used to apply deep scratches on the object. This is mimicing another type of anomaly sometimes found in the classes of splicing connectors and pushpins 
 in the original dataset. The common characteristic is that the region is very slim and long, making for better comparisons.
 
 \subsection{Logical Anomalies}
