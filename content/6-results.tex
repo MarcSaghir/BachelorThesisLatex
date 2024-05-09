@@ -1,22 +1,22 @@
 \chapter{Discussion}
 \label{chap:results}
 
-- describe function of this chapter
+- describe function of this chapter\newline
 
-at reader: I have some text/images for this but it is very scattered. Therefore i firstly just included the bullet points so you can comment on the contents.
+at reader: I have some text/images for this but it is very scattered. Therefore i firstly just included the bullet points so you can comment on the contents.\newline
 
 
 \section{Current Approaches Performance on Classical LOCO Dataset}
 \label{sec:locoresultssota}
 
-- describe trend seen in experiments section
-- review classes with generally good performance
-- review (nature of) anomalies that were especially easy/hard
+- describe trend seen in experiments section\newline
+- review classes with generally good performance\newline
+- review (nature of) anomalies that were especially easy/hard\newline
 
-- discuss differences in performance among IAD approaches
--> also if some classifiers were better/had more weaknesses in specific regions that others
+- discuss differences in performance among IAD approaches\newline
+-> also if some classifiers were better/had more weaknesses in specific regions that others\newline
 
-- compare sPRO of classifiers to sPRO of approaches specifically designed for LOCO like \cite{LOCODentsAndScratchesBergmann2022}
+- compare sPRO of classifiers to sPRO of approaches specifically designed for LOCO like \cite{LOCODentsAndScratchesBergmann2022}\newline
 
 %In this section we review the performance of prior introduced anomaly detection methods. All experiments were performed with the same 
 %experimental setup as explained in section (referenz of experimental setup section), the conditions explained in section (referenz von methods section über loco) 
@@ -43,10 +43,10 @@ at reader: I have some text/images for this but it is very scattered. Therefore 
 \section{Flat Connector}
 \label{sec:flatconnectordiscussion}
 
-- same analysis of metrics as above
-- also analyse different anomaly types
+- same analysis of metrics as above\newline
+- also analyse different anomaly types\newline
 
-- first analyse only with above approaches
+- first analyse only with above approaches\newline
 
 
 
@@ -56,68 +56,17 @@ at reader: I have some text/images for this but it is very scattered. Therefore 
 \subsection{Independent Transformation Block}
 \label{subsec:ITBfaildiscussion}
 
-- give possible reasons for failure of this methods
--> explain that applying pca to non ensemble features also resulted in this noise, therefore fault must lie with pca
--> give reasons why pca can fail(non linear dependency, ...)
+- give possible reasons for failure of this methods\newline
+-> explain that applying pca to non ensemble features also resulted in this noise, therefore fault must lie with pca\newline
+-> give reasons why pca can fail(non linear dependency, ...)\newline
 
 
 \subsection{Stacking Ensemble}
 \label{subsec:stackingdiscussion}
 
-
-Notizen für diese section:
-- hier soll reportet werden wie das ensemble sich geschlagen hat
-- dazu brauche ich:
--> metriken(AUROC sPRO und vllt pixel auroc) von dem ensemble auf flat connector + mvtec loco
--> beispielhafte segmentierungen
--> plots von loss und auroc über training
-
-- drauf eingehen wo sich das ensemble wie gut geschlagen hat
--> vergleich mit patchcore und simplenet wichtig, gerne auch mit DRAEM vergleichen als reconstruction representativer algo
--> sagen bei welchen klassen es gut und nicht so gut geklappt hat, vergleichen mit ergebnissen aus LOCO studie oben drüber(vllt in conclusion?)
--> mehr images in appendix anbieten
+- interpret similar to loco survey section\newline
+- also look at how the two experiments performed(hierarchy vs variety)\newline
 
 
 
 
-\section{Ensemble Network}
-\label{sec:ensembleconclusion}
-
-- einleitungssatz dass hier die ensemble analyse für den flachverbinder kommt
-
-\subsection{Independent Transformation Block}
-\label{subsec:ITBfailconc}
-
-- sagen dass analyse ergeben hat dass pca hier gefailt hat. testweise wurde auch pca auf nur die simplenet features angewandt, und zeigte ähnliche ergebnisse.
-- das heißt fehler liegt wahrscheinlich bei pca
--> gründe nennen, zB: pca ist nicht immer anwendbar, nur bei linearen dependencies
--> belegen mit quelle wo grenze von PCA ist
-- sagen was potentiell getan werden kann, zb tSNE und Kernel PCA als verfahren nennen um so probleme zu überbrücken plus quellen
-
-
-\subsection{Stacking Ensemble}
-\label{subsec:stackingconc}
-
-\section{SOTA performance}
-\label{sec:sotaperformanceconc}
-
-\section{Flat connector}
-\label{sec:flatconnectorconc}
-
-- performance von den ansätzen auf flat connector bewerten
-- vergleiche zum restlichen loco dataset ziehen bzgl performance
-- wenn ich das gemacht habe dann auch vergleiche zwischen strukturellen und logischen anomalien performance machen
-
-- schlussendlich sagen ob die klasse sich gelohnt hat, oder zu einfach war und welche aspekte sehr herausfordernd waren(zb der loch größen unterschied)
-
-\section{Outlook}
-\label{sec:outlook}
-
-
-- schreiben was es noch für coole dataset categories gab -> multiperspective angle und blech konstruktion mit schrauben
-
-subsection ensemble network
-- schreiben dass man an der feature ensembling methode arbeiten kann, zb halt mit tsne oder kernel PCA da neue sachen probieren kann, sonst auch anderen methoden außer stacking(beispiel)
-- man kann die layer der verschiedenen backbones optimieren plus die kombi
-- schreiben die einbindung von andern approaches ins ensemble wie das füttern von patchcore mit diesen features
-- generelles hinzufügen von anderen feature approaches weil ensemble ja blackbox mäßig ist.

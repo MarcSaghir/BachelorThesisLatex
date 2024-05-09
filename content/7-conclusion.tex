@@ -5,17 +5,19 @@
 \section{Conclusion}
 \label{sec:realconclusion}
 
-- conclusion performance change of state of the art methods/current capabilities of detecting logical anomalies
+- conclusion performance change of state of the art methods/current capabilities of detecting logical anomalies\newline
 
-- conclusion of flat connector as a class
--> was it challenging
--> were the results similar to other classes
--> were the anomalies picked well%(im bezug auf wie man weitere hätte machen können)
+- conclusion of flat connector as a class\newline
+-> was it challenging\newline
+-> were the results similar to other classes\newline
+-> were the anomalies picked well%(im bezug auf wie man weitere hätte machen können)\newline
 
-- conlusion of ensemble approach + pipeline
--> did it work
--> were the improvements significant/promising
--> current state of the pipeline
+- conlusion of ensemble approach + pipeline\newline
+-> did it work\newline
+--> hierarchy of features vs variety of backbones\newline
+%simplenet sagt ja eh dass features 2-3 am besten waren also bringt es probably weniger da mehr layers reinzuholen?
+-> were the improvements significant/promising\newline
+-> current state of the pipeline\newline
 
 
 
@@ -23,24 +25,44 @@
 \section{Outlook}
 \label{sec:finaloutlook}
 
-- how to proceed with findings from survey
--> either here or below in ensemble section: mention idea of fusing patchcore and simplenet
+After concluding the findings of this work it is imperative to analyze aspects that could have been done differently, or discuss new possible research that could emerge from 
+the basis of this work as well as related work.\newline
 
-- how to possibly extend/modify the flat connector class/LOCO dataset
--> different anomalies?
--> different logical rules with multiple objects?
--> new class ideas?
---> angle for multiperspective class
---> metal plate with screws
+\subsection{Current IAD Methods}
+The conclusions drawn from the survey were reported in the previous section. The decreasing performance trend for logical anomaly detection in overall performance suggests 
+current IAD approaches to be unsuitable to reach the same effectiveness as on structural ones. This calls for a shift in fundamental perspective of visual anomaly 
+detection methods, tailoring them towards logical anomaly detection as in \cite{LOCODentsAndScratchesBergmann2022}, or try to improve them by combining them to raise their performance. Solutions to approach this problem could consist of combining 
+those state of the art methods into potentially more effective ones, by using the upsides of multiple IAD methods to produce new approaches. An example for this would be a 
+merger of the PatchCore \cite{patchCore2022} and SimpleNet \cite{liu2023simplenet} methods. Using a feature adapter, trained in the latter approach, to project feature 
+representations before adding them to a memory bank could constitute for an interesting step in this direction. 
 
-- how to improve the ensemble
--> experiment more with different backbones/other hierarchies of different backbones
+\subsection{Novel Dataset Classes}
+Regarding the novel dataset category introduced in chapter \ref{chap:datasets}, it was apparent that the performance of all approaches was significantly higher than for other classes. 
+As this may be an indicator for the class to be to easy, it is key to look forward on how to either modify the class, or introduce new ones that have similar representation in a 
+manufacturing context. \newline
+With respect to current implemented logical anomalies of the flat connector class, it may be resource extensive but worth to professionally produce anomalous flat connectors. This 
+could cause more real looking anomalies and even help create new ones. Exemplary one could shift the position of a hole as a new logical anomaly category. Alternatively the classes 
+of missing holes could be produced free of artifacts, potentially leading to new results and more precise conclusions. Another way to extend the anomalies introduced for this 
+object would be to work with arbitrary logical rules for collections of flat connectors. This could include presenting a grid of flat connectors and detecting missing ones or falsely 
+oriented ones, similar to the pushpin class of the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset.\newline 
+Since the effort to extend the logical anomaly dataset is ongoing, there are numerous possibilities on how to do so. Instances may include a class consisting to a metal angle. 
+Here it would be a noteworthy opportunity to construct this class as a multiperspective dataset, as the angle may have different orientations and ambiguous positions. Depending 
+on the orientation of the angle on the surface, one camera might not be able to capture every aspect of the three dimensional object. An approach could be to learn several models 
+on different perspectives and ensemble classifier outputs or even feature representations afterwards.
 
--> ensemble as double black box
+\subsection{Ensemble}
 
---> use another method to ensemble the feature maps
----> fix/replace PCA like mentioned in Discussion
----> other approach like learn with specialized ensembling network
-
---> find differnt kinds of feature representations and input them to the network
+\textbf{Backbones.} An outlook on backbones used for this works ensemble approach is to conduct more experiments with either other backbones or a higher variety of hierarchies. 
+This may be conducted in either the same way as done here or with potentially different architectures.
+\newline\newline
+\textbf{Ensembling Method.} The discussion made it apparent that the independent transformation block \cite{EnsembleHeller2023} or at least PCA is not applicable in this context. 
+Still, there may be solutions to more efficiently combine different feature representations. In the case that the PCA did not work as intended on the features due to non linear 
+relationships of the variables, there are methods to overcome that problem. They include methods like t-SNE\cite{tSNE} or kernel PCA \cite{Hoffmann_2007kernelPCA}, both potentially 
+viable methods for this problem. Furthermore there exist possibilities outside of standard dimensionality reduction that may be experimented on. Possible approaches may include 
+utilizing networks similar to the feature adapter approach from Simplenet (section \ref{subsec:simplenet}) to ensemble features channel wise.
+\newline\newline
+\textbf{Feature Representations.} Lastly, as mentioned in the conclusion, the current ensemble network is currently a pipeline that consists of two black boxes, one for the ensemble 
+members feature representations and one for the chosen ensemble methods. The latter is covered in the last subsection. For the box of feature representations there are ablation 
+experiments to be done using different IAD approaches. One could introduce new appropriate feature representations from different IAD methods to input to the ensemble pipeline for 
+further studies.
 
