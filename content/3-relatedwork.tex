@@ -1,8 +1,8 @@
 \chapter{Novel Dataset Class}
 \label{chap:datasets}
 
-In this chapter we present the novel dataset category representing a flat connector. Mainly the sections will revolve around the specifics of the flat connector object, the setup used to 
-record the data and produce labels, as well as the anomalies that can be incorporated into this object. Section \ref{sec:flatconnectoranomalies} also reviews the steps that went into producing the specific anomalies 
+This chapter introduces the novel dataset category representing a flat connector. Mainly the sections will revolve around the specifics of the flat connector object, the setup used to 
+record the data and produce labels, as well as the anomalies that were chosen for this class. Section \ref{sec:flatconnectoranomalies} also reviews the steps that went into producing the specific anomalies 
 and how to recreate them.
 
 
@@ -80,7 +80,7 @@ is admissible to predict the whole hole as an anomalous region.  %vor der abgabe
 Here a drill tip was used with a slightly higher radius that the original hole to enlarge the diameter.
 
 
-\subsection{Saturation Thresholds and Outlook}
+\subsection{Saturation Thresholds}
 
 The saturation scores for the anomalies, as discussed in section \ref{sec:datasets} were put at the amount of pixels in the anomalous region for all above listed anomalies respectively.
 This was because the nature of presented anomalies of this categories calls for a full segmentation of the respective anomaly for a perfect result. Unlike in the pushpin example given in that section 
