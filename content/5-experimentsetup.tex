@@ -20,28 +20,38 @@ environment files in the project code.
 \section{MVTecAD LOCO Experiments}
 \label{sec:locoxperiments}
 
-- report metric changes between MVTecAD and MVTecAD LOCO datasets(perfromance going down, etc.)\newline
-- show reference images from the experiments
-%In this section we review the performance of prior introduced anomaly detection methods. All experiments were performed with the same 
-%conditions explained in section (referenz von methods section über loco) 
-%and on the MVTecAD LOCO dataset \cite{LOCODentsAndScratchesBergmann2022}. 
-%The results of inference on the test set can be seen in table x (tabelle mit ergebnissen). As it can be seen, all models scored a significantly 
-%lower result on the MVTecAD LOCO dataset than on the normal MVTecAD one(exemplary scores seen in table xy(table mit normalen mvtec scores)). 
-%A lower performance is generally to be expected, since firstly logial anomalies are regarded as a more difficult problem than structual 
-%ones and secondly the average SOTA performances as seen in table x(tabelle mit ergebnissen) is already closing in on an AUROC of of 1. 
-%(den satz rechts von hier müsste man maybe rausmachen oder umschreiben)Therefore there is not much room for further improvement in similar settings, and a worse performance still aknowledgeable as very good. 
-%Yet there is an drop in cross-model average AUROC of approcimately (durchschnitts drop ausrechnen), which is a remarkable(synonym) difference. 
-%Most other metrics, namely (metrics names), also declined with an respective average of (respective averages). As explained in section 
-%(referenz zu metrics section von background), the sPRO (or rather AU-sPRO) was a score introduced in \cite{LOCODentsAndScratchesBergmann2022} to gain an 
-%advanced insight on the quality of segmentations. This means that all approaches who either were published before or did not include this 
-%paper in their research likely did not include this metric, which holds true for the approahces used for this experiment. Therefore no comparison 
-%in sPRO/AU-sPRO can be shown(vllt einfach spro auch für allte ansätze implementieren?? dann kann ich den satz ändern). Comparing the sPRO 
-%scores of the SOTA methods in this experiment with the ones from compared to GCAD \cite{LOCODentsAndScratchesBergmann2022} shows asignificantly 
-%(abchecken ob wirklich) worse performance.
-%Among the different models, the highest scoring one was PatchCore \cite{patchCore2022}. It scored an average (metrics einfügen) feature embedding based approaches like  
-%achieved the highest scoring
+In this section we review the performance of the IAD methods mentioned in section \ref{sec:IADmethods} on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} 
+dataset. Tables xyz, xyz, and xyz each display the experiments with regards to one of the metrics: image AUROC, pixel AUROC and sPRO. \newline
+Comparing the average image and pixel AUROCs to the ones reported in the chapter \ref{chap:background} a decrease in performance is visible. 
+This is also true in regards to the pixel wise AUROC on average. (noch hinschreiben welche classifier den maximalen drop off hatten und 
+welche den wenigsten hatten). (Schreiben Welche classifier on average die besten waren für jede metric)
 
-%Interpretation of results hier, weiß nicht in welche section das eigentlich muss:
+- image auroc Tabelle hier hin
+
+Investigating the column wise performance, the classes of the dataset seem to have varying challenge levels. Albeit some fluctuations, 
+the juice bottle class seems to be consistently getting very high results in image and pixel AUROC, especially regarding the latter. 
+Conversely, the class screw seems to often have lower image AUROC resuts.
+
+- pixel auroc hier hin
+
+
+The sPRO values calculated for the approaches were of poor performance as seen in table xyz. Despite this, comparing the metrics to the 
+class averages reportet in \cite{LOCODentsAndScratchesBergmann2022}, the results seem legitimate. Bergmann et al. review several methods 
+in this paper that they selected to be applicable on logical anomalies. The lowest scoring models were often barely above some metrics reportet 
+below, if at all. (Beschreiben wer so gute ansätze sind bei sPRO on average)
+
+- sPRO tabelle hier hin
+
+Figure xyz shows exemplary metrics divided by structural and logical anomalies. Here a better performance is clearly visible for the 
+class of structural anomalies, suggesting logical anomalies to be distinctively more difficult to corregtly predict and segment.
+
+- bild mit logical vs anomalous hier hin
+
+Additionally below in figure xyz are exemplary images from multiple classes that showcase good and bad segmentation results. 
+
+- Figure mit segmentation results
+
+
 
 \input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
 
@@ -55,8 +65,8 @@ environment files in the project code.
 \section{Ensemble Network}
 \label{sec:ensembleresults}
 
-This section reports the results of the ensemble network approach on the class flat connector %austauchen? 
-as a flagship experiment for the rest of the dataset. More results from other classes of the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} set are to be found in appendix (referenz). All conclusions drawn from this 
+This section reports the results of the ensemble network approach on the class flat connector to facilitate understanding of a visual 
+analyis. More results from other classes of the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} set are to be found in appendix (referenz). Conclusions drawn from this 
 experiment are also applicable to the other classes. Firstly the results from the primary ensemble approach from section \ref{sec:featurelevelensemble} are reported. Afterwards 
 the results of the secondary ensemble approach are presented, supported by according metrics and segmentation examples.
 
@@ -77,34 +87,32 @@ in the conclusion, not relevant and will not be part of further review. Thus no 
 \subsection{Stacking Ensemble}
 \label{subsec:stacking}
 
-This subsection reports the performance of both ensemble experiments with stacking as the ensemble method. Firstly it will cover experiments conducted combining different layer 
-hierarchies from backbones. Afterwards the ensemble of multiple backbones with similar hierarchies is presented.
+This experiment is split into two smaller experiments. One investigates the performance of ensembling higher and lower level features in 
+single backbones, wheras the other one regards standard backbone ensembling with the ones mentioned in section \ref{sec:ensemblecandidates}. 
 
-\textbf{Hierarchy Levels.} The results of ensembling different hierarchies exhibit a degree of diversity between different layer hierarchies. As briefly menitoned in section \ref{sec:ensemblecandidates}, the resnet backbones consist of four 
-layers, in other words they contain four larger sequential blocks. Inference with an backbone of subtype resnet resulted in unusable results, segmentation wise. 
-Figure xyz exemplary showcases the segmentation results of training using the wideresnet50 backbone. The image and pixel AUROC were unstable and poor over the course of the training, 
-as figure xyz suggests, and therefore were not recorded explicitly for multiple classes, as this was the case for all trainings. The loss visible in figure xyz furthermore 
-showcases that the training process was flawed. Due to these findings the following experiments only consider earlier layers if diverging from the standard layers 
-discussed in section \ref{sec:ensemblecandidates}.
-
-%figures
-
-Experiments combining lower layer aggregations yielded different results. Table xyz summarises the reported metrics on the flat connector class, and figure xyz showcases exemplary 
-segmentation images of the experiments. More data is to be found in the appendix.
-
-figures und tabellen hier
+- table mit metrics
 
 
-
-\textbf{Backbone Ensemble.} The second experiment revolved around ensembling the three backbone types from section \ref{sec:ensemblecandidates}. Additionally a control experiment was 
-conducted combining only two feature extractors, ResNet50 \cite{He_2016resnet} and Wideresnet50 \cite{wideresnet}. Table xyz presents the results of both experiments on the flat 
-connector class. %falls ich für die approaches abkürzungen benutze dann das da hin schreiben
-Moreover figure xyz displays segmentations of test images by the first ensemble, whereas figure xyz shows the segmentation results by the second experiment.
+\textbf{Feature Hierarchies.}
 
 
+\textbf{Backbone Ensemble.} The performance of this approach is visible in table xyz. The performance is visible worse from the performance 
+reported by the standard simplenet approach. Yet the results suggest usable results unlike the experiment conducted in section \ref{subsec:ITBfail}. 
+Moreover the loss, presented in figure xyz, suggests a conceptually adequate learning. The performance could not be increased by a higher 
+epoch count as to be seen by the loss progression in the other subfigure.
 
-- report metrics of stacking ensemble performance\newline
--> one experiment when stacking different backbones\newline
--> one experiment when stacking different hierarchies\newline
+- loss figure
+
+Moreover figure xyz showcases exemplary segmentation results on the flat connector class. As 
+seen the ensemble ouputs consist of a lot more uncertainty, as the values are closer together and visually harder to distinguish This uncertainty 
+was higher for logical anomalies than for structural ones. Still, 
+using threshoolding the results are usable, as often anomalous regions are discernible. Figure xyz also showcases examples of failed segmentation 
+attempts. 
+
+- figure mit segments 
+
+As a comparison figure xyz displays example segmentations from the individual backbones. Here there is a lot less uncertainty or 
+noise than in the ensembled approach. This makes for worse or at least more unstable ensemble performance, especially regarding segmentation. 
+The implications and reasons of this are taken up in the next chapter.
 
 

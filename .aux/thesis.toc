@@ -34,19 +34,19 @@
 \contentsline {section}{\numberline {5.2}MVTecAD LOCO Experiments}{31}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Flat Connector Experiments}{32}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Ensemble Network}{32}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Independent Transformation Block}{32}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.1}Independent Transformation Block}{33}{subsection.5.4.1}%
 \contentsline {subsection}{\numberline {5.4.2}Stacking Ensemble}{33}{subsection.5.4.2}%
-\contentsline {chapter}{\numberline {6}Discussion}{34}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Current Approaches Performance on Classical LOCO Dataset}{34}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Flat Connector}{34}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Ensemble Performance}{35}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Independent Transformation Block}{35}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Stacking Ensemble}{35}{subsection.6.3.2}%
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{36}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusion}{36}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Outlook}{36}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Current IAD Methods}{36}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Novel Dataset Classes}{37}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Ensemble}{37}{subsection.7.2.3}%
-\contentsline {chapter}{\numberline {A}Appendix}{41}{appendix.A}%
+\contentsline {chapter}{\numberline {6}Discussion}{35}{chapter.6}%
+\contentsline {section}{\numberline {6.1}MVTecAD LOCO Experiments}{35}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Flat Connector}{35}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Ensemble Performance}{36}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Independent Transformation Block}{36}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Stacking Ensemble}{36}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{37}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusion}{37}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Outlook}{37}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Current IAD Methods}{38}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Novel Dataset Classes}{38}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Ensemble}{38}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {A}Appendix}{43}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -25,10 +25,10 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Sorted normed anomaly scores for the MVTecAD \cite {MVTEC_Bergmann_2021} class broken bottle and applied platt scaling calibration. The x-axis represents the anomaly score value for each entry, and the y-axis the confidence for the curve. Here confidence is defined as the confidence that the sample is anomalous}}{29}{figure.caption.32}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Effects of changing parameters k and t and exemplary calibration for the MVTecAD \cite {MVTEC_Bergmann_2021} class broken bottle}}{30}{figure.caption.33}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Representative segmentation results from PatchCore \cite {patchCore2022} on the breakfast box class of the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{31}{figure.caption.34}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Results of using the Independent Transformation Block \cite {EnsembleHeller2023} for the ensemble process for the flat connector class. These results are also produced when just applying PCA to a single ensemble member and training with it.}}{32}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Representative segmentation results from PatchCore \cite {patchCore2022} on the breakfast box class of the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{32}{figure.caption.34}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Results of using the Independent Transformation Block \cite {EnsembleHeller2023} for the ensemble process for the flat connector class. These results are also produced when just applying PCA to a single ensemble member and training with it.}}{33}{figure.caption.35}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Visualizations for the general process of representation and reconstruction based IAD methods.}}{42}{figure.caption.37}%
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Example images of normal flat connectors.}}{42}{figure.caption.38}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Visualizations for the general process of representation and reconstruction based IAD methods.}}{44}{figure.caption.37}%
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Example images of normal flat connectors.}}{44}{figure.caption.38}%
