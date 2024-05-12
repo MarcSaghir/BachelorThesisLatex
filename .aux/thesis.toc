@@ -42,11 +42,11 @@
 \contentsline {section}{\numberline {6.3}Ensemble Performance}{36}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Independent Transformation Block}{36}{subsection.6.3.1}%
 \contentsline {subsection}{\numberline {6.3.2}Stacking Ensemble}{36}{subsection.6.3.2}%
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{37}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusion}{37}{section.7.1}%
-\contentsline {section}{\numberline {7.2}Outlook}{37}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Current IAD Methods}{38}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Novel Dataset Classes}{38}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Ensemble}{38}{subsection.7.2.3}%
-\contentsline {chapter}{\numberline {A}Appendix}{43}{appendix.A}%
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{38}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusion}{38}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Outlook}{38}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Current IAD Methods}{39}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Novel Dataset Classes}{39}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Ensemble}{39}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {A}Appendix}{44}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
