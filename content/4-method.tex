@@ -46,14 +46,20 @@ segmentation artifacts of certain classifier methods. The results can be viewed 
 
 %!BILD von pipeline machen!
 
-The following subsections deal with the individual components of our ensemble network pipeline, referencing concepts discussed in chapter \ref{chap:background}. First we produce cut off models 
-and an ensembling mechanism in accord to \cite{EnsembleHeller2023}. By leveraging different feature representations of the ensemble 
-members, as well as various feature hierarchies of the same network, we aim to improve the prior results of single classifiers.\newline 
-For the actual IAD process, this approach is based on the SimpleNet method \cite{liu2023simplenet}. 
-The discriminator presented there potentially makes for an easy to implement, yet powerful method of differentiating between anomalous and normal images, as seen by the performance of the original 
-SimpleNet approach. 
+The following subsections deal with the individual components of our ensemble network pipeline, referencing concepts discussed in chapter \ref{chap:background}. Our Ensemble pipeline 
+consists of multiple parts(Fig. \ref{fig:ensemblepipeline}). Firstly we leverage different feature representations to act as the ensemble members, which are comprised of 
+different pretrained feature extractors combined with trained feature adapters. Section \ref{sec:ensemblecandidates} elaborates on the choices of candidate backbones. Next the pipeline 
+utilizes conepts discussed in section \ref{sec:ensembles} to merge the different feature representations into one. Afterwards we adopt the process of SimpleNet's \cite{liu2023simplenet} 
+approach to train a simple two layer discriminator for differentiating between real features and ones altered by gaussian noise. Before the merged features are input into the 
+discriminator, they are projected by a global feature adapter that is trained in parallel to the discriminator. Section \ref{sec:discriminator} further dsicusses this procedure.
 
-- figure of pipline
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ensemblepipeline.png}
+    \caption{Sorted normed anomaly scores for the MVTecAD \cite{MVTEC_Bergmann_2021} class broken bottle and applied platt scaling calibration. The x-axis represents 
+            the anomaly score value for each entry, and the y-axis the confidence for the curve. Here confidence is defined as the confidence that the sample is anomalous}
+    \label{fig:ensemblepipeline}
+\end{figure}
 
 
 \subsection{Ensemble Members}
@@ -123,13 +129,12 @@ along with the predicted anomaly scores of 20 normal images.
 
 \begin{figure}[htbp]
     \centering
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/anomaly_scores_sorted.png}
         \caption{Normed anomaly scores for images of the broken bottle class and normal images.}
         \label{fig:scoresNormed}
     \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.4\textwidth}
+    \begin{subfigure}[b]{0.45\textwidth}
         \includegraphics[width=\textwidth]{figures/anomaly_calibration_step.png}
         \caption{Applied platt scaling calibration for the normed scores.}
         \label{fig:platt}

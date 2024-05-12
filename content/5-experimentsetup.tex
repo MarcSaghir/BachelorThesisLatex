@@ -95,12 +95,17 @@ single backbones, wheras the other one regards standard backbone ensembling with
 
 \textbf{Hierarchy Levels.} The results of ensembling different hierarchies exhibit a degree of diversity between different layer hierarchies. As briefly menitoned in section \ref{sec:ensemblecandidates}, the resnet backbones consist of four 
 layers, in other words they contain four larger sequential blocks. Inference using higher level feature representations with an backbone of subtype resnet resulted in unusable results, segmentation wise. 
-Figure xyz exemplary showcases the segmentation results of training using the wideresnet50 backbone. The image and pixel AUROC were unstable and poor over the course of the training, 
+Figure xyz exemplary showcases the segmentation results of training using the wideresnet50 backbone and including a feature aggregation between layers 3 and 4. 
+
+\input{figures/faillayer34/faillayersegmentations.tex}
+
+The image and pixel AUROC were unstable and poor over the course of the training, 
 as figure xyz suggests, and therefore were not recorded explicitly for multiple classes, as this was the case for all trainings. The loss visible in figure xyz furthermore 
 showcases that the training process was flawed. Due to these findings the following experiments only consider earlier layers if diverging from the standard layers 
 discussed in section \ref{sec:ensemblecandidates}.
 
-- loss fail plus example images
+\input{figures/faillayer34/failmetricsandloss.tex}
+
 
 
 Experiments combining lower layer aggregations yielded different results. Table xyz summarises the reported metrics on the flat connector class, and figure xyz showcases exemplary 

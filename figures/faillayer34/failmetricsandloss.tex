@@ -1,0 +1,15 @@
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{figures/faillayer34/auprosetc.png}
+        \caption{Testing metrics over the course of 30 meta epochs. Usually may contain fluctuations, but not of this amplitude.}
+        \label{fig:failmetrics}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{figures/faillayer34/loss_fail.png}
+        \caption{The networks loss during 30 meta epochs. Shows only very little deviations from value 1, not desirable behavior.}
+        \label{fig:failloss}
+    \end{subfigure}
+    \caption{Training metrics and loss of ensemble network training, utilizing layer 4.}
+    \label{fig:failmetricsloss}
+\end{figure}
