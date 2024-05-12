@@ -1,21 +1,21 @@
 # Fdb version 4
-["bibtex .aux/thesis"] 1715288784 ".aux/thesis.aux" ".aux/thesis.bbl" ".aux/thesis" 1715288858 0
+["bibtex .aux/thesis"] 1715364354 ".aux/thesis.aux" ".aux/thesis.bbl" ".aux/thesis" 1715364378 0
   "./literature/lit.bib" 1715272989 18720 554719b66ddd54a77b5ecb369dd450ee ""
-  ".aux/thesis.aux" 1715288856 43679 98ca6517661ba2643c21a31a56a1e027 "pdflatex"
+  ".aux/thesis.aux" 1715364377 43726 d0533db11d027906ed4e148bdbf1de5e "pdflatex"
   "C:/Users/Marc/Documents/MikeTeX/bibtex/bst/bibtex/ieeetr.bst" 1291867944 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
   (generated)
   ".aux/thesis.bbl"
   ".aux/thesis.blg"
   (rewritten before read)
-["pdflatex"] 1715288846 "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" ".aux/thesis.pdf" "thesis" 1715288858 0
-  ".aux/pdfa.xmpi" 1715288848 5352 5eeec4befc21ad8b041db9a66dd9c90e "pdflatex"
-  ".aux/thesis.aux" 1715288856 43679 98ca6517661ba2643c21a31a56a1e027 "pdflatex"
-  ".aux/thesis.bbl" 1715288785 9099 fd113061e81e580589d0fbc1089a5dd0 "bibtex .aux/thesis"
-  ".aux/thesis.lof" 1715288856 6016 c058c3a0f05d18c8593585ed924c4ae8 "pdflatex"
-  ".aux/thesis.lot" 1715288856 1117 bc7d41957fcb908e6c5187c1f793ea30 "pdflatex"
-  ".aux/thesis.out" 1715288849 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  ".aux/thesis.toc" 1715288856 4035 82c73a06d9b73ea1785cd1561fec1e1b "pdflatex"
-  ".aux/thesis.xmpdata" 1715288849 156 7625225de524fc182788bc8165d9bdf3 "pdflatex"
+["pdflatex"] 1715364366 "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" ".aux/thesis.pdf" "thesis" 1715364378 0
+  ".aux/pdfa.xmpi" 1715364368 5352 3b0fa8fd976119c3f8654ed95e8c800b "pdflatex"
+  ".aux/thesis.aux" 1715364377 43726 d0533db11d027906ed4e148bdbf1de5e "pdflatex"
+  ".aux/thesis.bbl" 1715364354 9099 fd113061e81e580589d0fbc1089a5dd0 "bibtex .aux/thesis"
+  ".aux/thesis.lof" 1715364377 6016 c058c3a0f05d18c8593585ed924c4ae8 "pdflatex"
+  ".aux/thesis.lot" 1715364377 1117 bc7d41957fcb908e6c5187c1f793ea30 "pdflatex"
+  ".aux/thesis.out" 1715364370 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  ".aux/thesis.toc" 1715364377 4035 82c73a06d9b73ea1785cd1561fec1e1b "pdflatex"
+  ".aux/thesis.xmpdata" 1715364370 156 7625225de524fc182788bc8165d9bdf3 "pdflatex"
   "<pdfa.xmpi" 1701615181 5400 0 ""
   "C:/Users/Marc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1715167988 406948 f00ee10c0f47365afc777a762ea862bb ""
   "C:/Users/Marc/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1700406096 24135773 aae61aac971fd122a4112c3229286075 ""
@@ -372,8 +372,8 @@
   "content/2-background.tex" 1715288325 53301 a86097ec52708ac2880966409625132b ""
   "content/3-relatedwork.tex" 1715287586 9723 78a6efd69872a253135255f7d005afe0 ""
   "content/4-method.tex" 1715288845 15933 d4e7b518235d8d7dc3709c2e945b696b ""
-  "content/5-experimentsetup.tex" 1715288750 6446 bc848a517ea8a26518b1ceb8df6a9565 ""
-  "content/6-results.tex" 1715288771 4214 3aafbec0eacd1c1e68da5fb2d4ba40c9 ""
+  "content/5-experimentsetup.tex" 1715364335 8662 8a2f0f572ac9c13de5c33e995eddcb60 ""
+  "content/6-results.tex" 1715364363 4768 162c2d5190cbfadc170b109d7a837bc5 ""
   "content/7-conclusion.tex" 1715288785 5898 8e7961a1220c98307e9b85fcd537ac5b ""
   "figures/DRAEM_pipeline.png" 1714236173 187723 8dfcd6a03997a4a8910d645fb954a1ee ""
   "figures/anomaly_calibration_soft.png" 1714743667 29977 35f92b590f977a3f06f05e0dbb239558 ""

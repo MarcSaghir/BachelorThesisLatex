@@ -77,6 +77,32 @@ in the conclusion, not relevant and will not be part of further review. Thus no 
 \subsection{Stacking Ensemble}
 \label{subsec:stacking}
 
+This subsection reports the performance of both ensemble experiments with stacking as the ensemble method. Firstly it will cover experiments conducted combining different layer 
+hierarchies from backbones. Afterwards the ensemble of multiple backbones with similar hierarchies is presented.
+
+\textbf{Hierarchy Levels.} The results of ensembling different hierarchies exhibit a degree of diversity between different layer hierarchies. As briefly menitoned in section \ref{sec:ensemblecandidates}, the resnet backbones consist of four 
+layers, in other words they contain four larger sequential blocks. Inference with an backbone of subtype resnet resulted in unusable results, segmentation wise. 
+Figure xyz exemplary showcases the segmentation results of training using the wideresnet50 backbone. The image and pixel AUROC were unstable and poor over the course of the training, 
+as figure xyz suggests, and therefore were not recorded explicitly for multiple classes, as this was the case for all trainings. The loss visible in figure xyz furthermore 
+showcases that the training process was flawed. Due to these findings the following experiments only consider earlier layers if diverging from the standard layers 
+discussed in section \ref{sec:ensemblecandidates}.
+
+%figures
+
+Experiments combining lower layer aggregations yielded different results. Table xyz summarises the reported metrics on the flat connector class, and figure xyz showcases exemplary 
+segmentation images of the experiments. More data is to be found in the appendix.
+
+figures und tabellen hier
+
+
+
+\textbf{Backbone Ensemble.} The second experiment revolved around ensembling the three backbone types from section \ref{sec:ensemblecandidates}. Additionally a control experiment was 
+conducted combining only two feature extractors, ResNet50 \cite{He_2016resnet} and Wideresnet50 \cite{wideresnet}. Table xyz presents the results of both experiments on the flat 
+connector class. %falls ich für die approaches abkürzungen benutze dann das da hin schreiben
+Moreover figure xyz displays segmentations of test images by the first ensemble, whereas figure xyz shows the segmentation results by the second experiment.
+
+
+
 - report metrics of stacking ensemble performance\newline
 -> one experiment when stacking different backbones\newline
 -> one experiment when stacking different hierarchies\newline

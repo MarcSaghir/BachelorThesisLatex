@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  9 MAY 2024 23:07
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  10 MAY 2024 20:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2081,12 +2081,12 @@ File: figures/pca_results/pca_res.png Graphic file (type png)
 <use figures/pca_results/pca_res.png>
 Package pdftex.def Info: figures/pca_results/pca_res.png  used on input line 18.
 (pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 80--83
+) [32 <./figures/pca_results/cut_corner.png> <./figures/pca_results/cut_corner_mask.png> <./figures/pca_results/pca_res.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 106--109
 
  []
 
-[32 <./figures/pca_results/cut_corner.png> <./figures/pca_results/cut_corner_mask.png> <./figures/pca_results/pca_res.png>]) (content/6-results.tex [33]
+) (content/6-results.tex [33]
 chapter 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 4--5
@@ -2131,7 +2131,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--62
 [34
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 67--69
+Underfull \hbox (badness 10000) in paragraph at lines 71--73
 
  []
 
@@ -2216,28 +2216,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 192--195
 ) [40] (meta/appendix.tex
 chapter A.
 (figures/recon_and_repres_based_diagram.tex
-<figures/represbased_viz.png, id=850, 282.30469pt x 432.86719pt>
+<figures/represbased_viz.png, id=855, 282.30469pt x 432.86719pt>
 File: figures/represbased_viz.png Graphic file (type png)
 <use figures/represbased_viz.png>
 Package pdftex.def Info: figures/represbased_viz.png  used on input line 5.
 (pdftex.def)             Requested size: 225.34708pt x 345.53464pt.
-<figures/rec_based.png, id=851, 292.84406pt x 435.12563pt>
+<figures/rec_based.png, id=856, 292.84406pt x 435.12563pt>
 File: figures/rec_based.png Graphic file (type png)
 <use figures/rec_based.png>
 Package pdftex.def Info: figures/rec_based.png  used on input line 12.
 (pdftex.def)             Requested size: 225.34708pt x 334.84857pt.
 ) (figures/flatconnectorgoodimages/goodflatimages.tex
-<figures/flatconnectorgoodimages/278.png, id=852, 3372.6pt x 2505.36pt>
+<figures/flatconnectorgoodimages/278.png, id=857, 3372.6pt x 2505.36pt>
 File: figures/flatconnectorgoodimages/278.png Graphic file (type png)
 <use figures/flatconnectorgoodimages/278.png>
 Package pdftex.def Info: figures/flatconnectorgoodimages/278.png  used on input line 6.
 (pdftex.def)             Requested size: 128.0374pt x 95.11292pt.
-<figures/flatconnectorgoodimages/269.png, id=853, 3372.6pt x 2505.36pt>
+<figures/flatconnectorgoodimages/269.png, id=858, 3372.6pt x 2505.36pt>
 File: figures/flatconnectorgoodimages/269.png Graphic file (type png)
 <use figures/flatconnectorgoodimages/269.png>
 Package pdftex.def Info: figures/flatconnectorgoodimages/269.png  used on input line 11.
 (pdftex.def)             Requested size: 128.0374pt x 95.11292pt.
-<figures/flatconnectorgoodimages/255.png, id=854, 3372.6pt x 2505.36pt>
+<figures/flatconnectorgoodimages/255.png, id=859, 3372.6pt x 2505.36pt>
 File: figures/flatconnectorgoodimages/255.png Graphic file (type png)
 <use figures/flatconnectorgoodimages/255.png>
 Package pdftex.def Info: figures/flatconnectorgoodimages/255.png  used on input line 16.
@@ -2259,17 +2259,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 53042 strings out of 475246
- 1142190 string characters out of 5763892
+ 53045 strings out of 475246
+ 1142265 string characters out of 5763892
  1991785 words of memory out of 5000000
  73108 multiletter control sequences out of 15000+600000
- 687257 words of font info for 278 fonts, out of 8000000 for 9000
+ 687618 words of font info for 280 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11004b,2810s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_e24joy.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/RobotoMono-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (48 pages, 89162159 bytes).
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (48 pages, 89165626 bytes).
 PDF statistics:
- 1086 PDF objects out of 1200 (max. 8388607)
+ 1091 PDF objects out of 1200 (max. 8388607)
  193 named destinations out of 1000 (max. 500000)
  57419 words of extra memory for PDF output out of 61914 (max. 10000000)
 
