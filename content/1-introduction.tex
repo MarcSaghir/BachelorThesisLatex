@@ -16,7 +16,7 @@ well researched research field it is today.\newline
 IAD, in our context, is a subcategory of general anomaly detection 
 and aims at distinguishing images of a category that conform to some chosen norm from anomalous images of the same category that do not. 
 An example would be creating a classifier that is given the image of a screw and can detect whether it conforms to our expectations, 
-which in a manufacturing setting likely means to meet the company's quality standards.
+which in a manufacturing setting likely means to meet the company's quality standards(Fig. xyz(figure mit schrauben)).
 \newline
 With IAD, being a very recent and popular field, there are various deep learning apporaches that have established themselves over 
 the last couple of years. The best performing ones have generally been unsupervised learning approaches. This stems from the fact, that 
@@ -24,7 +24,7 @@ in any manufacturing setting, there usually exist far less anomalous parts than 
 Moreover, it can pose as difficult to actually obtain a large number of data points and great variance, since it is a lot of work to 
 coordinate with adequate manufacturing facilities and implement the necessary infrastructure to take pictures. This problem is supported 
 by the fact that there are little well established datasets being used for modern IAD research. There are still some credible and widely used 
-datasets, amongst them the MVTecAD \cite{MVTEC_Bergmann_2021} dataset acting as some sort of gold standard. The dataset will be discussed in greater detail 
+datasets, amongst them the MVTecAD \cite{MVTEC_Bergmann_2021} dataset acting as a gold standard. The dataset will be discussed in greater detail 
 in the background chapter. Regarding the kind of unsupervised anomaly detection methods, there is again a great variety of approaches that follow a 
 distinct strategy of differentiating between the classes. Still most of them can be categorized with two classes: representation- 
 or reconstruction-based methods. While representation approaches aim at creating a feature representation to then 
@@ -44,10 +44,10 @@ set of rules. More concretely this can mean instances like a metal part with an 
 state of the art approaches produce performance metrics of up to $99.6 \% $ on classifying structural anomalies, they 
 strongly diverge in anomaly localization performance. Moreso does the performance plummet when approaching to classify and localize logical 
 anomalies. Additionally models often show inconsistencies between individual subtypes of structural and logical anomalies, especially during 
-localization. Another important consideration is, that most anomaly detection approaches have distinct weaknesses, which worsens most 
+localization. Another important consideration is, that most anomaly detection approaches have distinct weaknesses, which worsen most 
 of their performances in certain situations. These inconsistencies and performance gaps demonstrate that IAD as such is not yet solved and still has a need for improved 
 robustness and generalizability. This need also holds true due to logical anomalies making up an important new domain of automated 
-quality control, as more complex parts could be tested for requirements. Moreover the showcasing of performance inconsistencies between 
+quality control, as more complex parts could be tested for requirements. Moreover, the showcasing of performance inconsistencies between 
 structural and logical anomalies indicate the latter being of a different problem domain. Achieving better translation between those 
 settings could serve as a basis for tackling other problems in this field that may arise in future settings.
 
@@ -62,10 +62,10 @@ further push the progress of robust anomaly localization.
   to build a feature level ensemble network, combining various feature representations with the goal to improve 
   general performance alongside robustness in logical anomaly localization and detection. This ensemble network is then tested on 
   the MVTecAD LOCO dataset to observe its performance regarding both anomaly types.
-  \item Furthermore, an extensive study on the performance of a diverse selection of IDA methods on the MVTecAD LOCO dataset is performed. 
+  \item Furthermore, an extensive study on the performance of a diverse selection of IAD methods on the MVTecAD LOCO dataset is performed. 
   This serves to highlight the current state of anomaly detection with respect to logical problems, and also investigate the application potential of 
   those approaches a form of transfer learning setting.
-  \item Second to, last we introduce a new category to the MVTecAD LOCO dataset to further increase the diversity of this dataset and strengthen the focus 
+  \item Second to last, we introduce a new category to the MVTecAD LOCO dataset to further increase the diversity of this dataset and strengthen the focus 
   of this thesis on metal manufactured parts. Many datasets either use synthetic data or images in a very clinical setting, therefore this 
   attempt for variance is also a step towards IAD on more realistic datasets.
   \item Finally, the mentioned network and experiments are also streamlined into an easy to use pipeline 

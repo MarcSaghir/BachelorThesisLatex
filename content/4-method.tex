@@ -25,7 +25,7 @@ have to be done in a future work. Metrics that are specifically looked at in thi
 If the functionality to evaluate these metrics was already given, the results of inference were taken from the original code, else the according functionality 
 was implemented in this work and used to produce the according metrics. Moreover the results investigate possible causes and effects regarding the segmentation/localization results of the 
 classifiers. This is not done according to an official metric but in a more descriptive sense.
-Papers whose approaches were evaluated using the MVTecAD LOCO dataset were: SimpleNet \cite{liu2023simplenet}, PatchCore \cite{patchCore2022}, \cite{csflow2022} and \cite{Zavrtanik_2021DRAEM}. (list of paper references with names). 
+Papers whose approaches were evaluated using the MVTecAD LOCO dataset were: SimpleNet \cite{liu2023simplenet}, PatchCore \cite{patchCore2022}, \cite{csflow2022} and \cite{Zavrtanik_2021DRAEM}. 
 These papers were discussed in more depth in the backgrounds section and any specifics like 
 hyperparameters can be viewed in the corresponding paper. Furthermore all named classifiers were including, among other variable measures, 
 a preprocessing step to resize the input image. This makes for a variable model input and also the ability to process rectangular images, 
@@ -68,7 +68,7 @@ discriminator, they are projected by a global feature adapter that is trained in
 For the ensemble to be one, we need multiple feature representations to combine. Since the overall ensemble strategy heavily relies on SimpleNets \cite{liu2023simplenet} architecture 
 it is fitting to utilize features derived by separate backbones, along with an according trained feature adapter.\newline
 The backbones used are all residual networks by nature: ResNet18 \cite{He_2016resnet}, ResNet50 \cite{He_2016resnet} and Wideresnet50 \cite{wideresnet}. SimpleNet cuts of its 
-standard backbone Wideresnet50 at its middle two layers, layer 2 and layer3, and then aggregates the extracted features from there. The first ensemble experiment will combine 
+standard backbone Wideresnet50 at its middle two layers, layer 2 and layer 3, and then aggregates the extracted features from there. The first ensemble experiment will combine 
 feature representations from all three backbones, cut off at the same layers as the standard procedure. Additionally there will be a second experiment that aggregates features 
 from separate hierarchies. This is founded on the knowledge that each network hierarchy contains individual feature representations as visualized in figure \ref{fig:featurelayers}. 
 These images, taken from \cite{openaifeaturerepres}, showcase how features differentiate themselves at distinct levels. Early features often represent simple patterns like edges, 

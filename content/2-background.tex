@@ -7,11 +7,11 @@ state of the art methods and IAD specific datasets. Lastly it will cover relevan
 \section{Categorization of Anomaly detection}
 \label{sec:IADcategs}
 Over the last years a great amount approaches trying to IAD have been published. In order to compare separate anomaly detection methods, categorizing them with respect to various 
-aspects serves an improved comparative analysis in regards of strengths and weaknesses. It also helps gain a better understanding of the approaches in the global IAD context and
+aspects serves an improved comparative analysis in regards of strengths and weaknesses. It also helps to gain a better understanding of the approaches in the global IAD context and
 is useful detect possible patterns in performance correlated to categories. Survey papers like Xie et al. \cite{Xie_2024benchmarking} and 
 Liu et al.
 \cite{liu2024deep} primarily compare but also categorize IAD approaches, leading to the conclusion that there are applicable ways to group certain approaches, as 
-visualized in Figure \ref{fig:IADcategstree}. Here it has to be said that the following categorizations naturally are a generalization, as there may be certain niche settings or approaches who combine multiple categories.
+visualized in figure \ref{fig:IADcategstree}. Here it has to be said that the following categorizations naturally are a generalization, as there may be certain niche settings or approaches who combine multiple categories.
 
 \begin{figure}[ht]
     \centering
@@ -47,19 +47,19 @@ and reconstructed data.
 Again, looking at the representation-based approaches, some distinctions can be made on exactly how the method implements a representation-based procedure.
 The main approaches in this category are ones featuring a memory bank, teacher-student architecture, distribution map and ones employ a one-class classification strategy. The subcategory of 
 memory bank denotes the procedure to store feature representations, that are extracted from training images, into a data collection structure. This structure is then used to compare new 
-features from input images to the stored ones to form a decision(see figure \ref{fig:memorybankviz}). Memory bank approaches offer the upside of little training time and quick construction, yet the usually suffer from high memory 
+features from input images to the stored ones to form a decision (Fig. \ref{fig:memorybankviz}). Memory bank approaches offer the upside of little training time and quick construction, yet the usually suffer from high memory 
 usage and costly inference, due to the feature representations being stored into memory. Some papers have addressed this problem. Famously PatchCore \cite{patchCore2022} introduced a coreset-subsampled 
 memory bank, greatly improving on said bottlenecks and setting precedent for more efficient memory bank approaches. \newline
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/memorybankviz.jpg}
-    \caption{Abstract visualization of the functionality of the memory bank concept. Image taken from \cite{liu2024deep}}
+    \caption{Abstract visualization of the functionality of the memory bank concept \cite{liu2024deep}}
     \label{fig:memorybankviz}
 \end{figure}
 
 
-Teacher-student architectures(figure \ref{fig:TSviz}) reference the use of two networks for anomaly detection. 
+Teacher-student architectures(Fig. \ref{fig:TSviz}) reference the use of two networks for anomaly detection. 
 This architecture has also been one of the more effective ones and its performance greatly depends on factors like the selection of the teacher model and way 
 of knowledge transfer between the two networks. Here the teacher model is usually a pretrained 
 backbone, that transfers knowledge onto the student model during training time, whereas the student model is simultaneously learning representations from the teacher model as well as learning 
@@ -70,13 +70,13 @@ when presented an anomalous data point.\newline
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/TSviz.jpg}
-    \caption{Abstract visualization of the functionality of the teacher-student concept. Image taken from \cite{liu2024deep}}
+    \caption{Abstract visualization of the functionality of the teacher-student concept \cite{liu2024deep}}
     \label{fig:TSviz}
 \end{figure}
 
 
 
-Next, distribution map approaches try to map the features from their original distribution into a more suitable one. This vastly facilitates a identification of anomalous features as shown in 
+Next, distribution map approaches try to map the features from their original distribution into a more suitable one. This vastly facilitates an identification of anomalous features as shown in 
 figure \ref{fig:distmapviz}. Such an approach requires a method to map the features between distributions. Often times a variation of normalizing flow is utilized for this \cite{liu2024deep}. 
 Normalizing flows as a class of generative models \cite{Kobyzev_2021normalizingflowexplanation} are advantageous for transforming probability distributions because they provide a flexible 
 framework to model complex distributions and efficient sampling. This enables accurate distribution mapping as well as sampling. \newline
@@ -85,11 +85,11 @@ framework to model complex distributions and efficient sampling. This enables ac
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/distmapviz.jpg}
-    \caption{Abstract visualization of the functionality of the distribution map concept. Image taken from \cite{liu2024deep}}
+    \caption{Abstract visualization of the functionality of the distribution map concept \cite{liu2024deep}}
     \label{fig:distmapviz}
 \end{figure}
 
-Lastly, one-class classification(figure \ref{fig:OCCviz}) is 
+Lastly, one-class classification(Fig. \ref{fig:OCCviz}) is 
 similar to a distribution mapping approach. The key difference is that the latter maps features into a desired distribution and the former focuses on finding boundaries between normal 
 and anomalous features. To efficiently do that, features are projected into a suited space using a network. To learn an accurate boundary, the approaches generate fake anomalous features to 
 then differentiate from normal ones. This method greatly relies on the quality of generated features and as such its effectiveness may vary. A typical approach for generating fake samples 
@@ -98,12 +98,12 @@ in this works context is with the use of gaussian noise \cite{liu2023simplenet}.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/OCCviz.jpg}
-    \caption{Abstract visualization of the functionality of the one-class classification concept. Image taken from \cite{liu2024deep}}
+    \caption{Abstract visualization of the functionality of the one-class classification concept \cite{liu2024deep}}
     \label{fig:OCCviz}
 \end{figure}
 
 
-Circling back to reconstruction-based (figure \ref{fig:autoencoderviz}) methods, they also can be parted into subcategories. Here the most predominating one is the use of autoencoders to obtain a generated image. Many 
+Circling back to reconstruction-based (Fig. \ref{fig:autoencoderviz}) methods, they also can be parted into subcategories. Here the most predominating one is the use of autoencoders to obtain a generated image. Many 
 reconstruction approaches make use of typical AE encoder and decoder structures. They are mainly separated by the method of resolving differences between the input image and the reconstructed one. 
 While there are too many difference evaluation approaches to name, DRAEM \cite{Zavrtanik_2021DRAEM} can be named here as one of the most famous reconstruction autoencoder approaches. It uses 
 the output of the reconstructive network in combination with the original image as the input for a discriminative subnetwork and achieves very good results and demonstrated a nearly equal effectiveness 
@@ -113,7 +113,7 @@ training epochs and memory. %stimmt das???
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/autoencoderbiz.jpg}
-    \caption{Abstract visualization of the functionality of the autoencoder concept. Image taken from \cite{liu2024deep}}
+    \caption{Abstract visualization of the functionality of the autoencoder concept \cite{liu2024deep}}
     \label{fig:autoencoderviz}
 \end{figure}
 
@@ -173,7 +173,7 @@ utilized.
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/pathcore_architecture.png}
-    \caption{Structure of PatchCore architecture for training and testing. Image taken from \cite{patchCore2022}.}
+    \caption{Structure of PatchCore architecture for training and testing \cite{patchCore2022}.}
     \label{fig:patchcorearchitecture}
 \end{figure}
 
@@ -207,7 +207,7 @@ Moreover it was introduced by Liu et al. as a easy to use or application friendl
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/simplenet_architecture.png}
-    \caption{Structure from SimpleNet architecture. Image taken from \cite{liu2023simplenet}.}
+    \caption{Structure from SimpleNet architecture \cite{liu2023simplenet}.}
     \label{fig:simplenetpipeline}
 \end{figure}
 
@@ -246,7 +246,7 @@ approaches its performance is also dependent on the quality of the backbone feat
 
 As a teacher student model, \cite{revdist2023} has shown to produce state of the art results on current datasets. The paper is an extension of a previous reverse distillation approach from 
 \cite{Deng_2022basicrevdist}. The base paper utilizes knowledge distillation through a classical teacher student architecture as explained in section \ref{sec:IADcategs}, though they stand out 
-due to two key differences visualized in figure \ref{fig:revdistbottleneck}. Firstly they present a unconventional knowledge distillation flow as shown. The direct distillation through the teacher network still exists, 
+due to two key differences visualized in figure \ref{fig:revdistbottleneck}. Firstly they present a unconventional knowledge distillation flow. The direct distillation through the teacher network still exists, 
 yet the input image does not directly influence the student learning anymore. This results in increased compactness as the low dimensional output of the teacher model is fed to the student, 
 whereas the student model has to predict the teachers feature representation. This mimics the encoder - decoder structure and therefore may yield advantges that come with this approach. Secondly 
 the paper introduces a further one-class bottleneck embedding module. This is comprised of a multi-scale feature fusion block to aggregate low and high level features, and a one-calss embedding 
@@ -256,22 +256,22 @@ for retaining essential information important to the students decoding process.
 \begin{figure}[htbp]
     \captionsetup[subfigure]{justification=centering}
     \centering
-    \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
+    \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
         \centering
-        \includegraphics[width=0.45\textwidth]{figures/revdist_bottleneck.png}
+        \includegraphics[width=\textwidth]{figures/revdist_bottleneck.png}
         \caption{Image taken from \cite{Deng_2022basicrevdist}.}
         \label{fig:revdistbottleneck}
     \end{subfigure}
     \hspace{0.05\textwidth} % Add space between subfigures
-    \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
+    \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
         \centering
-        \includegraphics[width=0.45\textwidth]{figures/revdistpipeline.png}
-        \caption{Image taken from \cite{Deng_2022basicrevdist}.}
+        \includegraphics[width=\textwidth]{figures/revdistpipeline.png}
+        \caption{Image taken from \cite{revdist2023}.}
         \label{fig:revdistpipeline}
     \end{subfigure}
     
-    \caption{Visualization of reverse distillation approaches \cite{Deng_2022basicrevdist} and \cite{revdist2023}. The former shows 
-    the foundational concept of the bottleneck module used for reverse distillation approaches. The other shows the structural 
+    \caption{Visualization of reverse distillation approaches \cite{Deng_2022basicrevdist} and \cite{revdist2023}. a) shows 
+    the foundational concept of the bottleneck module used for reverse distillation approaches. b) shows the structural 
     architecture of the approach used in this works context.}
     \label{fig:revdistviz}
 \end{figure}
@@ -320,7 +320,7 @@ in their paper.\newline
 \begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth]{figures/DRAEM_pipeline.png}
-    \caption{Visualization of DRAEM architecture for testing. Image taken from \cite{Zavrtanik_2021DRAEM}.}
+    \caption{Visualization of DRAEM architecture for testing. \cite{Zavrtanik_2021DRAEM}.}
     \label{fig:draempipeline}
 \end{figure}
 
@@ -363,14 +363,14 @@ binary classification and gives an indication on how good the model is able to d
 
 Its calculation can be seen in 
 table \ref{tab:metrics}. Moreover it can be used on a pixel level, which is also a popular approach but not utilized everywhere.
-Next in importance is the per-region overlap(PRO) score or also the area under the PRO score(AU-PRO). This metric denotes the per-region overlap of two areas 
+Next in importance is the per-region overlap (PRO) score or also the area under the PRO score (AU-PRO). This metric denotes the per-region overlap of two areas 
 on a pixel level and can be calculated using the averaged sum of the ratio between true positives and ground truth pixels per predicted area. The two areas 
 compared are generally an image mask and the according segmentation by the model. The AU-PRO is then calculated by plotting the PRO score 
 at different thresholds for the segmentations, and reporting the area under the curve. This can be 
 used to compare the segmentation performance of models and is also a frequently featured metric in IAD related research. 
 Related to this score is the saturated per-region overlap (sPRO) and also the according are under the curve, the AU-sPRO. This metric was 
 introduced in \cite{LOCODentsAndScratchesBergmann2022} and is briefly mentioned in section \ref{sec:datasets}. The method of deriving the sPRO 
-score is shown again in equation abc, where $m$ denotes the amount of anomalous regions in an image, $A_i | i \in \{1, ... , m\}$ an anomalous 
+score is shown in table \ref{tab:metrics} here $m$ denotes the amount of anomalous regions in an image, $A_i | i \in \{1, ... , m\}$ an anomalous 
 region among them and $s_i | i \in \{1, ... , m\}$ a respective saturation threshold. $P$ is considered to be the pixels classified as anomalous 
 in the target image. The sPRO score is the calculated by averaging the intersections of all predictions and ground truths of an image, 
 while norming the values by the saturation threshold and providing an upper limit of 1 per region. It is to be said that this gives a similar 
@@ -388,8 +388,7 @@ scores for each anomaly have to be individually set for each anomaly, and are gi
     \includegraphics[width=0.3\textwidth]{figures/spro_vs_pro_bergmann.png}
     \caption{Example on difference between sPRO and normal PRO through saturation. It shows that for an larger anomalous region, that has no required 
              position for the anomalous object to be placed, the sPRO already reaches the maximum performance when a sufficiently large 
-             region is segmented. Meanwhile the conventional sPRO metric is strictly rising by the ration of the segmented region to the larger one.
-             Image taken from \cite{LOCODentsAndScratchesBergmann2022}.}
+             region is segmented. Meanwhile the conventional sPRO metric is strictly rising by the ration of the segmented region to the larger one \cite{LOCODentsAndScratchesBergmann2022}.}
     \label{fig:sprovspro}
 \end{figure}
 
@@ -487,7 +486,7 @@ art ensembles visible. Here it is emphasized, the compactness of this new ensemb
 increased robustness, as argued prior, it is a promising ensemble approach for this work.\newline
 To obtain ensembled feature maps the paper proposes to bring all feature maps to the same sizes using bilinear interpolation. Since 
 it is not necessarily desirable to keep every available feature map, as this would create inputs with way too many features, the amount of feature 
-maps is reduced using principle component analysis(PCA). This allows for the ensemble to focus only on the most important features, while maintaining 
+maps is reduced using principle component analysis (PCA). This allows for the ensemble to focus only on the most important features, while maintaining 
 an equal amount of maps as if it were composed of a single classifier. To be more specific Heller et al. \cite{EnsembleHeller2023} introduced two main 
 approaches to perform this ensemble. The first is a global transformation block as seen in figure \ref{fig:GTBheller}. 
 Here the features are first all resized to the same dimensions and then connected along their channels through a concatenation layer.
@@ -504,20 +503,20 @@ that most feature maps that are selected are from this classifier, if not all.
     \centering
     \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
         \centering
-        \includegraphics[width=0.3\textwidth]{figures/global_transformation_block.jpg}
+        \includegraphics[width=\textwidth]{figures/global_transformation_block.jpg}
         \caption{Global transformation block. The feature maps first get resized and concatenated before PCA is applied.}
         \label{fig:GTBheller}
     \end{subfigure}
     \hspace{0.05\textwidth} % Add space between subfigures
     \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
         \centering
-        \includegraphics[width=0.3\textwidth]{figures/independent_transformation_block.jpg}
+        \includegraphics[width=\textwidth]{figures/independent_transformation_block.jpg}
         \caption{Independent transformation block. The feature maps are subjected to PCA for cahnnel reduction, before resized and concatenated.}
         \label{fig:ITBheller}
     \end{subfigure}
     
     \caption{Visualizations of the proposed transformation blocks in \cite{EnsembleHeller2023}. The images show the global transformation 
-             block in comparison to the independent transformation block. Images taken from \cite{EnsembleHeller2023}}
+             block in comparison to the independent transformation block \cite{EnsembleHeller2023}}
     \label{fig:hellerensembleblocks}
 \end{figure}
 
