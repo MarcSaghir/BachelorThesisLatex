@@ -29,8 +29,11 @@ these issues, some supervised approaches \cite{Chu_2020supervised} operate in a 
 unsupervised IAD methods in current research persists, 
 this work will also restrict itself to such approaches. This also facilitates the execution of the ensemble approach presented in chapter \ref{chap:method}.
 \newline
-Looking into the unsupervised anomaly setting, the next important distinction is between reconstruction-based approaches and representation-based ones. They differ in the sense, that the former 
+\textbf{Unsupervised IAD.} Looking into the unsupervised anomaly setting, the next important distinction is between reconstruction-based approaches and representation-based ones. They differ in the sense, that the former 
 are comparing the distances between two images and the latter measure distances between feature representations.
+
+\subsection{Reconstruction Based}
+
 Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data, as well as noisy data. Noisy data are inputs
 which are altered using noise, although the exact noise application is depending on the specific approach. During testing, after having successfully learnt to 
 reconstruct anomaly free images, the method is then given an input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in the appendix with figure \ref{subfig:recbased}. 
@@ -41,8 +44,8 @@ Both classes of IAD methods have shown to produce state of the art results. Yet 
 consistently. Nevertheless it is reasonable to focus on both kinds of IAD, as they may excel at different regions of anomaly detection and evaluation criteria. Namely reconstruction methods are 
 often showing a notable performance at pixel level anomaly detection in comparison to feature embedding/representation methods, as their principle is based on pixelwise comparisons of input 
 and reconstructed data.
-\newline
 
+\subsection{Representation Based}
 
 Again, looking at the representation-based approaches, some distinctions can be made on exactly how the method implements a representation-based procedure.
 The main approaches in this category are ones featuring a memory bank, teacher-student architecture, distribution map and ones employ a one-class classification strategy. The subcategory of 
@@ -347,6 +350,7 @@ part of its pipeline when synthesizing near-in-distribution anomalies on the ori
 
 \section{Metrics}
 \label{sec:metrics}
+(-> continuous values -> thresholds -> aurocs)
 Metrics are known to be an important part of developing any artificial intelligence related models. Many of them are used to infer 
 certain characteristics of model performance and should only be used in appropriate circumstances, depending on which aspect 
 is important for the current application. Therefore, before the actual developing, one must first choose appropriate metrics 
@@ -383,9 +387,9 @@ would keep on rising as the segmented area gets larger within the anomalous regi
 by the sPRO metric as figure \ref{fig:sprovspro} shows it to be already saturated once the minimum required amount of pixels is achieved. The saturation 
 scores for each anomaly have to be individually set for each anomaly, and are given for the five classes of MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022}.
 
-\begin{figure}[ht]
+\begin{figure}[H]
     \centering
-    \includegraphics[width=0.3\textwidth]{figures/spro_vs_pro_bergmann.png}
+    \includegraphics[width=0.6\textwidth]{figures/spro_vs_pro_bergmann.png}
     \caption{Example on difference between sPRO and normal PRO through saturation. It shows that for an larger anomalous region, that has no required 
              position for the anomalous object to be placed, the sPRO already reaches the maximum performance when a sufficiently large 
              region is segmented. Meanwhile the conventional sPRO metric is strictly rising by the ration of the segmented region to the larger one \cite{LOCODentsAndScratchesBergmann2022}.}
@@ -448,7 +452,9 @@ averaging, channel stacking, bagging, boosting, and more. There are also new app
 a weighted average that is depending on the ensemble members accuracy, yet balances the relevancy of all classifiers so that no strong classifier completely outweighs the rest.\newline
 Homogeneous ensembles are popular, since they tend to boost the performance and robustness of a base classifier without 
 much work, since the ensemble is normally created by initializing the same model a number times with slightly changed values.
-\newline
+
+\subsection{Heterogeneous Ensembles}
+
 Heterogeneous classifier ensembles on the other hand are not necessarily combinable that easily, since they classically consist of models with 
 unique network architectures. This can lead to results, that should be interpreted as the same but differ by large margins. Yet 
 ensembles of such variety are often desirable since they offer loads of information from multiple perspectives or domains when done right. 
@@ -462,7 +468,9 @@ This stems from the fact that the model outputs are merely a small result of lar
 of information among the inputs. Therefore in turn, you cannot obtain all relevant information that can be offered by simply calibrating the 
 model outputs. A more robust approach to address that problem, would be to ensemble the aforementioned inner representations, i.e. feature maps 
 and in turn train another classifier for the final meaningful output.
-\newline
+
+\subsection{General Issues}
+
 Another current problem of both kinds of ensembles, homogeneous and heterogeneous, is that all models have to actually be trained 
 separately in each training attempt, to then utilize all classification outputs. This leads to a higher training time and thus also higher computational 
 cost, which is desirable to be reduced in real world manufacturing firms.
@@ -472,7 +480,9 @@ be necessary depending on the nature of the data. An example of our context woul
 suiting space to be effective, making it difficult to ensure that all features are in the same space when dealing with an ensemble. 
 Moreover feature level ensembles also are vulnerable to and reliant on the quality of the input features. This makes the decision on where 
 to cut off the base models very important.
-\newline
+
+\subsection{Multisource neural network feature map fusion}
+
 A desirable level of robustness and efficiency has been demonstrated in Heller et al. \cite{EnsembleHeller2023}. The authors utilize a feature level ensemble of multiple 
 convolutional neural networks with differing architectures and tasks to improve inference speed and accuracy in plant disease detection.
 They show that cutting off several, potentially heterogeneous, classifiers after a couple of network layers and ensembling the 
@@ -501,14 +511,14 @@ that most feature maps that are selected are from this classifier, if not all.
 \begin{figure}[htbp]
     \captionsetup[subfigure]{justification=centering}
     \centering
-    \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
+    \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
         \centering
         \includegraphics[width=\textwidth]{figures/global_transformation_block.jpg}
         \caption{Global transformation block. The feature maps first get resized and concatenated before PCA is applied.}
         \label{fig:GTBheller}
     \end{subfigure}
     \hspace{0.05\textwidth} % Add space between subfigures
-    \begin{subfigure}[b]{0.3\textwidth} % Decreased width to add space
+    \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
         \centering
         \includegraphics[width=\textwidth]{figures/independent_transformation_block.jpg}
         \caption{Independent transformation block. The feature maps are subjected to PCA for cahnnel reduction, before resized and concatenated.}

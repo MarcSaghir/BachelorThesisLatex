@@ -86,9 +86,22 @@ Here results of all ensemble experiments are discussed in more depth.
 \subsection{Independent Transformation Block}
 \label{subsec:ITBfaildiscussion}
 
-- give possible reasons for failure of this methods\newline
--> explain that applying pca to non ensemble features also resulted in this noise, therefore fault must lie with pca\newline
--> give reasons why pca can fail(non linear dependency, ...)\newline
+During the experiments chapter \ref{chap:experiments} it was observable that the independent transformation block \cite{EnsembleHeller2023} did not produce any usable results. 
+Since this method is reported to function as intended in Heller et al., there has to be some circumstance that is the root of the error. The transformation process is a 
+pipeline with three steps: applying PCA, resizing the maps and concatenating them. \newline
+The root cause of the failure is determined to be the PCA process. Further experiments were conducted applying PCA only to the standard feature map set from simplenet, 
+keeping all principle components and training 
+a discriminator. The results produced were identical to the first ones. The explained variance suggested that the components had to some extent similar relevancy. Would PCA 
+work as intended, the results should at least be visibly better. The performance furthermore could not be improved when applying PCA and selecting fewer components, thus reducing 
+the dimensionality. Possible reasons for this behavior are elaborated in papers like \cite{Jolliffe_2016PCAbasics}, that focus foundations of principal component analysis. 
+The paper gives multiple possible problems with PCA. One is that the method is not applicable when all data is not in the same space. A practical example would be if one were to 
+apply PCA to data that contains distance measurements in meters and centimeters. The data would have to be brought to the same unit first, the then reduce dimensions. This could 
+be the case for our data. Originally the individual feature projections per backbone were meant to solve this problem, yet it is possible that this approach did not work. 
+Secondly there is a general problem in utilizing PCA if the variables does not posess linear relations. Since principal components are linear combinations \cite{Jolliffe_2016PCAbasics} 
+they cannot capture non-linear relations and thus cannot meaningfully reduce dimensionality. To overcome this problem, as also discussed in secion \ref{subsec:ensembleconc}, 
+future experiments could try to utilize non linear dimensionality reduction methods that are meant to be utilized where PCA is not applicable. Such methods include t-SNE \cite{tSNE} 
+and kernel PCA \cite{Hoffmann_2007kernelPCA}.
+
 
 
 \subsection{Stacking Ensemble}

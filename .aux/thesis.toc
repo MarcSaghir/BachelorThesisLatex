@@ -1,0 +1,57 @@
+\babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Contributions}{3}{section.1.1}%
+\contentsline {chapter}{\numberline {2}Background}{5}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Categorization of Anomaly detection}{5}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}Reconstruction Based}{6}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Representation Based}{6}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}Anomaly Detection Methods}{10}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}PatchCore}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}SimpleNet}{11}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}RevDist}{13}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}CSFlow}{13}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}DRAEM}{14}{subsection.2.2.5}%
+\contentsline {section}{\numberline {2.3}Metrics}{15}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Datasets}{17}{section.2.4}%
+\contentsline {section}{\numberline {2.5}Ensembles}{19}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Heterogeneous Ensembles}{19}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}General Issues}{20}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.3}Multisource neural network feature map fusion}{20}{subsection.2.5.3}%
+\contentsline {section}{\numberline {2.6}Model Calibration}{21}{section.2.6}%
+\contentsline {chapter}{\numberline {3}Novel Dataset Class}{23}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Flat Connector}{23}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Data Acquisition Setup}{24}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Anomalies}{24}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}Structural Anomalies}{25}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}Logical Anomalies}{25}{subsection.3.3.2}%
+\contentsline {subsection}{\numberline {3.3.3}Saturation Thresholds}{26}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Methods}{27}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Logical Anomaly Detection}{27}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Ensemble network}{28}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Ensemble Members}{28}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Feature Level Ensembling}{29}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}Ensemble Training}{29}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Calibration}{30}{subsection.4.2.4}%
+\contentsline {chapter}{\numberline {5}Experiments}{32}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Experimental Setup}{32}{section.5.1}%
+\contentsline {section}{\numberline {5.2}MVTecAD LOCO Experiments}{32}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Flat Connector Experiments}{33}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Ensemble Network}{33}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Independent Transformation Block}{34}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Stacking Ensemble}{34}{subsection.5.4.2}%
+\contentsline {chapter}{\numberline {6}Discussion}{37}{chapter.6}%
+\contentsline {section}{\numberline {6.1}MVTecAD LOCO Experiments}{37}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Flat Connector}{38}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Ensemble Performance}{38}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Independent Transformation Block}{38}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Stacking Ensemble}{39}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{40}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusion}{40}{section.7.1}%
+\contentsline {section}{\numberline {7.2}Outlook}{40}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Current IAD Methods}{41}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Novel Dataset Classes}{41}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Ensemble}{41}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {A}Appendix}{46}{appendix.A}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

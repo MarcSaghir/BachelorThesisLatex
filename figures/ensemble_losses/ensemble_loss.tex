@@ -1,0 +1,20 @@
+\begin{figure}[ht]
+    \captionsetup[subfigure]{justification=centering}
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/ensemble_losses/normal_ensemble_loss.png}
+
+    \end{subfigure}
+    %\hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{figures/ensemble_losses/long_ensemble_loss.png}
+
+    \end{subfigure}
+    
+
+    \caption{Loss of ensemble network using the three standard backbones next to loss of the same network with increased meta epochs and increased discriminator epochs. Not significant difference 
+             in loss can be seen after training to new convergence.}
+    \label{fig:ensembleloss}
+\end{figure}

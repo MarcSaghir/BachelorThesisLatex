@@ -1,5 +1,11 @@
 \begin{thebibliography}{10}
 
+\bibitem{MVTEC_Bergmann_2021}
+P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``The mvtec
+  anomaly detection dataset: A comprehensive real-world dataset for
+  unsupervised anomaly detection,'' {\em International Journal of Computer
+  Vision}, vol.~129, p.~1038–1059, Jan. 2021.
+
 \bibitem{liu2024deep}
 J.~Liu, G.~Xie, J.~Wang, S.~Li, C.~Wang, F.~Zheng, and Y.~Jin, ``Deep
   industrial image anomaly detection: A survey,'' {\em Machine Intelligence
@@ -39,12 +45,6 @@ P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``Beyond
   dents and scratches: Logical constraints in unsupervised anomaly detection
   and localization,'' {\em International Journal of Computer Vision}, vol.~130,
   p.~947–969, Feb. 2022.
-
-\bibitem{MVTEC_Bergmann_2021}
-P.~Bergmann, K.~Batzner, M.~Fauser, D.~Sattlegger, and C.~Steger, ``The mvtec
-  anomaly detection dataset: A comprehensive real-world dataset for
-  unsupervised anomaly detection,'' {\em International Journal of Computer
-  Vision}, vol.~129, p.~1038–1059, Jan. 2021.
 
 \bibitem{EnsembleHeller2023}
 G.~Heller, E.~Perrin, V.~Vrabie, C.~Dusart, M.-L. Panon, M.~Loyaux, and
@@ -192,6 +192,12 @@ X.~Wu and M.~Gales, ``Should ensemble members be calibrated?,'' ICLR, 2021.
 ``Overview of the cluster.''
   \url{https://pointed-wakeboard-5f3.notion.site/Overview-of-the-Cluster-c74c945e34274f4ea9a964a805cc7d7f}.
 \newblock Accessed: 2024-04-30.
+
+\bibitem{Jolliffe_2016PCAbasics}
+I.~T. Jolliffe and J.~Cadima, ``Principal component analysis: a review and
+  recent developments,'' {\em Philosophical Transactions of the Royal Society
+  A: Mathematical, Physical and Engineering Sciences}, vol.~374, p.~20150202,
+  Apr. 2016.
 
 \bibitem{tSNE}
 L.~van~der Maaten and G.~Hinton, ``Visualizing data using t-sne,'' {\em Journal
