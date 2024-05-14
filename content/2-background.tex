@@ -350,23 +350,27 @@ part of its pipeline when synthesizing near-in-distribution anomalies on the ori
 
 \section{Metrics}
 \label{sec:metrics}
-(-> continuous values -> thresholds -> aurocs)
-Metrics are known to be an important part of developing any artificial intelligence related models. Many of them are used to infer 
-certain characteristics of model performance and should only be used in appropriate circumstances, depending on which aspect 
-is important for the current application. Therefore, before the actual developing, one must first choose appropriate metrics 
-to optimize and evaluate on later. IAD as a research area themselves has certain metrics that are the main performance evaluation tool 
-across most papers.\newline 
-A collection of metrics in this research field is displayed in table \ref{tab:metrics}, which is taken from 
-\cite{liu2024deep}. Visible are well known 
+
+Generally there are multiple metrics applicable to IAD experiments, a majority of which is listed in table \ref{tab:metrics}. Unlike different 
+settings, IAD approaches often work with continuous output values, called anomaly scores. This means a classifier does not usually return 
+a decision but rather a raw logit. An issue is that logits may vary between models for the same decision, i.e. PatchCore \cite{patchCore2022} could rank a set of images 
+with continuous scores between 1 and 10, while DRAEM \cite{Zavrtanik_2021DRAEM} would return values in a range from 7 to 14 for the same 
+set of images. Therefore a chosen threshold could greatly impact metrics like the true positive rate. To bridge this gap in comparativeness, one must find adequate metric that factors in such differences.
+A solution utilized in this field is to report take the logits, and report the area under the operator curve (AUROC) for differnent modalities. 
+For isntance this curve is computed on an image level by taking all logits and computing true and false positive rates for multiple distinct 
+decision thresholds. The area under that curve is then reported as the end result of the classifier.
+\newline\newline
+Looking at table \ref{tab:metrics} a variety of metrics in this research field is displayed. Visible are well known 
 ones from many other machine learning models like precision, recall, TPR, FPR and the F1-Score. These are generally applicable in most 
 cases, but are not listed in any recent important papers and thus are not important for any analyzes in this work. The other metrics are 
-more IAD specific. By a large margin, the most important scoring standard is the AUROC. This metric is usually referenced for image level 
-binary classification and gives an indication on how good the model is able to distinguish between both classes. 
+more IAD specific. By a large margin, the most important scoring standard is the image AUROC. While this metric is usually referenced for image level 
+binary classification it is also very well applicable on a pixel level to display performance in segmentation. 
 
 \input{algotable/metrics_table}
 
 Its calculation can be seen in 
-table \ref{tab:metrics}. Moreover it can be used on a pixel level, which is also a popular approach but not utilized everywhere.
+table \ref{tab:metrics}. Not every paper is generally reporting the pixel level AUROC \cite{csflow2022}, but it is becoming a more often 
+practiced standard over recent papers.
 Next in importance is the per-region overlap (PRO) score or also the area under the PRO score (AU-PRO). This metric denotes the per-region overlap of two areas 
 on a pixel level and can be calculated using the averaged sum of the ratio between true positives and ground truth pixels per predicted area. The two areas 
 compared are generally an image mask and the according segmentation by the model. The AU-PRO is then calculated by plotting the PRO score 
