@@ -4,6 +4,37 @@
 This chapter provides the background knowledge necessary for further understanding. Topics include general categorization of IAD methods, detailed explanations of relevant 
 state of the art methods and IAD specific datasets. Lastly it will cover relevant ensembling and calibration techniques, also utilized in later chapters.
 
+\begin{tikzpicture}[
+    level 1/.style={sibling distance=50mm, level distance=20mm},
+    level 2/.style={sibling distance=30mm},
+    edge from parent/.style={draw, -latex},
+    every node/.style={font=\footnotesize}
+    ]
+    
+    \node {IAD}
+      child {node {Unsupervised}
+        child {node {Representation}
+          child {node {Memory Bank}}
+          child {node {Teacher-Student}}
+          child {node {Distribution Map}}
+          child {node {One-Class \\ Classification}}
+        }
+        child {node {Reconstruction}
+          child {node {Autoencoder}}
+          child {node {GAN}}
+          child {node {Diffusion}}
+          child {node {Transformer}}
+        }
+      }
+      child {node {Supervised}
+        child {node {...}}
+        child {node {Few-Shot}
+          child {node {...}}
+        }
+      };
+  \end{tikzpicture}
+
+
 \section{Categorization of Anomaly detection}
 \label{sec:IADcategs}
 Over the last years a great amount approaches trying to IAD have been published. In order to compare separate anomaly detection methods, categorizing them with respect to various 
