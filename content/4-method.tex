@@ -125,7 +125,10 @@ methods for binary classifiers that did not need a probabilistic output was the 
 outputs. It is to be noted here, that we merely calibrate the models final outputs after everything has been predicted. This stems from the fact, that \cite{Wu_2021_shouldbecalibrated} demonstrated 
 how calibrated ensemble members do not necessarily yield a well calibrated final output, shifting our focus for calibration application. During the process, it became apparent that the platt 
 scaling approach from \cite{Guo_2017_tempscalingetc} was not necessarily sufficient, as figure \ref{fig:badCal} demonstrates. The figure displays 20 predicted scores of the "broken large" anomaly of the bottle class of the MVTecAD dataset, 
-along with the predicted anomaly scores of 20 normal images.
+along with the predicted anomaly scores of 20 normal images. It is notable on how the scores were not additionally sorted, but naturally 
+were linearly seperable. The y-axis score of one denotes an anomalous image and 0 a normal one.
+
+!ERSTES BILD VERBESSERN!!!!
 
 \begin{figure}[htbp]
     \centering
@@ -139,15 +142,19 @@ along with the predicted anomaly scores of 20 normal images.
         \caption{Applied platt scaling calibration for the normed scores.}
         \label{fig:platt}
     \end{subfigure}
-    \caption{Sorted normed anomaly scores for the MVTecAD \cite{MVTEC_Bergmann_2021} class broken bottle and applied platt scaling calibration. The x-axis represents 
+    \caption{The normed anomaly scores for the MVTecAD \cite{MVTEC_Bergmann_2021} class broken bottle. b) is applied platt scaling calibration. The x-axis represents 
             the anomaly score value for each entry, and the y-axis the confidence for the curve. Here confidence is defined as the confidence that the sample is anomalous}
     \label{fig:badCal}
 \end{figure}
 
 Due to the high performance of some IAD algorithms it is possible that some categories 
 of the datasets are fully correctly classified, which in example was the case for this. This would mean, that the optimal fitted sigmoid curve on the points 
-is a step curve, yielding either 100 percent confidence or none at all. This of course does not seem well calibrated, especially not looking at the exemplary score distribution in figure \ref{fig:platt}, where it 
-appears that the predicted anomaly scores seem to be stretched pretty evenly over the interval. To overcome this problem 
+is a step curve, yielding either 100 percent confidence or none at all. This does not seem well calibrated, especially not looking at the exemplary score distribution in figure \ref{fig:platt}, where it 
+appears that the predicted anomaly scores seem to be stretched pretty evenly over the interval. There exists an argument on how a step 
+curve would be fine for such cases, since the model classified each samople correctly and can thus be fully certain whether an 
+image is anomalous or not. To overcome this problem. However, this might make datahard to interpret as everything inside one class 
+would have the same certainty. In example, a point barely above the threshold would have the same certainty as the point furthest away from it, 
+which seems not necessarily appropriate and does not really capture any variance of uncertainty.
 we propose a generalized bounded sigmoid function with a variable slope \cite{bounded_sigmoid} as seen in equation \ref{eq:boundedsigmoid}. This allows the user to calibrate the steepness of the slope to account for larger uncertainty 
 towards the decision threshold.
 

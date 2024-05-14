@@ -26,13 +26,13 @@ Comparing the average image and pixel AUROCs to the ones reported in the chapter
 This is also true in regards to the pixel wise AUROC on average. (noch hinschreiben welche classifier den maximalen drop off hatten und 
 welche den wenigsten hatten). (Schreiben Welche classifier on average die besten waren für jede metric)
 
-- image auroc Tabelle hier hin
+\input{algotable/locoimageauroc.tex}
 
 Investigating the column wise performance, the classes of the dataset seem to have varying challenge levels. Albeit some fluctuations, 
 the juice bottle class seems to be consistently getting very high results in image and pixel AUROC, especially regarding the latter. 
-Conversely, the class screw seems to often have lower image AUROC resuts.
+Conversely, the class screw bag seems to often have lower image AUROC resuts.
 
-- pixel auroc hier hin
+\input{algotable/locopixelauroc.tex}
 
 
 The sPRO values calculated for the approaches were of poor performance as seen in table xyz. Despite this, comparing the metrics to the 
@@ -40,8 +40,14 @@ class averages reportet in \cite{LOCODentsAndScratchesBergmann2022}, the results
 in this paper that they selected to be applicable on logical anomalies. The lowest scoring models were often barely above some metrics reportet 
 below, if at all. (Beschreiben wer so gute ansätze sind bei sPRO on average)
 
-- sPRO tabelle hier hin
+\input{algotable/locospro.tex}
 
+
+To bring the above mentioned numbers into perspective, the drop of in image and pixel level auroc for the classififers between the 
+MVTecAD \cite{MVTEC_Bergmann_2021} and the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset was significant. Approaches 
+PatchCore \cite{patchCore2022}, SimpleNet \cite{liu2023simplenet}, Reverse Distillation \cite{revdist2023} and DRAEM \cite{Zavrtanik_2021DRAEM} had a fall off 
+in image AUROC class average of respectively 0.174, 0.193, (994 - ???) and 0.213. With respect to the pixel wise 
+AUROC, a decline of 0.064, 0.147, (983 - ???) and 0.174 emerged. \newline
 Figure xyz shows exemplary metrics divided by structural and logical anomalies. Here a better performance is clearly visible for the 
 class of structural anomalies, suggesting logical anomalies to be distinctively more difficult to corregtly predict and segment.
 
@@ -52,11 +58,32 @@ Additionally below in figure xyz are exemplary images from multiple classes that
 - Figure mit segmentation results
 
 
+\subsection{Classifier Behavior}
+\label{subsec:classifierbehavior}
+
+When inspecting localization performance in segmentated images, some classifiers exhibited different strengths and weaknesses than others. 
+DRAEM \cite{Zavrtanik_2021DRAEM} for instance often showed very precise localization performance in multiple classes, but struggled 
+with correctly segmenting anomalies in cases where objects are missing and there is not visbile border on where this object should 
+appear. For instance, precisely localizing missin nuts(?) in the right compratment of the braekfast box class was done well, yet 
+segmenting a missing screw that could be anywhere in the screw bag was often barely done at all. As these logical anomalies ocurr 
+frequently in the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset, it also explains how DRAEM 
+has the largest drop in average performance among the classifiers, despite its mostly precise localization.(figures??)
+
+- potentially figures hier hin von DRAEM
+
+
+
 
 \input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
 
 \section{Flat Connector Experiments}
 \label{sec:faltconnectorxperiments}
+
+The experiments on the flat connector class produced high performance from all classifiers participating in the survey. Table xyz 
+displays an overview of important metrics calculated on this novel class.
+
+
+
 
 - same analysis like last section\newline
 - analyse performance from 5 classifiers, ensemble performance is for next section

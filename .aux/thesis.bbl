@@ -114,12 +114,6 @@ T.~Defard, A.~Setkov, A.~Loesch, and R.~Audigier, {\em PaDiM: A Patch
   p.~475–489.
 \newblock Springer International Publishing, 2021.
 
-\bibitem{Rudolph_2021badNF}
-M.~Rudolph, B.~Wandt, and B.~Rosenhahn, ``Same same but differnet:
-  Semi-supervised defect detection with normalizing flows,'' in {\em 2021 IEEE
-  Winter Conference on Applications of Computer Vision (WACV)}, IEEE, Jan.
-  2021.
-
 \bibitem{Ronneberger_2015UNET}
 O.~Ronneberger, P.~Fischer, and T.~Brox, {\em U-Net: Convolutional Networks for
   Biomedical Image Segmentation}, p.~234–241.
