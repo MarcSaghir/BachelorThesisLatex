@@ -1,7 +1,7 @@
 \begin{table}[htbp]
     \tiny
     \centering
-    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|X|}%{|c|p{5cm}|p{5cm}|p{5cm}|}
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|}%{|c|p{5cm}|p{5cm}|p{5cm}|}
         \hline
         \textbf{Metric} & \textbf{PatchCore} \cite{patchCore2022} & \textbf{SimpleNet} \cite{liu2023simplenet} & \textbf{DRAEM} \cite{Zavrtanik_2021DRAEM} & \textbf{Reverse Destillation} \cite{revdist2023} \\
         \hline
@@ -9,9 +9,9 @@
         \hline
         Pixel AUROC & 0.993 & 0.984 & 0.995 & 0.992 \\
         \hline
-        sPRO & - & - & - & - & - \\
+        sPRO & 0.924 & - & - & - & - \\
         \hline
     \end{tabularx}
-    \caption{Results of this works IAD methods on the novel flat connector dataset class. Evaluates performance in regards to the metrics: image levele AUROC, pixel level AUROC and sPRO}
+    \caption{Results of this works IAD methods on the novel flat connector dataset class. Evaluates performance in regards to the metrics: image level AUROC, pixel level AUROC and sPRO}
     \label{tab:flatconnectorperformance}
 \end{table}

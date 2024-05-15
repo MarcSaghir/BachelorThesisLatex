@@ -1,0 +1,21 @@
+\begin{table}[htbp]
+    \tiny
+    \centering
+    \begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|}%{|c|p{5cm}|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Method} & \textbf{Breakfast Box} & \textbf{Juice Bottle} & \textbf{Pushpins} & \textbf{Scew Bag} & \textbf{Splicing Connectors} & \textbf{Average} \\
+        \hline
+        WR50L23 + R50L23 + R18L23  & 0.787 & 0.983 & 0.785 & 0.667 & 0.868 & 0.818 \\
+        \hline
+        WR50L12 + WR50L23 & 0.887 & 0.878 & 0.765 & 0.768 & 0.725 & 0.803 \\
+        \hline
+        %DRAEM \cite{Zavrtanik_2021DRAEM} & 0.766 & 0.985 & 0.623 & 0.611 & 0.852 & 0.767 \\
+        %\hline
+        %RevDist \cite{revdist2023} & 0.716 & 0.953 & 0.715 & 0.695 &  &  \\
+        %\hline
+    \end{tabularx}
+    \caption{Ensemble results on MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} by this works introduced ensemble approaches. The leftmost columns represents the ensemble 
+             constellation. The abbreviations denote the following: 
+             WR50 = wideresnet50, R50 = resnet50, R18 = resnet18. Lxy means an aggreation of layers x and y. Lastly the + sign shows that the listed abbreviations belong to one ensemble.}
+    \label{tab:ensemblepixelAUROC}
+\end{table}

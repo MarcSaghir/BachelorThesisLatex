@@ -60,9 +60,11 @@ class of structural anomalies, sometimes by even up to 29 percent, suggesting lo
     \label{fig:structvslogic}
 \end{figure}
 
-Additionally below in figure xyz are exemplary images from multiple classes that showcase good and bad segmentation results. Results are taken from multiple classes 
+Additionally below in figure xyz are representative images from multiple classes that showcase good and bad segmentation results. Results are taken from multiple approaches and 
+more results can be found in the appendix.
 
-- Figure mit segmentation results
+\input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
+\input{figures/locosimplenetresults/simplenetJBresults.tex}
 
 
 \subsection{Classifier Behavior}
@@ -71,22 +73,28 @@ Additionally below in figure xyz are exemplary images from multiple classes that
 When inspecting localization performance in segmentated images, some classifiers exhibited different strengths and weaknesses than others. 
 DRAEM \cite{Zavrtanik_2021DRAEM} for instance often showed very precise localization performance in multiple classes, but struggled 
 with correctly segmenting anomalies in cases where objects are missing and there is not visbile border on where this object should 
-appear. For instance, precisely localizing missin nuts(?) in the right compratment of the braekfast box class was done well, yet 
-segmenting a missing screw that could be anywhere in the screw bag was often barely done at all. As these logical anomalies ocurr 
+appear. For instance, precisely localizing missin screws in the right compratment of the braekfast box class was done well, yet 
+segmenting a missing screw that could be anywhere in the screw bag was often barely done at all (Fig. \ref{fig:DRAEMweakness}). As these logical anomalies ocurr 
 frequently in the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset, it also explains how DRAEM 
-has the largest drop in average performance among the classifiers, despite its mostly precise localization.(figures??)
+has the largest drop in average performance among the classifiers, despite its mostly precise localization. Another aspect to this result is DRAEM being very strict with 
+segmentations. often times results are perfectly interpretable by humans, but may perform worse than other segmentations, as DRAEM does not necessarily segment all pixels in 
+an anomalous region.
 
-- potentially figures hier hin von DRAEM
+\input{figures/DRAEMweakness/draemweakness.tex}
+
+Classifiers like PatchCore \cite{patchCore2022} and SimpleNet \cite{liu2023simplenet} generally showed good performance. Unlike DRAEM, they exhibited 
+poorer performance when classifying small anomalies (Fig. xyz). Moreover The segmentations often times slightly overshoot the anomalous regions at various confidence 
+degrees. What this means is that unlike DRAEM \cite{Zavrtanik_2021DRAEM}, which is very strict with segmentation, those approaches tend to segment more pixels than necessary. 
+Of course these pixels do not have the same values, which is why the performance is still good after thresholding. 
+
+- figure mit patchcore und simplenet results
 
 
-
-
-\input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
 
 \section{Flat Connector Experiments}
 \label{sec:faltconnectorxperiments}
 
-The experiments on the flat connector class produced high performance from all classifiers participating in the survey. Table xyz 
+The experiments on the flat connector class produced high performance from all classifiers participating in the survey. Table \ref{tab:flatconnectorperformance} 
 displays an overview of important metrics calculated on this novel class.
 
 \input{algotable/flatconnectorperformance.tex}
@@ -141,7 +149,6 @@ discussed in section \ref{sec:ensemblecandidates}.
 \input{figures/faillayer34/failmetricsandloss.tex}
 
 
-
 Experiments combining lower layer aggregations yielded different results. Table xyz summarises the reported metrics on the flat connector class, and figure xyz showcases exemplary 
 segmentation images of the experiments. More data is to be found in the appendix.
 
@@ -161,11 +168,13 @@ was higher for logical anomalies than for structural ones. Still,
 using threshoolding the results are usable, as often anomalous regions are discernible. Figure xyz also showcases examples of failed segmentation 
 attempts. 
 
-- figure mit segments 
+\input{figures/ensembleimagesFC/ensembleimagesFC.tex}
 
 As a comparison figure xyz displays example segmentations from the individual backbones. Here there is a lot less uncertainty or 
 noise than in the ensembled approach. This makes for worse or at least more unstable ensemble performance, especially regarding segmentation. 
 The implications and reasons of this are taken up in the next chapter.
+
+\input{figures/backboneexamples/singlebackboneexamples.tex}
 
 
 
