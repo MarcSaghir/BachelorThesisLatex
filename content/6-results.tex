@@ -119,17 +119,11 @@ This suggests, that the ensemble members are not at fault for this result, as th
 \newline
 
 A last observation from the ensemble experiments was the poor performance of higher level features in the ensembling process. 
+Here the fault is clearly with the respective ensemble members comparing figures (hierarchy fail und hierarchy success). This behavior can be explained with the specificity of higher level features. The more complex the features, the more specific is what they represent. Very high level features extraction layers are to convoluted to work on specific objects they were not explicitly trained on. As they are pretrained extractors, lower level features like edge representation can be of way more efficient use for out of domain objects.
+\newline
 
+Inspecting the performance of each classifier approach on the dataset, it is visible that
 
-- bei hierarchy ensemble aufgreifen dass training unstabil ist mit 70 auroc weil großteil ja eh anomalous images sind, bzw peaks halt sind wenn das modell viel als anomalous bestimmt.
--> sagen dass bei zu hohen features layers die spezifizität bzw komplexität zu hoch ist und es deswegen suckt
-
-- interpret similar to loco survey section\newline
 - also look at how the two experiments performed(hierarchy vs variety)\newline
 
-
-- sagen bei normalem ensemble dass es an der art und weise der feature concatenation liegen muss, da die einzelnen ensemble members besser sind
--> bild beweis
-
-- fals duo ensemble besser ist als triple sagen dass es zu viele channels sind mit 4608. -> ggf rückshlüsse dass auch 3076 zu viel sein könnten
 
