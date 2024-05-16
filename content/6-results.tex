@@ -81,7 +81,12 @@ way thicker that the anomalous region(bild).
 \section{Ensemble Performance}
 \label{sec:ensemblediscussion}
 
-Here results of all ensemble experiments are discussed in more depth. 
+Ensembles in IAD are not really a focus of current research. Some papers \cite{patchcore2022} provide homogeneous ensembles as a complementary option. 
+PatchCores ensemble is of simple average voting, meaning multiple classifier instances are trained and predict on the same inputs. The outputs are then averaged, on an image level as well as on a pixel level. 
+This may lead to a slight improvement in performance, as it did in this example. 
+With our approach however we aimed at transcending minor improvements, utilizing feature level ensemble strategies to achieve even more robust anomaly localization performance.
+The ensemble experiments conducted in this work did not yield an increased performance as seen in chapter \ref{chap: experimentsetup}. 
+Possible reasons for the shortcomings of each individual experiment are discussed in the following subsections.
 
 \subsection{Independent Transformation Block}
 \label{subsec:ITBfaildiscussion}
@@ -106,6 +111,14 @@ and kernel PCA \cite{Hoffmann_2007kernelPCA}.
 
 \subsection{Stacking Ensemble}
 \label{subsec:stackingdiscussion}
+
+Both ensemble experiments returned usable results, that showed learning behavior by the ensemble classifiers. Using correct thresholding, one is able to achieve passable anomaly localization on the flat connector class in many cases, and worse performance on other MVTecAD LOCO \ref{LOCO...} classes.
+
+Yet such a drastic drop in segmentation quality cannot be considered an improvement of robustness, but rather the opposite. As we showcased in section (section mit stacking ensemble results) the individual ensemble members produced each a better performance than the whole process. 
+This suggests, that the ensemble members are not at fault for this result, as that worst case would be for the features of one member to dominate the training process, and for the others to be unused, leading to the base performance of said member. Since this is not the case, the issue must lie within the feature ensembling process. It is to be argued that stacking all channels without elimination results in too many channels, meaning too many inputs for the model to handle. This hypothesis is supported by the much cleaner outputs of the ensemble utilizing solely 3072 channels at different hierarchy levels(checken ob's stimmt). Solutions would be to either increase model complexity or decrease the input dimension. Also the approach of stacking might not be an optimal solution to combining different feature representations. A solution would be further investigation of the problems that came up with the prior ensembling approach, to achieve a more suited ensembling process after solving said issues.
+\newline
+
+A last observation from the ensemble experiments was the poor performance of higher level features in the ensembling process. 
 
 
 - bei hierarchy ensemble aufgreifen dass training unstabil ist mit 70 auroc weil großteil ja eh anomalous images sind, bzw peaks halt sind wenn das modell viel als anomalous bestimmt.
