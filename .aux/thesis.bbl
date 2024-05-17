@@ -85,6 +85,11 @@ W.-H. Chu and K.~M. Kitani, {\em Neural Batch Sampling with Reinforcement
   Learning for Semi-supervised Anomaly Detection}, p.~751–766.
 \newblock Springer International Publishing, 2020.
 
+\bibitem{RudWeh2023AST}
+M.~Rudolph, T.~Wehrbein, B.~Rosenhahn, and B.~Wandt, ``Asymmetric
+  student-teacher networks for industrial anomaly detection,'' in {\em Winter
+  Conference on Applications of Computer Vision (WACV)}, Jan. 2023.
+
 \bibitem{Kobyzev_2021normalizingflowexplanation}
 I.~Kobyzev, S.~J. Prince, and M.~A. Brubaker, ``Normalizing flows: An
   introduction and review of current methods,'' {\em IEEE Transactions on
@@ -115,6 +120,10 @@ J.~Wyatt, A.~Leach, S.~M. Schmon, and C.~G. Willcocks, ``Anoddpm: Anomaly
 H.~Zhang, Z.~Wang, Z.~Wu, and Y.-G. Jiang, ``Diffusionad: Norm-guided one-step
   denoising diffusion for anomaly detection,'' {\em arXiv preprint
   arXiv:2303.08730}, 2023.
+
+\bibitem{douze2024faissnn}
+M.~Douze, A.~Guzhva, C.~Deng, J.~Johnson, G.~Szilvasy, P.-E. Mazaré,
+  M.~Lomeli, L.~Hosseini, and H.~Jégou, ``The faiss library,'' 2024.
 
 \bibitem{Defard_2021PADIM}
 T.~Defard, A.~Setkov, A.~Loesch, and R.~Audigier, {\em PaDiM: A Patch

@@ -13,16 +13,23 @@ possible ablation studies or new concepts that could be researched on the basis 
 \textbf{IAD Approaches on MVTecAD LOCO.}
 
 \textbf{Flat Connector Class.}
-The novel dataset category is usable and allows for further interesting insights into various IAD methods. It's difficulty compared to other logical anomaly classes may be below average. Yet this does not disqualify it from being a viable dataset extension. Having classes from multiple difficulties in one set helps evaluate classifiers on multiple levels, as well as giving opportunity for performance evaluation to strong and weaker approaches of IAD. Lastly it extends the previously existing logical anomaly concepts, providing a more diverse experiment setting. \newline
+The novel dataset category is usable and allows for further interesting insights into various IAD methods. It's difficulty compared to other logical anomaly classes may be 
+below average. Yet this does not disqualify it from being a viable dataset extension. Having classes from multiple difficulties in one set helps evaluate classifiers on 
+multiple levels, as well as giving opportunity for performance evaluation to strong and weaker approaches of IAD. Lastly it extends the previously existing logical anomaly 
+concepts, providing a more diverse experiment setting. \newline
 
-The class may benefit from being extended regarding kinds of anomalies, as well as more training and testing images. Ideas on how to potentially grow this class are given in the outlook section of this chapter.
+The class may benefit from being extended regarding kinds of anomalies, as well as more training and testing images. Ideas on how to potentially grow this class are given 
+in the outlook section of this chapter.
 
 \textbf{Ensemble.}
 
 \textbf{Current State of the Pipeline.}
 After the conducted experiments, there now remains an code structure to be used for potential further experiments. 
-All approaches discussed in this work are contained within the structure and their functionality is adapted to experiment on the MVTecAD LOCO \cite{LOCO...} dataset. Most importantly, there also exists an ensembling pipeline that allows ensemble members, as well as ensembling methods to be switched modularly. The ensembling members and methods serve es a two part black box, both of which are likely root causes of failing ensemble performances. 
-Through exchanging components in these regions, ablation studies can easily be performed on this topic, and the goal of achieving greater anomaly localization robustness could be realized with a different approach.
+All approaches discussed in this work are contained within the structure and their functionality is adapted to experiment on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset. Most 
+importantly, there also exists an ensembling pipeline that allows ensemble members, as well as ensembling methods to be switched modularly. The ensembling members and methods 
+serve es a two part black box, both of which are likely root causes of failing ensemble performances. 
+Through exchanging components in these regions, ablation studies can easily be performed on this topic, and the goal of achieving greater anomaly localization robustness 
+could be realized with a different approach.
 
 
 
@@ -52,7 +59,8 @@ the basis of this work as well as related work.\newline
 \subsection{Current IAD Methods}
 The conclusions drawn from the survey were reported in the previous section. The decreasing performance trend for logical anomaly detection in overall performance suggests 
 current IAD approaches to be unsuitable to reach the same effectiveness as on structural ones. This calls for a shift in fundamental perspective of visual anomaly 
-detection methods, tailoring them towards logical anomaly detection as in \cite{LOCODentsAndScratchesBergmann2022}, or try to improve them by combining them to raise their performance. Solutions to approach this problem could consist of combining 
+detection methods, tailoring them towards logical anomaly detection as in \cite{LOCODentsAndScratchesBergmann2022}, or try to improve them by combining them to raise their 
+performance. Solutions to approach this problem could consist of combining 
 those state of the art methods into potentially more effective ones, by using the upsides of multiple IAD methods to produce new approaches. An example for this would be a 
 merger of the PatchCore \cite{patchCore2022} and SimpleNet \cite{liu2023simplenet} methods. Using a feature adapter, trained in the latter approach, to project feature 
 representations before adding them to a memory bank could constitute for an interesting step in this direction. 
