@@ -36,17 +36,17 @@
 \contentsline {chapter}{\numberline {5}Experiments}{31}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Experimental Setup}{31}{section.5.1}%
 \contentsline {section}{\numberline {5.2}MVTecAD LOCO Experiments}{31}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Classifier Behavior}{33}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.1}Classifier Behavior}{34}{subsection.5.2.1}%
 \contentsline {section}{\numberline {5.3}Flat Connector Experiments}{35}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Ensemble Network}{36}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Independent Transformation Block}{36}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Stacking Ensemble}{36}{subsection.5.4.2}%
-\contentsline {chapter}{\numberline {6}Discussion}{41}{chapter.6}%
-\contentsline {section}{\numberline {6.1}MVTecAD LOCO Experiments}{41}{section.6.1}%
+\contentsline {section}{\numberline {5.4}Ensemble Network}{37}{section.5.4}%
+\contentsline {subsection}{\numberline {5.4.1}Independent Transformation Block}{37}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Stacking Ensemble}{37}{subsection.5.4.2}%
+\contentsline {chapter}{\numberline {6}Discussion}{42}{chapter.6}%
+\contentsline {section}{\numberline {6.1}MVTecAD LOCO Experiments}{42}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Flat Connector}{42}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Ensemble Performance}{42}{section.6.3}%
+\contentsline {section}{\numberline {6.3}Ensemble Performance}{43}{section.6.3}%
 \contentsline {subsection}{\numberline {6.3.1}Independent Transformation Block}{43}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Stacking Ensemble}{43}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.2}Stacking Ensemble}{44}{subsection.6.3.2}%
 \contentsline {chapter}{\numberline {7}Conclusion and Outlook}{45}{chapter.7}%
 \contentsline {section}{\numberline {7.1}Conclusion}{45}{section.7.1}%
 \contentsline {section}{\numberline {7.2}Outlook}{46}{section.7.2}%
