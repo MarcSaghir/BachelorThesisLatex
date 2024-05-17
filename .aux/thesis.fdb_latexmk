@@ -1,21 +1,21 @@
 # Fdb version 4
-["bibtex .aux/thesis"] 1715984328 ".aux/thesis.aux" ".aux/thesis.bbl" ".aux/thesis" 1715984355 0
+["bibtex .aux/thesis"] 1715987519 ".aux/thesis.aux" ".aux/thesis.bbl" ".aux/thesis" 1715987790 0
   "./literature/lit.bib" 1715907275 20003 f0c1d69bf5a93e23d48f4792b29d78b5 ""
-  ".aux/thesis.aux" 1715984353 56072 f2db0039bd16996ce447d40a45f5d0a4 "pdflatex"
+  ".aux/thesis.aux" 1715987788 56070 3253f49166d4e53989ebb03f8bf7d8bb "pdflatex"
   "C:/Users/Marc/Documents/MikeTeX/bibtex/bst/bibtex/ieeetr.bst" 1291867944 18361 1a00e58565e7f19bf2b3e1bfb82254ae ""
   (generated)
   ".aux/thesis.bbl"
   ".aux/thesis.blg"
   (rewritten before read)
-["pdflatex"] 1715984328 "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" ".aux/thesis.pdf" "thesis" 1715984355 0
-  ".aux/pdfa.xmpi" 1715984330 5352 16d77608906a0b2b28629ae161ebb312 "pdflatex"
-  ".aux/thesis.aux" 1715984353 56072 f2db0039bd16996ce447d40a45f5d0a4 "pdflatex"
-  ".aux/thesis.bbl" 1715984328 9533 6099ba85fc271f7987b372506f11fad9 "bibtex .aux/thesis"
-  ".aux/thesis.lof" 1715984353 8980 d61891ff745616d8279066f53c499c67 "pdflatex"
-  ".aux/thesis.lot" 1715984353 2940 bed8442067c39f28f7806416c1cc3ecc "pdflatex"
-  ".aux/thesis.out" 1715984332 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  ".aux/thesis.toc" 1715984353 4491 cd7fd16121a1a86a727853fe6b73abcc "pdflatex"
-  ".aux/thesis.xmpdata" 1715984332 156 7625225de524fc182788bc8165d9bdf3 "pdflatex"
+["pdflatex"] 1715987762 "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" ".aux/thesis.pdf" "thesis" 1715987790 0
+  ".aux/pdfa.xmpi" 1715987764 5352 77445d009acd9620689fd433f0e94f92 "pdflatex"
+  ".aux/thesis.aux" 1715987788 56070 3253f49166d4e53989ebb03f8bf7d8bb "pdflatex"
+  ".aux/thesis.bbl" 1715987519 9533 6099ba85fc271f7987b372506f11fad9 "bibtex .aux/thesis"
+  ".aux/thesis.lof" 1715987788 8979 a469da1e515ef12453b23b60ec042049 "pdflatex"
+  ".aux/thesis.lot" 1715987788 2940 8e804e74289dce9af3c52a5b8a3b3dff "pdflatex"
+  ".aux/thesis.out" 1715987766 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  ".aux/thesis.toc" 1715987788 4491 cd7fd16121a1a86a727853fe6b73abcc "pdflatex"
+  ".aux/thesis.xmpdata" 1715987766 156 7625225de524fc182788bc8165d9bdf3 "pdflatex"
   "<pdfa.xmpi" 1701615181 5400 0 ""
   "C:/Users/Marc/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1715875038 406948 f00ee10c0f47365afc777a762ea862bb ""
   "C:/Users/Marc/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1700406096 24135773 aae61aac971fd122a4112c3229286075 ""
@@ -373,7 +373,7 @@
   "algotable/metrics_table.tex" 1715261950 2037 548d04d68b43c577dbfd5aa3534305e0 ""
   "algotable/mvtecimageauroc.tex" 1715701995 5967 272dfb60c5e8aebcdf1f83bb8385be60 ""
   "algotable/mvtecpixelauroc.tex" 1715701995 1687 e21efc32dba2f67e113f9c7af9cc2d47 ""
-  "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" 1715984111 5166 ff9a87a85f85c433c0b9e348b76feeb9 ""
+  "c:/Users/Marc/Documents/GitHub/BachelorThesisLatex/thesis.tex" 1715987490 5168 27c205b88633f895654bf325c4659548 ""
   "content/1-introduction.tex" 1715907631 10365 8cbe9021f897af9120a4ef5810630262 ""
   "content/2-background.tex" 1715907453 50681 e6deb5967f3897b7b511dcac7a7662d7 ""
   "content/3-relatedwork.tex" 1715963362 9535 1825bc027d74ee9eaa4352012e86a87b ""
@@ -509,12 +509,12 @@
   "figures/structvslogic.png" 1715969679 27895 9f3cb2a8c533e8d3da74488bdcc172d8 ""
   "iasThesis.sty" 1701615181 3084 9dec75a7f28766b239cf68e02bbb1203 ""
   "img/iasLogo.jpeg" 1701615181 21959 52e9fad55a42d3c8d9af7bce5c8f3f09 ""
-  "meta/abstract.tex" 1715984247 649 74229ae1b70a7d74f8c9746eb5e41305 ""
+  "meta/abstract.tex" 1715987761 2991 9ae0de3a8bea3a4bdfa97875af123dd4 ""
   "meta/appendix.tex" 1715261951 153 0f50a8a3f43c084f9d4c9554e5f17fb0 ""
   "preamble/glossary.tex" 1715984050 1683 80d83dabdd849097c011181cc7f12b44 ""
   "preamble/packages.tex" 1715875309 3569 04a69e6d778f080309dd548c3b803ab0 ""
   "preamble/tikzGraphs.tex" 1701615181 3832 3eb6102bfbcfd29ec1ecf7d544a6f35e ""
-  "thesis.tex" 1715984111 5166 ff9a87a85f85c433c0b9e348b76feeb9 ""
+  "thesis.tex" 1715987490 5168 27c205b88633f895654bf325c4659548 ""
   "tuda_logo.pdf" 1701615181 550495 23bb8d225c925ed53d15336ee7ccf4bd ""
   (generated)
   ".aux/pdfa.xmpi"
