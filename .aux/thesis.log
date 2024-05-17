@@ -1711,4 +1711,425 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--16
  []
 
 
-Underful
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (+20) Tooth-
+ []
+
+
+Overfull \hbox (10.07364pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (-20) Transistor| 
+ []
+
+
+Overfull \hbox (3.83965pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (-20) Average| 
+ []
+
+
+Overfull \hbox (2.24466pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/m/n/6 (-20) DRAEM
+ []
+
+
+Overfull \hbox (1.58246pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/m/n/6 (-20) RevDist
+ []
+
+) (algotable/mvtecpixelauroc.tex
+Overfull \hbox (3.08284pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (-20) Method| 
+ []
+
+
+Overfull \hbox (3.57924pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (-20) Capsule| 
+ []
+
+
+Overfull \hbox (6.92216pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (-20) Hazelnut| 
+ []
+
+
+Overfull \hbox (3.07971pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (-20) Leather| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (+20) Metal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (+20) Tooth-
+ []
+
+
+Overfull \hbox (10.07364pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (-20) Transistor| 
+ []
+
+
+Overfull \hbox (3.83965pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/b/n/6 (-20) Average| 
+ []
+
+
+Overfull \hbox (2.24466pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/m/n/6 (-20) DRAEM
+ []
+
+
+Overfull \hbox (1.58246pt too wide) in paragraph at lines 16--16
+[]|\T1/XCharter-TLF/m/n/6 (-20) RevDist
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 328--342
+
+ []
+
+[14 <./figures/DRAEM_pipeline.png>] (algotable/metrics_table.tex) [15]
+<figures/spro_vs_pro_bergmann.png, id=590, 944.02687pt x 587.94656pt>
+File: figures/spro_vs_pro_bergmann.png Graphic file (type png)
+<use figures/spro_vs_pro_bergmann.png>
+Package pdftex.def Info: figures/spro_vs_pro_bergmann.png  used on input line 370.
+(pdftex.def)             Requested size: 307.2929pt x 191.38539pt.
+ [16 <./figures/spro_vs_pro_bergmann.png>] (figures/mvtecadexampleimages/mvtecadexampleimages.tex
+<figures/mvtecadexampleimages/bottle000.png, id=605, 903.375pt x 903.375pt>
+File: figures/mvtecadexampleimages/bottle000.png Graphic file (type png)
+<use figures/mvtecadexampleimages/bottle000.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/bottle000.png  used on input line 6.
+(pdftex.def)             Requested size: 72.98299pt x 72.97447pt.
+<figures/mvtecadexampleimages/bottle000_mask.png, id=606, 903.375pt x 903.375pt>
+File: figures/mvtecadexampleimages/bottle000_mask.png Graphic file (type png)
+<use figures/mvtecadexampleimages/bottle000_mask.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/bottle000_mask.png  used on input line 7.
+(pdftex.def)             Requested size: 72.98299pt x 72.97447pt.
+<figures/mvtecadexampleimages/cable009.png, id=607, 1027.84pt x 1027.84pt>
+File: figures/mvtecadexampleimages/cable009.png Graphic file (type png)
+<use figures/mvtecadexampleimages/cable009.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/cable009.png  used on input line 14.
+(pdftex.def)             Requested size: 72.98299pt x 72.97557pt.
+<figures/mvtecadexampleimages/cable009_mask.png, id=608, 1027.84pt x 1027.84pt>
+File: figures/mvtecadexampleimages/cable009_mask.png Graphic file (type png)
+<use figures/mvtecadexampleimages/cable009_mask.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/cable009_mask.png  used on input line 15.
+(pdftex.def)             Requested size: 72.98299pt x 72.97557pt.
+<figures/mvtecadexampleimages/hazelnut017.png, id=609, 1027.84pt x 1027.84pt>
+File: figures/mvtecadexampleimages/hazelnut017.png Graphic file (type png)
+<use figures/mvtecadexampleimages/hazelnut017.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/hazelnut017.png  used on input line 22.
+(pdftex.def)             Requested size: 72.98299pt x 72.97557pt.
+<figures/mvtecadexampleimages/hazelnut017_mask.png, id=610, 1027.84pt x 1027.84pt>
+File: figures/mvtecadexampleimages/hazelnut017_mask.png Graphic file (type png)
+<use figures/mvtecadexampleimages/hazelnut017_mask.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/hazelnut017_mask.png  used on input line 23.
+(pdftex.def)             Requested size: 72.98299pt x 72.97557pt.
+<figures/mvtecadexampleimages/metalnut024.png, id=611, 702.625pt x 702.625pt>
+File: figures/mvtecadexampleimages/metalnut024.png Graphic file (type png)
+<use figures/mvtecadexampleimages/metalnut024.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/metalnut024.png  used on input line 30.
+(pdftex.def)             Requested size: 72.98299pt x 72.97906pt.
+<figures/mvtecadexampleimages/metalnut024_mask.png, id=612, 702.625pt x 702.625pt>
+File: figures/mvtecadexampleimages/metalnut024_mask.png Graphic file (type png)
+<use figures/mvtecadexampleimages/metalnut024_mask.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/metalnut024_mask.png  used on input line 31.
+(pdftex.def)             Requested size: 72.98299pt x 72.97906pt.
+<figures/mvtecadexampleimages/screw023.png, id=613, 1027.84pt x 1027.84pt>
+File: figures/mvtecadexampleimages/screw023.png Graphic file (type png)
+<use figures/mvtecadexampleimages/screw023.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/screw023.png  used on input line 38.
+(pdftex.def)             Requested size: 72.98299pt x 72.97557pt.
+<figures/mvtecadexampleimages/screw023_mask.png, id=614, 1027.84pt x 1027.84pt>
+File: figures/mvtecadexampleimages/screw023_mask.png Graphic file (type png)
+<use figures/mvtecadexampleimages/screw023_mask.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/screw023_mask.png  used on input line 39.
+(pdftex.def)             Requested size: 72.98299pt x 72.97557pt.
+<figures/mvtecadexampleimages/toothbrush029.png, id=615, 1027.84pt x 1027.84pt>
+File: figures/mvtecadexampleimages/toothbrush029.png Graphic file (type png)
+<use figures/mvtecadexampleimages/toothbrush029.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/toothbrush029.png  used on input line 46.
+(pdftex.def)             Requested size: 72.98299pt x 72.97557pt.
+<figures/mvtecadexampleimages/toothbrush029_mask.png, id=616, 1027.84pt x 1027.84pt>
+File: figures/mvtecadexampleimages/toothbrush029_mask.png Graphic file (type png)
+<use figures/mvtecadexampleimages/toothbrush029_mask.png>
+Package pdftex.def Info: figures/mvtecadexampleimages/toothbrush029_mask.png  used on input line 47.
+(pdftex.def)             Requested size: 72.98299pt x 72.97557pt.
+) [17 <./figures/mvtecadexampleimages/bottle000.png> <./figures/mvtecadexampleimages/bottle000_mask.png> <./figures/mvtecadexampleimages/cable009.png> <./figures/mvtecadexampleimages/cable009_mask.png> <./figures/mvtecadexampleimages/hazelnut017.png> <./figures/mvtecadexampleimages/hazelnut017_mask.png> <./figures/mvtecadexampleimages/metalnut024.png> <./figures/mvtecadexampleimages/metalnut024_mask.png> <./figures/mvtecadexampleimages/screw023.png> <./figures/mvtecadexampleimages/screw023_mask.png> <./figures/mvtecadexampleimages/toothbrush029.png> <./figures/mvtecadexampleimages/toothbrush029_mask.png>] (figures/pushpinviz/pushpinviz.tex
+<figures/pushpinviz/image_000.png, id=628, 409.53pt x 240.9pt>
+File: figures/pushpinviz/image_000.png Graphic file (type png)
+<use figures/pushpinviz/image_000.png>
+Package pdftex.def Info: figures/pushpinviz/image_000.png  used on input line 6.
+(pdftex.def)             Requested size: 153.64644pt x 90.38138pt.
+File: figures/pushpinviz/image_000.png Graphic file (type png)
+<use figures/pushpinviz/image_000.png>
+Package pdftex.def Info: figures/pushpinviz/image_000.png  used on input line 12.
+(pdftex.def)             Requested size: 153.64644pt x 90.38138pt.
+) [18 <./figures/pushpinviz/image_000.png>] [19]
+<figures/global_transformation_block.jpg, id=656, 458.33633pt x 200.9106pt>
+File: figures/global_transformation_block.jpg Graphic file (type jpg)
+<use figures/global_transformation_block.jpg>
+Package pdftex.def Info: figures/global_transformation_block.jpg  used on input line 489.
+(pdftex.def)             Requested size: 204.85672pt x 89.79886pt.
+<figures/independent_transformation_block.jpg, id=657, 482.32999pt x 197.2971pt>
+File: figures/independent_transformation_block.jpg Graphic file (type jpg)
+<use figures/independent_transformation_block.jpg>
+Package pdftex.def Info: figures/independent_transformation_block.jpg  used on input line 496.
+(pdftex.def)             Requested size: 204.85672pt x 83.79445pt.
+ [20 <./figures/global_transformation_block.jpg> <./figures/independent_transformation_block.jpg>]) (content/3-relatedwork.tex [21]
+chapter 3.
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--30
+
+ []
+
+(figures/flatconnectordatasetimages/faltdatasetfigure.tex
+<figures/flatconnectordatasetimages/cut_corner_image.png, id=681, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/cut_corner_image.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/cut_corner_image.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/cut_corner_image.png  used on input line 8.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/cut_corner_mask.png, id=682, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/cut_corner_mask.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/cut_corner_mask.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/cut_corner_mask.png  used on input line 9.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/damaged_edge.png, id=683, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/damaged_edge.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/damaged_edge.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/damaged_edge.png  used on input line 16.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/damaged_edge_mask.png, id=684, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/damaged_edge_mask.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/damaged_edge_mask.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/damaged_edge_mask.png  used on input line 17.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/scratch.png, id=685, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/scratch.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/scratch.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/scratch.png  used on input line 24.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/scratch_mask.png, id=686, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/scratch_mask.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/scratch_mask.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/scratch_mask.png  used on input line 25.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/missing_big_hole.png, id=687, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/missing_big_hole.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/missing_big_hole.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/missing_big_hole.png  used on input line 32.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/missing_big_hole_mask.png, id=688, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/missing_big_hole_mask.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/missing_big_hole_mask.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/missing_big_hole_mask.png  used on input line 33.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/extra_holes.png, id=689, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/extra_holes.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/extra_holes.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/extra_holes.png  used on input line 40.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/extra_holes_mask.png, id=690, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/extra_holes_mask.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/extra_holes_mask.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/extra_holes_mask.png  used on input line 41.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/diff_size_holes.png, id=691, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/diff_size_holes.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/diff_size_holes.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/diff_size_holes.png  used on input line 48.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+<figures/flatconnectordatasetimages/diff_size_holes_mask.png, id=692, 3372.6pt x 2505.36pt>
+File: figures/flatconnectordatasetimages/diff_size_holes_mask.png Graphic file (type png)
+<use figures/flatconnectordatasetimages/diff_size_holes_mask.png>
+Package pdftex.def Info: figures/flatconnectordatasetimages/diff_size_holes_mask.png  used on input line 49.
+(pdftex.def)             Requested size: 72.98299pt x 54.20824pt.
+) [22
+
+] (figures/setupimages/setup_viz.tex
+<figures/setupimages/setup_empty.JPG, id=702, 3661.68pt x 2441.12pt>
+File: figures/setupimages/setup_empty.JPG Graphic file (type jpg)
+<use figures/setupimages/setup_empty.JPG>
+Package pdftex.def Info: figures/setupimages/setup_empty.JPG  used on input line 6.
+(pdftex.def)             Requested size: 3661.67111pt x 2441.11406pt.
+<figures/setupimages/setup_flachverbinder.JPG, id=703, 3661.68pt x 2441.12pt>
+File: figures/setupimages/setup_flachverbinder.JPG Graphic file (type jpg)
+<use figures/setupimages/setup_flachverbinder.JPG>
+Package pdftex.def Info: figures/setupimages/setup_flachverbinder.JPG  used on input line 12.
+(pdftex.def)             Requested size: 3661.67111pt x 2441.11406pt.
+<figures/setupimages/setup_close.JPG, id=704, 3661.68pt x 2441.12pt>
+File: figures/setupimages/setup_close.JPG Graphic file (type jpg)
+<use figures/setupimages/setup_close.JPG>
+Package pdftex.def Info: figures/setupimages/setup_close.JPG  used on input line 18.
+(pdftex.def)             Requested size: 3661.67111pt x 2441.11406pt.
+)
+
+Package caption Warning: \label without proper reference on input line 19.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: Reference `fig:damagededgesubfig' on page 23 undefined on input line 65.
+
+[23 <./figures/flatconnectordatasetimages/cut_corner_image.png (PNG copy)> <./figures/flatconnectordatasetimages/cut_corner_mask.png (PNG copy)> <./figures/flatconnectordatasetimages/damaged_edge.png (PNG copy)> <./figures/flatconnectordatasetimages/damaged_edge_mask.png (PNG copy)> <./figures/flatconnectordatasetimages/scratch.png (PNG copy)> <./figures/flatconnectordatasetimages/scratch_mask.png (PNG copy)> <./figures/flatconnectordatasetimages/missing_big_hole.png (PNG copy)> <./figures/flatconnectordatasetimages/missing_big_hole_mask.png (PNG copy)> <./figures/flatconnectordatasetimages/extra_holes.png (PNG copy)> <./figures/flatconnectordatasetimages/extra_holes_mask.png (PNG copy)> <./figures/flatconnectordatasetimages/diff_size_holes.png (PNG copy)> <./figures/flatconnectordatasetimages/diff_size_holes_mask.png (PNG copy)>] [24 <./figures/setupimages/setup_empty.JPG> <./figures/setupimages/setup_flachverbinder.JPG> <./figures/setupimages/setup_close.JPG>]) (content/4-method.tex [25]
+chapter 4.
+[26
+
+]
+<figures/ensemblepipeline.png, id=743, 956.57375pt x 246.9225pt>
+File: figures/ensemblepipeline.png Graphic file (type png)
+<use figures/ensemblepipeline.png>
+Package pdftex.def Info: figures/ensemblepipeline.png  used on input line 51.
+(pdftex.def)             Requested size: 512.14963pt x 132.20206pt.
+ (figures/featurelayersviz/feature_layers_viz.tex
+<figures/featurelayersviz/low_channel.png, id=751, 224.84pt x 224.84pt>
+File: figures/featurelayersviz/low_channel.png Graphic file (type png)
+<use figures/featurelayersviz/low_channel.png>
+Package pdftex.def Info: figures/featurelayersviz/low_channel.png  used on input line 6.
+(pdftex.def)             Requested size: 128.0374pt x 128.04347pt.
+<figures/featurelayersviz/medium_channel.png, id=752, 224.84pt x 224.84pt>
+File: figures/featurelayersviz/medium_channel.png Graphic file (type png)
+<use figures/featurelayersviz/medium_channel.png>
+Package pdftex.def Info: figures/featurelayersviz/medium_channel.png  used on input line 12.
+(pdftex.def)             Requested size: 128.0374pt x 128.04347pt.
+<figures/featurelayersviz/late_channel.png, id=753, 899.36pt x 899.36pt>
+File: figures/featurelayersviz/late_channel.png Graphic file (type png)
+<use figures/featurelayersviz/late_channel.png>
+Package pdftex.def Info: figures/featurelayersviz/late_channel.png  used on input line 18.
+(pdftex.def)             Requested size: 128.0374pt x 128.03662pt.
+) [27 <./figures/ensemblepipeline.png>] [28 <./figures/featurelayersviz/low_channel.png (PNG copy)> <./figures/featurelayersviz/medium_channel.png (PNG copy)> <./figures/featurelayersviz/late_channel.png>]
+<figures/anomaly_scores_sorted.png, id=790, 462.528pt x 346.896pt>
+File: figures/anomaly_scores_sorted.png Graphic file (type png)
+<use figures/anomaly_scores_sorted.png>
+Package pdftex.def Info: figures/anomaly_scores_sorted.png  used on input line 129.
+(pdftex.def)             Requested size: 230.46576pt x 172.84943pt.
+<figures/anomaly_calibration_step.png, id=791, 462.528pt x 346.896pt>
+File: figures/anomaly_calibration_step.png Graphic file (type png)
+<use figures/anomaly_calibration_step.png>
+Package pdftex.def Info: figures/anomaly_calibration_step.png  used on input line 134.
+(pdftex.def)             Requested size: 230.46576pt x 172.84943pt.
+ [29]
+<figures/soft_sigmoidt05.png, id=807, 462.528pt x 346.896pt>
+File: figures/soft_sigmoidt05.png Graphic file (type png)
+<use figures/soft_sigmoidt05.png>
+Package pdftex.def Info: figures/soft_sigmoidt05.png  used on input line 168.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+<figures/soft_sigmoidt25.png, id=808, 462.528pt x 346.896pt>
+File: figures/soft_sigmoidt25.png Graphic file (type png)
+<use figures/soft_sigmoidt25.png>
+Package pdftex.def Info: figures/soft_sigmoidt25.png  used on input line 174.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+<figures/anomaly_calibration_soft.png, id=809, 462.528pt x 346.896pt>
+File: figures/anomaly_calibration_soft.png Graphic file (type png)
+<use figures/anomaly_calibration_soft.png>
+Package pdftex.def Info: figures/anomaly_calibration_soft.png  used on input line 180.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+) (content/5-experimentsetup.tex [30 <./figures/anomaly_scores_sorted.png> <./figures/anomaly_calibration_step.png> <./figures/soft_sigmoidt05.png> <./figures/soft_sigmoidt25.png> <./figures/anomaly_calibration_soft.png>]
+chapter 5.
+(algotable/locoimageauroc.tex) [31
+
+] (algotable/locopixelauroc.tex) (algotable/locospro.tex)
+<figures/structvslogic.png, id=888, 462.528pt x 346.896pt>
+File: figures/structvslogic.png Graphic file (type png)
+<use figures/structvslogic.png>
+Package pdftex.def Info: figures/structvslogic.png  used on input line 60.
+(pdftex.def)             Requested size: 256.07481pt x 192.06375pt.
+ [32] (figures/locoallapproaches/locoallapproaches.tex
+<figures/locoallapproaches/patchcore/breakfast_box_test_logical_anomalies_003.png, id=895, 677.53125pt x 225.84375pt>
+File: figures/locoallapproaches/patchcore/breakfast_box_test_logical_anomalies_003.png Graphic file (type png)
+<use figures/locoallapproaches/patchcore/breakfast_box_test_logical_anomalies_003.png>
+Package pdftex.def Info: figures/locoallapproaches/patchcore/breakfast_box_test_logical_anomalies_003.png  used on input line 6.
+(pdftex.def)             Requested size: 230.46576pt x 76.82031pt.
+<figures/locoallapproaches/patchcore/breakfast_box_test_structural_anomalies_014.png, id=896, 677.53125pt x 225.84375pt>
+File: figures/locoallapproaches/patchcore/breakfast_box_test_structural_anomalies_014.png Graphic file (type png)
+<use figures/locoallapproaches/patchcore/breakfast_box_test_structural_anomalies_014.png>
+Package pdftex.def Info: figures/locoallapproaches/patchcore/breakfast_box_test_structural_anomalies_014.png  used on input line 7.
+(pdftex.def)             Requested size: 230.46576pt x 76.82031pt.
+<figures/locoallapproaches/simplenet/image_prediction_188.png, id=898, 382.3083pt x 226.9278pt>
+File: figures/locoallapproaches/simplenet/image_prediction_188.png Graphic file (type png)
+<use figures/locoallapproaches/simplenet/image_prediction_188.png>
+Package pdftex.def Info: figures/locoallapproaches/simplenet/image_prediction_188.png  used on input line 13.
+(pdftex.def)             Requested size: 230.46576pt x 136.80177pt.
+<figures/locoallapproaches/simplenet/image_prediction_258.png, id=899, 377.9721pt x 225.4824pt>
+File: figures/locoallapproaches/simplenet/image_prediction_258.png Graphic file (type png)
+<use figures/locoallapproaches/simplenet/image_prediction_258.png>
+Package pdftex.def Info: figures/locoallapproaches/simplenet/image_prediction_258.png  used on input line 14.
+(pdftex.def)             Requested size: 230.46576pt x 137.48557pt.
+<figures/locoallapproaches/RevDist/revdist_003.png, id=901, 464.4853pt x 74.52844pt>
+File: figures/locoallapproaches/RevDist/revdist_003.png Graphic file (type png)
+<use figures/locoallapproaches/RevDist/revdist_003.png>
+Package pdftex.def Info: figures/locoallapproaches/RevDist/revdist_003.png  used on input line 20.
+(pdftex.def)             Requested size: 230.46576pt x 36.97981pt.
+<figures/locoallapproaches/RevDist/RevDist_053.png, id=902, 466.74374pt x 76.78688pt>
+File: figures/locoallapproaches/RevDist/RevDist_053.png Graphic file (type png)
+<use figures/locoallapproaches/RevDist/RevDist_053.png>
+Package pdftex.def Info: figures/locoallapproaches/RevDist/RevDist_053.png  used on input line 21.
+(pdftex.def)             Requested size: 230.46576pt x 37.9153pt.
+<figures/locoallapproaches/DRAEM/DRAEM_SB.png, id=904, 467.49657pt x 102.3825pt>
+File: figures/locoallapproaches/DRAEM/DRAEM_SB.png Graphic file (type png)
+<use figures/locoallapproaches/DRAEM/DRAEM_SB.png>
+Package pdftex.def Info: figures/locoallapproaches/DRAEM/DRAEM_SB.png  used on input line 27.
+(pdftex.def)             Requested size: 230.46576pt x 50.47249pt.
+<figures/locoallapproaches/DRAEM/DRAEM_SC.png, id=905, 462.97969pt x 74.52844pt>
+File: figures/locoallapproaches/DRAEM/DRAEM_SC.png Graphic file (type png)
+<use figures/locoallapproaches/DRAEM/DRAEM_SC.png>
+Package pdftex.def Info: figures/locoallapproaches/DRAEM/DRAEM_SC.png  used on input line 28.
+(pdftex.def)             Requested size: 230.46576pt x 37.09921pt.
+) [33 <./figures/structvslogic.png>] (figures/DRAEMweakness/draemweakness.tex
+<figures/DRAEMweakness/structural026image.png, id=916, 1876.00874pt x 1358.07375pt>
+File: figures/DRAEMweakness/structural026image.png Graphic file (type png)
+<use figures/DRAEMweakness/structural026image.png>
+Package pdftex.def Info: figures/DRAEMweakness/structural026image.png  used on input line 7.
+(pdftex.def)             Requested size: 78.66727pt x 56.94545pt.
+<figures/DRAEMweakness/structural026mask.png, id=917, 1876.00874pt x 1358.07375pt>
+File: figures/DRAEMweakness/structural026mask.png Graphic file (type png)
+<use figures/DRAEMweakness/structural026mask.png>
+Package pdftex.def Info: figures/DRAEMweakness/structural026mask.png  used on input line 11.
+(pdftex.def)             Requested size: 78.66727pt x 56.94545pt.
+<figures/DRAEMweakness/structural026segment.png, id=918, 267.399pt x 200.9106pt>
+File: figures/DRAEMweakness/structural026segment.png Graphic file (type png)
+<use figures/DRAEMweakness/structural026segment.png>
+Package pdftex.def Info: figures/DRAEMweakness/structural026segment.png  used on input line 15.
+(pdftex.def)             Requested size: 78.66727pt x 59.10562pt.
+<figures/DRAEMweakness/logical042image.png, id=919, 385.44pt x 264.99pt>
+File: figures/DRAEMweakness/logical042image.png Graphic file (type png)
+<use figures/DRAEMweakness/logical042image.png>
+Package pdftex.def Info: figures/DRAEMweakness/logical042image.png  used on input line 24.
+(pdftex.def)             Requested size: 78.66727pt x 54.08069pt.
+<figures/DRAEMweakness/logical042mask.png, id=920, 385.44pt x 264.99pt>
+File: figures/DRAEMweakness/logical042mask.png Graphic file (type png)
+<use figures/DRAEMweakness/logical042mask.png>
+Package pdftex.def Info: figures/DRAEMweakness/logical042mask.png  used on input line 28.
+(pdftex.def)             Requested size: 78.66727pt x 54.08069pt.
+<figures/DRAEMweakness/logical042segment.png, id=921, 526.96875pt x 370.38374pt>
+File: figures/DRAEMweakness/logical042segment.png Graphic file (type png)
+<use figures/DRAEMweakness/logical042segment.png>
+Package pdftex.def Info: figures/DRAEMweakness/logical042segment.png  used on input line 32.
+(pdftex.def)             Requested size: 78.66727pt x 55.28954pt.
+) [34 <./figures/locoallapproaches/patchcore/breakfast_box_test_logical_anomalies_003.png> <./figures/locoallapproaches/patchcore/breakfast_box_test_structural_anomalies_014.png> <./figures/locoallapproaches/simplenet/image_prediction_188.png> <./figures/locoallapproaches/simplenet/image_prediction_258.png> <./figures/locoallapproaches/RevDist/revdist_003.png> <./figures/locoallapproaches/RevDist/RevDist_053.png> <./figures/locoallapproaches/DRAEM/DRAEM_SB.png> <./figures/locoallapproaches/DRAEM/DRAEM_SC.png>] (figures/overshootexamples/overshootandsmallanomalies.tex
+<figures/overshootexamples/flat_connector_test_logical_anomalies_004.png, id=940, 677.53125pt x 225.84375pt>
+File: figures/overshootexamples/flat_connector_test_logical_anomalies_004.png Graphic file (type png)
+<use figures/overshootexamples/flat_connector_test_logical_anomalies_004.png>
+Package pdftex.def Info: figures/overshootexamples/flat_connector_test_logical_anomalies_004.png  used on input line 6.
+(pdftex.def)             Requested size: 230.46576pt x 76.82031pt.
+<figures/overshootexamples/juice_bottle_test_structural_anomalies_019.png, id=941, 677.53125pt x 225.84375pt>
+File: figures/overshootexamples/juice_bottle_test_structural_anomalies_019.png Graphic file (type png)
+<use figures/overshootexamples/juice_bottle_test_structural_anomalies_019.png>
+Package pdftex.def Info: figures/overshootexamples/juice_bottle_test_structural_anomalies_019.png  used on input line 12.
+(pdftex.def)             Requested size: 230.46576pt x 76.82031pt.
+) (algotable/flatconnectorperformance.tex) (figures/allapproachesFCimages/allapproachesFC.tex
+<figures/allapproachesFCimages/patchcore_flat_connector_test_logical_anomalies_023.png, id=958, 639.89063pt x 195.73125pt>
+File: figures/allapproachesFCimages/patchcore_flat_connector_test_logical_anomalies_023.png Graphic file (type png)
+<use figures/allapproachesFCimages/patchcore_flat_connector_test_logical_anomalies_023.png>
+Package pdftex.def Info: figures/allapproachesFCimages/patchcore_flat_connector_test_logical_anomalies_023.png  used on input line 5.
+(pdftex.def)             Requested size: 230.46576pt x 70.49603pt.
+<figures/allapproachesFCimages/patchcore_flat_connector_test_structural_anomalies_014.png, id=959, 644.4075pt x 195.73125pt>
+File: figures/allapproachesFCimages/patchcore_flat_connector_test_structural_anomalies_014.png Graphic file (type png)
+<use figures/allapproachesFCimages/patchcore_flat_connector_test_structural_anomalies_014.png>
+Package pdftex.def Info: figures/allapproachesFCimages/patchcore_flat_connector_test_structural_anomalies_014.png  used on input line 6.
+(pdftex.def)             Requested size: 230.46576pt x 70.00026pt.
+<figures/allapproachesFCimages/simplenet_flat_connector_test_logical_anomalies_004.png, id=961, 639.13782pt x 193.47281pt>
+File: figures/allapproachesFCimages/simplenet_flat_connector_test_logical_anomalies_004.png Graphic file (type png)
+<use figures/allapproachesFCimages/simplenet_flat_connector_test_logical_anomalies_004.png>
+Package pdf
