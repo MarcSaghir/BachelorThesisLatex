@@ -1,8 +1,8 @@
 \chapter{Novel Dataset Class}
 \label{chap:datasets}
 
-This chapter introduces the novel dataset category representing a flat connector. Mainly the sections will revolve around the specifics of the flat connector object, the setup used to 
-record the data and produce labels, as well as the anomalies that were chosen for this class. Section \ref{sec:flatconnectoranomalies} also reviews the steps that went into producing the specific anomalies 
+This chapter introduces the novel dataset category representing a flat connector. The sections will revolve mainly around the specifics of the flat connector object, the setup used to 
+record the data and produce labels, as well as the anomalies chosen for this class. Section \ref{sec:flatconnectoranomalies} also reviews the steps to produce the specific anomalies 
 and how to recreate them.
 
 
@@ -10,23 +10,23 @@ and how to recreate them.
 \label{sec:faltconnectordesscription}
 
 As mentioned prior to this chapter, this work will also deal with the introduction of a novel dataset category that is an extension of the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset. 
-Despite simply extending the range of objects covered in the dataset, this also serves a more various investigation of IAD method performance in industrial settings. The motivation behind adhering 
-to MVTecAD LOCO standards is multifold. Firstly the setting of this work is already in the logical anomalies context, which greatly facilitates the evaluation of the new class. Additionally, as 
+Despite simply extending the range of objects covered in the dataset, this also serves as a more varied investigation of IAD method performance in industrial settings. The motivation behind adhering 
+to MVTecAD LOCO standards is multifold. Firstly, the setting of this work is already in the context of logical anomalies, which greatly facilitates the evaluation of the new class. Additionally, as 
 discussed in section \ref{sec:datasets}, there is only a slight technical difference between the MVTecAD LOCO and the classical MVTecAD \cite{MVTEC_Bergmann_2021} dataset, meaning that this novel 
-class can easily be evaluated by the vast majority of IAD approaches, as most of them already report their performance on the MVTecAD dataset. This holds true for past approaches but also new ones 
+class can easily be evaluated by most IAD approaches, as most already report their performance on the MVTecAD dataset. This holds true for past approaches but also new ones 
 to come.
 \newline\newline
-The flat connector object was chosen for this since it meets multiple requirements for an adequate object class. It is of metal manufacturing nature, and can comfortably be photographed from 
+The flat connector object was chosen since it meets multiple requirements for an adequate object class. It is of a metal manufacturing nature and can comfortably be photographed from 
 an overhead perspective. Although the MVTecAD LOCO dataset already contains a screw bag, the property of the plastic bag could potentially shift the focus of the performance from solely the metal 
-part performance to the anomaly localization in more difficult conditions. The latter is a common characteristic of the other classes in the set. Finally the flat connector has some 
-properties that make it a very favorable manufacturing part to include: It is of a lighter metal, giving us much more freedom to produce anomalies. A steel block for example would be vastly 
-harder to meaningfully process into it representing various kinds of anomalies. Moreover the differently sized holes in set configurations that the flat connector possesses, make for a lot of opportunities 
-to introduce logical anomalies without the need of arbitrary rules like the pushpin or splicing connector class. For example the latter class may need multiple objects in a certain arrangement per image to then predefine 
-rules as logical constraints, whereas the flat connector as such may possess multiple logical violations within only one object without the need of additional artificial rules.
+part performance to the anomaly localization in more difficult conditions. The latter is a common characteristic of the other classes in the set. Finally, the flat connector has some 
+properties that make it a very favorable manufacturing part include the following: It is of lighter metal, giving us much more freedom to produce anomalies. A steel block, for example, would be vastly 
+harder to meaningfully process into it, representing various kinds of anomalies. Moreover, the differently sized holes in set configurations that the flat connector possesses make for many opportunities 
+to introduce logical anomalies without the need for arbitrary rules like the pushpin or splicing connector class. For example, the latter class may need multiple objects in a certain arrangement per image to then predefine 
+rules as logical constraints, whereas the flat connector, as such, may possess multiple logical violations within only one object without the need for additional artificial rules.
 \newline
-Further regarding the flat size specifications, we used regulatory flat 
+Further, regarding the flat size specifications, we used regulatory flat 
 connectors of size $100x35 mm$ which are widely available at hardware stores and at \cite{flatconnectorlink}. The surface of the flat connectors is galvanized 
-and displays a CE-label according to DIN EN 14545. Images of normal flat connectors without manipulations can be viewed in appendix figure \ref{fig:flatgoodimages}.
+and displays a CE label according to DIN EN 14545. Images of normal flat connectors without manipulations can be viewed in appendix figure \ref{fig:flatgoodimages}.
 
 
 \input{figures/flatconnectordatasetimages/faltdatasetfigure.tex}
@@ -36,15 +36,14 @@ and displays a CE-label according to DIN EN 14545. Images of normal flat connect
 \section{Data Acquisition Setup}
 \label{sec:faltconnectordataacquisiton}
 
-The images for the dataset were taken in the university facilities. An exemplary setup for image acquisition can be viewed in figure \ref{fig:setupofdatacollection}. The contraption to capture images was 
-done by utilizing a camera mounted to an robotic arm, pointing the camera lens at the table from an overhead perspective. The distance between camera lens and the table surface was approximately 15 cm and the main light source in the 
-images was delivered by a built in flash light of the arm. Regarding the background of the object, a black cloth was chosen to be placed on the table, where the object would then be put. For 
-an increased variety, multiple flat connectors were bought and filmed. Here each one was manually rotated after each shot, to achieve multiple object orientations and thus a more robust training 
-set. Each flat connector was rotated a total of six times per side, resulting in 12 normal images per flat connector object. \newline
+The images for the dataset were taken at university facilities.  Figure \ref{fig:setupofdatacollection} shows an exemplary setup for image acquisition. The contraption to capture images was 
+done by utilizing a camera mounted to a robotic arm and pointing the camera lens at the table from an overhead perspective. The distance between the camera lens and the table surface was approximately 15 cm and the main light source for the images was provided by a built-in flashlight of the arm. Regarding the object's background, a black cloth was placed on the table where the object would be put. For 
+an increased variety, multiple flat connectors were bought and filmed. Here, each one was manually rotated after each shot to achieve multiple object orientations and, thus, a more robust training 
+set. Each flat connector was rotated six times per side, resulting in 12 normal images per flat connector object. \newline
 The camera used to take pictures produced the images of the flat connectors in a 4k resolution. Due to the large size of the resulting 
 images, their size was adjusted by half of the original image size.\newline
-To obtain segmentation labels, a free polygon annotation software was used to then label anomalous regions in the images. The annotations were done by hand and by the author of this work. In accord to 
-MVTecAD LOCO standards \cite{LOCODentsAndScratchesBergmann2022} each kind of anomaly would be assigned a unique pixel value to differentiate them when working with saturation thresholds 
+A free polygon annotation software was used to label anomalous regions in the images to obtain segmentation labels. The annotations were done by hand and by the author of this work. In accord with 
+MVTecAD LOCO standards \cite{LOCODentsAndScratchesBergmann2022}, each kind of anomaly would be assigned a unique pixel value to differentiate them when working with saturation thresholds 
 as mentioned in section \ref{sec:datasets}. Example annotations can be viewed in figure \ref{sec:flatconnectoranomalies}, where several original images are depicted next to the produced segmentation labels. Just like in the 
 original MVTecAD LOCO dataset, image labels were not explicitly given since they can be inferred by the anomaly class.
 
@@ -55,35 +54,35 @@ original MVTecAD LOCO dataset, image labels were not explicitly given since they
 \section{Anomalies}
 \label{sec:flatconnectoranomalies}
 
-To a certain degree the common MVTecAD LOCO classes all possess a balanced amount of logical and structural anomalies. Therefore the collection of possible anomalies for this class was kept at an even structural 
-to logical ratio. The anomalies listed below can be viewed in figure \ref{fig:flatconnectorexampleimages} where exemplary anomalous images are displayed next to their corresponding ground truth mask.
+To a certain degree, the standard MVTecAD LOCO classes all possess a balanced number of logical and structural anomalies. Therefore, the collection of possible anomalies for this class was kept at an even structural-to-logical ratio. The anomalies listed below can be viewed in figure \ref{fig:flatconnectorexampleimages}, where exemplary anomalous images are displayed next to their corresponding ground truth mask.
 
 \subsection{Structural Anomalies}
-Structural anomalies in this case were comparably simple to think of an execute since they only involved damaging some area of the flat connector. Here we also tried to represent a variety of 
+Structural anomalies, in this case, were comparably simple to think of and execute since they only involved damaging some area of the flat connector. Here, we also tried to represent a variety of 
 certain characteristics of anomalies among the ones we chose. An example would be to include anomalies with larger areas as well as ones with small ground truths.\newline
-First of we produced the structural anomaly of a cut off corner. This was done by simply using a metal saw to remove a corner of the flat connector. This is an anomaly with a comparably large 
-surface area and clean edges to predict. Next we again used a metal saw to damage the edges of the flat connector by cutting out pieces of or simply sawing into the edges of the object. One image 
-of this anomaly type contained multiple damages spots on multiple edges. Due to the cuts partially being very small, this makes for an anomaly with very small ground truth areas as seen in figure 
-\ref{fig:damagededgesubfig}. As a last structural anomaly the saw was used to apply deep scratches on the object. This is mimicking another type of anomaly sometimes found in the classes of splicing connectors and pushpins 
+First, we produced the structural anomaly of a cut-off corner. This was done using a metal saw to remove a corner of the flat connector. This is an anomaly with a comparably large 
+surface area and clean edges to predict. Next, we used a metal saw to damage the edges of the flat connector by cutting out pieces or simply sawing into the object's edges. One image 
+of this anomaly type contained multiple damaged spots on multiple edges. Due to the cuts partially being tiny, this makes for an anomaly with very small ground truth areas, as seen in the figure 
+\ref{fig:damagededgesubfig}. As a last structural anomaly, the saw was used to apply deep scratches to the object. This is mimicking another type of anomaly sometimes found in the classes of splicing connectors and pushpins 
 in the original dataset. The common characteristic is that the region is very slim and long, making for better comparisons.
 
 \subsection{Logical Anomalies}
-The logical anomalies comprise the more interesting part of the anomaly types, as they are the focus of the MVTecAD LCOO dataset. The first logical anomaly in this class is the case in which a hole 
-is missing in the flat connector hole pattern. This anomaly had to be improvised, since it is difficult to obtain a properly manufactured flat connector that was faulty produced. To still include 
-this type of anomaly, the solution was to first fill the hole with moldable material and then spray paint over it to hide color differences. For realism the spray paint color was the same as the 
-object surface and the whole object was spray painted to avoid color artifacts. Partially this anomaly was one of the larger and more clean cut ones since the holes mostly chosen to be filled were one of the two 
-bigger ones on the object. For increased variety there were also anomalous cases added where a small hole would be concealed. As a second anomaly the case of an extra hole was realized. To produce such an anomaly the facilities offered a drill, which was used to drill another small hole into 
-the object at an unusual location. The size of the additional hole was the same as the smaller ones on the object. To also test capabilities of detecting multiple anomalies in a single image, this anomaly 
-was put together with an differently sized hole. The final anomaly to be introduced was a resized hole at a correct 
-location. This would mean that the anomaly does not consist of the hole location but rather the size difference between this holes and the other ones in similar places. For this type of anomaly it 
-is admissible to predict the whole hole as an anomalous region.  %vor der abgabe maybe die labels dafür noch anpassen dass es ringe sind
-Here a drill tip was used with a slightly higher radius that the original hole to enlarge the diameter.
+The logical anomalies comprise the more relevant part of the anomaly types, as they are the focus of the MVTecAD LCOO dataset. The first logical anomaly in this class is the case in which a hole 
+is missing in the flat connector hole pattern. This anomaly had to be improvised since it was difficult to obtain an adequately manufactured flat connector that was faulty. To still include 
+this type of anomaly, the solution was first to fill the hole with moldable material and then spray paint over it to hide color differences. For realism, the spray paint color was the same as the 
+object surface and the whole object was spray painted to avoid color artifacts. Partially, this anomaly was one of the larger and more clean-cut ones since the holes mostly chosen to be filled were one of the two 
+bigger ones on the object. For increased variety, anomalous cases were also added where a small hole would be concealed. As a second anomaly, an extra hole was realized. To produce such an anomaly, the facilities offered a drill, which was used to drill another small hole into 
+the object at an unusual location. The size of the additional hole was the same as the smaller ones on the object. To also test the capabilities of detecting multiple anomalies in a single image, this anomaly 
+was put together with a differently-sized hole. The final anomaly to be introduced was a resized hole at a correct 
+location. This would mean that the anomaly does not consist of the hole location but rather the size difference between these holes and those in similar places. For this type of anomaly, it 
+is admissible to predict the whole hole as an anomalous region.
+Here, a drill tip with a slightly higher radius than the original hole was used to enlarge the diameter.
 
 
 \subsection{Saturation Thresholds}
 
-The saturation scores for the anomalies, as discussed in section \ref{sec:datasets} were put at the amount of pixels in the anomalous region for all above listed anomalies respectively.
-This was because the nature of presented anomalies of this categories calls for a full segmentation of the respective anomaly for a perfect result. Unlike in the pushpin example given in that section 
+The saturation scores for the anomalies, as discussed in section \ref{sec:datasets}, were put at the number of pixels in the anomalous region for all the listed anomalies, 
+respectively.
+This was because the nature of the presented anomalies of these categories calls for a complete segmentation of the respective anomaly for a perfect result. Unlike in the pushpin example given in that section 
 there are no cases that warrant multiple possible placements of anomalies.
 
 
