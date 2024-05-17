@@ -1,217 +1,185 @@
 \chapter{Background}
 \label{chap:background}
 
-This chapter provides the background knowledge necessary for further understanding. Topics include general categorization of IAD methods, detailed explanations of relevant 
-state of the art methods and IAD specific datasets. Lastly it will cover relevant ensembling and calibration techniques, also utilized in later chapters.
-
-\begin{tikzpicture}[
-    level 1/.style={sibling distance=50mm, level distance=20mm},
-    level 2/.style={sibling distance=30mm},
-    edge from parent/.style={draw, -latex},
-    every node/.style={font=\footnotesize}
-    ]
-    
-    \node {IAD}
-      child {node {Unsupervised}
-        child {node {Representation}
-          child {node {Memory Bank}}
-          child {node {Teacher-Student}}
-          child {node {Distribution Map}}
-          child {node {One-Class \\ Classification}}
-        }
-        child {node {Reconstruction}
-          child {node {Autoencoder}}
-          child {node {GAN}}
-          child {node {Diffusion}}
-          child {node {Transformer}}
-        }
-      }
-      child {node {Supervised}
-        child {node {...}}
-        child {node {Few-Shot}
-          child {node {...}}
-        }
-      };
-  \end{tikzpicture}
+This chapter provides the background knowledge necessary for further understanding. Topics include general categorization of IAD methods, detailed explanations of the relevant 
+state-of-the-art methods, and IAD-specific datasets. Lastly, it will cover relevant ensembling and calibration techniques, also utilized in later chapters.
 
 
-\section{Categorization of Anomaly detection}
+
+\section{Categorization of Anomaly Detection}
 \label{sec:IADcategs}
-Over the last years a great amount approaches trying to IAD have been published. In order to compare separate anomaly detection methods, categorizing them with respect to various 
-aspects serves an improved comparative analysis in regards of strengths and weaknesses. It also helps to gain a better understanding of the approaches in the global IAD context and
-is useful detect possible patterns in performance correlated to categories. Survey papers like Xie et al. \cite{Xie_2024benchmarking} and 
+Over the last few years, many approaches to IAD have been published. In order to compare separate anomaly detection methods, categorizing them by various 
+aspects serves as an improved comparative analysis regarding strengths and weaknesses. It also helps to better understand the approaches in the global IAD context and
+detect possible patterns in performance correlated to categories. Survey papers like Xie et al. \cite{Xie_2024benchmarking} and 
 Liu et al.
-\cite{liu2024deep} primarily compare but also categorize IAD approaches, leading to the conclusion that there are applicable ways to group certain approaches, as 
-visualized in figure \ref{fig:IADcategstree}. Here it has to be said that the following categorizations naturally are a generalization, as there may be certain niche settings or approaches who combine multiple categories.
+\cite{liu2024deep} primarily compare but also categorize IAD approaches, concluding that there are applicable ways to group specific approaches, as 
+visualized in figure \ref{fig:IADcategstree}. Here, it has to be said that the following categorizations naturally are generalizations, as there may be specific niche settings or approaches that combine multiple categories.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/baumtree.drawio.png}
-    \caption{Overview of IAD methods in a global context. The categorization primarily focuses on unsupervised approaches.}
-    \label{fig:IADcategstree}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/Wald.pdf}
+\caption{Overview of IAD methods in a global context. The categorization primarily focuses on unsupervised approaches.}
+\label{fig:IADcategstree}
 \end{figure}
 
-The first distinction relevant to our work is between supervised and unsupervised settings. Current deep learning approaches that have established themselves as state of the art in image anomaly detection 
-are almost exclusively unsupervised approaches. This partially stems from the fact 
-that in practical situations, anomalous images occur far less than normal images, hence the word "normal". This is especially true in industrial settings, due to the high performance of 
-production sites nowadays. Therefore if one were to consider using a classical supervised learning approach to detect anomalies, either a strong class imbalance or a nonrepresentative class 
-distribution would constitute a problem. While there are some solutions for this, they often either do not suffice for imbalances of this magnitude or far to resource extensive. To overcome 
-these issues, some supervised approaches \cite{Chu_2020supervised} operate in a few-shot setting which limit the training data amount needed for proper training. Nevertheless as the focus on 
+The first distinction relevant to our work is between supervised and unsupervised settings. Current deep learning approaches that have established themselves as state-of-the-art in image anomaly detection 
+are almost exclusively unsupervised. This circumstance partially stems from the fact 
+that in practical situations, anomalous images occur far less than normal images, hence the word "normal". This is especially true in industrial settings due to the high performance of 
+production sites nowadays. Therefore, a strong class imbalance or a nonrepresentative class 
+distribution would constitute a problem if one considers using a classical supervised learning approach to detect anomalies. While there are some solutions for this, they often do not suffice for imbalances of this magnitude or are far too extensive. To overcome 
+these issues, some supervised approaches \cite{Chu_2020supervised} operate in a few-shot setting, which limits the training data amount needed for proper training. Nevertheless, as the focus on 
 unsupervised IAD methods in current research persists, 
-this work will also restrict itself to such approaches. This also facilitates the execution of the ensemble approach presented in chapter \ref{chap:method}.
+this work will also restrict itself to such approaches. This also facilitates executing the ensemble approach presented in chapter \ref{chap:method}.
 \newline
-\textbf{Unsupervised IAD.} Looking into the unsupervised anomaly setting, the next important distinction is between reconstruction-based approaches and representation-based ones. They differ in the sense, that the former 
-are comparing the distances between two images and the latter measure distances between feature representations.
+\textbf{Unsupervised IAD.} Looking into the unsupervised anomaly setting, the following important distinction is between reconstruction and representation-based approaches. They differ as the former compares the distances between two images, and the latter measures distances between feature representations.
 
 \subsection{Reconstruction Based}
 
-Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data, as well as noisy data. Noisy data are inputs
-which are altered using noise, although the exact noise application is depending on the specific approach. During testing, after having successfully learnt to 
-reconstruct anomaly free images, the method is then given an input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in the appendix with figure \ref{subfig:recbased}. 
-Representation approaches on the other hand use feature embedding methods to obtain feature representations of images and compare those. As shown in appendix figure \ref{subfig:repbased}, during training the model is 
-learning to correctly extract features of input images. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
-prior feature level representations of the class object. A decision is then made as well using a distance measure.\newline
-Both classes of IAD methods have shown to produce state of the art results. Yet currently more approaches are representation-based \cite{liu2024deep} as they have shown SOTA performance more 
-consistently. Nevertheless it is reasonable to focus on both kinds of IAD, as they may excel at different regions of anomaly detection and evaluation criteria. Namely reconstruction methods are 
-often showing a notable performance at pixel level anomaly detection in comparison to feature embedding/representation methods, as their principle is based on pixelwise comparisons of input 
+Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data as well as noisy data. Noisy data are inputs
+that are altered using noise, although the exact noise application depends on the specific approach. During testing, after successfully learning to 
+reconstruct anomaly-free images, the method is given a potentially noisy input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in the appendix with figure \ref{subfig:recbased}. 
+On the other hand, representation approaches use feature embedding methods to obtain feature representations of images and compare those. As shown in appendix figure \ref{subfig:repbased}, during training, the model is 
+learning to extract features of input images correctly. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
+prior feature-level representations of the class object. A decision is then made as well using a distance measure.\newline
+Both classes of IAD methods have been shown to produce state-of-the-art results. Nevertheless, more approaches are currently representation-based \cite{liu2024deep} as they have shown SOTA performance more 
+consistently. However, it is reasonable to focus on both kinds of IAD, as they may excel in different regions of anomaly detection and evaluation criteria. Namely, reconstruction methods often show a notable performance at pixel-level anomaly detection compared to feature embedding/representation methods, as their principle is based on pixel-wise comparisons of input 
 and reconstructed data.
 
 \subsection{Representation Based}
 
-Again, looking at the representation-based approaches, some distinctions can be made on exactly how the method implements a representation-based procedure.
-The main approaches in this category are ones featuring a memory bank, teacher-student architecture, distribution map and ones employ a one-class classification strategy. The subcategory of 
-memory bank denotes the procedure to store feature representations, that are extracted from training images, into a data collection structure. This structure is then used to compare new 
-features from input images to the stored ones to form a decision (Fig. \ref{fig:memorybankviz}). Memory bank approaches offer the upside of little training time and quick construction, yet the usually suffer from high memory 
-usage and costly inference, due to the feature representations being stored into memory. Some papers have addressed this problem. Famously PatchCore \cite{patchCore2022} introduced a coreset-subsampled 
+Again, when examining the representation-based approaches, some distinctions can be made regarding exactly how the method implements a representation-based procedure.
+The main approaches in this category feature a memory bank, teacher-student architecture, and distribution map, and one employing a one-class classification strategy. The subcategory of 
+memory bank denotes the procedure to store feature representations extracted from training images into a data collection structure. This structure then compares new 
+features from input images to the stored ones to form a decision (Fig. \ref{fig:memorybankviz}). Memory bank approaches offer the upside of little training time and quick construction. However, they usually suffer from high memory 
+usage and costly inference due to the stored feature representations in memory. Some papers have addressed this problem. Famously PatchCore \cite{patchCore2022} introduced a coreset-subsampled 
 memory bank, greatly improving on said bottlenecks and setting precedent for more efficient memory bank approaches. \newline
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/memorybankviz.jpg}
-    \caption{Abstract visualization of the functionality of the memory bank concept \cite{liu2024deep}}
-    \label{fig:memorybankviz}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/memorybankviz.jpg}
+\caption{Abstract visualization of the functionality of the memory bank concept \cite{liu2024deep}}
+\label{fig:memorybankviz}
 \end{figure}
 
 
-Teacher-student architectures(Fig. \ref{fig:TSviz}) \cite{revdist2023} (AST zitieren) reference the use of two networks for anomaly detection. 
-This architecture has also been one of the more effective ones and its performance greatly depends on factors like the selection of the teacher model and way 
-of knowledge transfer between the two networks. Here the teacher model is usually a pretrained 
-backbone, that transfers knowledge onto the student model during training time, whereas the student model is simultaneously learning representations from the teacher model as well as learning 
-how to represent the input data by itself. During testing, the extracted features of teacher and student are compared, which would then be similar for normal images but have larger differences 
-when presented an anomalous data point.\newline
+Teacher-student architectures(Fig. \ref{fig:TSviz}) \cite{revdist2023} \cite{RudWeh2023AST} reference the use of two networks for anomaly detection. 
+This architecture has also been one of the more effective ones. Its performance greatly depends on factors like the teacher model selection and the knowledge transfer between the two networks. The teacher model is usually a pretrained 
+backbone that transfers knowledge onto the student model during training time. In contrast, the student model simultaneously learns representations from the teacher model and learns 
+how to represent the input data by itself. During testing, the extracted features of the teacher and student are compared, which would be similar for normal images but have larger differences 
+when presented with an anomalous data point.\newline
 
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/TSviz.jpg}
-    \caption{Abstract visualization of the functionality of the teacher-student concept \cite{liu2024deep}}
-    \label{fig:TSviz}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/TSviz.jpg}
+\caption{Abstract visualization of the functionality of the teacher-student concept \cite{liu2024deep}}
+\label{fig:TSviz}
 \end{figure}
 
 
 
-Next, distribution map approaches \cite{csflow2022} try to map the features from their original distribution into a more suitable one. This vastly facilitates an identification of anomalous features as shown in 
-figure \ref{fig:distmapviz}. Such an approach requires a method to map the features between distributions. Often times a variation of normalizing flow is utilized for this \cite{liu2024deep}. 
+Next, distribution map approaches \cite{csflow2022} try to map the features from their original distribution into a more suitable one. This vastly facilitates the identification of anomalous features as shown in 
+figure \ref{fig:distmapviz}. Such an approach requires a method to map the features between distributions. Often, a variation of normalizing flow is utilized for this \cite{liu2024deep}. 
 Normalizing flows as a class of generative models \cite{Kobyzev_2021normalizingflowexplanation} are advantageous for transforming probability distributions because they provide a flexible 
 framework to model complex distributions and efficient sampling. This enables accurate distribution mapping as well as sampling. \newline
 
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/distmapviz.jpg}
-    \caption{Abstract visualization of the functionality of the distribution map concept \cite{liu2024deep}}
-    \label{fig:distmapviz}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/distmapviz.jpg}
+\caption{Abstract visualization of the functionality of the distribution map concept \cite{liu2024deep}}
+\label{fig:distmapviz}
 \end{figure}
 
 Lastly, one-class classification(Fig. \ref{fig:OCCviz}) is 
-similar to a distribution mapping approach. The key difference is that the latter maps features into a desired distribution and the former focuses on finding boundaries between normal 
-and anomalous features. To efficiently do that, features are projected into a suited space using a network. To learn an accurate boundary, the approaches generate fake anomalous features to 
-then differentiate from normal ones. This method greatly relies on the quality of generated features and as such its effectiveness may vary. A typical approach for generating fake samples 
-in this works context is with the use of gaussian noise \cite{liu2023simplenet}.
+similar to a distribution mapping approach. The critical difference is that the latter maps features into a desired distribution, and the former focuses on finding boundaries between normal 
+and anomalous features. Features are projected into a suitable space using a network to efficiently do that. To learn an accurate boundary, the approaches generate fake anomalous features to 
+differentiate from normal ones. This method heavily relies on the quality of generated features, and as such, its effectiveness may vary. A typical approach for generating fake samples 
+in this context is using gaussian noise \cite{liu2023simplenet}.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/OCCviz.jpg}
-    \caption{Abstract visualization of the functionality of the one-class classification concept \cite{liu2024deep}}
-    \label{fig:OCCviz}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/OCCviz.jpg}
+\caption{Abstract visualization of the functionality of the one-class classification concept \cite{liu2024deep}}
+\label{fig:OCCviz}
 \end{figure}
 
 
-Circling back to reconstruction-based (Fig. \ref{fig:autoencoderviz}) methods, they also can be parted into subcategories. Here the most predominating one is the use of autoencoders to obtain a generated image. Many 
-reconstruction approaches make use of typical AE encoder and decoder structures. They are mainly separated by the method of resolving differences between the input image and the reconstructed one. 
-While there are too many difference evaluation approaches to name, DRAEM \cite{Zavrtanik_2021DRAEM} can be named here as one of the most famous reconstruction autoencoder approaches. It uses 
-the output of the reconstructive network in combination with the original image as the input for a discriminative subnetwork and achieves very good results and demonstrated a nearly equal effectiveness 
+Circling back to reconstruction-based (Fig. \ref{fig:autoencoderviz}) methods, they also can be parted into subcategories. Here, the most predominant one is the use of autoencoders to obtain a generated image. Many 
+reconstruction approaches make use of typical AE encoder and decoder structures. They are mainly separated by resolving differences between the input and reconstructed images. 
+While there are too many evaluation approaches to name, DRAEM \cite{Zavrtanik_2021DRAEM} can be named here as one of the most famous reconstruction autoencoder approaches. It uses 
+the output of the reconstructive network in combination with the original image as the input for a discriminative subnetwork. It achieves outstanding results and demonstrates nearly equal effectiveness 
 of reconstruction-based methods to representation-based ones. Autoencoder approaches like DRAEM are, despite being popular, often computationally expensive to train for IAD, as they require a lot of 
-training epochs and memory. %stimmt das???
+training epochs and memory.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/autoencoderbiz.jpg}
-    \caption{Abstract visualization of the functionality of the autoencoder concept \cite{liu2024deep}}
-    \label{fig:autoencoderviz}
+\centering
+\includegraphics[width=0.7\textwidth]{figures/approachvizgeneral/autoencoderbiz.jpg}
+\caption{Abstract visualization of the functionality of the autoencoder concept \cite{liu2024deep}}
+\label{fig:autoencoderviz}
 \end{figure}
 
 
-Another, albeit less popular, approach in this category would be the use of GAN architectures/concepts to try and solve the detection problem. While we don't cover the basic principles of GANs in 
-this chapter, GANs applied in IAD may still suffer the same disadvantages of regular ones, which include training instability, high computational demand and a higher difficulty of correct training and 
-evaluation. Hence the use of GANs for IAD is not commonly seen, although the nature of them may promise more realistic and higher quality training data than other approaches.
-Another kind of reconstruction-based IAD involves the use of transformer structures. They allow for good capturing of spatial relationships and long distance feature extraction \cite{xie2020benchmarking},
-making them useful for not only structural but also logical anomaly detection. Papers like \cite{You_2023transformer} make use of transformers for feature reconstruction and, as they are very 
-limited in reconstructing anomalous features well, creating an easy distinction. They show in their experiments, that their approach ADTR is able to outperform all shown baselines, including 
+Another, albeit less popular, approach in this category would be using GAN architectures/concepts to try and solve the detection problem. While we do not cover the basic principles of GANs in 
+this chapter, GANs applied in IAD may still suffer the same disadvantages as regular ones, including training instability, high computational demand and a higher difficulty of correct training and 
+evaluation. Hence, the use of GANs for IAD is not commonly seen, although their nature may promise more realistic and higher-quality training data than other approaches.
+Another kind of reconstruction-based IAD involves the use of transformer structures. They allow for good capturing of spatial relationships and long-distance feature extraction \cite{xie2020benchmarking},
+making them useful for structural and logical anomaly detection. Papers like \cite{You_2023transformer} use transformers for feature reconstruction and, as they are very 
+limited in reconstructing anomalous features well, providing an easy distinction. They show in their experiments that their approach ADTR is able to outperform all shown baselines, including 
 a variety of autoencoder approaches.
-Finally there also exists an approach that has been gaining popularity lately: the usage of the diffusion model \cite{ho2020denoisingdiffusionOG}. Papers like \cite{Wyatt_2022diffusionfirstapproach} 
-leverage the models ability to capture complex dependencies to detect anomalies in IAD, and other papers \cite{zhang2023diffusionaddiffusionmodern} further improved its efficiency by speeding up 
+Finally, there also exists an approach that has been gaining popularity lately: the usage of the diffusion model \cite{ho2020denoisingdiffusionOG}. Papers like \cite{Wyatt_2022diffusionfirstapproach} 
+leverage the model's ability to capture complex dependencies to detect anomalies in IAD, and other papers \cite{zhang2023diffusionaddiffusionmodern} further improved its efficiency by speeding up 
 the denoising process.
 \newline
-After carefully categorizing the important classes of unsupervised IAD, it is now discernible how many unique approaches towards anomaly detection exist, and may all yield different merits. 
-In section \ref{sec:IADmethods} we further elaborate on a few select IAD approaches from various categories who were utilized for the MVTecAD LOCO performance analysis or the ensemble 
+After carefully categorizing the essential classes of unsupervised IAD, it is now discernible how many unique approaches towards anomaly detection exist, and may all yield different merits. 
+In section \ref{sec:IADmethods}, we further elaborate on a few select IAD approaches from various categories that were utilized for the MVTecAD LOCO performance analysis or the ensemble 
 model. 
 
 
 \section{Anomaly Detection Methods}
 \label{sec:IADmethods}
-In this section we further dive into some of the IAD approaches that can be viewed as class representative to some extent. All following methods have demonstrated SOTA performance in 
-at least some categories and are subjects in the performance study on the MVTecAD LOCO dataset. In the this work we investigated the most widely popular categories of 
-IAD, namely memory bank, one-class classification, teacher-student and autoencoders.% and diffusion models.
+In this section, we further dive into some of the IAD approaches that can be considered class representative. All following methods have demonstrated SOTA performance in 
+at least some categories and are subjects in the performance study on the MVTecAD LOCO dataset. In this work, we investigated the most widely popular categories of 
+IAD, namely memory bank, one-class classification, teacher-student and autoencoders.
 
 \subsection{PatchCore}
 \label{subsec:patchcore}
-As the memory bank approach PatchCore \cite{patchCore2022} has been chosen. It has demonstrated very high accuracy in both image and pixel level anomaly detection and set a high standard for 
-performance after its release. The fundamental principle of PatchCore is visualized in figure \ref{fig:patchcorearchitecture} and is according to the basic memory bank principle. First a pretrained feature extractor is used 
-to retrieve features of the input data. Next in this paper, the features are turned into locally aware feature patches, meaning the feature maps are cut into small fields and applied preprocessing operations like pooling to ensure 
-the patches to be locally aware and also of similar dimension throughout the training. This results in patches of image $x_i$ that adhere to equation \ref{eq:patchcorepatches} where $\mathcal{N}_{P}^{(h,w)}$ 
+PatchCore \cite{patchCore2022} has been chosen as the memory bank approach. It has demonstrated high accuracy in image and pixel-level anomaly detection and set a high standard for 
+performance after its release. The fundamental principle of PatchCore is visualized in figure \ref{fig:patchcorearchitecture} and is according to the basic memory bank principle. First, a pre-trained feature extractor is used 
+to retrieve features of the input data. Next, in this paper, the features are turned into locally aware feature patches, meaning the feature maps are cut into small fields, and preprocessing operations like pooling are applied to ensure 
+the patches are locally aware and of similar dimensions throughout the training. This results in patches of image $x_i$ that adhere to equation \ref{eq:patchcorepatches} where $\mathcal{N}_{P}^{(h,w)}$ 
 describes a neighborhood of patches $\mathcal{P}$ in an image with height $h$, width $h$ and patch size $p$, as described in \ref{eq:neighborhood}. Moreover we use $\phi_{i,j} = \phi_j(x_i)$ as the feature 
 maps of hierarchy $j$ of image $x_i$.
 
 \begin{equation}
-    \label{eq:patchcorepatches}
-    \begin{split}
-    \phi_{i,j} (\mathcal{N}_{P}^{(h,w)}) = \mathcal{f}_{agg}(\{ \phi_{i,j}(a,b) \| (a,b) \in \mathcal{N}_{P}^{(h,w)} \})
-    \end{split}
+\label{eq:patchcorepatches}
+\begin{split}
+\phi_{i,j} (\mathcal{N}_{P}^{(h,w)}) = \mathcal{f}_{agg}(\{ \phi_{i,j}(a,b) \| (a,b) \in \mathcal{N}_{P}^{(h,w)} \})
+\end{split}
 \end{equation}
 
 \begin{equation}
-    \label{eq:neighborhood}
-    \begin{split}
-    \mathcal{N}_{P}^{(h,w)} = \{ (a,b) \| a & \in [h - [p/2], ..., h + [p/2]], \\
-                                              b & \in [w - [p/2], ..., w + [p/2]], \}
-    \end{split}
+ \label{eq:neighborhood}
+ \begin{split}
+\mathcal{N}_{P}^{(h,w)} = \{ (a,b) \| a & \in [h - [p/2], ..., h + [p/2]], \\
+ b & \in [w - [p/2], ..., w + [p/2]], \}
+ \end{split}
 \end{equation}
 
 The effectiveness of this patchwise approach is justified with each patch, despite being small, having a large enough receptive field size to provide a meaningful anomalous context when learned. 
 Before committing the resulting patches to the memory bank, PatchCore first induces coreset subsampling on the set of feature vectors. This ensures a reasonably small memory bank size that is 
-large enough to offer good results, and yet is not to time and memory consuming when performing nearest neighbor search. As a memory bank structure, PatchCore utilizes a search index by FaissNN(referenz) 
-which offers the application of kNN with great speed, performance and even a desired tradeoff if necessary for a task. Since performance is the main criterion in IAD research though, this tradeoff is not 
-utilized. 
+large enough to offer good results and is not too time-consuming when performing nearest-neighbor searches. As a memory bank structure, PatchCore utilizes a search index by FaissNN \cite{douze2024faissnn}
+which offers the application of kNN with great speed, performance and even a desired tradeoff if necessary for a task. This tradeoff is not utilized since performance is the main criterion in IAD research. 
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{figures/pathcore_architecture.png}
-    \caption{Structure of PatchCore architecture for training and testing \cite{patchCore2022}.}
-    \label{fig:patchcorearchitecture}
+\begin{figure}[H]
+\centering
+ \includegraphics[width=\textwidth]{figures/pathcore_architecture.png}
+ \caption{Structure of PatchCore architecture for training and testing \cite{patchCore2022}.}
+ \label{fig:patchcorearchitecture}
 \end{figure}
 
-At test time, the input images are processed exactly like the training images were, and afterwards the model searches for the nearest neighbor of each patch, and calculates a distance measurement as 
+At test time, the input images are processed exactly like the training images were, and afterwards the model searches for the nearest neighbor of each patch and calculates a distance measurement as 
 in equation \ref{eq:patchcoredistance}:
 
 \begin{equation}
@@ -222,129 +190,127 @@ s^{*} &= \| m^{test, *} - m^{*} \|_{2}
 \end{split}
 \end{equation}
 
-The distance scores are then used twofold: The maximum distance in addition to a weighting relative to other neighbors distances, indicates the anomaly score on an image level. Meanwhile the patchwise distances are reshaped, 
-interpolated and smoothed to a segmentation map for pixelwise anomaly detection.
+The distance scores are then used twofold: The maximum distance weighted relative to other neighbors' distances indicates the anomaly score on an image level. Meanwhile, the patchwise distances are reshaped, 
+interpolated and smoothed to a segmentation map for pixel-wise anomaly detection.
 \newline
-PatchCore has greatly improved the status of prior thought slow and rather inefficient memory bank approaches through its subsampling approach. It moreover offers to train a model with little time 
-since the only training that is really done is to fit the memory bank structure with patch vectors. Besides low training time it also requires low storage cost and offers very high and state of the art 
-performance that can also be boosted using simple averaging ensembles in its paper. Its performance on the MVTecAD dataset \cite{MVTEC_Bergmann_2021} is documented in tables \ref{tab:imageaurocmvtec} and \ref{tab:pixelaurocmvtec}. Yet due to its nature as a representation-based approach, PatchCore's 
-efficiency is limited by the pretrained feature extractors acting as its backbones. This problem persists but is also approached by the paper, as they offer a implementation to train the backbone 
+PatchCore has dramatically improved the status of prior thought slow and relatively inefficient memory bank approaches through its subsampling approach. Moreover, it offers to train a model in a short time 
+since the only training that is technically done is to fit the memory bank structure with patch vectors. Besides low training time, it also requires low storage cost and offers very high and state-of-the-art 
+performance that can also be boosted using simple averaging ensembles in its paper. Its performance on the MVTecAD dataset \cite{MVTEC_Bergmann_2021} is documented in tables \ref{tab:imageaurocmvtec} and \ref{tab:pixelaurocmvtec}. However, due to its nature as a representation-based approach, PatchCore's 
+efficiency is limited by the pretrained feature extractors acting as its backbones. This problem persists but is also approached by the paper, as they offer an implementation to train the backbone 
 extractor alongside the actual training.
 
 
 \subsection{SimpleNet}
 \label{subsec:simplenet}
-SimpleNet \cite{liu2023simplenet} is a recent one-class classification approach that has also shown to compete with other state of the art methods. Table \ref{tab:imageaurocmvtec} records its performance to be on the same standard as PatchCore 
+SimpleNet \cite{liu2023simplenet} is a recent one-class classification approach that has also been shown to compete with other state-of-the-art methods. Table \ref{tab:imageaurocmvtec} records its performance to be on the same standard as PatchCore 
 for most of the categories, %extra satz der es spezifiziert
-Moreover it was introduced by Liu et al. as a easy to use or application friendly approach, being easy to implement and requiring very little models.
+Moreover, it was introduced by Liu et al. as an easy-to-use or application-friendly approach, being easy to implement and requiring very few models.
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{figures/simplenet_architecture.png}
-    \caption{Structure from SimpleNet architecture \cite{liu2023simplenet}.}
-    \label{fig:simplenetpipeline}
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{figures/simplenet_architecture.png}
+\caption{Structure from SimpleNet architecture \cite{liu2023simplenet}.}
+\label{fig:simplenetpipeline}
 \end{figure}
 
-As a one-class classification or feature projection approach, SimpleNet utilizes a sub network to project extracted features into another space, to then find a decision criterion between nomral and 
-abnormal features. The exact pipeline of SimpleNet is illustrated in figure \ref{fig:simplenetpipeline}. While training, a pretrained feature extractor is used to retrieve features from the input data. Here it is noteworthy, 
-that SinmpleNet adopts PatchCore's approach of transforming extracted features into locally aware patches. This means in figure \ref{fig:simplenetpipeline}, the blue tiled pane represents features in form patch vectors 
-that represent the characteristics of the image. On the basis of SimpleNet being a one-class classification approach, the features are projected in the next step, visually at the green tiled pane. 
-\cite{liu2023simplenet} conducts multiple ablation experiments on different implementations of the feature adapter. They conclude that a single fully connected layer network yield the best 
-performance. The extracted features are then projected using the feature adapter, which is also simultaneously trained during the training session. Before training the discriminator, the resulting 
-features are used in combination with gaussian noise to produce fake features. This is done by adding the generated noise onto the features. Afterwards the discriminator is trained by giving it 
-the normal patch vectors of the input data as well as the artificial fake features, to then learn to differentiate between them. For the discriminator, the paper reports the use of a two-layer 
-MLP to be very effective. The training objective for the discriminator is composed of a truncated $l1$ loss and batchwise normalization:
+As a one-class classification or feature projection approach, SimpleNet utilizes a sub-network to project extracted features into another space to then find a decision criterion between normal and 
+abnormal features. The exact pipeline of SimpleNet is illustrated in figure \ref{fig:simplenetpipeline}. While training, a pre-trained feature extractor retrieves features from the input data. Notably, SinmpleNet adopts PatchCore's approach of transforming extracted features into locally aware patches. This means that in figure \ref{fig:simplenetpipeline}, the blue tiled pane represents features in the form of patch vectors 
+that represent the characteristics of the image. Based on SimpleNet being a one-class classification approach, the features are projected in the next step, visually at the green tiled pane. 
+\cite{liu2023simplenet} conducts multiple ablation experiments on different implementations of the feature adapter. They conclude that a single fully connected layer network yields the best 
+performance. The extracted features are then projected using the feature adapter, which is simultaneously trained during the training session. Before training the discriminator, the resulting 
+features are combined with gaussian noise to produce fake features. This is done by adding the generated noise onto the features. Afterwards, the discriminator is trained by giving it 
+the normal patch vectors of the input data and the artificial fake features to learn to differentiate between them. For the discriminator, the paper reports the use of a two-layer 
+MLP is very effective. The training objective for the discriminator is composed of a truncated $l1$ loss and batch-wise normalization:
 
 %simplenet loss function
 \begin{equation}
-    \label{eq:simplenetloss}
-    \begin{split}
-        \mathcal{L} &= min \sum_{x^{i}\in \mathcal{X}_{train}} \sum_{h, w} \frac{l^{i}_{h,w}}{H_{O} * W_{0}} \\
-        l^{i}_{h,w} &= max(0, th^{+} - D_{\psi}(q^{i}_{h,w})) + max(0, -th^{-} - D_{\psi}(q^{-i}_{h,w}))
-    \end{split}
-\end{equation}    
+ \label{eq:simplenetloss}
+ \begin{split}
+ \mathcal{L} &= min \sum_{x^{i}\in \mathcal{X}_{train}} \sum_{h, w} \frac{l^{i}_{h,w}}{H_{O} * W_{0}} \\
+ l^{i}_{h,w} &= max(0, th^{+} - D_{\psi}(q^{i}_{h,w})) + max(0, -th^{-} - D_{\psi}(q^{-i}_{h,w}))
+ \end{split}
+\end{equation} 
 
 Here $$th^{+}$$ and $$th^{-}$$ are truncation terms preventing potential overfitting, and $$D_{\psi}(q^{i}_{h,w})$$ represents the estimated normality of adapted features by the discriminator.
 
-At test time the features from the input image are undergoing the described process and the projected patch vectors are given to the discriminator, resulting in a score for each patch. Similar to 
-PatchCore, to generate segmentations, the scores are reshaped, bilinearly interpolated and smoothened. Also the largest score acts as the image anomaly score.
+At test time, the input image features undergo the described process, and the projected patch vectors are given to the discriminator, resulting in a score for each patch. Similar to 
+PatchCore, to generate segmentations, the scores are reshaped, bilinearly interpolated and smoothened. Also, the largest score acts as the image anomaly score.
 
-SimpleNet offers great results as to be seen in tables \ref{tab:imageaurocmvtec} and \ref{tab:pixelaurocmvtec}, in anomaly detection and localization. According to \cite{liu2023simplenet} its inference speed is with 79 frames per second (FPS) 
-not only comparably slower that PatchCore \cite{patchCore2022} with only 10 FPS 
-and PaDiM \cite{Defard_2021PADIM} (1 FPS), all being representation-based approaches, but also slower than many reconstruction-based approaches like DRAEM with 67 FPS. As other representation 
-approaches its performance is also dependent on the quality of the backbone feature extractor.
+SimpleNet offers excellent results in anomaly detection and localization, as seen in tables \ref{tab:imageaurocmvtec} and \ref{tab:pixelaurocmvtec}. According to \cite{liu2023simplenet}, its inference speed is 79 frames per second (FPS) and 
+not only comparably slower than PatchCore \cite{patchCore2022} with only 10 FPS 
+and PaDiM \cite{Defard_2021PADIM} (1 FPS), all being representation-based approaches, but also slower than many reconstruction-based approaches like DRAEM with 67 FPS. As with other representation 
+approaches, its performance is also dependent on the quality of the backbone feature extractor.
 
 
 \subsection{RevDist}
 \label{subsec:revdist}
 
-As a teacher student model, \cite{revdist2023} has shown to produce state of the art results on current datasets. The paper is an extension of a previous reverse distillation approach from 
-\cite{Deng_2022basicrevdist}. The base paper utilizes knowledge distillation through a classical teacher student architecture as explained in section \ref{sec:IADcategs}, though they stand out 
-due to two key differences visualized in figure \ref{fig:revdistbottleneck}. Firstly they present a unconventional knowledge distillation flow. The direct distillation through the teacher network still exists, 
-yet the input image does not directly influence the student learning anymore. This results in increased compactness as the low dimensional output of the teacher model is fed to the student, 
-whereas the student model has to predict the teachers feature representation. This mimics the encoder - decoder structure and therefore may yield advantges that come with this approach. Secondly 
-the paper introduces a further one-class bottleneck embedding module. This is comprised of a multi-scale feature fusion block to aggregate low and high level features, and a one-calss embedding 
-for retaining essential information important to the students decoding process. 
+As a teacher-student model, \cite{revdist2023} has produced state-of-the-art results on current datasets. The paper extends a previous reverse distillation approach from 
+\cite{Deng_2022basicrevdist}. The base paper utilizes knowledge distillation through a classical teacher-student architecture as explained in section \ref{sec:IADcategs}. However, they stand out 
+due to two critical differences visualized in figure \ref{fig:revdistbottleneck}. Firstly, they present an unconventional knowledge distillation flow. The direct distillation through the teacher network still exists, 
+yet the input image no longer directly influences student learning. This results in increased compactness as the low dimensional output of the teacher model is fed to the student, 
+whereas the student model has to predict the teacher's feature representation. This mimics the encoder-decoder structure and may yield advantages that come with this approach. Secondly, 
+the paper introduces a further one-class bottleneck embedding module. This comprises a multi-scale feature fusion block to aggregate low and high-level features and a one-class embedding 
+for retaining essential information necessary to the student's decoding process. 
 
 
-\begin{figure}[htbp]
-    \captionsetup[subfigure]{justification=centering}
-    \centering
-    \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
-        \centering
-        \includegraphics[width=\textwidth]{figures/revdist_bottleneck.png}
-        \caption{Image taken from \cite{Deng_2022basicrevdist}.}
-        \label{fig:revdistbottleneck}
-    \end{subfigure}
-    \hspace{0.05\textwidth} % Add space between subfigures
-    \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
-        \centering
-        \includegraphics[width=\textwidth]{figures/revdistpipeline.png}
-        \caption{Image taken from \cite{revdist2023}.}
-        \label{fig:revdistpipeline}
-    \end{subfigure}
-    
-    \caption{Visualization of reverse distillation approaches \cite{Deng_2022basicrevdist} and \cite{revdist2023}. a) shows 
-    the foundational concept of the bottleneck module used for reverse distillation approaches. b) shows the structural 
-    architecture of the approach used in this works context.}
-    \label{fig:revdistviz}
+\begin{figure}[H]
+ \captionsetup[subfigure]{justification=centering}
+\centering
+ \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
+ \centering
+ \includegraphics[width=\textwidth]{figures/revdist_bottleneck.png}
+ \caption{Image taken from \cite{Deng_2022basicrevdist}.}
+ \label{fig:revdistbottleneck}
+ \end{subfigure}
+ \hspace{0.05\textwidth} % Add space between subfigures
+ \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
+ \centering
+ \includegraphics[width=\textwidth]{figures/revdistpipeline.png}
+ \caption{Image taken from \cite{revdist2023}.}
+ \label{fig:revdistpipeline}
+ \end{subfigure}
+ 
+ \caption{Visualization of reverse distillation approaches \cite{Deng_2022basicrevdist} and \cite{revdist2023}. a) shows 
+ the foundational concept of the bottleneck module used for reverse distillation approaches. b) shows the structural 
+architecture of the approach used in this context.}
+\label{fig:revdistviz}
 \end{figure}
 
 
-Circling back to \cite{revdist2023}, the paper extends the prior reverse distillation approach in a way that limits possible abnormal patterns to heavily impact student learning. To do so they 
-introduce firstly a multiscale teacher architecture as well as projection blocks after each respective teacher block. Those multiscale projection blocks are made of stacked convolutional blocks 
-and are designed to regulate possible abnormal information patterns that might flow from teacher blocks to the student. This is depicted in figure \ref{fig:revdistpipeline}, which shows the image to describe the 
-approaches training pipeline. For inference the teachers information is passed to the respective multilayer projection blocks, as well as their students counterparts information after the 
-reverse distillation process.
+Circling back to \cite{revdist2023}, the paper extends the prior reverse distillation approach to limit possible abnormal patterns that heavily impact student learning. To do so, they 
+first introduce a multi-scale teacher architecture and projection blocks after each respective teacher block. Those multi-scale projection blocks are stacked convolutional blocks 
+and are designed to regulate abnormal information patterns that might flow from teacher blocks to the student. This is depicted in figure \ref{fig:revdistpipeline}, which shows the image to describe the 
+approaches training pipeline. For inference, the teacher's information is passed to the respective multilayer projection blocks and their student counterparts' information after the 
+reverse distillation.
 
 
 
 \subsection{DRAEM}
 \label{subsec:DRAEM}
 
-DRAEM \cite{Zavrtanik_2021DRAEM} is one of the reconstruction-based approaches that were selected for this work. This paper is one of the more representative ones for the reconstruction branch of 
-IAD techniques. The method is based on the reconstruction abilities of autoencoders to recreate normal images from altered ones. While in recent research representation-based approaches did 
-show SOTA performance more often, DRAEM demonstrated that reconstruction-based methods are able to compete in the same region. Tables \ref{tab:imageaurocmvtec} and 
-\ref{tab:pixelaurocmvtec} shows DRAEMs results on the MVTecAD dataset as reported 
+DRAEM \cite{Zavrtanik_2021DRAEM} is one of the reconstruction-based approaches selected for this work. This paper is one of the more representative ones for the reconstruction branch of 
+IAD techniques. The method is based on the reconstruction abilities of autoencoders to recreate normal images from altered ones. While recent research showed that representation-based approaches did 
+show SOTA performance more often, DRAEM demonstrated that reconstruction-based methods can compete in the same region. Tables \ref{tab:imageaurocmvtec} and 
+\ref{tab:pixelaurocmvtec} show DRAEMs results on the MVTecAD dataset as reported 
 in their paper.\newline
 
-\begin{figure}[ht]
-    \centering
-    \includegraphics[width=\textwidth]{figures/DRAEM_pipeline.png}
-    \caption{Visualization of DRAEM architecture for testing. \cite{Zavrtanik_2021DRAEM}.}
-    \label{fig:draempipeline}
+\begin{figure}[H]
+ \centering
+\includegraphics[width=\textwidth]{figures/DRAEM_pipeline.png}
+ \caption{Visualization of DRAEM architecture for testing. \cite{Zavrtanik_2021DRAEM}.}
+ \label{fig:draempipeline}
 \end{figure}
 
-DRAEM utilizes two subnetworks in their anomaly detection pipeline as seen in figure \ref{fig:draempipeline}. The first on is the so called reconstructive sub-network and is an encoder-decoder structure. The network is trained 
-to receive an image with artificial noise and reconstruct it into its original state. As the distance measurement between the reconstructed image and the original one, the second network is used, 
-namely the discriminative sub-network. This network consists of a u-net \cite{Ronneberger_2015UNET} like architecture. Input is a channel-wise concatenation of the altered input image and the reconstructed 
-one. Since the reconstructed image is supposed to be anomaly free, the two inputs should differ to some extent, which is to be learned by the second sub-network. The network outputs a segmentation map, 
-which can be used as the pixelwise anomaly detection map. Moreover the resulting map is further used for image level detection. To be interpretable, the map is smoothed by a convolution filter 
-and the maximum value is taken as the image anomaly score. Reconstruction methods often utilize similarity functions such as SSIM \cite{Wang_2004SSIM} to obtain segmentation masks \cite{Zavrtanik_2021DRAEM} 
+DRAEM utilizes two subnetworks in their anomaly detection pipeline, as seen in figure \ref{fig:draempipeline}. The first one is the so-called reconstructive sub-network, which is an encoder-decoder structure. The network is trained 
+to receive an image with artificial noise and reconstruct it into its original state. The second network is used as the distance measurement between the reconstructed image and the original one, 
+namely the discriminative sub-network. This network consists of a u-net \cite{Ronneberger_2015UNET} like architecture. Input is a channel-wise concatenation of the altered and reconstructed 
+input images. Since the reconstructed image is supposed to be anomaly-free, the two inputs should differ to some extent, which the second sub-network will learn. The network outputs a segmentation map, 
+which can be used as the pixel-wise anomaly detection map. Moreover, the resulting map is further used for image-level detection. To be interpretable, a convolution filter smoothes the map, and the maximum value is taken as the image anomaly score. Reconstruction methods often utilize similarity functions such as SSIM \cite{Wang_2004SSIM} to obtain segmentation masks \cite{Zavrtanik_2021DRAEM} 
 \cite{liu2024deep}. While the first 
-sub-network makes SSIM as part of their loss function, the discriminative sub-network breaks free of this as it automatically learns an appropriate distance measure, making it much more robust.
+sub-network makes SSIM part of their loss function, the discriminative sub-network breaks free of this as it automatically learns an appropriate distance measure, making it much more robust.
 
-DRAEM offers a exemplary good performance, robustness and moderate speed with around 67 frames per second at inference time \cite{liu2023simplenet}. Still this approach may struggle on the reconstructive 
+DRAEM offers exemplary performance, robustness and moderate speed with around 67 frames per second at inference time \cite{liu2023simplenet}. Still, this approach may struggle on the reconstructive 
 part of its pipeline when synthesizing near-in-distribution anomalies on the original input images \cite{liu2024deep}. %(rausfinden was das heißt und umschreiben).
 
 
@@ -359,98 +325,95 @@ part of its pipeline when synthesizing near-in-distribution anomalies on the ori
 \section{Metrics}
 \label{sec:metrics}
 
-Generally there are multiple metrics applicable to IAD experiments, a majority of which is listed in table \ref{tab:metrics}. Unlike different 
+Generally, multiple metrics are applicable to IAD experiments, most of which are listed in table \ref{tab:metrics}. Unlike different 
 settings, IAD approaches often work with continuous output values, called anomaly scores. This means a classifier does not usually return 
 a decision but rather a raw logit. An issue is that logits may vary between models for the same decision, i.e. PatchCore \cite{patchCore2022} could rank a set of images 
 with continuous scores between 1 and 10, while DRAEM \cite{Zavrtanik_2021DRAEM} would return values in a range from 7 to 14 for the same 
-set of images. Therefore a chosen threshold could greatly impact metrics like the true positive rate. To bridge this gap in comparativeness, one must find adequate metric that factors in such differences.
-A solution utilized in this field is to report take the logits, and report the area under the operator curve (AUROC) for differnent modalities. 
-For isntance this curve is computed on an image level by taking all logits and computing true and false positive rates for multiple distinct 
-decision thresholds. The area under that curve is then reported as the end result of the classifier.
+set of images. Therefore, a chosen threshold could significantly impact metrics such as the true positive rate. One must find an adequate metric that factors in such differences to bridge this gap in comparativeness.
+A solution utilized in this field is to take the logits and report the area under the operator curve (AUROC) for different thresholds. 
+For instance, this curve is computed on an image level by taking all logits and computing true and false positive rates for multiple distinct 
+decision thresholds. The area under that curve is then reported as the classifier's result.
 \newline\newline
-Looking at table \ref{tab:metrics} a variety of metrics in this research field is displayed. Visible are well known 
+Looking at table \ref{tab:metrics}, various metrics in this research field are displayed. Visible are well-known 
 ones from many other machine learning models like precision, recall, TPR, FPR and the F1-Score. These are generally applicable in most 
-cases, but are not listed in any recent important papers and thus are not important for any analyzes in this work. The other metrics are 
-more IAD specific. By a large margin, the most important scoring standard is the image AUROC. While this metric is usually referenced for image level 
-binary classification it is also very well applicable on a pixel level to display performance in segmentation. 
+cases but are not listed in any recent essential papers and, thus, are not crucial for any analyzes in this work. The other metrics are 
+more IAD-specific. By a large margin, the most crucial scoring standard is the image AUROC. While this metric is usually referenced for image-level 
+binary classification, it is also very well applicable on a pixel level to display performance in segmentation. 
 
 \input{algotable/metrics_table}
 
 Its calculation can be seen in 
-table \ref{tab:metrics}. Not every paper is generally reporting the pixel level AUROC \cite{csflow2022}, but it is becoming a more often 
+table \ref{tab:metrics}. Not every paper generally reports the pixel level AUROC \cite{csflow2022}, but it is becoming a more often 
 practiced standard over recent papers.
-Next in importance is the per-region overlap (PRO) score or also the area under the PRO score (AU-PRO). This metric denotes the per-region overlap of two areas 
-on a pixel level and can be calculated using the averaged sum of the ratio between true positives and ground truth pixels per predicted area. The two areas 
+Next of importance is the per-region overlap (PRO) score or the area under the PRO score (AU-PRO). This metric denotes the per-region overlap of two areas 
+on a pixel level. It can be calculated using the averaged sum of the ratio between true positives and ground truth pixels per predicted area. The two areas 
 compared are generally an image mask and the according segmentation by the model. The AU-PRO is then calculated by plotting the PRO score 
-at different thresholds for the segmentations, and reporting the area under the curve. This can be 
-used to compare the segmentation performance of models and is also a frequently featured metric in IAD related research. 
-Related to this score is the saturated per-region overlap (sPRO) and also the according are under the curve, the AU-sPRO. This metric was 
+at different thresholds for the segmentations and reporting the area under the curve. This can be 
+used to compare the segmentation performance of models and is also a frequently featured metric in IAD-related research. 
+Related to this score is the saturated per-region overlap (sPRO) and the according area under the curve, the AU-sPRO. This metric was 
 introduced in \cite{LOCODentsAndScratchesBergmann2022} and is briefly mentioned in section \ref{sec:datasets}. The method of deriving the sPRO 
 score is shown in table \ref{tab:metrics} here $m$ denotes the amount of anomalous regions in an image, $A_i | i \in \{1, ... , m\}$ an anomalous 
 region among them and $s_i | i \in \{1, ... , m\}$ a respective saturation threshold. $P$ is considered to be the pixels classified as anomalous 
-in the target image. The sPRO score is the calculated by averaging the intersections of all predictions and ground truths of an image, 
+in the target image. The sPRO score is calculated by averaging the intersections of all predictions and ground truths of an image 
 while norming the values by the saturation threshold and providing an upper limit of 1 per region. It is to be said that this gives a similar 
-view on the segmentation performance as the PRO score, as it is a generalized form of it and can produce the same results if the saturation 
-threshold would be equal to the amount of anomalous pixels per region. However, due to its cap of 1, it also rates varyingly large segmentations equally in cases 
-where the anomalous position possesses some uncertainty. Figure \ref{fig:sprovspro} demonstrates this behavior in the case of a logical anomaly of the pushpin class. 
+view on the segmentation performance as the PRO score, as it is a generalized form and can produce the same results if the saturation 
+threshold is equal to the number of anomalous pixels per region. However, due to its cap of 1, it also rates varyingly large segmentations equally in cases 
+where the anomalous position is uncertain. Figure \ref{fig:sprovspro} demonstrates this behavior in the case of a logical anomaly of the pushpin class. 
 As visible, the logical anomaly consists of an empty pushpin compartment. The missing pushpin could be placed in any place of this smaller 
-box for it to be valid, therefore an amount of pixels equal to the amount a visual pushpin possesses would suffice. Yet the conventional PRO score 
-would keep on rising as the segmented area gets larger within the anomalous region. Due to the saturation score and limit. this is prevented 
+box for it to be valid. Therefore, an amount of pixels equal to the amount a visual pushpin possesses would suffice. However, the conventional PRO score 
+keeps rising as the segmented area grows within the anomalous region. Due to the saturation score and limit, this is prevented 
 by the sPRO metric as figure \ref{fig:sprovspro} shows it to be already saturated once the minimum required amount of pixels is achieved. The saturation 
-scores for each anomaly have to be individually set for each anomaly, and are given for the five classes of MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022}.
+scores for each anomaly have to be individually set for each anomaly and are given for the five classes of MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022}.
 
 \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\textwidth]{figures/spro_vs_pro_bergmann.png}
-    \caption{Example on difference between sPRO and normal PRO through saturation. It shows that for an larger anomalous region, that has no required 
-             position for the anomalous object to be placed, the sPRO already reaches the maximum performance when a sufficiently large 
-             region is segmented. Meanwhile the conventional sPRO metric is strictly rising by the ration of the segmented region to the larger one \cite{LOCODentsAndScratchesBergmann2022}.}
-    \label{fig:sprovspro}
+\centering
+\includegraphics[width=0.6\textwidth]{figures/spro_vs_pro_bergmann.png}
+ \caption{Example of difference between sPRO and regular PRO through saturation. It shows that for a larger anomalous region that has no required 
+position for the anomalous object to be placed, the sPRO already reaches maximum performance when a sufficiently large 
+region is segmented. Meanwhile, the conventional PRO metric is strictly rising by the ratio of the segmented region to the larger one \cite{LOCODentsAndScratchesBergmann2022}.}
+ \label{fig:sprovspro}
 \end{figure}
 
 
 
 \section{Datasets}
 \label{sec:datasets}
-The datasets used in image anomaly detection are scarce, especially when it comes to anomaly detection in a manufacturing setting. There are many datasets and approaches that specialize on certain materials \cite{FabricDataset_Tsang_2016} 
+The datasets used in image anomaly detection are scarce, especially when it comes to anomaly detection in a manufacturing setting. Some many datasets and approaches specialize in certain materials \cite{FabricDataset_Tsang_2016} 
 \cite{SteeltubeDataset_Yang_2021} \cite{magnetictiles_Huang_2018}
-and often only one class. What currently stands out as a gold standard among IAD datasets is the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The authors created it  
-as a highly representative and standardized set of anomalous images along with training images. It has 15 classes from capsules to screws. Moreover the dataset provides image labels as well as segmentation 
-ground truths, making it versatile and applicable for multiple algorithms. The masks come as black and white grayscale images, while the image labels are given through its folder structure. 
-Each class contain train images, which only consist of regular examples, 
+and often only one class. What currently stands out as a gold standard among IAD datasets is the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The authors created it  
+as a highly representative and standardized set of anomalous images and training images. It has 15 classes, from capsules to screws. Moreover, the dataset provides image labels and segmentation 
+ground truths, making it versatile and applicable to multiple algorithms. The masks come as black and white grayscale images, while the image labels are given through its folder structure. 
+Each class contains train images consisting of regular examples 
 and test images. The data among the testing images is categorized by a title describing the anomaly. The ground truth folder contains 
-according ground truths on a pixel level.\newline
-Example images of the dataset are to be seen in figure \ref{fig:mvtecexampleimages}. They typically are of a rectangular shape and their resolutions range from 
+ground truths on a pixel level.\newline
+Exemplary images of the dataset are to be seen in figure \ref{fig:mvtecexampleimages}. They typically are of rectangular shape and their resolutions range from 
 700x700 to 1024x1024. More specifications can be found in Bergmann et al. \cite{MVTEC_Bergmann_2021} and the whole dataset is publicly available at the official website\cite{mvtecdownload}.\newline
-The MVTecAD\cite{MVTEC_Bergmann_2021} dataset is regarded highly among IAD papers, and has since its introduction been used in most relevant papers as a dataset 
-to benchmark the respective approaches on. This is also likely to remain the trend, since many state of the art algorithms in the recent years have primarily been benmarked on it, forcing new approaches 
-to also be benchmarked on this dataset to be comparable to the current highest performance holding approaches. Despite this work focusing on manufacturing settings MVTecAD is one of only two datasets relevant to this work, 
-and serves as a comparison for the performance investigation of this papers approaches on the second dataset. This is mainly due to the dataset's importance and 
-its relation to the second dataset.
+The MVTecAD\cite{MVTEC_Bergmann_2021} dataset is regarded highly among IAD papers and has, since its introduction, been used in most relevant papers as a dataset 
+to benchmark the respective approaches. This is also likely to remain the trend since many state-of-the-art algorithms in recent years have primarily been benchmarked on it, forcing new approaches 
+to be benchmarked on this dataset to be comparable to the current highest performance holding approaches. Despite this work focusing on manufacturing settings, MVTecAD is one of only two datasets relevant to this work 
+and serves as a comparison for the performance investigation of this paper's approaches on the second dataset. This is mainly due to the dataset's importance and 
+relation to the second dataset.
 
 \input{figures/mvtecadexampleimages/mvtecadexampleimages.tex}
 
-Later in 2022 Bergman et al. has introduced another IAD dataset that is loosely related to their original MVTecAD dataset, namely the MVTecAD LOCO dataset \cite{LOCODentsAndScratchesBergmann2022}. 
-This dataset works with the same ground ideas as their original MVTecAD set, but extends the testing contents of the dataset by logical anomalies. 
-It consists of five classes: breakfast box, juice bottle, pushpins, screw bag and splicing connectors. The difference to the other dataset is that the anomalous categories for each class are only separated into good images, images with structural anomalies 
-and images with logical anomalies. As mentioned in the introduction structural anomalies are visible damages to the objects, similar to the MVTecAD dataset. Logical anomalies denote violations against arbitrary restrictions 
-imposed by the authors. To illustrate this by an example: The class of pushpins represents a birds view of a compartmentalized box of pushpins(see figure \ref{fig:pushpinviz}). A rule added was, 
-that each compartment is only to contain one pushpin. This means that if one region were to miss their contents, or contain more than one pushpin, it would constitute a logical anomaly. If on the 
-other hand a pushpin would have a crooked or broken tip, it would be  labelled a structural anomaly. Fundamentally the differences of the 
-MVTecAD and the MVTecAD LOCO dataset consist of the method to store segmentations. While the former dataset provides one segmentation file per image, here there exists an image 
-file for each anomalous ground truth area, which is mapped to the image by the folder name they are in.
+Later, in 2022, Bergman et al. introduced another IAD dataset loosely related to their original MVTecAD dataset, namely the MVTecAD LOCO dataset \cite{LOCODentsAndScratchesBergmann2022}. 
+This dataset works with the same ground ideas as their original MVTecAD set but extends the testing contents of the dataset by logical anomalies. 
+It consists of five classes: breakfast box, juice bottle, pushpins, screw bag and splicing connectors. The difference from the other dataset is that the anomalous categories for each class are only separated into good images, images with structural anomalies 
+and images with logical anomalies. As mentioned in the introduction, structural anomalies are visible damages to the objects, similar to the MVTecAD dataset. Logical anomalies denote violations against arbitrary restrictions 
+imposed by the authors. To illustrate this by an example: The class of pushpins represents a bird's view of a compartmentalized box of pushpins(see figure \ref{fig:pushpinviz}). A rule was added 
+that each compartment only contained one pushpin. This means that if one region misses their contents or contains more than one pushpin, it would constitute a logical anomaly. Conversely, if a pushpin had a crooked or broken tip, it would be labeled a structural anomaly. Fundamentally, the differences between the 
+MVTecAD and the MVTecAD LOCO dataset are the methods used to store segmentations. While the former dataset provides one segmentation file per image, now an image file exists for each anomalous ground truth area, which is mapped to the image by the folder name of their location.
 
 \input{figures/pushpinviz/pushpinviz.tex}
 
 
-The addition of logical constraints opened an interesting area of research, since the high performance 
-of current state of the art algorithms were only measured on structural anomalies so far. Yet it would be insightful to see if those models could also detect logical anomalies, since those also occur 
-in real life settings, such as manufacturing settings. Another concept introduced in \cite{LOCODentsAndScratchesBergmann2022} is the 
-saturated per-region overlap score, also sPRO. The metric is further analyzed in section \ref{sec:metrics}, but in short gives a measure 
-on how well two regions overlap, while also accounting for regions overlapping in a way, that is seen as sufficient. The criterion of 
+The addition of logical constraints opened an exciting area of research since the high performance 
+of current state-of-the-art algorithms has only been measured on structural anomalies. However, it would be insightful to see if those models could also detect logical anomalies since they often occur 
+in real-life settings, such as manufacturing settings. Another concept introduced in \cite{LOCODentsAndScratchesBergmann2022} is the 
+saturated per-region overlap score, also sPRO. The metric is further analyzed in section \ref{sec:metrics}, but in short, it measures how well two regions overlap while also accounting for regions overlapping in a way that is seen as sufficient. The criterion of 
 sufficiency is given by a file in the respective class, which maps a saturation score to each kind of anomaly.
 Bergmann et al.\cite{LOCODentsAndScratchesBergmann2022} lastly also released a new IAD model together with the new dataset. The model utilizes autoencoders acting 
-as global and local feature encoders who each is using a feature regression network. Afterwards the approach makes use of knowledge distillation to jointly train 
+as global and local feature encoders, each using a feature regression network. Afterwards, the approach uses knowledge distillation to jointly train 
 feature extractors and regression networks to facilitate higher-dimensional feature mapping. Since the source code has not been made public, 
 this work refrains from using the method proposed in the paper.
 
@@ -458,134 +421,130 @@ this work refrains from using the method proposed in the paper.
 \section{Ensembles}
 \label{sec:ensembles}
 
-When it comes to ensembling classification models, there are multiple approaches to do so. Many ensembling methods are focused on combining homogeneous 
+There are multiple approaches to ensembling classification models. Many ensembling methods are focused on combining homogeneous 
 models, meaning a set of related models with similar architecture but different parameters or initializations. Typical methods \cite{Opitz_1999ensemblebasics} include 
-averaging, channel stacking, bagging, boosting, and more. There are also new approaches like the CAWPE \cite{Large_2019CAPE} who try to improve on standard methods. They extend averaging ensembles by 
-a weighted average that is depending on the ensemble members accuracy, yet balances the relevancy of all classifiers so that no strong classifier completely outweighs the rest.\newline
-Homogeneous ensembles are popular, since they tend to boost the performance and robustness of a base classifier without 
-much work, since the ensemble is normally created by initializing the same model a number times with slightly changed values.
+averaging, channel stacking, bagging, boosting, and more. New approaches like the CAWPE \cite{Large_2019CAPE} also try to improve on standard methods. They extend averaging ensembles by 
+a weighted average depending on the ensemble members' accuracy yet balance the relevancy of all classifiers so that no strong classifier completely outweighs the rest.\newline
+Homogeneous ensembles are popular since they tend to boost the performance and robustness of a base classifier without 
+much work since the ensemble is usually created by initializing the same model several times with slightly changed values.
 
 \subsection{Heterogeneous Ensembles}
 
-Heterogeneous classifier ensembles on the other hand are not necessarily combinable that easily, since they classically consist of models with 
-unique network architectures. This can lead to results, that should be interpreted as the same but differ by large margins. Yet 
+Conversely, heterogeneous classifier ensembles are not necessarily easily combinable since they classically consist of models with 
+unique network architectures. This can lead to results that should be interpreted as the same but differ by large margins. However, 
 ensembles of such variety are often desirable since they offer loads of information from multiple perspectives or domains when done right. 
 \newline
-Thus to bridge this gap at the output, a common approach is to first calibrate \cite{Guo_2017_tempscalingetc} and then ensemble each models 
+Thus, to bridge this gap at the output, a common approach is to calibrate \cite{Guo_2017_tempscalingetc} and then ensemble each model 
 output. For the last combination step, all ensemble techniques suited for homogeneous ensembling can 
-be applied, due to the outputs being in a comparable state then. There are also approaches to collectively calibrate the hyperparameters 
+be applied due to the outputs being in a comparable state. There are also approaches to collectively calibrate the hyperparameters 
 of each heterogeneous classifier while classifying \cite{Guo_2017_tempscalingetc}. While performance varies, combining 
 these models in such a way is not necessarily regarded as the highest achievable robustness, especially when the classifiers work with features or some other form of inner representation. 
-This stems from the fact that the model outputs are merely a small result of larger inner representations that may focus different aspects 
-of information among the inputs. Therefore in turn, you cannot obtain all relevant information that can be offered by simply calibrating the 
-model outputs. A more robust approach to address that problem, would be to ensemble the aforementioned inner representations, i.e. feature maps 
-and in turn train another classifier for the final meaningful output.
+This stems from the fact that the model outputs are a small result of more extensive inner representations that may focus on different aspects 
+of information among the inputs. Therefore, one cannot obtain all relevant information that can be offered by simply calibrating the 
+model outputs. A more robust approach to address that problem would be to ensemble the aforementioned inner representations, i.e., feature maps, and train another classifier for the final meaningful output.
 
 \subsection{General Issues}
 
-Another current problem of both kinds of ensembles, homogeneous and heterogeneous, is that all models have to actually be trained 
-separately in each training attempt, to then utilize all classification outputs. This leads to a higher training time and thus also higher computational 
-cost, which is desirable to be reduced in real world manufacturing firms.
-It should be said that while offering a potential increase in robustness and overall performance, naturally feature level ensemble may also 
+Another current problem of both kinds of ensembles, homogeneous and heterogeneous, is that all models must be trained 
+separately in each training attempt to utilize all classification outputs. This process leads to a higher training time and thus also higher computational 
+cost, which is desirable to be reduced in real-world manufacturing firms.
+It should be said that while offering a potential increase in robustness and overall performance, naturally, feature-level ensembles may also 
 come with certain disadvantages. For instance, it is more difficult to calibrate features from the ensemble members if possible, which may 
-be necessary depending on the nature of the data. An example of our context would be that certain IAD approaches project their features into a 
-suiting space to be effective, making it difficult to ensure that all features are in the same space when dealing with an ensemble. 
-Moreover feature level ensembles also are vulnerable to and reliant on the quality of the input features. This makes the decision on where 
-to cut off the base models very important.
+be necessary depending on the nature of the data. An example of our context would be that specific IAD approaches project their features into a 
+suitable space to be effective, making it challenging to ensure that all features are in the same space when dealing with an ensemble. 
+Moreover, feature-level ensembles are also vulnerable to and reliant on the quality of the input features. This makes the decision on where 
+to cut off the base models critical.
 
 \subsection{Multisource neural network feature map fusion}
 
-A desirable level of robustness and efficiency has been demonstrated in Heller et al. \cite{EnsembleHeller2023}. The authors utilize a feature level ensemble of multiple 
+Heller et al. \cite{EnsembleHeller2023} demonstrated a desirable level of robustness and efficiency. The authors utilize a feature-level ensemble of multiple 
 convolutional neural networks with differing architectures and tasks to improve inference speed and accuracy in plant disease detection.
-They show that cutting off several, potentially heterogeneous, classifiers after a couple of network layers and ensembling the 
-resulting feature maps yields firstly a significant improvement in training time compared to classical output ensembles. This stems from 
-the fact, that all base classifiers of the ensemble only have to be trained once for every following training approach. During this the ensemble 
-model remains compact, giving it an memory usage advantage over many supervised approaches. 
-Moreover they compared the performance of several ensemble combinations with conventional 
-output ensembles via the softmax function and reported in all cases no significant drop in performance. In cases where this approach allowed for 
-unique inputs via multispectral cameras \cite{EnsembleHeller2023} there even was a similar performance of this ensemble to other state of the 
-art ensembles visible. Here it is emphasized, the compactness of this new ensemble model combined with an equal performance and possible 
-increased robustness, as argued prior, it is a promising ensemble approach for this work.\newline
-To obtain ensembled feature maps the paper proposes to bring all feature maps to the same sizes using bilinear interpolation. Since 
-it is not necessarily desirable to keep every available feature map, as this would create inputs with way too many features, the amount of feature 
-maps is reduced using principle component analysis (PCA). This allows for the ensemble to focus only on the most important features, while maintaining 
-an equal amount of maps as if it were composed of a single classifier. To be more specific Heller et al. \cite{EnsembleHeller2023} introduced two main 
-approaches to perform this ensemble. The first is a global transformation block as seen in figure \ref{fig:GTBheller}. 
-Here the features are first all resized to the same dimensions and then connected along their channels through a concatenation layer.
-Afterwards PCA is applied along the channel dimension to obtain a result with N remaining feature maps, where N can be adjusted for ones 
+They show that cutting off several potentially heterogeneous classifiers after a couple of network layers and ensembling the 
+resulting feature maps yields a significant improvement in training time compared to classical output ensembles. This stems from 
+the fact that all base classifiers of the ensemble only have to be trained once for every following training approach. The ensemble 
+model remains compact during this time, giving it a memory usage advantage over many supervised approaches. 
+Moreover, they compared the performance of several ensemble combinations with conventional 
+output ensembles via the softmax function and reported, in all cases, no significant drop in performance. In cases where this approach allowed for 
+unique inputs via multispectral cameras \cite{EnsembleHeller2023}, there even was a similar performance of this ensemble to other state-of-the-art ensembles visible. Here, it is emphasized that the compactness of this new ensemble model combined with an equal performance and possible 
+increased robustness, as argued prior, is a promising ensemble approach for this work.\newline
+To obtain ensembled feature maps, the paper proposes to bring all feature maps to the same sizes using bilinear interpolation. Since 
+keeping every available feature map is not necessarily desirable, as this would create inputs with too many features, the amount of feature 
+maps is reduced using principal component analysis (PCA). This allows the ensemble to focus only on the most essential features while maintaining 
+an equal number of maps as if composed of a single classifier. To be more specific, Heller et al. \cite{EnsembleHeller2023} introduced two main 
+approaches to perform this ensemble. The first is a global transformation block, as seen in figure \ref{fig:GTBheller}. 
+The features are all resized to the same dimensions and connected along their channels through a concatenation layer.
+Afterwards, PCA is applied along the channel dimension to obtain a result with N remaining feature maps, where N can be adjusted for one's 
 needs. This method offers the advantage of efficiency, as PCA is only run once per feature ensembling, and may be applied when there is 
-an almost even number of feature maps per classifier from similar input sources. Yet this approach is also 
-prone to a couple disadvantages. If the different input data is collected from fundamentally distinct sources, there may be a significant 
-loss of information when globally applying PCA. Furthermore this approach cannot be balanced when confronted with classifiers with large 
-discrepancies in channel number. If the amount of feature maps from one classifier completely predominates, there is a high likelihood 
+an almost even number of feature maps per classifier from similar input sources. However, this approach is also 
+prone to a couple of disadvantages. If the different input data is collected from fundamentally distinct sources, there may be a significant 
+loss of information when globally applying PCA. Furthermore, this approach cannot be balanced when confronted with classifiers with large 
+discrepancies in channel numbers. If the amount of feature maps from one classifier completely predominates, there is a high likelihood 
 that most feature maps that are selected are from this classifier, if not all.
 
-\begin{figure}[htbp]
-    \captionsetup[subfigure]{justification=centering}
-    \centering
-    \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
-        \centering
-        \includegraphics[width=\textwidth]{figures/global_transformation_block.jpg}
-        \caption{Global transformation block. The feature maps first get resized and concatenated before PCA is applied.}
-        \label{fig:GTBheller}
-    \end{subfigure}
-    \hspace{0.05\textwidth} % Add space between subfigures
-    \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
-        \centering
-        \includegraphics[width=\textwidth]{figures/independent_transformation_block.jpg}
-        \caption{Independent transformation block. The feature maps are subjected to PCA for cahnnel reduction, before resized and concatenated.}
-        \label{fig:ITBheller}
-    \end{subfigure}
-    
-    \caption{Visualizations of the proposed transformation blocks in \cite{EnsembleHeller2023}. The images show the global transformation 
-             block in comparison to the independent transformation block \cite{EnsembleHeller2023}}
-    \label{fig:hellerensembleblocks}
+\begin{figure}[H]
+ \captionsetup[subfigure]{justification=centering}
+ \centering
+\begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
+ \centering
+ \includegraphics[width=\textwidth]{figures/global_transformation_block.jpg}
+ \caption{Global transformation block. The feature maps first get resized and concatenated before PCA is applied.}
+ \label{fig:GTBheller}
+ \end{subfigure}
+ \hspace{0.05\textwidth} % Add space between subfigures
+ \begin{subfigure}[b]{0.4\textwidth} % Decreased width to add space
+ \centering
+ \includegraphics[width=\textwidth]{figures/independent_transformation_block.jpg}
+ \caption{Independent transformation block. The feature maps are subjected to PCA for channel reduction before being resized and concatenated.}
+ \label{fig:ITBheller}
+\end{subfigure}
+ 
+ \caption{Visualizations of the proposed transformation blocks in \cite{EnsembleHeller2023}. The images show the global transformation 
+block in comparison to the independent transformation block \cite{EnsembleHeller2023}}
+ \label{fig:hellerensembleblocks}
 \end{figure}
 
 
 
 
-To combat this at a cost of lesser efficiency Heller et al. also introduced a second approach, namely the independent transformation block, 
+To combat this at the cost of lesser efficiency, Heller et al. also introduced a second approach, namely the independent transformation block, 
 visualized in figure \ref{fig:ITBheller}. 
-This procedure is only differing in the sequencing of the actions. Therefore PCA is firstly applied to every set of feature maps, keeping 
+This procedure only differs in the sequencing of the actions. Therefore, PCA is first applied to every set of feature maps, keeping 
 a certain number of feature map components per classifier. They are then all resized to the desired dimensions and concatenated through 
-the concatenation layer. This sequencing allows for maximum information preservation through individual PCA and also to predefine the number 
+the concatenation layer. This sequencing allows maximum information preservation through individual PCA and predefining the number 
 of feature maps to be kept per classifier, preventing larger imbalances.
 
 
 
 \section{Model Calibration}
 \label{sec:modelcalibration}
-Calibration or rather confidence calibration is the process of adjusting/scaling your models output so that it indicates how likely it is to be correct. This is an important action, as nowadays 
-models demonstrate increasingly good performance, scoring very high accuracies on classification tasks. Models that show to be correct that often, generally also have potential to be deployed in 
-real world use cases, which especially holds true in IAD research for manufacturing contents. \cite{Guo_2017_tempscalingetc} reports that most modern neural networks are poorly calibrated in regard 
-to their confidence. Current IAD methods investigated in this work confirm this, only returning anomaly scores devoid of any confidence indication. Correct confidence calibration can help evaluate 
-models using new metrics, increase the users trust into the application and also help to decide on how to utilize the predictions of the model in ones context \cite{whyUncertaintyIsImportant}. 
+Calibration, or rather confidence calibration, is the process of adjusting/scaling one's model output so that it indicates how likely it is to be correct. This is a necessary action, as nowadays, 
+models demonstrate increasingly good performance, scoring very high accuracies on classification tasks. Models that are correct often also have the potential to be deployed in 
+real-world use cases, which is especially true in IAD research for manufacturing content. \cite{Guo_2017_tempscalingetc} reports that most modern neural networks are poorly calibrated concerning their confidence. Current IAD methods investigated in this work confirm this, only returning anomaly scores without any confidence indication. Correct confidence calibration can help evaluate 
+models using new metrics, increase the user's trust in the application, and help decide on how to utilize the model's predictions in one's context \cite{whyUncertaintyIsImportant}. 
 \newline
-\cite{Guo_2017_tempscalingetc} review multiple promising ways to calibrate the confidence of a model. The paper assumes certain components as method input. For a sample $x_i$ there exists the 
-prediction probability $\hat{p}_i$ that $y_i = 1$, which is poorly calibrated. Moreover we are given the according non probabilistic output or logit $z_i$ for the input. The goal is to derive a 
-well calibrated output confidence $\hat{q}_i$.
-On a top level, the authors distinguish between calibrating binary classification models and multiclass 
-ones. For binary models they present histogram binning, isotonic regression, bayesian binning into quantiles (BBQ) and lastly platt scaling. 
-Histogram binning is a non-parametric approach and involves binning the uncalibrated prediction possibilities into distinct bins. Each bin $B_m$ is then assigned a confidence score $\theta _m$. During 
-test time the models prediction probability $\hat{p}_i$ is mapped the score $\theta _m$ of the bin $B_m$ it falls into, resulting in a calibrated confidence $\hat{q}_m = \theta _m$.
-%The boundaries of the bins are here chosen so that they minimize the bin-wise squared loss in accord to:
+\cite{Guo_2017_tempscalingetc} review multiple promising ways to calibrate the confidence of a model. The paper assumes specific components as method input. For a sample $x_i$, there exists the 
+prediction probability $\hat{p}_i$ that $y_i = 1$, which is poorly calibrated. Moreover, we are given the non-probabilistic output or logit $z_i$ for the input. The goal is to derive a 
+well-calibrated output confidence $\hat{q}_i$.
+On a high level, the authors distinguish between calibrating binary classification models and multi-class 
+ones. For binary models, they present histogram binning, isotonic regression, bayesian binning into quantiles (BBQ), and platt scaling. 
+Histogram binning is a non-parametric approach that involves binning uncalibrated prediction possibilities into distinct bins. Each bin $B_m$ is then assigned a confidence score $\theta _m$. During 
+test time, the model's prediction probability $\hat{p}_i$ is mapped to the score $\theta _m$ of the bin $B_m$ it falls into, resulting in a calibrated confidence $\hat{q}_m = \theta _m$.
+%The boundaries of the bins are here chosen so that they minimize the bin-wise squared loss in accordance to:
 %Hier formel einfügen
 
 
-Another non parametric approach is the solution with isotonic regression. This means to learn a piecewise constraint function $\mathcal{f} \ni \hat{q}_m = \mathcal{f}(x_i)$. This may serve as a 
-optimized strict generalization of the histogram binning approach as the function can be written as: %formel und boundaries erwähnen
-Another extension of histogram binning would be BBQ, which marginalizes out all possible binning schemes to produce $\hat{q}_i$. A binning schemes 
+Another non-parametric approach is the solution with isotonic regression. This means to learn a piecewise constraint function $\mathcal{f} \ni \hat{q}_m = \mathcal{f}(x_i)$. This may serve as an 
+optimized strict generalization of the histogram binning approach.
+Another extension of histogram binning would be BBQ, which marginalizes out all possible binning schemes to produce $\hat{q}_i$. A binning scheme 
 is denoted by \cite{Guo_2017_tempscalingetc} to be a pair $(M, \mathcal{I})$, with $M$ being the number of bins and $\mathcal{I}$ a corresponding partition of $[0, 1]$ into disjoint intervals. 
-%noch bissi beschreiben, kb jetzt
 
 
-Lastly there is the parametric approach for binary prediction classifiers called platt scaling. This is the only approach that doesn't require the uncalibrated predicted probability and solely utilizes 
-the classifiers' logits to infer a calibrated confidence. The approach can be summarized with fitting a logistic regression model on the uncalibrated non-probabilistic model outputs. An exemplary 
+Lastly, there is the parametric approach for binary prediction classifiers called platt scaling. This approach does not require the uncalibrated predicted probability and solely utilizes 
+the classifiers' logits to infer a calibrated confidence. The approach can be summarized by fitting a logistic regression model on the uncalibrated non-probabilistic model outputs. An exemplary 
 solution in the context of neural networks may be to optimize two scalar parameters $a, b \in \mathcal{R}$ so that $\hat{q}_i = \sigma(az_i + b)$ achieves an optimal fit. \cite{Guo_2017_tempscalingetc} 
-stress that this method only calibrates the output after training, while the networks parameters stay fixed during this calibration as well as thereafter.
+stress that this method only calibrates the output after training, while the network parameters stay fixed during this calibration and thereafter.
 \newline
-As mentioned the paper also touches on model calibration for multi class prediction models, like certain binning method extensions or matrix and vector scaling. These will not be discussed here, 
+As mentioned, the paper also discusses model calibration for multi-class prediction models, like specific binning method extensions or matrix and vector scaling. These will not be discussed here, 
 since the problem context of this work revolves around binary classification methods.
 
 

@@ -46,8 +46,8 @@ below, if at all. (Beschreiben wer so gute ansätze sind bei sPRO on average)
 To bring the above mentioned numbers into perspective, the drop of in image and pixel level auroc for the classififers between the 
 MVTecAD \cite{MVTEC_Bergmann_2021} and the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset was significant. Approaches 
 PatchCore \cite{patchCore2022}, SimpleNet \cite{liu2023simplenet}, Reverse Distillation \cite{revdist2023} and DRAEM \cite{Zavrtanik_2021DRAEM} had a fall off 
-in image AUROC class average of respectively 0.174, 0.193, (994 - ???) and 0.213. With respect to the pixel wise 
-AUROC, a decline of 0.064, 0.147, (983 - ???) and 0.174 emerged. \newline
+in image AUROC class average of respectively 0.174, 0.193, 0.208 and 0.213. With respect to the pixel wise 
+AUROC, a decline of 0.064, 0.147, 0.218 and 0.174 emerged. \newline
 Figure xyz shows exemplary metrics divided by structural and logical anomalies. The reported pixel AUROCs slightly differ from earlier reported results due to a different 
 evaluation split of good images, but showcase a principle performance difference. Here a better performance is clearly visible for the 
 class of structural anomalies, sometimes by even up to 29 percent, suggesting logical anomalies to be distinctively more difficult to correctly segment. (Prediction plot???)
@@ -82,7 +82,7 @@ an anomalous region.
 
 \input{figures/DRAEMweakness/draemweakness.tex}
 
-Classifiers like PatchCore \cite{patchCore2022} and SimpleNet \cite{liu2023simplenet} generally showed good performance. Unlike DRAEM, they exhibited 
+The other classifiers, PatchCore \cite{patchCore2022}, SimpleNet \cite{liu2023simplenet} and Reverse Distillation \cite{revdist2023}, generally showed good performance. Unlike DRAEM, they exhibited 
 poorer performance when classifying small anomalies (Fig. xyz). Moreover The segmentations often times slightly overshoot the anomalous regions at various confidence 
 degrees. What this means is that unlike DRAEM \cite{Zavrtanik_2021DRAEM}, which is very strict with segmentation, those approaches tend to segment more pixels than necessary. 
 Of course these pixels do not have the same values, which is why the performance is still good after thresholding. 
@@ -99,16 +99,21 @@ displays an overview of important metrics calculated on this novel class.
 
 \input{algotable/flatconnectorperformance.tex}
 
+The localization performances display similar characteristics of each classifier as during the last experiment. This relates to DRAEMs \cite{Zavrtanik_2021DRAEM} precise segmentation, 
+aswell to the more fuzzy segmentation of the other classifiers. Below are representative results of the classifiers localization performance on the flat connector class (Fig. \ref{fig:FCallapproaches}).
 
-- same analysis like last section\newline
-- analyse performance from 5 classifiers, ensemble performance is for next section
+
+\input{figures/allapproachesFCimages/allapproachesFC.tex}
+
 
 
 \section{Ensemble Network}
 \label{sec:ensembleresults}
 
 This section reports the results of the ensemble network approach on the class flat connector to facilitate understanding of a visual 
-analyis. More results from other classes of the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} set are to be found in appendix (referenz). Conclusions drawn from this 
+analyis. Furthermore, as the flat connector class seems to be less of a challenge to this works approaches than other classes, it is convenient to showcase strenghts and 
+shortcomings of the ensemble models in a more easy environment. More experiments from other classes of the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} set are to be found in appendix (referenz). 
+Conclusions drawn from this 
 experiment are also applicable to the other classes. Firstly the results from the primary ensemble approach from section \ref{sec:featurelevelensemble} are reported. Afterwards 
 the results of the secondary ensemble approach are presented, supported by according metrics and segmentation examples.
 
@@ -132,7 +137,9 @@ This subsection reports the performance of both ensemble experiments with stacki
 The experiment is split into two smaller experiments. One investigates the performance of ensembling higher and lower level features in 
 single backbones, wheras the other one regards standard backbone ensembling with the ones mentioned in section \ref{sec:ensemblecandidates}. 
 
-- table mit metrics
+\input{algotable/ensembleimageAUROC.tex}
+
+\input{algotable/ensemblepixelAUROC.tex}
 
 
 \textbf{Hierarchy Levels.} The results of ensembling different hierarchies exhibit a degree of diversity between different layer hierarchies. As briefly menitoned in section \ref{sec:ensemblecandidates}, the resnet backbones consist of four 
@@ -142,17 +149,23 @@ Figure xyz exemplary showcases the segmentation results of training using the wi
 \input{figures/faillayer34/faillayersegmentations.tex}
 
 The image and pixel AUROC were unstable and poor over the course of the training, 
-as figure xyz suggests, and therefore were not recorded explicitly for multiple classes, as this was the case for all trainings. The loss visible in figure xyz furthermore 
+as figure \ref{fig:failmetrics} suggests, and therefore were not recorded explicitly for multiple classes, as this was the case for all trainings. The loss visible in figure \ref{fig:failmetricsloss} furthermore 
 showcases that the training process was flawed. Due to these findings the following experiments only consider earlier layers if diverging from the standard layers 
 discussed in section \ref{sec:ensemblecandidates}.
 
 \input{figures/faillayer34/failmetricsandloss.tex}
 
 
-Experiments combining lower layer aggregations yielded different results. Table xyz summarises the reported metrics on the flat connector class, and figure xyz showcases exemplary 
+Experiments combining lower layer aggregations yielded different results. Table xyz summarises the reported metrics on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} 
+dataset, and figure xyz showcases exemplary 
 segmentation images of the experiments. More data is to be found in the appendix.
 
-- figures hier
+\input{figures/ensemblehierarchyimages/ensemblehierarchy.tex}
+
+Here it is to be seen that the results are usable, as anomalies are segmented. The localization performance seems to be worse than the standard SimpleNet \cite{liu2023simplenet} 
+performance, judging from segmentation images (Fig. \ref{fig:ensemblehierarchy}) and metrics (Tab. \ref{tab:ensembleimageAUROC}, Tab. \ref{tab:ensemblepixelAUROC}). While the anomalous regions often still get detected, there is a lot more uncertainty regarding 
+the pixel scores than from comparable IAD approaches, leading to less robust results.
+
 
 
 \textbf{Backbone Ensemble.} The performance of this approach is visible in table xyz. The performance is visible worse from the performance 
@@ -171,7 +184,7 @@ attempts.
 \input{figures/ensembleimagesFC/ensembleimagesFC.tex}
 
 As a comparison figure xyz displays example segmentations from the individual backbones. Here there is a lot less uncertainty or 
-noise than in the ensembled approach. This makes for worse or at least more unstable ensemble performance, especially regarding segmentation. 
+noise than in the ensembled approach. This makes for worse and less robust ensemble performance, especially regarding segmentation. 
 The implications and reasons of this are taken up in the next chapter.
 
 \input{figures/backboneexamples/singlebackboneexamples.tex}
