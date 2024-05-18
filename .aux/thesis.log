@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  18 MAY 2024 01:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  18 MAY 2024 01:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1499,11 +1499,6 @@ LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
 (Font)              `T1/Roboto-LF/bold/n' on input line 2.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
 (Font)              scaled to size 20.74pt on input line 2.
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--14
-
- []
-
 )
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
@@ -2132,4 +2127,314 @@ Package pdftex.def Info: figures/allapproachesFCimages/patchcore_flat_connector_
 <figures/allapproachesFCimages/simplenet_flat_connector_test_logical_anomalies_004.png, id=961, 639.13782pt x 193.47281pt>
 File: figures/allapproachesFCimages/simplenet_flat_connector_test_logical_anomalies_004.png Graphic file (type png)
 <use figures/allapproachesFCimages/simplenet_flat_connector_test_logical_anomalies_004.png>
-Package pdf
+Package pdftex.def Info: figures/allapproachesFCimages/simplenet_flat_connector_test_logical_anomalies_004.png  used on input line 11.
+(pdftex.def)             Requested size: 230.46576pt x 69.76529pt.
+<figures/allapproachesFCimages/simplenet_flat_connector_test_structural_anomalies_016.png, id=962, 636.87938pt x 191.9672pt>
+File: figures/allapproachesFCimages/simplenet_flat_connector_test_structural_anomalies_016.png Graphic file (type png)
+<use figures/allapproachesFCimages/simplenet_flat_connector_test_structural_anomalies_016.png>
+Package pdftex.def Info: figures/allapproachesFCimages/simplenet_flat_connector_test_structural_anomalies_016.png  used on input line 12.
+(pdftex.def)             Requested size: 230.46576pt x 69.46548pt.
+<figures/allapproachesFCimages/DRAEM_structural_26.png, id=964, 676.02562pt x 212.29312pt>
+File: figures/allapproachesFCimages/DRAEM_structural_26.png Graphic file (type png)
+<use figures/allapproachesFCimages/DRAEM_structural_26.png>
+Package pdftex.def Info: figures/allapproachesFCimages/DRAEM_structural_26.png  used on input line 17.
+(pdftex.def)             Requested size: 230.46576pt x 72.37306pt.
+<figures/allapproachesFCimages/DRAEM_logical_image_40.png, id=965, 575.90157pt x 137.7647pt>
+File: figures/allapproachesFCimages/DRAEM_logical_image_40.png Graphic file (type png)
+<use figures/allapproachesFCimages/DRAEM_logical_image_40.png>
+Package pdftex.def Info: figures/allapproachesFCimages/DRAEM_logical_image_40.png  used on input line 18.
+(pdftex.def)             Requested size: 230.46576pt x 55.13011pt.
+<figures/allapproachesFCimages/RevDist_structural_26.png, id=967, 674.52pt x 208.52907pt>
+File: figures/allapproachesFCimages/RevDist_structural_26.png Graphic file (type png)
+<use figures/allapproachesFCimages/RevDist_structural_26.png>
+Package pdftex.def Info: figures/allapproachesFCimages/RevDist_structural_26.png  used on input line 22.
+(pdftex.def)             Requested size: 230.46576pt x 71.24895pt.
+<figures/allapproachesFCimages/RevDist_logical_016.png, id=968, 671.50874pt x 206.27063pt>
+File: figures/allapproachesFCimages/RevDist_logical_016.png Graphic file (type png)
+<use figures/allapproachesFCimages/RevDist_logical_016.png>
+Package pdftex.def Info: figures/allapproachesFCimages/RevDist_logical_016.png  used on input line 23.
+(pdftex.def)             Requested size: 230.46576pt x 70.79204pt.
+) [35 <./figures/DRAEMweakness/structural026image.png> <./figures/DRAEMweakness/structural026mask.png> <./figures/DRAEMweakness/structural026segment.png> <./figures/DRAEMweakness/logical042image.png> <./figures/DRAEMweakness/logical042mask.png> <./figures/DRAEMweakness/logical042segment.png> <./figures/overshootexamples/flat_connector_test_logical_anomalies_004.png> <./figures/overshootexamples/juice_bottle_test_structural_anomalies_019.png>] [36 <./figures/allapproachesFCimages/patchcore_flat_connector_test_logical_anomalies_023.png> <./figures/allapproachesFCimages/patchcore_flat_connector_test_structural_anomalies_014.png> <./figures/allapproachesFCimages/simplenet_flat_connector_test_logical_anomalies_004.png> <./figures/allapproachesFCimages/simplenet_flat_connector_test_structural_anomalies_016.png> <./figures/allapproachesFCimages/DRAEM_structural_26.png> <./figures/allapproachesFCimages/DRAEM_logical_image_40.png> <./figures/allapproachesFCimages/RevDist_structural_26.png> <./figures/allapproachesFCimages/RevDist_logical_016.png>] (figures/pca_results/pca_results_figure.tex
+<figures/pca_results/cut_corner.png, id=996, 462.528pt x 346.896pt>
+File: figures/pca_results/cut_corner.png Graphic file (type png)
+<use figures/pca_results/cut_corner.png>
+Package pdftex.def Info: figures/pca_results/cut_corner.png  used on input line 6.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+<figures/pca_results/cut_corner_mask.png, id=997, 462.528pt x 346.896pt>
+File: figures/pca_results/cut_corner_mask.png Graphic file (type png)
+<use figures/pca_results/cut_corner_mask.png>
+Package pdftex.def Info: figures/pca_results/cut_corner_mask.png  used on input line 12.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+<figures/pca_results/pca_res.png, id=998, 462.528pt x 346.896pt>
+File: figures/pca_results/pca_res.png Graphic file (type png)
+<use figures/pca_results/pca_res.png>
+Package pdftex.def Info: figures/pca_results/pca_res.png  used on input line 18.
+(pdftex.def)             Requested size: 153.64644pt x 115.23296pt.
+) (algotable/ensembleimageAUROC.tex
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/XCharter-TLF/b/n/6 (+20) Splicing Con-nec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/XCharter-TLF/m/n/6 (+20) WR50L23 +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/XCharter-TLF/m/n/6 (+20) WR50L12 +
+ []
+
+) (algotable/ensemblepixelAUROC.tex
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/XCharter-TLF/b/n/6 (+20) Splicing Con-nec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/XCharter-TLF/m/n/6 (+20) WR50L23 +
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]|\T1/XCharter-TLF/m/n/6 (+20) WR50L12 +
+ []
+
+) [37 <./figures/pca_results/cut_corner.png> <./figures/pca_results/cut_corner_mask.png> <./figures/pca_results/pca_res.png>] (figures/faillayer34/faillayersegmentations.tex
+<figures/faillayer34/flat_connector_test_logical_anomalies_001.png, id=1014, 677.53125pt x 225.84375pt>
+File: figures/faillayer34/flat_connector_test_logical_anomalies_001.png Graphic file (type png)
+<use figures/faillayer34/flat_connector_test_logical_anomalies_001.png>
+Package pdftex.def Info: figures/faillayer34/flat_connector_test_logical_anomalies_001.png  used on input line 6.
+(pdftex.def)             Requested size: 204.85672pt x 68.28433pt.
+<figures/faillayer34/flat_connector_test_logical_anomalies_023.png, id=1015, 677.53125pt x 225.84375pt>
+File: figures/faillayer34/flat_connector_test_logical_anomalies_023.png Graphic file (type png)
+<use figures/faillayer34/flat_connector_test_logical_anomalies_023.png>
+Package pdftex.def Info: figures/faillayer34/flat_connector_test_logical_anomalies_023.png  used on input line 10.
+(pdftex.def)             Requested size: 204.85672pt x 68.28433pt.
+) (figures/faillayer34/failmetricsandloss.tex
+<figures/faillayer34/auprosetc.png, id=1019, 462.528pt x 346.896pt>
+File: figures/faillayer34/auprosetc.png Graphic file (type png)
+<use figures/faillayer34/auprosetc.png>
+Package pdftex.def Info: figures/faillayer34/auprosetc.png  used on input line 4.
+(pdftex.def)             Requested size: 204.85672pt x 153.6457pt.
+<figures/faillayer34/loss_fail.png, id=1020, 481.8pt x 361.35pt>
+File: figures/faillayer34/loss_fail.png Graphic file (type png)
+<use figures/faillayer34/loss_fail.png>
+Package pdftex.def Info: figures/faillayer34/loss_fail.png  used on input line 9.
+(pdftex.def)             Requested size: 204.85672pt x 153.64064pt.
+) (figures/ensemblehierarchyimages/ensemblehierarchy.tex
+<figures/ensemblehierarchyimages/image_prediction_018.png, id=1024, 364.2408pt x 84.5559pt>
+File: figures/ensemblehierarchyimages/image_prediction_018.png Graphic file (type png)
+<use figures/ensemblehierarchyimages/image_prediction_018.png>
+Package pdftex.def Info: figures/ensemblehierarchyimages/image_prediction_018.png  used on input line 6.
+(pdftex.def)             Requested size: 153.64644pt x 35.66805pt.
+<figures/ensemblehierarchyimages/image_prediction_021.png, id=1025, 364.2408pt x 83.1105pt>
+File: figures/ensemblehierarchyimages/image_prediction_021.png Graphic file (type png)
+<use figures/ensemblehierarchyimages/image_prediction_021.png>
+Package pdftex.def Info: figures/ensemblehierarchyimages/image_prediction_021.png  used on input line 12.
+(pdftex.def)             Requested size: 153.64644pt x 35.05833pt.
+<figures/ensemblehierarchyimages/image_prediction_047.png, id=1026, 363.5181pt x 83.1105pt>
+File: figures/ensemblehierarchyimages/image_prediction_047.png Graphic file (type png)
+<use figures/ensemblehierarchyimages/image_prediction_047.png>
+Package pdftex.def Info: figures/ensemblehierarchyimages/image_prediction_047.png  used on input line 18.
+(pdftex.def)             Requested size: 153.64644pt x 35.12682pt.
+<figures/ensemblehierarchyimages/image_prediction_064.png, id=1027, 365.6862pt x 85.2786pt>
+File: figures/ensemblehierarchyimages/image_prediction_064.png Graphic file (type png)
+<use figures/ensemblehierarchyimages/image_prediction_064.png>
+Package pdftex.def Info: figures/ensemblehierarchyimages/image_prediction_064.png  used on input line 24.
+(pdftex.def)             Requested size: 153.64644pt x 35.83107pt.
+<figures/ensemblehierarchyimages/image_prediction_071.png, id=1028, 364.9635pt x 83.8332pt>
+File: figures/ensemblehierarchyimages/image_prediction_071.png Graphic file (type png)
+<use figures/ensemblehierarchyimages/image_prediction_071.png>
+Package pdftex.def Info: figures/ensemblehierarchyimages/image_prediction_071.png  used on input line 30.
+(pdftex.def)             Requested size: 153.64644pt x 35.29283pt.
+<figures/ensemblehierarchyimages/image_prediction_089.png, id=1029, 363.5181pt x 84.5559pt>
+File: figures/ensemblehierarchyimages/image_prediction_089.png Graphic file (type png)
+<use figures/ensemblehierarchyimages/image_prediction_089.png>
+Package pdftex.def Info: figures/ensemblehierarchyimages/image_prediction_089.png  used on input line 36.
+(pdftex.def)             Requested size: 153.64644pt x 35.73772pt.
+) [38 <./figures/faillayer34/flat_connector_test_logical_anomalies_001.png> <./figures/faillayer34/flat_connector_test_logical_anomalies_023.png>] [39 <./figures/faillayer34/auprosetc.png> <./figures/faillayer34/loss_fail.png> <./figures/ensemblehierarchyimages/image_prediction_018.png> <./figures/ensemblehierarchyimages/image_prediction_021.png> <./figures/ensemblehierarchyimages/image_prediction_047.png> <./figures/ensemblehierarchyimages/image_prediction_064.png> <./figures/ensemblehierarchyimages/image_prediction_071.png> <./figures/ensemblehierarchyimages/image_prediction_089.png>] (figures/ensemble_losses/ensemble_loss.tex
+<figures/ensemble_losses/normal_ensemble_loss.png, id=1054, 462.528pt x 346.896pt>
+File: figures/ensemble_losses/normal_ensemble_loss.png Graphic file (type png)
+<use figures/ensemble_losses/normal_ensemble_loss.png>
+Package pdftex.def Info: figures/ensemble_losses/normal_ensemble_loss.png  used on input line 6.
+(pdftex.def)             Requested size: 230.46576pt x 172.84943pt.
+<figures/ensemble_losses/long_ensemble_loss.png, id=1055, 462.528pt x 346.896pt>
+File: figures/ensemble_losses/long_ensemble_loss.png Graphic file (type png)
+<use figures/ensemble_losses/long_ensemble_loss.png>
+Package pdftex.def Info: figures/ensemble_losses/long_ensemble_loss.png  used on input line 12.
+(pdftex.def)             Requested size: 230.46576pt x 172.84943pt.
+) (figures/ensembleimagesFC/ensembleimagesFC.tex
+<figures/ensembleimagesFC/image_prediction_100.png, id=1057, 362.7954pt x 83.1105pt>
+File: figures/ensembleimagesFC/image_prediction_100.png Graphic file (type png)
+<use figures/ensembleimagesFC/image_prediction_100.png>
+Package pdftex.def Info: figures/ensembleimagesFC/image_prediction_100.png  used on input line 6.
+(pdftex.def)             Requested size: 153.64644pt x 35.1991pt.
+<figures/ensembleimagesFC/image_prediction_036.png, id=1058, 362.7954pt x 81.6651pt>
+File: figures/ensembleimagesFC/image_prediction_036.png Graphic file (type png)
+<use figures/ensembleimagesFC/image_prediction_036.png>
+Package pdftex.def Info: figures/ensembleimagesFC/image_prediction_036.png  used on input line 12.
+(pdftex.def)             Requested size: 153.64644pt x 34.58694pt.
+<figures/ensembleimagesFC/image_prediction_052.png, id=1059, 362.0727pt x 82.3878pt>
+File: figures/ensembleimagesFC/image_prediction_052.png Graphic file (type png)
+<use figures/ensembleimagesFC/image_prediction_052.png>
+Package pdftex.def Info: figures/ensembleimagesFC/image_prediction_052.png  used on input line 18.
+(pdftex.def)             Requested size: 153.64644pt x 34.96216pt.
+<figures/ensembleimagesFC/image_prediction_061.png, id=1060, 362.0727pt x 83.1105pt>
+File: figures/ensembleimagesFC/image_prediction_061.png Graphic file (type png)
+<use figures/ensembleimagesFC/image_prediction_061.png>
+Package pdftex.def Info: figures/ensembleimagesFC/image_prediction_061.png  used on input line 24.
+(pdftex.def)             Requested size: 153.64644pt x 35.26884pt.
+<figures/ensembleimagesFC/image_prediction_073.png, id=1061, 363.5181pt x 83.8332pt>
+File: figures/ensembleimagesFC/image_prediction_073.png Graphic file (type png)
+<use figures/ensembleimagesFC/image_prediction_073.png>
+Package pdftex.def Info: figures/ensembleimagesFC/image_prediction_073.png  used on input line 30.
+(pdftex.def)             Requested size: 153.64644pt x 35.43227pt.
+<figures/ensembleimagesFC/image_prediction_085.png, id=1062, 362.0727pt x 83.1105pt>
+File: figures/ensembleimagesFC/image_prediction_085.png Graphic file (type png)
+<use figures/ensembleimagesFC/image_prediction_085.png>
+Package pdftex.def Info: figures/ensembleimagesFC/image_prediction_085.png  used on input line 36.
+(pdftex.def)             Requested size: 153.64644pt x 35.26884pt.
+) (figures/backboneexamples/singlebackboneexamples.tex
+<figures/backboneexamples/flat_connector_test_logical_anomalies_033.png, id=1064, 677.53125pt x 225.84375pt>
+File: figures/backboneexamples/flat_connector_test_logical_anomalies_033.png Graphic file (type png)
+<use figures/backboneexamples/flat_connector_test_logical_anomalies_033.png>
+Package pdftex.def Info: figures/backboneexamples/flat_connector_test_logical_anomalies_033.png  used on input line 5.
+(pdftex.def)             Requested size: 204.85672pt x 68.28433pt.
+<figures/backboneexamples/flat_connector_test_structural_anomalies_001.png, id=1065, 677.53125pt x 225.84375pt>
+File: figures/backboneexamples/flat_connector_test_structural_anomalies_001.png Graphic file (type png)
+<use figures/backboneexamples/flat_connector_test_structural_anomalies_001.png>
+Package pdftex.def Info: figures/backboneexamples/flat_connector_test_structural_anomalies_001.png  used on input line 9.
+(pdftex.def)             Requested size: 204.85672pt x 68.28433pt.
+)) (content/6-results.tex [40 <./figures/ensemble_losses/normal_ensemble_loss.png> <./figures/ensemble_losses/long_ensemble_loss.png> <./figures/ensembleimagesFC/image_prediction_100.png> <./figures/ensembleimagesFC/image_prediction_036.png> <./figures/ensembleimagesFC/image_prediction_052.png> <./figures/ensembleimagesFC/image_prediction_061.png> <./figures/ensembleimagesFC/image_prediction_073.png> <./figures/ensembleimagesFC/image_prediction_085.png>] [41 <./figures/backboneexamples/flat_connector_test_logical_anomalies_033.png> <./figures/backboneexamples/flat_connector_test_structural_anomalies_001.png>]
+chapter 6.
+[42
+
+] [43]) (content/7-conclusion.tex [44]
+chapter 7.
+[45
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 49--51
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 78--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--91
+
+ []
+
+) [47] (c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.bbl
+LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/it' will be
+(Font)              scaled to size 10.95pt on input line 6.
+LaTeX Font Info:    Trying to load font information for T1+RobotoMono-TLF on input line 57.
+ (C:\Users\Marc\Documents\MikeTeX\tex/latex/roboto\t1robotomono-tlf.fd
+File: T1RobotoMono-TLF.fd 2019/12/11 (autoinst) Font definitions for T1/RobotoMono-TLF.
+)
+LaTeX Font Info:    Font shape `T1/RobotoMono-TLF/m/n' aliased to
+(Font)              `T1/RobotoMono-TLF/regular/n' on input line 57.
+LaTeX Font Info:    Font shape `T1/RobotoMono-TLF/regular/n' will be
+(Font)              scaled to size 10.95pt on input line 57.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `RobotoMono-TLF' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+
+Underfull \hbox (badness 10000) in paragraph at lines 56--59
+[]\T1/XCharter-TLF/m/n/10.95 (+20) ``Open ai mi-cro-scope.'' []$\T1/RobotoMono-TLF/regular/n/10.95 https : / / microscope . openai . com / models / resnetv2 _ 50 _ slim ?
+ []
+
+[48
+
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 74--77
+[]\T1/XCharter-TLF/m/n/10.95 (+20) ``2023 world steel in fig-ures.'' []$\T1/RobotoMono-TLF/regular/n/10.95 https : / / worldsteel . org / wp-[]content / uploads /
+ []
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
+[]\T1/XCharter-TLF/m/n/10.95 (+20) ``Link to the flat con-nec-tor that was recorded.'' []$\T1/RobotoMono-TLF/regular/n/10.95 https : / / www . hornbach . de / p /
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
+\T1/RobotoMono-TLF/regular/n/10.95 flachverbinder-[]100-[]x-[]35-[]mm-[]sendzimirverzinkt-[]1-[]stueck / 735660/$[]\T1/XCharter-TLF/m/n/10.95 (+20) .  Ac-cessed:
+ []
+
+
+Overfull \hbox (58.78702pt too wide) in paragraph at lines 190--193
+\T1/RobotoMono-TLF/regular/n/10.95 1832177 / sigmoid-[]function-[]with-[]fixed-[]bounds-[]and-[]variable-[]steepness-[]partially-[]solved$[]\T1/XCharter-TLF/m/n/10.95 (-20) .
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 195--198
+[]\T1/XCharter-TLF/m/n/10.95 (+20) ``Overview of the clus-ter.'' []$\T1/RobotoMono-TLF/regular/n/10.95 https : / / pointed-[]wakeboard-[]5f3 . notion . site /
+ []
+
+) [50] (meta/appendix.tex
+chapter A.
+(figures/recon_and_repres_based_diagram.tex
+<figures/represbased_viz.png, id=1180, 282.30469pt x 432.86719pt>
+File: figures/represbased_viz.png Graphic file (type png)
+<use figures/represbased_viz.png>
+Package pdftex.def Info: figures/represbased_viz.png  used on input line 5.
+(pdftex.def)             Requested size: 225.34708pt x 345.53464pt.
+<figures/rec_based.png, id=1181, 292.84406pt x 435.12563pt>
+File: figures/rec_based.png Graphic file (type png)
+<use figures/rec_based.png>
+Package pdftex.def Info: figures/rec_based.png  used on input line 12.
+(pdftex.def)             Requested size: 225.34708pt x 334.84857pt.
+) (figures/flatconnectorgoodimages/goodflatimages.tex
+<figures/flatconnectorgoodimages/278.png, id=1182, 3372.6pt x 2505.36pt>
+File: figures/flatconnectorgoodimages/278.png Graphic file (type png)
+<use figures/flatconnectorgoodimages/278.png>
+Package pdftex.def Info: figures/flatconnectorgoodimages/278.png  used on input line 6.
+(pdftex.def)             Requested size: 128.0374pt x 95.11292pt.
+<figures/flatconnectorgoodimages/269.png, id=1183, 3372.6pt x 2505.36pt>
+File: figures/flatconnectorgoodimages/269.png Graphic file (type png)
+<use figures/flatconnectorgoodimages/269.png>
+Package pdftex.def Info: figures/flatconnectorgoodimages/269.png  used on input line 11.
+(pdftex.def)             Requested size: 128.0374pt x 95.11292pt.
+<figures/flatconnectorgoodimages/255.png, id=1184, 3372.6pt x 2505.36pt>
+File: figures/flatconnectorgoodimages/255.png Graphic file (type png)
+<use figures/flatconnectorgoodimages/255.png>
+Package pdftex.def Info: figures/flatconnectorgoodimages/255.png  used on input line 16.
+(pdftex.def)             Requested size: 128.0374pt x 95.11292pt.
+)) [51
+
+
+
+] [52 <./figures/represbased_viz.png> <./figures/rec_based.png> <./figures/flatconnectorgoodimages/278.png (PNG copy)> <./figures/flatconnectorgoodimages/269.png (PNG copy)> <./figures/flatconnectorgoodimages/255.png (PNG copy)>] (c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.aux)
+ ***********
+LaTeX2e <2023-06-01> patch level 1
+L3 programming layer <2020/03/25>
+ ***********
+
+
+LaTeX Warning: There were undefined references.
+
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+ ) 
+Here is how much of TeX's memory you used:
+ 53504 strings out of 475246
+ 1166671 string characters out of 5763892
+ 1977785 words of memory out of 5000000
+ 73461 multiletter control sequences out of 15000+600000
+ 690346 words of font info for 296 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 122i,21n,121p,11004b,2810s stack positions out of 10000i,1000n,20000p,200000b,200000s
+{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_e24joy.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/RobotoMono-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (58 pages, 99314057 bytes).
+PDF statistics:
+ 1418 PDF objects out of 1440 (max. 8388607)
+ 209 named destinations out of 1000 (max. 500000)
+ 57634 words of extra memory for PDF output out of 61914 (max. 10000000)
+
