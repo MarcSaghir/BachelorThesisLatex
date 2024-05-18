@@ -28,11 +28,13 @@ by the fact that few well-established, wide-ranging datasets are being used for 
 datasets, amongst them the MVTecAD \cite{MVTEC_Bergmann_2021} dataset acting as a gold standard. The dataset will be discussed in greater detail 
 in the background chapter. Regarding the kind of unsupervised anomaly detection methods, a great variety of approaches follow a 
 distinct strategy of differentiating between the classes. Still, most of them can be categorized into two classes: representation- 
-or reconstruction-based methods. While representation approaches aim at creating a feature representation to compare the features of new input images then, reconstruction-based ones try to learn how to recreate the part shown in the image as an anomaly-free object and then compare the constructed product to the original input. Both workflows are visualized in figure \ref{fig:vizofrecrepbased}, which showcases 
+or reconstruction-based methods. While representation approaches aim at creating a feature representation to compare the features of new input images then, 
+reconstruction-based ones try to learn how to recreate the part shown in the image as an anomaly-free object and then compare the constructed product to the original input. 
+Both workflows are visualized in Fig. \ref{fig:vizofrecrepbased}, which showcases 
 the individual steps of the respective methods as described. It is to be said that both approaches offer high-quality predictions, yet 
-feature representation methods have shown more frequently in latest research to achieve state-of-the-art results \cite{liu2024deep}. % \cite{Xie_2024benchmarking}.
+feature representation methods have shown more frequently in latest research to achieve state-of-the-art results \cite{liu2024deep}. % \cite{Xie_2024benchmarking}.
 \newline
-The current state of IAD generally consists of very high-performing classifiers. Here, it is essential to differentiate between the  
+The current state of IAD generally consists of very high-performing classifiers. Here, it is essential to differentiate between the 
 applications of those classifiers. There is anomaly detection in the form of image classification, which has already been mentioned. 
 Furthermore, there is anomaly localization, referring to the image segmentation process to point out the specific regions where 
 the detected anomaly occurs. Lastly, besides the applications, one can also categorize anomalies. The most researched anomaly types 

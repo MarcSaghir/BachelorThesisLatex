@@ -64,7 +64,7 @@ it is fitting to utilize features derived by separate backbones, along with an a
 The backbones used are all residual networks by nature: ResNet18 \cite{He_2016resnet}, ResNet50 \cite{He_2016resnet} and Wideresnet50 \cite{wideresnet}. SimpleNet cuts off its 
 standard backbone Wideresnet50 at its middle two layers, layer two and layer three, and then aggregates the extracted features. The first ensemble experiment will combine 
 feature representations from all three backbones, cut off at the same layers as the standard procedure. Additionally, a second experiment will aggregate features 
-from various hierarchies. This is founded on the knowledge that each network hierarchy contains individual feature representations as visualized in figure \ref{fig:featurelayers}. 
+from various hierarchies. This is founded on the knowledge that each network hierarchy contains individual feature representations as visualized in Fig. \ref{fig:featurelayers}. 
 These images, taken from \cite{openaifeaturerepres}, showcase how features differentiate themselves at distinct levels. Early features often represent simple patterns like edges, 
 while ones taken later from a network make up increasingly complex objects and relationships. Therefore, combining several levels of representation could aid in segmenting 
 multiple regions of varying textures.
@@ -80,9 +80,9 @@ feature adapter that is trained parallel to the ensemble discriminator.
 \subsection{Feature Level Ensembling}
 \label{sec:featurelevelensemble}
 
-For combining the feature representations from the ensemble members, we chose the approach of the independent transformation block (see figure \ref{fig:ITBheller}, section \ref{sec:ensembles}). This means 
+For combining the feature representations from the ensemble members, we chose the approach of the independent transformation block (see Fig. \ref{fig:ITBheller}, section \ref{sec:ensembles}). This means 
 PCA was first performed on each set of feature vectors before then resizing and concatenating them. As for resizing, 
-the feature vectors were bilinearly interpolated to the largest dimensions of the ensemble candidates. Moreover, the amount of feature maps kept per classifier, namely $\alpha$ in figure \ref{fig:ITBheller}, 
+the feature vectors were bilinearly interpolated to the largest dimensions of the ensemble candidates. Moreover, the amount of feature maps kept per classifier, namely $\alpha$ in Fig. \ref{fig:ITBheller}, 
 was derived by dividing up the number of feature maps from the first classifier in the list of ensemble members, which in this instance also was the maximum amount. If the number 
 was not evenly divisible, excess maps would be split up among the remaining classifiers as evenly as possible.\newline
 As stated in the results under subsection \ref{subsec:ITBfail} and further analyzed in section \ref{subsec:ITBfaildiscussion}, this approach did not yield the expected results. 
@@ -97,12 +97,12 @@ the one-class classification class from the representation-based approaches. Spe
 presented in SimpleNet \cite{liu2023simplenet}. Since our discriminator inputs in the ensemble pipeline, which stems from ensembled locally aware patch features, 
 will be similar as 
 the inputs for SimpleNet's discriminator, it is reasonable to utilize their network architecture for this work. Looking back at section 
-\ref{subsec:simplenet} and moreso figure \ref{fig:simplenetpipeline}, we thus will adapt the SimpleNet pipeline at the feature adapter step. 
+\ref{subsec:simplenet} and moreso Fig. \ref{fig:simplenetpipeline}, we thus will adapt the SimpleNet pipeline at the feature adapter step. 
 This means we will train a global feature adapter that ensures the projection of ensembled features into the right latent space. Additionally, a lightweight discriminator 
 is trained, which again differentiates between normal ensembled features and artificially created abnormal ones. Unlike in the original approach, the input to the feature adapter 
 does not consist of only pre-extracted image features 
 but the ensembled features from section \ref{sec:featurelevelensemble}. The artificial anomalous features, 
-depicted as the red-tiled pane in figure \ref{fig:simplenetpipeline}, will also be provided during training time. Here, we also adapt SimpleNet's approach of 
+depicted as the red-tiled pane in Fig. \ref{fig:simplenetpipeline}, will also be provided during training time. Here, we also adapt SimpleNet's approach of 
 gaussian noise to produce those artificial features. %(Simplex noise???). 
 The discriminator is expected to provide positive and negative outputs for regular and anomalous features, respectively.
 As to the discriminator network specifics, a regular fully connected network consisting of two layers is used. As an optimizer, this work utilizes the 
@@ -118,7 +118,7 @@ outputs. These can be thresholded to derive decision criteria but do not represe
 method for binary classifiers that did not need a probabilistic output was the platt scaling attempt. Therefore, this basic principle was the method of choice for calibrating the ensemble network 
 outputs. It is to be noted here that we merely calibrate the model's final outputs after everything has been predicted. This stems from the fact that \cite{Wu_2021_shouldbecalibrated} demonstrated 
 how calibrated ensemble members do not necessarily yield a well-calibrated final output, shifting our focus to calibration application. During the process, it became apparent that the platt 
-scaling approach from \cite{Guo_2017_tempscalingetc} was not necessarily sufficient, as figure \ref{fig:badCal} demonstrates. The figure displays 20 predicted scores of the "broken large" anomaly of the bottle class of the MVTecAD dataset, 
+scaling approach from \cite{Guo_2017_tempscalingetc} was not necessarily sufficient, as Fig. \ref{fig:badCal} demonstrates. The graph displays 20 predicted scores of the "broken large" anomaly of the bottle class of the MVTecAD dataset, 
 along with the predicted anomaly scores of 20 normal images. Notably, the scores were not additionally sorted but naturally 
 were linearly separable. The y-axis score of one denotes an anomalous image, and 0 is a normal one.
 
@@ -142,7 +142,7 @@ were linearly separable. The y-axis score of one denotes an anomalous image, and
 
 Due to the high performance of some IAD algorithms, some categories 
 of the datasets may be entirely correctly classified, which, for example, was the case here. This would mean that the optimal fitted sigmoid curve on the points 
-is a step curve, yielding either 100 percent confidence or none at all. This does not seem well calibrated, especially not looking at the exemplary score distribution in figure \ref{fig:platt}, where the predicted anomaly scores seem to be stretched pretty evenly over the interval. There is an argument on how a step 
+is a step curve, yielding either 100 percent confidence or none at all. This does not seem well calibrated, especially not looking at the exemplary score distribution in Fig. \ref{fig:platt}, where the predicted anomaly scores seem to be stretched pretty evenly over the interval. There is an argument on how a step 
 curve would be appropriate for such cases since the model classified each sample correctly and can thus be entirely certain whether an 
 image is anomalous. However, this might make data hard to interpret as everything inside one class 
 would have the same certainty. For example, a point barely above the threshold would have the same certainty as the point furthest away from it, 
@@ -159,8 +159,8 @@ towards the decision threshold.
 
 $t$ denotes the point where the function has to pass through. This value is usually assigned the calculated threshold for the decision criterion of the classification task. $k$ is a parameter 
 that influences the growth of the curve along the axis. This value can either be chosen per hand or optimized regarding uncertainty requirements. This means that if one generally wants the 
-outputs to reflect a higher uncertainty towards the threshold, it is reasonable to choose a lower value for k and vice versa. Figures \ref{fig:sub1} and \ref{fig:sub2} demonstrate the effects of changing values for k, as well 
-as an exemplary well-calibrated platt scaling variant of figure \ref{fig:sub3}, using the presented formula.
+outputs to reflect a higher uncertainty towards the threshold, it is reasonable to choose a lower value for k and vice versa. Fig. \ref{fig:sub1} and Fig. \ref{fig:sub2} demonstrate the effects of changing values for k, as well 
+as an exemplary well-calibrated platt scaling variant of Fig. \ref{fig:sub3}, using the presented formula.
 
 \begin{figure}[htbp]
     \centering

@@ -51,7 +51,7 @@ MVTecAD \cite{MVTEC_Bergmann_2021} and the MVTecAD LOCO \cite{LOCODentsAndScratc
 PatchCore \cite{patchCore2022}, SimpleNet \cite{liu2023simplenet}, Reverse Distillation \cite{revdist2023} and DRAEM \cite{Zavrtanik_2021DRAEM} had a fall off 
 in image AUROC class average of respectively 0.174, 0.193, 0.208 and 0.213. With respect to the pixel wise 
 AUROC, a decline of 0.064, 0.147, 0.218 and 0.174 emerged. \newline
-Figure \ref{fig:structvslogic} shows exemplary metrics divided by structural and logical anomalies. The reported pixel AUROCs slightly differ from earlier reported results due to a different 
+Fig. \ref{fig:structvslogic} shows exemplary metrics divided by structural and logical anomalies. The reported pixel AUROCs slightly differ from earlier reported results due to a different 
 evaluation split of good images, but showcase a principle performance difference. Here a better performance is clearly visible for the 
 class of structural anomalies, sometimes by even up to 29 percent, suggesting logical anomalies to be distinctively more difficult to correctly segment.
 
@@ -63,7 +63,7 @@ class of structural anomalies, sometimes by even up to 29 percent, suggesting lo
     \label{fig:structvslogic}
 \end{figure}
 
-Additionally below in figure \ref{fig:locoallapproaches} are representative images from multiple classes that showcase good and bad segmentation results. Results are taken from multiple approaches and 
+Additionally below in Fig. \ref{fig:locoallapproaches} are representative images from multiple classes that showcase good and bad segmentation results. Results are taken from multiple approaches and 
 more results can be found in the appendix.
 
 %\input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
@@ -127,12 +127,12 @@ the results of the secondary ensemble approach are presented, supported by accor
 \label{subsec:ITBfail}
 
 When performing the ensemble training process using the approach by \cite{EnsembleHeller2023}, the results were generally not usable. Looking at the exemplary plot of the segmentation 
-results in figure \ref{fig:pca_res}, it becomes obvious why no metrics are reported for this experiment. When investigating image level metrics, they were highly inconsistent thorughout 
+results in Fig. \ref{fig:pca_res}, it becomes obvious why no metrics are reported for this experiment. When investigating image level metrics, they were highly inconsistent thorughout 
 the training process and are regarded as not meaningful and representative.
 
 \input{figures/pca_results/pca_results_figure.tex}
 
-As visible in figure \ref{fig:pca_res}, the segmentation results appeared to be not more meaningful than gaussian noise, strongly suggesting that this method has failed. Subsection 
+As visible in Fig. \ref{fig:pca_res}, the segmentation results appeared to be not more meaningful than gaussian noise, strongly suggesting that this method has failed. Subsection 
 \ref{subsec:ITBfaildiscussion} will go into possible reasons for the suboptimal experiments results. Concludingly it is to be said that these results are, besides the failure analysis 
 in the conclusion, not relevant and will not be part of further review. Thus no results of other classes using this method are posted in the appendix.
 
@@ -149,12 +149,12 @@ single backbones, wheras the other one regards standard backbone ensembling with
 
 \textbf{Hierarchy Levels.} The results of ensembling different hierarchies exhibit a degree of diversity between different layer hierarchies. As briefly menitoned in section \ref{sec:ensemblecandidates}, the resnet backbones consist of four 
 layers, in other words they contain four larger sequential blocks. Inference using higher level feature representations with an backbone of subtype resnet resulted in unusable results, segmentation wise. 
-Figure xyz exemplary showcases the segmentation results of training using the wideresnet50 backbone and including a feature aggregation between layers 3 and 4. 
+Fig. \ref{fig:faillayersegments} exemplary showcases the segmentation results of training using the wideresnet50 backbone and including a feature aggregation between layers 3 and 4. 
 
 \input{figures/faillayer34/faillayersegmentations.tex}
 
 The image and pixel AUROC were unstable and poor over the course of the training, 
-as figure \ref{fig:failmetrics} suggests, and therefore were not recorded explicitly for multiple classes, as this was the case for all trainings. The loss visible in figure \ref{fig:failmetricsloss} furthermore 
+as Fig. \ref{fig:failmetrics} suggests, and therefore were not recorded explicitly for multiple classes, as this was the case for all trainings. The loss visible in Fig. \ref{fig:failmetricsloss} furthermore 
 showcases that the training process was flawed. Due to these findings the following experiments only consider earlier layers if diverging from the standard layers 
 discussed in section \ref{sec:ensemblecandidates}.
 
@@ -162,7 +162,7 @@ discussed in section \ref{sec:ensemblecandidates}.
 
 
 Experiments combining lower layer aggregations yielded different results. Table \ref{tab:ensemblepixelAUROC} summarises the reported pixel metrics on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} 
-dataset, and figure \ref{fig:ensemblehierarchy} showcases exemplary 
+dataset, and Fig. \ref{fig:ensemblehierarchy} showcases exemplary 
 segmentation images of the experiments. More data is to be found in the appendix.
 
 \input{figures/ensemblehierarchyimages/ensemblehierarchy.tex}
@@ -175,20 +175,20 @@ the pixel scores than from comparable IAD approaches, leading to less robust res
 
 \textbf{Backbone Ensemble.} The performance of this approach is visible in table xyz. The performance is visible worse from the performance 
 reported by the standard simplenet approach. Yet the results suggest usable results unlike the experiment conducted in section \ref{subsec:ITBfail}. 
-Moreover the loss, presented in figure \ref{fig:ensembleloss}, suggests a conceptually adequate learning. The performance could not be increased by a higher 
+Moreover the loss, presented in Fig. \ref{fig:ensembleloss}, suggests a conceptually adequate learning. The performance could not be increased by a higher 
 epoch count as to be seen by the loss progression in the other subfigure.
 
 \input{figures/ensemble_losses/ensemble_loss.tex}
 
-Moreover figure \ref{fig:ensembleFCimages} showcases exemplary segmentation results on the flat connector class. As 
+Moreover Fig. \ref{fig:ensembleFCimages} showcases exemplary segmentation results on the flat connector class. As 
 seen the ensemble ouputs consist of a lot more uncertainty, as the values are closer together and visually harder to distinguish This uncertainty 
 was higher for logical anomalies than for structural ones. Still, 
-using threshoolding the results are usable, as often anomalous regions are discernible. Figure xyz also showcases examples of failed segmentation 
+using threshoolding the results are usable, as often anomalous regions are discernible. Fig. \ref{fig:ensembleFCimages} also showcases examples of failed segmentation 
 attempts. 
 
 \input{figures/ensembleimagesFC/ensembleimagesFC.tex}
 
-As a comparison figure \ref{fig:singlebackboneexamples} displays example segmentations from the individual backbones. Here there is a lot less uncertainty or 
+As a comparison Fig. \ref{fig:singlebackboneexamples} displays example segmentations from the individual backbones. Here there is a lot less uncertainty or 
 noise than in the ensembled approach. This makes for worse and less robust ensemble performance, especially regarding segmentation. 
 The implications and reasons of this are taken up in the next chapter.
 

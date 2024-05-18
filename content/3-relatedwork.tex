@@ -26,7 +26,7 @@ rules as logical constraints, whereas the flat connector, as such, may possess m
 \newline
 Further, regarding the flat size specifications, we used regulatory flat 
 connectors of size $100x35 mm$ which are widely available at hardware stores and at \cite{flatconnectorlink}. The surface of the flat connectors is galvanized 
-and displays a CE label according to DIN EN 14545. Images of normal flat connectors without manipulations can be viewed in appendix figure \ref{fig:flatgoodimages}.
+and displays a CE label according to DIN EN 14545. Images of normal flat connectors without manipulations can be viewed in appendix Fig. \ref{fig:flatgoodimages}.
 
 
 \input{figures/flatconnectordatasetimages/faltdatasetfigure.tex}
@@ -36,7 +36,7 @@ and displays a CE label according to DIN EN 14545. Images of normal flat connect
 \section{Data Acquisition Setup}
 \label{sec:faltconnectordataacquisiton}
 
-The images for the dataset were taken at university facilities.  Figure \ref{fig:setupofdatacollection} shows an exemplary setup for image acquisition. The contraption to capture images was 
+The images for the dataset were taken at university facilities.  Fig. \ref{fig:setupofdatacollection} shows an exemplary setup for image acquisition. The contraption to capture images was 
 done by utilizing a camera mounted to a robotic arm and pointing the camera lens at the table from an overhead perspective. The distance between the camera lens and the table surface was approximately 15 cm and the main light source for the images was provided by a built-in flashlight of the arm. Regarding the object's background, a black cloth was placed on the table where the object would be put. For 
 an increased variety, multiple flat connectors were bought and filmed. Here, each one was manually rotated after each shot to achieve multiple object orientations and, thus, a more robust training 
 set. Each flat connector was rotated six times per side, resulting in 12 normal images per flat connector object. \newline
@@ -44,7 +44,7 @@ The camera used to take pictures produced the images of the flat connectors in a
 images, their size was adjusted by half of the original image size.\newline
 A free polygon annotation software was used to label anomalous regions in the images to obtain segmentation labels. The annotations were done by hand and by the author of this work. In accord with 
 MVTecAD LOCO standards \cite{LOCODentsAndScratchesBergmann2022}, each kind of anomaly would be assigned a unique pixel value to differentiate them when working with saturation thresholds 
-as mentioned in section \ref{sec:datasets}. Example annotations can be viewed in figure \ref{sec:flatconnectoranomalies}, where several original images are depicted next to the produced segmentation labels. Just like in the 
+as mentioned in section \ref{sec:datasets}. Example annotations can be viewed in Fig. \ref{sec:flatconnectoranomalies}, where several original images are depicted next to the produced segmentation labels. Just like in the 
 original MVTecAD LOCO dataset, image labels were not explicitly given since they can be inferred by the anomaly class.
 
 
@@ -54,14 +54,14 @@ original MVTecAD LOCO dataset, image labels were not explicitly given since they
 \section{Anomalies}
 \label{sec:flatconnectoranomalies}
 
-To a certain degree, the standard MVTecAD LOCO classes all possess a balanced number of logical and structural anomalies. Therefore, the collection of possible anomalies for this class was kept at an even structural-to-logical ratio. The anomalies listed below can be viewed in figure \ref{fig:flatconnectorexampleimages}, where exemplary anomalous images are displayed next to their corresponding ground truth mask.
+To a certain degree, the standard MVTecAD LOCO classes all possess a balanced number of logical and structural anomalies. Therefore, the collection of possible anomalies for this class was kept at an even structural-to-logical ratio. The anomalies listed below can be viewed in Fig. \ref{fig:flatconnectorexampleimages}, where exemplary anomalous images are displayed next to their corresponding ground truth mask.
 
 \subsection{Structural Anomalies}
 Structural anomalies, in this case, were comparably simple to think of and execute since they only involved damaging some area of the flat connector. Here, we also tried to represent a variety of 
 certain characteristics of anomalies among the ones we chose. An example would be to include anomalies with larger areas as well as ones with small ground truths.\newline
 First, we produced the structural anomaly of a cut-off corner. This was done using a metal saw to remove a corner of the flat connector. This is an anomaly with a comparably large 
 surface area and clean edges to predict. Next, we used a metal saw to damage the edges of the flat connector by cutting out pieces or simply sawing into the object's edges. One image 
-of this anomaly type contained multiple damaged spots on multiple edges. Due to the cuts partially being tiny, this makes for an anomaly with very small ground truth areas, as seen in the figure 
+of this anomaly type contained multiple damaged spots on multiple edges. Due to the cuts partially being tiny, this makes for an anomaly with very small ground truth areas, as seen in the Fig. 
 \ref{fig:damagededgesubfig}. As a last structural anomaly, the saw was used to apply deep scratches to the object. This is mimicking another type of anomaly sometimes found in the classes of splicing connectors and pushpins 
 in the original dataset. The common characteristic is that the region is very slim and long, making for better comparisons.
 

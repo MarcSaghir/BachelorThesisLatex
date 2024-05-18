@@ -13,7 +13,7 @@ aspects serves as an improved comparative analysis regarding strengths and weakn
 detect possible patterns in performance correlated to categories. Survey papers like Xie et al. \cite{Xie_2024benchmarking} and 
 Liu et al.
 \cite{liu2024deep} primarily compare but also categorize IAD approaches, concluding that there are applicable ways to group specific approaches, as 
-visualized in figure \ref{fig:IADcategstree}. Here, it has to be said that the following categorizations naturally are generalizations, as there may be specific niche settings or approaches that combine multiple categories.
+visualized in Fig. \ref{fig:IADcategstree}. Here, it has to be said that the following categorizations naturally are generalizations, as there may be specific niche settings or approaches that combine multiple categories.
 
 
 \begin{figure}[H]
@@ -38,8 +38,8 @@ this work will also restrict itself to such approaches. This also facilitates ex
 
 Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data as well as noisy data. Noisy data are inputs
 that are altered using noise, although the exact noise application depends on the specific approach. During testing, after successfully learning to 
-reconstruct anomaly-free images, the method is given a potentially noisy input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in the appendix with figure \ref{subfig:recbased}. 
-On the other hand, representation approaches use feature embedding methods to obtain feature representations of images and compare those. As shown in appendix figure \ref{subfig:repbased}, during training, the model is 
+reconstruct anomaly-free images, the method is given a potentially noisy input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in the appendix with Fig. \ref{subfig:recbased}. 
+On the other hand, representation approaches use feature embedding methods to obtain feature representations of images and compare those. As shown in appendix Fig. \ref{subfig:repbased}, during training, the model is 
 learning to extract features of input images correctly. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
 prior feature-level representations of the class object. A decision is then made as well using a distance measure.\newline
 Both classes of IAD methods have been shown to produce state-of-the-art results. Nevertheless, more approaches are currently representation-based \cite{liu2024deep} as they have shown SOTA performance more 
@@ -80,7 +80,7 @@ when presented with an anomalous data point.\newline
 
 
 Next, distribution map approaches \cite{csflow2022} try to map the features from their original distribution into a more suitable one. This vastly facilitates the identification of anomalous features as shown in 
-figure \ref{fig:distmapviz}. Such an approach requires a method to map the features between distributions. Often, a variation of normalizing flow is utilized for this \cite{liu2024deep}. 
+Fig. \ref{fig:distmapviz}. Such an approach requires a method to map the features between distributions. Often, a variation of normalizing flow is utilized for this \cite{liu2024deep}. 
 Normalizing flows as a class of generative models \cite{Kobyzev_2021normalizingflowexplanation} are advantageous for transforming probability distributions because they provide a flexible 
 framework to model complex distributions and efficient sampling. This enables accurate distribution mapping as well as sampling. \newline
 
@@ -146,7 +146,7 @@ IAD, namely memory bank, one-class classification, teacher-student and autoencod
 \subsection{PatchCore}
 \label{subsec:patchcore}
 PatchCore \cite{patchCore2022} has been chosen as the memory bank approach. It has demonstrated high accuracy in image and pixel-level anomaly detection and set a high standard for 
-performance after its release. The fundamental principle of PatchCore is visualized in figure \ref{fig:patchcorearchitecture} and is according to the basic memory bank principle. First, a pre-trained feature extractor is used 
+performance after its release. The fundamental principle of PatchCore is visualized in Fig. \ref{fig:patchcorearchitecture} and is according to the basic memory bank principle. First, a pre-trained feature extractor is used 
 to retrieve features of the input data. Next, in this paper, the features are turned into locally aware feature patches, meaning the feature maps are cut into small fields, and preprocessing operations like pooling are applied to ensure 
 the patches are locally aware and of similar dimensions throughout the training. This results in patches of image $x_i$ that adhere to equation \ref{eq:patchcorepatches} where $\mathcal{N}_{P}^{(h,w)}$ 
 describes a neighborhood of patches $\mathcal{P}$ in an image with height $h$, width $h$ and patch size $p$, as described in \ref{eq:neighborhood}. Moreover we use $\phi_{i,j} = \phi_j(x_i)$ as the feature 
@@ -214,7 +214,7 @@ Moreover, it was introduced by Liu et al. as an easy-to-use or application-frien
 \end{figure}
 
 As a one-class classification or feature projection approach, SimpleNet utilizes a sub-network to project extracted features into another space to then find a decision criterion between normal and 
-abnormal features. The exact pipeline of SimpleNet is illustrated in figure \ref{fig:simplenetpipeline}. While training, a pre-trained feature extractor retrieves features from the input data. Notably, SinmpleNet adopts PatchCore's approach of transforming extracted features into locally aware patches. This means that in figure \ref{fig:simplenetpipeline}, the blue tiled pane represents features in the form of patch vectors 
+abnormal features. The exact pipeline of SimpleNet is illustrated in Fig. \ref{fig:simplenetpipeline}. While training, a pre-trained feature extractor retrieves features from the input data. Notably, SinmpleNet adopts PatchCore's approach of transforming extracted features into locally aware patches. This means that in Fig. \ref{fig:simplenetpipeline}, the blue tiled pane represents features in the form of patch vectors 
 that represent the characteristics of the image. Based on SimpleNet being a one-class classification approach, the features are projected in the next step, visually at the green tiled pane. 
 \cite{liu2023simplenet} conducts multiple ablation experiments on different implementations of the feature adapter. They conclude that a single fully connected layer network yields the best 
 performance. The extracted features are then projected using the feature adapter, which is simultaneously trained during the training session. Before training the discriminator, the resulting 
@@ -247,7 +247,7 @@ approaches, its performance is also dependent on the quality of the backbone fea
 
 As a teacher-student model, \cite{revdist2023} has produced state-of-the-art results on current datasets. The paper extends a previous reverse distillation approach from 
 \cite{Deng_2022basicrevdist}. The base paper utilizes knowledge distillation through a classical teacher-student architecture as explained in section \ref{sec:IADcategs}. However, they stand out 
-due to two critical differences visualized in figure \ref{fig:revdistbottleneck}. Firstly, they present an unconventional knowledge distillation flow. The direct distillation through the teacher network still exists, 
+due to two critical differences visualized in Fig. \ref{fig:revdistbottleneck}. Firstly, they present an unconventional knowledge distillation flow. The direct distillation through the teacher network still exists, 
 yet the input image no longer directly influences student learning. This results in increased compactness as the low dimensional output of the teacher model is fed to the student, 
 whereas the student model has to predict the teacher's feature representation. This mimics the encoder-decoder structure and may yield advantages that come with this approach. Secondly, 
 the paper introduces a further one-class bottleneck embedding module. This comprises a multi-scale feature fusion block to aggregate low and high-level features and a one-class embedding 
@@ -280,7 +280,7 @@ architecture of the approach used in this context.}
 
 Circling back to \cite{revdist2023}, the paper extends the prior reverse distillation approach to limit possible abnormal patterns that heavily impact student learning. To do so, they 
 first introduce a multi-scale teacher architecture and projection blocks after each respective teacher block. Those multi-scale projection blocks are stacked convolutional blocks 
-and are designed to regulate abnormal information patterns that might flow from teacher blocks to the student. This is depicted in figure \ref{fig:revdistpipeline}, which shows the image to describe the 
+and are designed to regulate abnormal information patterns that might flow from teacher blocks to the student. This is depicted in Fig. \ref{fig:revdistpipeline}, which shows the image to describe the 
 approaches training pipeline. For inference, the teacher's information is passed to the respective multilayer projection blocks and their student counterparts' information after the 
 reverse distillation.
 
@@ -302,7 +302,7 @@ in their paper.\newline
  \label{fig:draempipeline}
 \end{figure}
 
-DRAEM utilizes two subnetworks in their anomaly detection pipeline, as seen in figure \ref{fig:draempipeline}. The first one is the so-called reconstructive sub-network, which is an encoder-decoder structure. The network is trained 
+DRAEM utilizes two subnetworks in their anomaly detection pipeline, as seen in Fig. \ref{fig:draempipeline}. The first one is the so-called reconstructive sub-network, which is an encoder-decoder structure. The network is trained 
 to receive an image with artificial noise and reconstruct it into its original state. The second network is used as the distance measurement between the reconstructed image and the original one, 
 namely the discriminative sub-network. This network consists of a u-net \cite{Ronneberger_2015UNET} like architecture. Input is a channel-wise concatenation of the altered and reconstructed 
 input images. Since the reconstructed image is supposed to be anomaly-free, the two inputs should differ to some extent, which the second sub-network will learn. The network outputs a segmentation map, 
@@ -358,11 +358,11 @@ in the target image. The sPRO score is calculated by averaging the intersections
 while norming the values by the saturation threshold and providing an upper limit of 1 per region. It is to be said that this gives a similar 
 view on the segmentation performance as the PRO score, as it is a generalized form and can produce the same results if the saturation 
 threshold is equal to the number of anomalous pixels per region. However, due to its cap of 1, it also rates varyingly large segmentations equally in cases 
-where the anomalous position is uncertain. Figure \ref{fig:sprovspro} demonstrates this behavior in the case of a logical anomaly of the pushpin class. 
+where the anomalous position is uncertain. Fig. \ref{fig:sprovspro} demonstrates this behavior in the case of a logical anomaly of the pushpin class. 
 As visible, the logical anomaly consists of an empty pushpin compartment. The missing pushpin could be placed in any place of this smaller 
 box for it to be valid. Therefore, an amount of pixels equal to the amount a visual pushpin possesses would suffice. However, the conventional PRO score 
 keeps rising as the segmented area grows within the anomalous region. Due to the saturation score and limit, this is prevented 
-by the sPRO metric as figure \ref{fig:sprovspro} shows it to be already saturated once the minimum required amount of pixels is achieved. The saturation 
+by the sPRO metric as Fig. \ref{fig:sprovspro} shows it to be already saturated once the minimum required amount of pixels is achieved. The saturation 
 scores for each anomaly have to be individually set for each anomaly and are given for the five classes of MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022}.
 
 \begin{figure}[H]
@@ -386,7 +386,7 @@ ground truths, making it versatile and applicable to multiple algorithms. The ma
 Each class contains train images consisting of regular examples 
 and test images. The data among the testing images is categorized by a title describing the anomaly. The ground truth folder contains 
 ground truths on a pixel level.\newline
-Exemplary images of the dataset are to be seen in figure \ref{fig:mvtecexampleimages}. They typically are of rectangular shape and their resolutions range from 
+Exemplary images of the dataset are to be seen in Fig. \ref{fig:mvtecexampleimages}. They typically are of rectangular shape and their resolutions range from 
 700x700 to 1024x1024. More specifications can be found in Bergmann et al. \cite{MVTEC_Bergmann_2021} and the whole dataset is publicly available at the official website\cite{mvtecdownload}.\newline
 The MVTecAD\cite{MVTEC_Bergmann_2021} dataset is regarded highly among IAD papers and has, since its introduction, been used in most relevant papers as a dataset 
 to benchmark the respective approaches. This is also likely to remain the trend since many state-of-the-art algorithms in recent years have primarily been benchmarked on it, forcing new approaches 
@@ -400,7 +400,7 @@ Later, in 2022, Bergman et al. introduced another IAD dataset loosely related to
 This dataset works with the same ground ideas as their original MVTecAD set but extends the testing contents of the dataset by logical anomalies. 
 It consists of five classes: breakfast box, juice bottle, pushpins, screw bag and splicing connectors. The difference from the other dataset is that the anomalous categories for each class are only separated into good images, images with structural anomalies 
 and images with logical anomalies. As mentioned in the introduction, structural anomalies are visible damages to the objects, similar to the MVTecAD dataset. Logical anomalies denote violations against arbitrary restrictions 
-imposed by the authors. To illustrate this by an example: The class of pushpins represents a bird's view of a compartmentalized box of pushpins(see figure \ref{fig:pushpinviz}). A rule was added 
+imposed by the authors. To illustrate this by an example: The class of pushpins represents a bird's view of a compartmentalized box of pushpins(see Fig. \ref{fig:pushpinviz}). A rule was added 
 that each compartment only contained one pushpin. This means that if one region misses their contents or contains more than one pushpin, it would constitute a logical anomaly. Conversely, if a pushpin had a crooked or broken tip, it would be labeled a structural anomaly. Fundamentally, the differences between the 
 MVTecAD and the MVTecAD LOCO dataset are the methods used to store segmentations. While the former dataset provides one segmentation file per image, now an image file exists for each anomalous ground truth area, which is mapped to the image by the folder name of their location.
 
@@ -471,7 +471,7 @@ To obtain ensembled feature maps, the paper proposes to bring all feature maps t
 keeping every available feature map is not necessarily desirable, as this would create inputs with too many features, the amount of feature 
 maps is reduced using principal component analysis (PCA). This allows the ensemble to focus only on the most essential features while maintaining 
 an equal number of maps as if composed of a single classifier. To be more specific, Heller et al. \cite{EnsembleHeller2023} introduced two main 
-approaches to perform this ensemble. The first is a global transformation block, as seen in figure \ref{fig:GTBheller}. 
+approaches to perform this ensemble. The first is a global transformation block, as seen in Fig. \ref{fig:GTBheller}. 
 The features are all resized to the same dimensions and connected along their channels through a concatenation layer.
 Afterwards, PCA is applied along the channel dimension to obtain a result with N remaining feature maps, where N can be adjusted for one's 
 needs. This method offers the advantage of efficiency, as PCA is only run once per feature ensembling, and may be applied when there is 
@@ -507,7 +507,7 @@ block in comparison to the independent transformation block \cite{EnsembleHeller
 
 
 To combat this at the cost of lesser efficiency, Heller et al. also introduced a second approach, namely the independent transformation block, 
-visualized in figure \ref{fig:ITBheller}. 
+visualized in Fig. \ref{fig:ITBheller}. 
 This procedure only differs in the sequencing of the actions. Therefore, PCA is first applied to every set of feature maps, keeping 
 a certain number of feature map components per classifier. They are then all resized to the desired dimensions and concatenated through 
 the concatenation layer. This sequencing allows maximum information preservation through individual PCA and predefining the number 
