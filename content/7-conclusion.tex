@@ -10,7 +10,7 @@ possible ablation studies or new concepts that could be researched on the basis 
 \section{Conclusion}
 \label{sec:realconclusion}
 
-\textbf{IAD Approaches on MVTecAD LOCO.}\newline
+\subsection{IAD Approaches on MVTecAD LOCO}
 The survey on logical anomaly detection and localization using recent state-of-the-art IAD approaches went as expected. There was a performance drop, that could at least 
 partially be traced back to the addition of logical anomalies to the experiments. Moreover the classifiers all exhibited reasonable sPRO metrics that were predictable for the 
 other metrics. The results and discussion sections confirm that these approaches have clear need for improvement when shifting the focus from the classic MVTecAD \cite{MVTEC_Bergmann_2021} 
@@ -18,23 +18,23 @@ to a more challenging dataset containing logical anomalies. This underlines one 
 Judging from the segmentation results, these approaches have potential to be adjusted for better logical anomaly localization performance. This could either be through 
 further research for improved approaches, or combination of approaches to utilize different strenghts. Examples of this are rpesented in the outlook.
 
-\textbf{Flat Connector Class.}\newline
-The novel dataset category is usable and allows for further interesting insights into various IAD methods. It's difficulty compared to other logical anomaly classes may be 
+\subsection{Flat Connector Class}
+The novel dataset category is viable and allows for further interesting insights into various IAD methods. It's difficulty compared to other logical anomaly classes may be 
 below average. Yet this does not disqualify it from being a viable dataset extension. Having classes from multiple difficulties in one set helps evaluate classifiers on 
 multiple levels, as well as giving opportunity for performance evaluation to strong and weaker approaches of IAD. Lastly it extends the previously existing logical anomaly 
 concepts, providing a more diverse experiment setting. \newline
 The class may benefit from being extended regarding kinds of anomalies, as well as more training and testing images. Ideas on how to potentially grow this class are given 
 in the outlook section of this chapter.
 
-\textbf{Ensemble.}\newline
+\subsection{Ensemble}
 The ensemble approach presented in the previous chapters did not yield an improvement in robustness, or any improvement in performance at all. The segmentations were either 
-worse or unusable. The feature ensembling approach by Heller et al. \cite{EnsembleHeller2023} did not work in this setting. Results from applying it were not showing any learning 
+worse than the baseline or did not show any learning process. The feature ensembling approach by Heller et al. \cite{EnsembleHeller2023} did not work in this setting. Results from applying it were not showing any learning 
 process (Fig. \ref{fig:pca_res}) and possible reasons were discussed in section \ref{subsec:ITBfaildiscussion}. This calls for further experimentation with this approach as mentioned 
 in the outlook. Stacking the channels to create merged feature maps did produce results that displayed potential. Still the base ensemble methods had a better localization 
 performance. On this basis, it is to be said that merely feature map stacking is not a promising procedure for this problem statement, and should only be used in combination 
 with other methdos to reduce and combine the number of channels.
 
-\textbf{Current State of the Pipeline.}\newline
+\subsection{Current State of the Pipeline}
 After the conducted experiments, there now remains an code structure to be used for potential further experiments. 
 All approaches discussed in this work are contained within the structure and their functionality is adapted to experiment on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset. Most 
 importantly, there also exists an ensembling pipeline that allows ensemble members, as well as ensembling methods to be switched modularly. The ensembling members and methods 

@@ -64,7 +64,7 @@ class of structural anomalies, sometimes by even up to 29 percent, suggesting lo
 \end{figure}
 
 Additionally below in Fig. \ref{fig:locoallapproaches} are representative images from multiple classes that showcase good and bad segmentation results. Results are taken from multiple approaches and 
-more results can be found in the appendix.
+more results can be found in the appendix. Next subsection deals with strengths and weaknesses if individual classifiers found when examining the images.
 
 %\input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
 %\input{figures/locosimplenetresults/simplenetJBresults.tex}
@@ -75,7 +75,11 @@ more results can be found in the appendix.
 \subsection{Classifier Behavior}
 \label{subsec:classifierbehavior}
 
-When inspecting localization performance in segmentated images, some classifiers exhibited different strengths and weaknesses than others. 
+When inspecting localization performance in segmentated images, some classifiers exhibited different strengths and weaknesses than others. Fig. xyz showcases 
+the performance comparison between the classifiers on an arbitrary image from the dataset.
+
+- figure mit vergleichen
+
 DRAEM \cite{Zavrtanik_2021DRAEM} for instance often showed very precise localization performance in multiple classes, but struggled 
 with correctly segmenting anomalies in cases where objects are missing and there is not visbile border on where this object should 
 appear. For instance, precisely localizing missin screws in the right compratment of the braekfast box class was done well, yet 
@@ -125,7 +129,7 @@ the results of the secondary ensemble approach are presented, supported by accor
 \subsection{Independent Transformation Block}
 \label{subsec:ITBfail}
 
-When performing the ensemble training process using the approach by \cite{EnsembleHeller2023}, the results were generally not usable. Looking at the exemplary plot of the segmentation 
+When performing the ensemble training process using the approach by \cite{EnsembleHeller2023}, the results were generally not meaningful. Looking at the exemplary plot of the segmentation 
 results in Fig. \ref{fig:pca_res}, it becomes obvious why no metrics are reported for this experiment. When investigating image level metrics, they were highly inconsistent thorughout 
 the training process and are regarded as not meaningful and representative.
 
@@ -147,7 +151,7 @@ single backbones, wheras the other one regards standard backbone ensembling with
 
 
 \textbf{Hierarchy Levels.} The results of ensembling different hierarchies exhibit a degree of diversity between different layer hierarchies. As briefly menitoned in section \ref{sec:ensemblecandidates}, the resnet backbones consist of four 
-layers, in other words they contain four larger sequential blocks. Inference using higher level feature representations with an backbone of subtype resnet resulted in unusable results, segmentation wise. 
+layers, in other words they contain four larger sequential blocks. Inference using higher level feature representations with an backbone of subtype resnet resulted in suboptimal results, segmentation wise. 
 Fig. \ref{fig:faillayersegments} exemplary showcases the segmentation results of training using the wideresnet50 backbone and including a feature aggregation between layers 3 and 4. 
 
 \input{figures/faillayer34/faillayersegmentations.tex}
@@ -166,14 +170,15 @@ segmentation images of the experiments. More data is to be found in the appendix
 
 \input{figures/ensemblehierarchyimages/ensemblehierarchy.tex}
 
-Here it is to be seen that the results are usable, as anomalies are segmented. The localization performance seems to be worse than the standard SimpleNet \cite{liu2023simplenet} 
+Here it is to be seen that at least for this class, the anomalies are segmented. The localization performance seems to be worse than the standard SimpleNet \cite{liu2023simplenet} 
 performance, judging from segmentation images (Fig. \ref{fig:ensemblehierarchy}) and metrics (Tab. \ref{tab:ensembleimageAUROC}, Tab. \ref{tab:ensemblepixelAUROC}). While the anomalous regions often still get detected, there is a lot more uncertainty regarding 
-the pixel scores than from comparable IAD approaches, leading to less robust results.
+the pixel scores than from comparable IAD approaches, leading to less robust results. In other experiments in the appendix it is visible that this performance is significantly worse on 
+other classes like the splicing connectors.
 
 
 
-\textbf{Backbone Ensemble.} The performance of this approach is visible in table xyz. The performance is visible worse from the performance 
-reported by the standard simplenet approach. Yet the results suggest usable results unlike the experiment conducted in section \ref{subsec:ITBfail}. 
+\textbf{Backbone Ensemble.} The performance of this approach is visible in table \ref{tab:ensembleimageAUROC}. The performance is visible worse from the performance 
+reported by the standard simplenet approach. Yet the results suggest some learning process for the flat connector class, unlike the experiment conducted in section \ref{subsec:ITBfail}. 
 Moreover the loss, presented in Fig. \ref{fig:ensembleloss}, suggests a conceptually adequate learning. The performance could not be increased by a higher 
 epoch count as to be seen by the loss progression in the other subfigure.
 
@@ -182,7 +187,7 @@ epoch count as to be seen by the loss progression in the other subfigure.
 Moreover Fig. \ref{fig:ensembleFCimages} showcases exemplary segmentation results on the flat connector class. As 
 seen the ensemble ouputs consist of a lot more uncertainty, as the values are closer together and visually harder to distinguish This uncertainty 
 was higher for logical anomalies than for structural ones. Still, 
-using threshoolding the results are usable, as often anomalous regions are discernible. Fig. \ref{fig:ensembleFCimages} also showcases examples of failed segmentation 
+using threshoolding the approach is viable, as often anomalous regions are discernible. Fig. \ref{fig:ensembleFCimages} also showcases examples of failed segmentation 
 attempts. 
 
 \input{figures/ensembleimagesFC/ensembleimagesFC.tex}
