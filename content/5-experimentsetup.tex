@@ -21,10 +21,11 @@ environment files in the project code.
 \label{sec:locoxperiments}
 
 In this section we review the performance of the IAD methods mentioned in section \ref{sec:IADmethods} on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} 
-dataset. Tables xyz, xyz, and xyz each display the experiments with regards to one of the metrics: image AUROC, pixel AUROC and sPRO. \newline
+dataset. Tables \ref{tab:ensembleimageAUROC}, \ref{tab:ensemblepixelAUROC}, and \ref{tab:sproloco} each display the experiments with regards to one of the metrics: image AUROC, pixel AUROC and sPRO. \newline
 Comparing the average image and pixel AUROCs to the ones reported in the chapter \ref{chap:background} a decrease in performance is visible. 
-This is also true in regards to the pixel wise AUROC on average. (noch hinschreiben welche classifier den maximalen drop off hatten und 
-welche den wenigsten hatten). (Schreiben Welche classifier on average die besten waren für jede metric)
+This is also true in regards to the pixel wise AUROC on average. The performances of the classifiers were on a similar level, emphasizing that all these approaches are 
+able to achieve equally high quality results. Reverse Destillation \cite{revdist2023} displayed a slightly larger performance drop in pixel AUROC, while PatchCore \cite{patchCore2022} 
+did barely lose in that category.
 
 \input{algotable/locoimageauroc.tex}
 
@@ -35,10 +36,12 @@ Conversely, the class screw bag seems to often have lower image AUROC resuts.
 \input{algotable/locopixelauroc.tex}
 
 
-The sPRO values calculated for the approaches were of poor performance as seen in table xyz. Despite this, comparing the metrics to the 
-class averages reportet in \cite{LOCODentsAndScratchesBergmann2022}, the results seem legitimate. Bergmann et al. review several methods 
-in this paper that they selected to be applicable on logical anomalies. The lowest scoring models were often barely above some metrics reportet 
-below, if at all. (Beschreiben wer so gute ansätze sind bei sPRO on average)
+The sPRO values calculated for the approaches were of below average performance as seen in table \ref{tab:sproloco}. Despite this, comparing the metrics to the 
+class averages reportet in \cite{LOCODentsAndScratchesBergmann2022}, the results seem legitimate. Bergmann et al. review methods 
+in this paper that they selected to be applicable on logical anomalies. The classifiers in this survey cannot compete with their novel IAD method GCAD, which reaches an 
+average sPRO of 0.701. Still they were somtimes in comparable regions as other classifiers in the named paper, producing an expected performance. 
+The average metric scores all are very close to each other, suggesting somawhat equal performance in the end.
+
 
 \input{algotable/locospro.tex}
 
@@ -48,23 +51,25 @@ MVTecAD \cite{MVTEC_Bergmann_2021} and the MVTecAD LOCO \cite{LOCODentsAndScratc
 PatchCore \cite{patchCore2022}, SimpleNet \cite{liu2023simplenet}, Reverse Distillation \cite{revdist2023} and DRAEM \cite{Zavrtanik_2021DRAEM} had a fall off 
 in image AUROC class average of respectively 0.174, 0.193, 0.208 and 0.213. With respect to the pixel wise 
 AUROC, a decline of 0.064, 0.147, 0.218 and 0.174 emerged. \newline
-Figure xyz shows exemplary metrics divided by structural and logical anomalies. The reported pixel AUROCs slightly differ from earlier reported results due to a different 
+Figure \ref{fig:structvslogic} shows exemplary metrics divided by structural and logical anomalies. The reported pixel AUROCs slightly differ from earlier reported results due to a different 
 evaluation split of good images, but showcase a principle performance difference. Here a better performance is clearly visible for the 
-class of structural anomalies, sometimes by even up to 29 percent, suggesting logical anomalies to be distinctively more difficult to correctly segment. (Prediction plot???)
+class of structural anomalies, sometimes by even up to 29 percent, suggesting logical anomalies to be distinctively more difficult to correctly segment.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/structvslogic.png}
+    \includegraphics[width=0.5\textwidth]{figures/structvslogic.png}
     \caption{Exemplary pixel AUROC comparison of PatchCore \cite{patchCore2022} between structural and logical anomalies. For each evaluation class all normal class images 
              are taken into calculation, resulting into deviating AUROCS from the original reported ones.}
     \label{fig:structvslogic}
 \end{figure}
 
-Additionally below in figure xyz are representative images from multiple classes that showcase good and bad segmentation results. Results are taken from multiple approaches and 
+Additionally below in figure \ref{fig:locoallapproaches} are representative images from multiple classes that showcase good and bad segmentation results. Results are taken from multiple approaches and 
 more results can be found in the appendix.
 
-\input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
-\input{figures/locosimplenetresults/simplenetJBresults.tex}
+%\input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
+%\input{figures/locosimplenetresults/simplenetJBresults.tex}
+
+\input{figures/locoallapproaches/locoallapproaches.tex}
 
 
 \subsection{Classifier Behavior}
@@ -83,11 +88,11 @@ an anomalous region.
 \input{figures/DRAEMweakness/draemweakness.tex}
 
 The other classifiers, PatchCore \cite{patchCore2022}, SimpleNet \cite{liu2023simplenet} and Reverse Distillation \cite{revdist2023}, generally showed good performance. Unlike DRAEM, they exhibited 
-poorer performance when classifying small anomalies (Fig. xyz). Moreover The segmentations often times slightly overshoot the anomalous regions at various confidence 
+poorer performance when classifying small anomalies (Fig. \ref{fig:overshoot}). Moreover The segmentations often times slightly overshoot the anomalous regions at various confidence 
 degrees. What this means is that unlike DRAEM \cite{Zavrtanik_2021DRAEM}, which is very strict with segmentation, those approaches tend to segment more pixels than necessary. 
 Of course these pixels do not have the same values, which is why the performance is still good after thresholding. 
 
-- figure mit patchcore und simplenet results
+\input{figures/overshootexamples/overshootandsmallanomalies.tex}
 
 
 
@@ -156,8 +161,8 @@ discussed in section \ref{sec:ensemblecandidates}.
 \input{figures/faillayer34/failmetricsandloss.tex}
 
 
-Experiments combining lower layer aggregations yielded different results. Table xyz summarises the reported metrics on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} 
-dataset, and figure xyz showcases exemplary 
+Experiments combining lower layer aggregations yielded different results. Table \ref{tab:ensemblepixelAUROC} summarises the reported pixel metrics on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} 
+dataset, and figure \ref{fig:ensemblehierarchy} showcases exemplary 
 segmentation images of the experiments. More data is to be found in the appendix.
 
 \input{figures/ensemblehierarchyimages/ensemblehierarchy.tex}
@@ -170,12 +175,12 @@ the pixel scores than from comparable IAD approaches, leading to less robust res
 
 \textbf{Backbone Ensemble.} The performance of this approach is visible in table xyz. The performance is visible worse from the performance 
 reported by the standard simplenet approach. Yet the results suggest usable results unlike the experiment conducted in section \ref{subsec:ITBfail}. 
-Moreover the loss, presented in figure xyz, suggests a conceptually adequate learning. The performance could not be increased by a higher 
+Moreover the loss, presented in figure \ref{fig:ensembleloss}, suggests a conceptually adequate learning. The performance could not be increased by a higher 
 epoch count as to be seen by the loss progression in the other subfigure.
 
 \input{figures/ensemble_losses/ensemble_loss.tex}
 
-Moreover figure xyz showcases exemplary segmentation results on the flat connector class. As 
+Moreover figure \ref{fig:ensembleFCimages} showcases exemplary segmentation results on the flat connector class. As 
 seen the ensemble ouputs consist of a lot more uncertainty, as the values are closer together and visually harder to distinguish This uncertainty 
 was higher for logical anomalies than for structural ones. Still, 
 using threshoolding the results are usable, as often anomalous regions are discernible. Figure xyz also showcases examples of failed segmentation 
@@ -183,7 +188,7 @@ attempts.
 
 \input{figures/ensembleimagesFC/ensembleimagesFC.tex}
 
-As a comparison figure xyz displays example segmentations from the individual backbones. Here there is a lot less uncertainty or 
+As a comparison figure \ref{fig:singlebackboneexamples} displays example segmentations from the individual backbones. Here there is a lot less uncertainty or 
 noise than in the ensembled approach. This makes for worse and less robust ensemble performance, especially regarding segmentation. 
 The implications and reasons of this are taken up in the next chapter.
 
