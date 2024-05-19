@@ -32,21 +32,31 @@ these issues, some supervised approaches \cite{Chu_2020supervised} operate in a 
 unsupervised IAD methods in current research persists, 
 this work will also restrict itself to such approaches. This also facilitates executing the ensemble approach presented in chapter \ref{chap:method}.
 \newline
-\textbf{Unsupervised IAD.} Looking into the unsupervised anomaly setting, the following important distinction is between reconstruction and representation-based approaches. They differ as the former compares the distances between two images, and the latter measures distances between feature representations.
+\subsection{Unsupervised IAD} 
+Looking into the unsupervised anomaly setting, the following important distinction is between reconstruction and representation-based approaches. They differ as the
+ former compares the distances between two images, and the latter measures distances between feature representations.
 
-\subsection{Reconstruction Based}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/recvsreppdf.pdf}
+    \caption{Visualizations for the general process of representation (left) and reconstruction (right) based IAD methods.}
+    \label{fig:recvsrep}
+\end{figure}
+
 
 Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data as well as noisy data. Noisy data are inputs
 that are altered using noise, although the exact noise application depends on the specific approach. During testing, after successfully learning to 
-reconstruct anomaly-free images, the method is given a potentially noisy input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in the appendix with Fig. \ref{subfig:recbased}. 
-On the other hand, representation approaches use feature embedding methods to obtain feature representations of images and compare those. As shown in appendix Fig. \ref{subfig:repbased}, during training, the model is 
+reconstruct anomaly-free images, the method is given a potentially noisy input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in Fig. \ref{fig:recvsrep}. 
+On the other hand, representation approaches use feature embedding methods to obtain feature representations of images and compare those. As shown in Fig. \ref{fig:recvsrep}, during training, the model is 
 learning to extract features of input images correctly. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
 prior feature-level representations of the class object. A decision is then made as well using a distance measure.\newline
 Both classes of IAD methods have been shown to produce state-of-the-art results. Nevertheless, more approaches are currently representation-based \cite{liu2024deep} as they have shown SOTA performance more 
 consistently. However, it is reasonable to focus on both kinds of IAD, as they may excel in different regions of anomaly detection and evaluation criteria. Namely, reconstruction methods often show a notable performance at pixel-level anomaly detection compared to feature embedding/representation methods, as their principle is based on pixel-wise comparisons of input 
 and reconstructed data.
 
-\subsection{Representation Based}
+
+
+\subsection{Subcategories}
 
 Again, when examining the representation-based approaches, some distinctions can be made regarding exactly how the method implements a representation-based procedure.
 The main approaches in this category feature a memory bank, teacher-student architecture, and distribution map, and one employing a one-class classification strategy. The subcategory of 
@@ -231,7 +241,7 @@ MLP is very effective. The training objective for the discriminator is composed 
  \end{split}
 \end{equation} 
 
-Here $$th^{+}$$ and $$th^{-}$$ are truncation terms preventing potential overfitting, and $$D_{\psi}(q^{i}_{h,w})$$ represents the estimated normality of adapted features by the discriminator.
+Here $th^{+}$ and $th^{-}$ are truncation terms preventing potential overfitting, and $D_{\psi}(q^{i}_{h,w})$ represents the estimated normality of adapted features by the discriminator.
 
 At test time, the input image features undergo the described process, and the projected patch vectors are given to the discriminator, resulting in a score for each patch. Similar to 
 PatchCore, to generate segmentations, the scores are reshaped, bilinearly interpolated and smoothened. Also, the largest score acts as the image anomaly score.
