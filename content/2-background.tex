@@ -46,10 +46,10 @@ Looking into the unsupervised anomaly setting, the following important distincti
 
 Reconstruction approaches first learn to reconstruct the objects given in the input images. This is done by feeding the network normal train data as well as noisy data. Noisy data are inputs
 that are altered using noise, although the exact noise application depends on the specific approach. During testing, after successfully learning to 
-reconstruct anomaly-free images, the method is given a potentially noisy input image, reconstructs it and compares both images using some sort of distance measure. This process is also depicted in Fig. \ref{fig:recvsrep}. 
+reconstruct anomaly-free images, the method is given a potentially noisy input image, reconstructs it and compares both images using some sort of distance metric. This process is also depicted in Fig. \ref{fig:recvsrep}. 
 On the other hand, representation approaches use feature embedding methods to obtain feature representations of images and compare those. As shown in Fig. \ref{fig:recvsrep}, during training, the model is 
 learning to extract features of input images correctly. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
-prior feature-level representations of the class object. A decision is then made as well using a distance measure.\newline
+prior feature-level representations of the class object. A decision is then made as well using a distance metric.\newline
 Both classes of IAD methods have been shown to produce state-of-the-art results. Nevertheless, more approaches are currently representation-based \cite{liu2024deep} as they have shown SOTA performance more 
 consistently. However, it is reasonable to focus on both kinds of IAD, as they may excel in different regions of anomaly detection and evaluation criteria. Namely, reconstruction methods often show a notable performance at pixel-level anomaly detection compared to feature embedding/representation methods, as their principle is based on pixel-wise comparisons of input 
 and reconstructed data.
@@ -106,7 +106,7 @@ Lastly, one-class classification(Fig. \ref{fig:OCCviz}) is
 similar to a distribution mapping approach. The critical difference is that the latter maps features into a desired distribution, and the former focuses on finding boundaries between normal 
 and anomalous features. Features are projected into a suitable space using a network to efficiently do that. To learn an accurate boundary, the approaches generate fake anomalous features to 
 differentiate from normal ones. This method heavily relies on the quality of generated features, and as such, its effectiveness may vary. A typical approach for generating fake samples 
-in this context is using gaussian noise \cite{liu2023simplenet}.
+in this context is using Gaussian noise \cite{liu2023simplenet}.
 
 \begin{figure}[H]
 \centering
@@ -117,7 +117,7 @@ in this context is using gaussian noise \cite{liu2023simplenet}.
 
 
 Circling back to reconstruction-based (Fig. \ref{fig:autoencoderviz}) methods, they also can be parted into subcategories. Here, the most predominant one is the use of autoencoders to obtain a generated image. Many 
-reconstruction approaches make use of typical AE encoder and decoder structures. They are mainly separated by resolving differences between the input and reconstructed images. 
+reconstruction approaches make use of typical encoder and decoder structures. They are mainly separated by resolving differences between the input and reconstructed images. 
 While there are too many evaluation approaches to name, DRAEM \cite{Zavrtanik_2021DRAEM} can be named here as one of the most famous reconstruction autoencoder approaches. It uses 
 the output of the reconstructive network in combination with the original image as the input for a discriminative subnetwork. It achieves outstanding results and demonstrates nearly equal effectiveness 
 of reconstruction-based methods to representation-based ones. Autoencoder approaches like DRAEM are, despite being popular, often computationally expensive to train for IAD, as they require a lot of 
@@ -184,7 +184,7 @@ which offers the application of kNN with great speed, performance and even a des
 
 \begin{figure}[H]
 \centering
- \includegraphics[width=\textwidth]{figures/pathcore_architecture.png}
+ \includegraphics[width=0.8\textwidth]{figures/pathcore_architecture.png}
  \caption{Structure of PatchCore architecture for training and testing \cite{patchCore2022}.}
  \label{fig:patchcorearchitecture}
 \end{figure}
@@ -218,17 +218,17 @@ Moreover, it was introduced by Liu et al. as an easy-to-use or application-frien
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{figures/simplenet_architecture.png}
+\includegraphics[width=0.8\textwidth]{figures/simplenet_architecture.png}
 \caption{Structure from SimpleNet architecture \cite{liu2023simplenet}.}
 \label{fig:simplenetpipeline}
 \end{figure}
 
 As a one-class classification or feature projection approach, SimpleNet utilizes a sub-network to project extracted features into another space to then find a decision criterion between normal and 
-abnormal features. The exact pipeline of SimpleNet is illustrated in Fig. \ref{fig:simplenetpipeline}. While training, a pre-trained feature extractor retrieves features from the input data. Notably, SinmpleNet adopts PatchCore's approach of transforming extracted features into locally aware patches. This means that in Fig. \ref{fig:simplenetpipeline}, the blue tiled pane represents features in the form of patch vectors 
+abnormal features. The exact pipeline of SimpleNet is illustrated in Fig. \ref{fig:simplenetpipeline}. While training, a pre-trained feature extractor retrieves features from the input data. Notably, SimpleNet adopts PatchCore's approach of transforming extracted features into locally aware patches. This means that in Fig. \ref{fig:simplenetpipeline}, the blue tiled pane represents features in the form of patch vectors 
 that represent the characteristics of the image. Based on SimpleNet being a one-class classification approach, the features are projected in the next step, visually at the green tiled pane. 
 \cite{liu2023simplenet} conducts multiple ablation experiments on different implementations of the feature adapter. They conclude that a single fully connected layer network yields the best 
 performance. The extracted features are then projected using the feature adapter, which is simultaneously trained during the training session. Before training the discriminator, the resulting 
-features are combined with gaussian noise to produce fake features. This is done by adding the generated noise onto the features. Afterwards, the discriminator is trained by giving it 
+features are combined with Gaussian noise to produce fake features. This is done by adding the generated noise onto the features. Afterwards, the discriminator is trained by giving it 
 the normal patch vectors of the input data and the artificial fake features to learn to differentiate between them. For the discriminator, the paper reports the use of a two-layer 
 MLP is very effective. The training objective for the discriminator is composed of a truncated $l1$ loss and batch-wise normalization:
 
@@ -255,7 +255,7 @@ approaches, its performance is also dependent on the quality of the backbone fea
 \subsection{RevDist}
 \label{subsec:revdist}
 
-As a teacher-student model, \cite{revdist2023} has produced state-of-the-art results on current datasets. The paper extends a previous reverse distillation approach from 
+As teacher-student models, reverse distialltion approaches \cite{revdist2023} \cite{Deng_2022basicrevdist} have produced state-of-the-art results on current datasets. The paper extends a previous reverse distillation approach from 
 \cite{Deng_2022basicrevdist}. The base paper utilizes knowledge distillation through a classical teacher-student architecture as explained in section \ref{sec:IADcategs}. However, they stand out 
 due to two critical differences visualized in Fig. \ref{fig:revdistbottleneck}. Firstly, they present an unconventional knowledge distillation flow. The direct distillation through the teacher network still exists, 
 yet the input image no longer directly influences student learning. This results in increased compactness as the low dimensional output of the teacher model is fed to the student, 
@@ -299,7 +299,7 @@ reverse distillation.
 \subsection{DRAEM}
 \label{subsec:DRAEM}
 
-DRAEM \cite{Zavrtanik_2021DRAEM} is one of the reconstruction-based approaches selected for this work. This paper is one of the more representative ones for the reconstruction branch of 
+DRAEM \cite{Zavrtanik_2021DRAEM} is one of the reconstruction-based approaches selected for this work. This method is one of the more representative ones for the reconstruction branch of 
 IAD techniques. The method is based on the reconstruction abilities of autoencoders to recreate normal images from altered ones. While recent research showed that representation-based approaches did 
 show SOTA performance more often, DRAEM demonstrated that reconstruction-based methods can compete in the same region. Tables \ref{tab:imageaurocmvtec} and 
 \ref{tab:pixelaurocmvtec} show DRAEMs results on the MVTecAD dataset as reported 
@@ -318,7 +318,7 @@ namely the discriminative sub-network. This network consists of a u-net \cite{Ro
 input images. Since the reconstructed image is supposed to be anomaly-free, the two inputs should differ to some extent, which the second sub-network will learn. The network outputs a segmentation map, 
 which can be used as the pixel-wise anomaly detection map. Moreover, the resulting map is further used for image-level detection. To be interpretable, a convolution filter smoothes the map, and the maximum value is taken as the image anomaly score. Reconstruction methods often utilize similarity functions such as SSIM \cite{Wang_2004SSIM} to obtain segmentation masks \cite{Zavrtanik_2021DRAEM} 
 \cite{liu2024deep}. While the first 
-sub-network makes SSIM part of their loss function, the discriminative sub-network breaks free of this as it automatically learns an appropriate distance measure, making it much more robust.
+sub-network makes SSIM part of their loss function, the discriminative sub-network breaks free of this as it automatically learns an appropriate distance metric, making it much more robust.
 
 DRAEM offers exemplary performance, robustness and moderate speed with around 67 frames per second at inference time \cite{liu2023simplenet}. Still, this approach may struggle on the reconstructive 
 part of its pipeline when synthesizing near-in-distribution anomalies on the original input images \cite{liu2024deep}. %(rausfinden was das heißt und umschreiben).
@@ -407,7 +407,7 @@ relation to the second dataset.
 \input{figures/mvtecadexampleimages/mvtecadexampleimages.tex}
 
 Later, in 2022, Bergman et al. introduced another IAD dataset loosely related to their original MVTecAD dataset, namely the MVTecAD LOCO dataset \cite{LOCODentsAndScratchesBergmann2022}. 
-This dataset works with the same ground ideas as their original MVTecAD set but extends the testing contents of the dataset by logical anomalies. 
+This dataset works with the same basic ideas as their original MVTecAD set but extends the testing contents of the dataset by logical anomalies. 
 It consists of five classes: breakfast box, juice bottle, pushpins, screw bag and splicing connectors. The difference from the other dataset is that the anomalous categories for each class are only separated into good images, images with structural anomalies 
 and images with logical anomalies. As mentioned in the introduction, structural anomalies are visible damages to the objects, similar to the MVTecAD dataset. Logical anomalies denote violations against arbitrary restrictions 
 imposed by the authors. To illustrate this by an example: The class of pushpins represents a bird's view of a compartmentalized box of pushpins(see Fig. \ref{fig:pushpinviz}). A rule was added 

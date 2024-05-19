@@ -1,20 +1,21 @@
 \begin{abstract}
 
-The field of image anomaly detection (IAD) has been very popular in recent years. This development can largely be attributed to its application as quality control in manufacturing 
-settings, such as industrial ones. It has had many breakthroughs already. State-of-the-art classifiers achieve classification and localization performance of up to $99.6 \%$ 
-on various datasets. However, those results were produced in very clinical settting and on structural anomalies, such as a surface with a scratch. A different crucial 
-type of anomalies are logical anomalies. They constitute violations of rules, such as wrong object orientations or missing parts. Current anomaly detection classifiers 
-show a significantly worse performance on this second anomaly type, even though they are just as common and potentially vital for a more varied quality control process 
-in real-world settings.\newline
-To enhance robustness, we propose a feature-level ensemble pipeline that integrates diverse feature representations and existing anomaly detection architectures. 
+Image anomaly detection (IAD) has been very popular in recent years. This development can largely be attributed to its application as quality control in manufacturing 
+settings, such as industrial ones. It has had many breakthroughs already. State-of-the-art classifiers achieve a classification and localization performance of up to $99.6 \%$ 
+on various datasets. In IAD, there is a distinction between two types of anomalies: structural and logical. Structural anomalies denote material damage to the class object, while logical ones 
+comprise anomalies that violate a set of rules and are not necessarily constrained to one region. \newline 
+Current research in anomaly detection has predominantly focused on evaluating classifiers solely on structural anomalies. Moreover, popular dataset images in this area are often 
+in a clinical setting. This approach is problematic as it neglects the detection of logical anomalies that are often critical in real-world applications. This results in 
+IAD classifiers, with initially robust and high performance, to significantly drop in detection and localization quality. \newline
+To enhance robustness, a feature-level ensemble pipeline is proposed. It integrates diverse feature representations and existing anomaly detection architectures. 
 By utilizing feature representations from multiple extractors 
-and projecting them into a unified space, we aim to provide increased information, thereby improving precision and robustness in anomaly localization. Additionally, 
-we conduct a survey of representative IAD approaches on a novel dataset that includes logical anomalies, offering an extensive overview of current methods and their 
-potential for logical anomaly localization. We also introduce a new dataset category, extending the primary dataset used in this study.\newline
-Our experiments confirm that the performance of classifiers significantly decreases when both structural and logical anomalies are considered, validating our initial 
-assumptions. We discuss specific characteristics and cross-classifier comparisons in detail. However, our ensemble approach did not enhance performance or robustness. 
+and projecting them into a unified space, the ensemble aims to provide increased information, thereby improving precision and robustness in anomaly localization. Additionally, 
+this work conducts a survey of representative IAD approaches on a novel dataset that includes logical anomalies, offering an extensive overview of current methods and their 
+potential for logical anomaly localization. Furthermore, a novel dataset category is introduced, extending the primary dataset used in this study. It features both logical and structural anomalies.\newline
+Our experiments confirm that classifiers' performance significantly decreases when structural and logical anomalies are considered, validating our initial 
+assumptions. Specific characteristics and cross-classifier comparisons are discussed in greater detail. However, our ensemble approach did not enhance performance or robustness. 
 The results were significantly inferior to those of individual ensemble members. This outcome highlights the need for further research into feature-level ensembling methods. 
-Despite not presenting extraordinary difficulty, the new dataset category provided valuable insights into classifier performance and serves as a valid extension of the 
+Despite not presenting extraordinary difficulty, the new dataset category provided valuable insights into classifier performance and served as a valid extension of the 
 logical dataset.
 
 \end{abstract}

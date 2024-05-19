@@ -28,7 +28,7 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces The normed anomaly scores for the MVTecAD \cite {MVTEC_Bergmann_2021} class broken bottle. b) is applied platt scaling calibration. The x-axis represents the anomaly score value for each entry, and the y-axis the confidence for the curve. Here, confidence is defined as the confidence that the sample is anomalous}}{31}{figure.caption.30}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Effects of changing parameters k and t and exemplary calibration for the MVTecAD \cite {MVTEC_Bergmann_2021} class broken bottle}}{31}{figure.caption.31}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Exemplary pixel AUROC comparison of PatchCore \cite {patchCore2022} between structural and logical anomalies. For each evaluation class all normal class images are taken into calculation, resulting into deviating AUROCS from the original reported ones.}}{34}{figure.caption.35}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Exemplary pixel AUROC comparison of PatchCore \cite {patchCore2022} between structural and logical anomalies. For each evaluation class, all normal class images are taken into calculation, resulting in deviating AUROCS from the original reported ones.}}{34}{figure.caption.35}%
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Representative segmentation results from all classifiers on the breakfast box class of the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{35}{figure.caption.36}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Comparison of classifier results on the same image.}}{36}{figure.caption.37}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Example segmentations of DRAEM \cite {Zavrtanik_2021DRAEM}, showcasing its precise segmentation and weakness in localizing missing objects.}}{36}{figure.caption.38}%
@@ -42,6 +42,7 @@
 \contentsline {figure}{\numberline {5.12}{\ignorespaces Representative segmentation results from our stacking ensemble with different residual network backbones at the same hierarchy level. The predictions are done on the novel flat connector class.}}{42}{figure.caption.49}%
 \contentsline {figure}{\numberline {5.13}{\ignorespaces Instance segmentations from backbones Wideresnet50 \cite {wideresnet} and Resnet50 \cite {He_2016resnet} on the novel flat connector class.}}{42}{figure.caption.50}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} anomalies with lots of texture and very small anomalous regions.}}{44}{figure.caption.51}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Example images of normal flat connectors.}}{52}{figure.caption.52}%
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Example images of normal flat connectors.}}{53}{figure.caption.53}%

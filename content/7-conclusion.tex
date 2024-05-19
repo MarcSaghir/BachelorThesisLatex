@@ -2,43 +2,43 @@
 \label{chap:conclusion}
 
 
-After now having experimented on concepts made known in chapter \ref{chap:method}, reviewed the results and interpreted them, it is 
-fitting to draw a conclusion from this work. This chapters focus is firstly on what to take away and secondly giving thought to 
-possible ablation studies or new concepts that could be researched on the basis of this paper.
+After experimenting with concepts made known in chapter \ref{chap:method}, reviewing the results and interpreting them, it is 
+fitting to conclude this work. This chapter focuses firstly on what to take away and secondly on 
+possible ablation studies or new concepts that could be researched based on this paper.
 
 
 \section{Conclusion}
 \label{sec:realconclusion}
 
 \subsection{IAD Approaches on MVTecAD LOCO}
-The survey on logical anomaly detection and localization using recent state-of-the-art IAD approaches went as expected. There was a performance drop, that could at least 
-partially be traced back to the addition of logical anomalies to the experiments. Moreover the classifiers all exhibited reasonable sPRO metrics that were predictable for the 
-other metrics. The results and discussion sections confirm that these approaches have clear need for improvement when shifting the focus from the classic MVTecAD \cite{MVTEC_Bergmann_2021} 
-to a more challenging dataset containing logical anomalies. This underlines one of the problems mentioned in the introduction, namely poor robustness for more complex anomalies. \newline
-Judging from the segmentation results, these approaches have potential to be adjusted for better logical anomaly localization performance. This could either be through 
-further research for improved approaches, or combination of approaches to utilize different strenghts. Examples of this are rpesented in the outlook.
+The survey on logical anomaly detection and localization using recent state-of-the-art IAD approaches went as expected. There was a performance drop that could at least 
+partially be traced back to adding logical anomalies to the experiments. Moreover, the classifiers all exhibited reasonable sPRO metrics that were predictable for the 
+other metrics. The results and discussion sections confirm that these approaches have a clear need for improvement when shifting the focus from the classic MVTecAD \cite{MVTEC_Bergmann_2021} 
+to a more challenging dataset containing logical anomalies. This underlines one of the problems mentioned in the introduction: poor robustness for more complex anomalies. \newline
+Judging from the segmentation results, these approaches have the potential to be adjusted for better logical anomaly localization performance. This could be done through 
+further research for improved approaches or combining approaches to utilize different strengths. Examples of this are presented in the outlook.
 
 \subsection{Flat Connector Class}
-The novel dataset category is viable and allows for further interesting insights into various IAD methods. It's difficulty compared to other logical anomaly classes may be 
-below average. Yet this does not disqualify it from being a viable dataset extension. Having classes from multiple difficulties in one set helps evaluate classifiers on 
-multiple levels, as well as giving opportunity for performance evaluation to strong and weaker approaches of IAD. Lastly it extends the previously existing logical anomaly 
+The novel dataset category is viable and allows further insights into various IAD methods. Its difficulty compared to other logical anomaly classes may be 
+below average. However, this does not disqualify it from being a viable dataset extension. Having classes from multiple difficulties in one set helps evaluate classifiers on 
+multiple levels and gives the opportunity for performance evaluation to strong and weaker approaches of IAD. Lastly, it extends the previously existing logical anomaly 
 concepts, providing a more diverse experiment setting. \newline
-The class may benefit from being extended regarding kinds of anomalies, as well as more training and testing images. Ideas on how to potentially grow this class are given 
+The class may benefit from being extended regarding kinds of anomalies and more training and testing images. Ideas on potentially expanding this class are given 
 in the outlook section of this chapter.
 
 \subsection{Ensemble}
-The ensemble approach presented in the previous chapters did not yield an improvement in robustness, or any improvement in performance at all. The segmentations were either 
-worse than the baseline or did not show any learning process. The feature ensembling approach by Heller et al. \cite{EnsembleHeller2023} did not work in this setting. Results from applying it were not showing any learning 
-process (Fig. \ref{fig:pca_res}) and possible reasons were discussed in section \ref{subsec:ITBfaildiscussion}. This calls for further experimentation with this approach as mentioned 
-in the outlook. Stacking the channels to create merged feature maps did produce results that displayed potential. Still the base ensemble methods had a better localization 
-performance. On this basis, it is to be said that merely feature map stacking is not a promising procedure for this problem statement, and should only be used in combination 
-with other methdos to reduce and combine the number of channels.
+The ensemble approach presented in the previous chapters did not yield an improvement in robustness or any improvement in performance at all. The segmentations were either 
+worse than the baseline or showed no learning process. The feature ensembling approach by Heller et al. \cite{EnsembleHeller2023} did not work in this setting. Results from applying it did not show any learning 
+process (Fig. \ref{fig:pca_res}), and possible reasons were discussed in section \ref{subsec:ITBfaildiscussion}. This calls for further experimentation with this approach, as mentioned 
+in the outlook. Stacking the channels to create merged feature maps did produce results that displayed potential. Still, the base ensemble methods had a better localization 
+performance. On this basis, it is clear that merely feature map stacking is not a promising procedure for this problem statement. It should only be used  
+with other methods to reduce and combine the number of channels.
 
 \subsection{Current State of the Pipeline}
-After the conducted experiments, there now remains an code structure to be used for potential further experiments. 
-All approaches discussed in this work are contained within the structure and their functionality is adapted to experiment on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset. Most 
-importantly, there also exists an ensembling pipeline that allows ensemble members, as well as ensembling methods to be switched modularly. The ensembling members and methods 
-serve es a two part black box, both of which are likely root causes of failing ensemble performances. 
+After the experiments are conducted, a code structure remains to be used for further experiments. 
+All approaches discussed in this work are contained within the structure, and their functionality is adapted to experiment on the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset. Most 
+importantly, an ensembling pipeline that allows ensemble members and ensembling methods to be switched modularly also exists. The ensembling members and methods 
+serve as a two-part black box, both of which are likely root causes of failing ensemble performances. 
 Through exchanging components in these regions, ablation studies can easily be performed on this topic, and the goal of achieving greater anomaly localization robustness 
 could be realized with a different approach.
 
@@ -46,46 +46,44 @@ could be realized with a different approach.
 \section{Outlook}
 \label{sec:finaloutlook}
 
-After concluding the findings of this work it is imperative to analyze aspects that could have been done differently, or discuss new possible research that could emerge from 
-the basis of this work as well as related work.\newline
+After concluding the findings of this work, it is imperative to analyze aspects that could have been done differently or discuss new possible research that could emerge from 
+the basis of this work and related work.\newline
 
 \subsection{Current IAD Methods}
 The conclusions drawn from the survey were reported in the previous section. The decreasing performance trend for logical anomaly detection in overall performance suggests 
-current IAD approaches to be unsuitable to reach the same effectiveness as on structural ones. This calls for a shift in fundamental perspective of visual anomaly 
-detection methods, tailoring them towards logical anomaly detection as in \cite{LOCODentsAndScratchesBergmann2022}, or try to improve them by combining them to raise their 
-performance. Solutions to approach this problem could consist of combining 
-those state of the art methods into potentially more effective ones, by using the upsides of multiple IAD methods to produce new approaches. An example for this would be a 
-merger of the PatchCore \cite{patchCore2022} and SimpleNet \cite{liu2023simplenet} methods. Using a feature adapter, trained in the latter approach, to project feature 
-representations before adding them to a memory bank could constitute for an interesting step in this direction. 
+current IAD approaches to be unsuitable for reaching the same effectiveness as on structural ones. This calls for a shift in the fundamental perspective of visual anomaly 
+detection methods, tailoring them towards logical anomaly detection as in \cite{LOCODentsAndScratchesBergmann2022}, or trying to improve them by combining them to raise their 
+performance. Solutions to this problem could combine 
+those state-of-the-art methods into potentially more effective ones by using the upsides of multiple IAD methods to produce new approaches. An example would be a 
+merger of the PatchCore \cite{patchCore2022} and SimpleNet \cite{liu2023simplenet} methods. Using a feature adapter trained in the latter approach to project feature 
+representations before adding them to a memory bank is a promising step in this direction. 
 
 \subsection{Novel Dataset Classes}
 Regarding the novel dataset category introduced in chapter \ref{chap:datasets}, it was apparent that the performance of all approaches was significantly higher than for other classes. 
-As this may be an indicator for the class to be to easy, it is key to look forward on how to either modify the class, or introduce new ones that have similar representation in a 
+As this may indicate that the class will be too easy, it is vital to look forward to either modifying the class or introducing new ones with similar representation in a 
 manufacturing context. \newline
-With respect to current implemented logical anomalies of the flat connector class, it may be resource extensive but worth to professionally produce anomalous flat connectors. This 
-could cause more real looking anomalies and even help create new ones. Exemplary one could shift the position of a hole as a new logical anomaly category. Alternatively the classes 
-of missing holes could be produced free of artifacts, potentially leading to new results and more precise conclusions. Another way to extend the anomalies introduced for this 
-object would be to work with arbitrary logical rules for collections of flat connectors. This could include presenting a grid of flat connectors and detecting missing ones or falsely 
+Concerning currently implemented logical anomalies of the flat connector class, it may be resource-extensive but worth producing anomalous flat connectors professionally. This 
+could cause more real-looking anomalies and even help create new ones. For example, one could shift the position of a hole to a new logical anomaly category. Alternatively, the classes 
+of missing holes could be produced free of artefacts, potentially leading to new results and more precise conclusions. Another way to extend the anomalies introduced for this 
+object would be to work with arbitrary logical rules for collections of flat connectors. This could include presenting a grid of flat connectors and detecting missing or falsely 
 oriented ones, similar to the pushpin class of the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset.\newline 
-Since the effort to extend the logical anomaly dataset is ongoing, there are numerous possibilities on how to do so. Instances may include a class consisting to a metal angle. 
-Here it would be a noteworthy opportunity to construct this class as a multiperspective dataset, as the angle may have different orientations and ambiguous positions. Depending 
-on the orientation of the angle on the surface, one camera might not be able to capture every aspect of the three dimensional object. An approach could be to learn several models 
-on different perspectives and ensemble classifier outputs or even feature representations afterwards.
+Since the effort to extend the logical anomaly dataset is ongoing, there are numerous possibilities on how to do so. Instances may include a class consisting of a metal angle. 
+Constructing this class as a multiperspective dataset would be a noteworthy opportunity, as the angle may have different orientations and ambiguous positions. Depending 
+on the orientation of the angle on the surface, one camera might not be able to capture every aspect of the three-dimensional object. An approach could be to learn several models 
+from different perspectives and ensemble classifier outputs or even feature representations afterwards.
 
 \subsection{Ensemble}
 \label{subsec:ensembleconc}
 
-\textbf{Backbones.} An outlook on backbones used for this works ensemble approach is to conduct more experiments with either other backbones or a higher variety of hierarchies. 
-This may be conducted in either the same way as done here or with potentially different architectures.
+\textbf{Backbones.} An outlook on backbones used for this work's ensemble approach is to conduct more experiments with either other backbones or a wider variety of hierarchies. 
+This may be conducted in the same way as here or with potentially different architectures.
 \newline\newline
 \textbf{Ensembling Method.} The discussion made it apparent that the independent transformation block \cite{EnsembleHeller2023} or at least PCA is not applicable in this context. 
-Still, there may be solutions to more efficiently combine different feature representations. In the case that the PCA did not work as intended on the features due to non linear 
+Still, there may be solutions to combine different feature representations more efficiently. In the case that the PCA did not work as intended on the features due to non-linear 
 relationships of the variables, there are methods to overcome that problem. They include methods like t-SNE\cite{tSNE} or kernel PCA \cite{Hoffmann_2007kernelPCA}, both potentially 
-viable methods for this problem. Furthermore there exist possibilities outside of standard dimensionality reduction that may be experimented on. Possible approaches may include 
-utilizing networks similar to the feature adapter approach from Simplenet (section \ref{subsec:simplenet}) to ensemble features channel wise.
+viable methods for this problem. Furthermore, possibilities outside standard dimensionality reduction may be a base for new experiments. Possible approaches may include 
+utilizing networks similar to the feature adapter approach from Simplenet (section \ref{subsec:simplenet}) to ensemble features channel-wise.
 \newline\newline
 \textbf{Feature Representations.} Lastly, as mentioned in the conclusion, the current ensemble network is currently a pipeline that consists of two black boxes, one for the ensemble 
-members feature representations and one for the chosen ensemble methods. The latter is covered in the last subsection. For the box of feature representations there are ablation 
-experiments to be done using different IAD approaches. One could introduce new appropriate feature representations from different IAD methods to input to the ensemble pipeline for 
+members' feature representations and one for the chosen ensemble methods. The latter is covered in the last subsection. For the box of feature representations, ablation experiments are to be done using different IAD approaches. One could introduce new appropriate feature representations from different IAD methods to input to the ensemble pipeline for 
 further studies.
-

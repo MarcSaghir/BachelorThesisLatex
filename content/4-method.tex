@@ -43,7 +43,7 @@ The following subsections deal with the individual components of our ensemble ne
 consists of multiple parts(Fig. \ref{fig:ensemblepipeline}). Firstly, we leverage different feature representations to act as ensemble members, comprising 
 different pretrained feature extractors combined with trained feature adapters. Section \ref{sec:ensemblecandidates} elaborates on the choices of candidate backbones. Next, the pipeline 
 utilizes concepts discussed in section \ref{sec:ensembles} to merge the different feature representations into one. Afterwards, we adopt the process of SimpleNet's \cite{liu2023simplenet} 
-approach to train a simple two-layer discriminator for differentiating between real features and ones altered by gaussian noise. Before the merged features are input into the 
+approach to train a simple two-layer discriminator for differentiating between real features and ones altered by Gaussian noise. Before the merged features are input into the 
 discriminator, they are projected by a global feature adapter, trained in parallel to the discriminator. Section \ref{sec:discriminator} further discusses this procedure.
 
 \begin{figure}[htbp]
@@ -93,7 +93,7 @@ sections \ref{subsec:stacking} and \ref{subsec:stackingdiscussion}.
 \subsection{Ensemble Training}
 \label{sec:discriminator}
 Our approach to using a small, compact discriminator to differentiate between regular and anomalous image features is based on the concept of 
-the one-class classification class from the representation-based approaches. Specifically, the main inspiration of this work is the approach 
+one-class classification from the representation-based approaches. Specifically, the main inspiration of this work is the approach 
 presented in SimpleNet \cite{liu2023simplenet}. Since our discriminator inputs in the ensemble pipeline, which stems from ensembled locally aware patch features, 
 will be similar as 
 the inputs for SimpleNet's discriminator, it is reasonable to utilize their network architecture for this work. Looking back at section 
@@ -103,7 +103,7 @@ is trained, which again differentiates between normal ensembled features and art
 does not consist of only pre-extracted image features 
 but the ensembled features from section \ref{sec:featurelevelensemble}. The artificial anomalous features, 
 depicted as the red-tiled pane in Fig. \ref{fig:simplenetpipeline}, will also be provided during training time. Here, we also adapt SimpleNet's approach of 
-gaussian noise to produce those artificial features. %(Simplex noise???). 
+Gaussian noise to produce those artificial features. %(Simplex noise???). 
 The discriminator is expected to provide positive and negative outputs for regular and anomalous features, respectively.
 As to the discriminator network specifics, a regular fully connected network consisting of two layers is used. As an optimizer, this work utilizes the 
 Adam optimizer by Pytorch with a learn rate of 0.0002. The loss is derived the same way as in the approach that inspired this procedure, 
@@ -158,7 +158,7 @@ towards the decision threshold.
 \end{equation}
 
 $t$ denotes the point where the function has to pass through. This value is usually assigned the calculated threshold for the decision criterion of the classification task. $k$ is a parameter 
-that influences the growth of the curve along the axis. This value can either be chosen per hand or optimized regarding uncertainty requirements. This means that if one generally wants the 
+that influences the growth of the curve along the axis. This value can either be chosen by hand or optimized regarding uncertainty requirements. This means that if one generally wants the 
 outputs to reflect a higher uncertainty towards the threshold, it is reasonable to choose a lower value for k and vice versa. Fig. \ref{fig:sub1} and Fig. \ref{fig:sub2} demonstrate the effects of changing values for k, as well 
 as an exemplary well-calibrated platt scaling variant of Fig. \ref{fig:sub3}, using the presented formula.
 
