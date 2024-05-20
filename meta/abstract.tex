@@ -1,28 +1,69 @@
 \begin{abstract}
 
-Image anomaly detection (IAD) has been very popular in recent years. This development can largely be attributed to its application as quality control in manufacturing 
-settings, such as industrial ones. It has had many breakthroughs already. State-of-the-art classifiers achieve a classification and localization performance of up to $99.6 \%$ 
-on various datasets. In IAD, there is a distinction between two types of anomalies: structural and logical. Structural anomalies denote material damage to the class object, while logical ones 
-comprise anomalies that violate a set of rules and are not necessarily constrained to one region. \newline 
+Image anomaly detection (IAD) has been very popular in recent years. This circumstance can largely be attributed to its application as quality control in manufacturing 
+settings, such as industrial ones. It has had many breakthroughs already. State-of-the-art classifiers achieve a classification and localization performance of up to $99.6$ percent 
+on various datasets. In IAD, there is a distinction between two types of anomalies: structural and logical. Structural anomalies denote material damage to the class object, like 
+a scratch, while logical ones 
+comprise anomalies that violate a set of rules and are not necessarily constrained to one region. An example of a logical anomaly would be a missing object or one pointing in a 
+direction not permitted by the rule set of the class. \newline 
 Current research in anomaly detection has predominantly focused on evaluating classifiers solely on structural anomalies. Moreover, popular dataset images in this area are often 
 in a clinical setting. This approach is problematic as it neglects the detection of logical anomalies that are often critical in real-world applications. This results in 
-IAD classifiers, with initially robust and high performance, to significantly drop in detection and localization quality. \newline
+IAD classifiers, with initially robust and high performance, to significantly drop in detection and localization quality. This drop in performance may range from six to 
+twenty-nine percent, which is significant considering the previously mentioned high performance.\newline
 To enhance robustness, a feature-level ensemble pipeline is proposed. It integrates diverse feature representations and existing anomaly detection architectures. 
 By utilizing feature representations from multiple extractors 
-and projecting them into a unified space, the ensemble aims to provide increased information, thereby improving precision and robustness in anomaly localization. Additionally, 
+and projecting them into a unified space, the ensemble aims to utilize increased information, thereby improving precision and robustness in anomaly localization. Additionally, 
 this work conducts a survey of representative IAD approaches on a novel dataset that includes logical anomalies, offering an extensive overview of current methods and their 
-potential for logical anomaly localization. Furthermore, a novel dataset category is introduced, extending the primary dataset used in this study. It features both logical and structural anomalies.\newline
-Our experiments confirm that classifiers' performance significantly decreases when structural and logical anomalies are considered, validating our initial 
-assumptions. Specific characteristics and cross-classifier comparisons are discussed in greater detail. However, our ensemble approach did not enhance performance or robustness. 
-The results were significantly inferior to those of individual ensemble members. This outcome highlights the need for further research into feature-level ensembling methods. 
-Despite not presenting extraordinary difficulty, the new dataset category provided valuable insights into classifier performance and served as a valid extension of the 
-logical dataset.
+potential for logical anomaly localization. Furthermore, a novel dataset category is introduced, extending the primary dataset used in this study. It features both logical and 
+structural anomalies.\newline
+The experiments confirm that classifiers' performance significantly decreases when structural and logical anomalies are considered, validating initial 
+assumptions. Specific characteristics and cross-classifier comparisons are discussed in greater detail. However, the ensemble approach did not enhance performance or robustness. 
+The results were significantly inferior to those of individual ensemble members. Further investigations have shown that the root cause for this lies within the method of 
+feature combination.
+This outcome highlights the need for further research into feature-level ensembling methods, especially in this context. 
+Despite not presenting extraordinary difficulty, the new dataset category provided insights into classifier performance and served as a valid extension of the 
+logical dataset. Future studies regarding this topic may utilize this dataset class as the base for a new set of logical anomalies to further expand the variety of logical 
+datasets for IAD.
 
 \end{abstract}
 %
 %
-%\selectlanguage{ngerman} % select german language
-%\begin{abstract}[2]
+\selectlanguage{ngerman} % select german language
+\begin{abstract}%[2]
 %	Hier können Sie Ihre deutsche Zusammenfassung schreiben. %
-%\end{abstract}
-%\selectlanguage{english} % reset to english language
+
+Die Erkennung von Bildanomalien ist in den letzten Jahren sehr beliebt geworden. Dieser Umstand ist vor allem auf die otentielle Anwendung als Qualitätskontrolle 
+in industriellen Fabriken zurückzuführen. Es hat bereits viele Durchbrüche in den letzter Zeit gegeben. Aktuelle Modelle erreichen eine Klassifizierungs- und 
+Lokalisierungsleistung von bis zu $99,6$ Prozent auf verschiedenen Datensätzen. In dem Gebiet wird zwischen zwei Arten von Anomalien unterschieden: strukturelle und 
+logische. Strukturelle Anomalien bezeichnen materielle Schäden am Objekten, wie ein Kratzer, während logische Anomalien 
+solche umfassen, die vordefinierte Regeln verletzen oder nicht potentiell mehrere Regionen überspannen. Ein Beispiel für eine logische Anomalie wäre ein fehlendes 
+Objekt oder eines das in eine Richtung zeigt, die nach den Klassenregeln nicht zulässig ist. \newline
+Die derzeitige Forschung auf dem Gebiet der Anomalieerkennung konzentriert sich hauptsächlich auf die Bewertung von Modellen, die ausschließlich auf strukturelle 
+Anomalien basieren. Darüber hinaus sind die Inhalte der gängigen Datensätze in diesem Bereich oft sehr künstlich hergestellt worden. Dies ist problematisch, da es die 
+Erkennung von logischen Anomalien vernachlässigt, die in realen Anwendungen oft einen relevanten Mehrwert bringen. Dies führt dazu, dass
+Klassifikatoren, die anfangs robuste und hohe Leistungen erbringen, erheblich an Erkennungs- und Lokalisierungsqualität verlieren. Dieser Leistungsabfall kann zwischen 
+sechs und neunundzwanzig Prozent betragen, was in Anbetracht der zuvor erwähnten hohen Leistung beträchtlich ist.\newline
+Um die Robustheit dieser Modelle zu verbessern, wird hier eine Ensemble-Pipeline auf Merkmalsebene vorgestellt. Sie integriert verschiedene Merkmalsrepräsentationen und 
+bestehende Architekturen zur Erkennung von Anomalien. 
+Durch die Verwendung von Merkmalsrepräsentationen aus mehreren Extraktoren 
+und deren Projektion in eine vergleichbare Repräsentation, zielt das Ensemble darauf ab, mehr Informationen einzubeziehen und dadurch die Präzision und Robustheit bei der 
+Lokalisierung von Anomalien zu verbessern. Zusätzlich verschafft diese Arbeit einen Überblick über repräsentative Anomalieerkennungsansätze auf einem neueren Datensatz, welcher 
+logische Anomalien enthält, und bietet eine Analyse bezüglich deren 
+Potenzial für die Lokalisierung logischer Anomalien. Darüber hinaus wird eine neue Datensatzkategorie eingeführt, die den in dieser Studie verwendeten Datensatz erweitert. 
+Sie umfasst sowohl logische als auch strukturelle Anomalien. \newline
+
+Experimente bestätigen, dass die Leistung der Modelle deutlich abnimmt, wenn sowohl strukturelle als auch logische Anomalien berücksichtigt werden, was die 
+ursprünglichen Annahmen bestätigt. Spezifische Merkmale und Vergleiche zwischen den Klassifikatoren werden ebenfalls ausführlicher erörtert. Der Ensemble-Ansatz hat 
+jedoch weder die Leistung noch die Robustheit verbessert. 
+Die Segmentierungen waren deutlich schlechter als die der einzelnen Ensemblemitglieder. Weitere Untersuchungen haben gezeigt, dass die Ursache hierfür in der Methode der 
+Merkmalsvereinigung liegt.
+Dieses Ergebnis unterstreicht die Notwendigkeit weiterer Forschung zu Methoden der Merkmalsvereinigung, insbesondere in diesem Zusammenhang. 
+Obwohl die neue Datensatzkategorie keine außergewöhnlichen Schwierigkeiten für dir Modelle aufwies, lieferte sie sinnvollen Einblicke in die Klassifikatorleistung und diente 
+als gelungene Erweiterung des 
+logischen Datensatzes. Künftige Studien zu diesem Thema könnten diese Klasse als Grundlage für einen neuen Satz logischer Anomalien verwenden, um die Vielfalt der logischen 
+Datensätze für IAD zu erweitern.
+
+
+
+\end{abstract}
+\selectlanguage{english} % reset to english language
