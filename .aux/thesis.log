@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  20 MAY 2024 01:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  20 MAY 2024 11:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1369,68 +1369,68 @@ Package tudapub/thesis Info: You submitted examdate data for title
 (tudapub/thesis)             This field is only used for type=dr/drfinal.
 (tudapub/thesis)             It will be ignored.
 
-Package scrbase Info: activating english \ptxcd_department: on input line 104.
-Package scrbase Info: activating english \departmentname on input line 104.
-Package scrbase Info: activating english \ptxcd_departmentprefix: on input line 104.
-Package scrbase Info: activating english \departmentfullname on input line 104.
+Package scrbase Info: activating english \ptxcd_department: on input line 105.
+Package scrbase Info: activating english \departmentname on input line 105.
+Package scrbase Info: activating english \ptxcd_departmentprefix: on input line 105.
+Package scrbase Info: activating english \departmentfullname on input line 105.
 \ptxcd_xmpdata_stream=\write7
 \openout7 = `thesis.xmpdata'.
 
-LaTeX Font Info:    Trying to load font information for T1+Roboto-LF on input line 104.
+LaTeX Font Info:    Trying to load font information for T1+Roboto-LF on input line 105.
 (C:\Users\Marc\Documents\MikeTeX\tex/latex/roboto\t1roboto-lf.fd
 File: T1Roboto-LF.fd 2019/12/11 (autoinst) Font definitions for T1/Roboto-LF.
 )
 LaTeX Font Info:    Font shape `T1/Roboto-LF/m/n' aliased to
-(Font)              `T1/Roboto-LF/regular/n' on input line 104.
+(Font)              `T1/Roboto-LF/regular/n' on input line 105.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 104.
+(Font)              scaled to size 10.95pt on input line 105.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Roboto-LF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
-(Font)              `T1/Roboto-LF/bold/n' on input line 104.
+(Font)              `T1/Roboto-LF/bold/n' on input line 105.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 10.95pt on input line 104.
+(Font)              scaled to size 10.95pt on input line 105.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
-(Font)              `T1/Roboto-LF/bold/n' on input line 104.
+(Font)              `T1/Roboto-LF/bold/n' on input line 105.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 36.0pt on input line 104.
-LaTeX Font Info:    Trying to load font information for T1+Roboto-TLF on input line 104.
+(Font)              scaled to size 36.0pt on input line 105.
+LaTeX Font Info:    Trying to load font information for T1+Roboto-TLF on input line 105.
  (C:\Users\Marc\Documents\MikeTeX\tex/latex/roboto\t1roboto-tlf.fd
 File: T1Roboto-TLF.fd 2019/12/11 (autoinst) Font definitions for T1/Roboto-TLF.
 )
 LaTeX Font Info:    Font shape `T1/Roboto-TLF/m/n' aliased to
-(Font)              `T1/Roboto-TLF/regular/n' on input line 104.
+(Font)              `T1/Roboto-TLF/regular/n' on input line 105.
 LaTeX Font Info:    Font shape `T1/Roboto-TLF/regular/n' will be
-(Font)              scaled to size 10.95pt on input line 104.
+(Font)              scaled to size 10.95pt on input line 105.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `Roboto-TLF' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 LaTeX Font Info:    Font shape `T1/Roboto-TLF/m/n' aliased to
-(Font)              `T1/Roboto-TLF/regular/n' on input line 104.
+(Font)              `T1/Roboto-TLF/regular/n' on input line 105.
 LaTeX Font Info:    Font shape `T1/Roboto-TLF/regular/n' will be
-(Font)              scaled to size 12.0pt on input line 104.
+(Font)              scaled to size 12.0pt on input line 105.
 LaTeX Font Info:    Font shape `T1/Roboto-TLF/b/n' aliased to
-(Font)              `T1/Roboto-TLF/bold/n' on input line 104.
+(Font)              `T1/Roboto-TLF/bold/n' on input line 105.
 LaTeX Font Info:    Font shape `T1/Roboto-TLF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 104.
+(Font)              scaled to size 12.0pt on input line 105.
 <tuda_logo.pdf, id=9, 156.48964pt x 62.59586pt>
 File: tuda_logo.pdf Graphic file (type pdf)
 <use tuda_logo.pdf>
-Package pdftex.def Info: tuda_logo.pdf  used on input line 104.
+Package pdftex.def Info: tuda_logo.pdf  used on input line 105.
 (pdftex.def)             Requested size: 156.49402pt x 62.59605pt.
  (C:\Users\Marc\Documents\MikeTeX\tex/latex/microtype\mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 104.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 105.
  (C:\Users\Marc\Documents\MikeTeX\tex/latex/amsfonts\umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (C:\Users\Marc\Documents\MikeTeX\tex/latex/microtype\mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 104.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 105.
  (C:\Users\Marc\Documents\MikeTeX\tex/latex/amsfonts\umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (C:\Users\Marc\Documents\MikeTeX\tex/latex/microtype\mt-msb.cfg
@@ -1439,7 +1439,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 <img/iasLogo.jpeg, id=10, 481.8pt x 276.28218pt>
 File: img/iasLogo.jpeg Graphic file (type jpg)
 <use img/iasLogo.jpeg>
-Package pdftex.def Info: img/iasLogo.jpeg  used on input line 104.
+Package pdftex.def Info: img/iasLogo.jpeg  used on input line 105.
 (pdftex.def)             Requested size: 103.28334pt x 59.22665pt.
  [1
 
@@ -1466,27 +1466,27 @@ Package typearea Info: These are the values describing the layout:
 (typearea)              \topskip        = 11.0pt
 (typearea)              \footskip       = 47.60002pt
 (typearea)              \baselineskip   = 13.6pt
-(typearea)              on input line 108.
+(typearea)              on input line 109.
 Package typearea Info: Using dirty hack to recalculate internal output
-(typearea)             dimensions of LaTeX on input line 108.
+(typearea)             dimensions of LaTeX on input line 109.
 
 Left margin: -29.59088pt
 Right margin: -29.59088pt
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
-(Font)              `T1/Roboto-LF/bold/n' on input line 116.
+(Font)              `T1/Roboto-LF/bold/n' on input line 117.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 12.0pt on input line 116.
+(Font)              scaled to size 12.0pt on input line 117.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/m/n' aliased to
-(Font)              `T1/Roboto-LF/regular/n' on input line 116.
+(Font)              `T1/Roboto-LF/regular/n' on input line 117.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/regular/n' will be
-(Font)              scaled to size 10.0pt on input line 116.
+(Font)              scaled to size 10.0pt on input line 117.
 LaTeX Font Info:    Font shape `T1/XCharter-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 116.
+(Font)              scaled to size 10.0pt on input line 117.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.116 	
+l.117 	
         [2
 
 
@@ -1503,12 +1503,12 @@ LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.121 	\tableofcontents
+l.122 	\tableofcontents
                         [3
 
 
 ]
-Package tocbasic Info: character protrusion at toc deactivated on input line 121.
+Package tocbasic Info: character protrusion at toc deactivated on input line 122.
  (c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.toc)
 \tf@toc=\write8
 \openout8 = `thesis.toc'.
@@ -1517,14 +1517,14 @@ Package tocbasic Info: character protrusion at toc deactivated on input line 121
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.123 	\chapter
+l.124 	\chapter
                *{Figures~and~Tables} [4
 
 ]
 LaTeX Font Info:    Font shape `T1/Roboto-LF/b/n' aliased to
-(Font)              `T1/Roboto-LF/bold/n' on input line 126.
+(Font)              `T1/Roboto-LF/bold/n' on input line 127.
 LaTeX Font Info:    Font shape `T1/Roboto-LF/bold/n' will be
-(Font)              scaled to size 14.4pt on input line 126.
+(Font)              scaled to size 14.4pt on input line 127.
  (c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.lof
 pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
 <to be read again> 
@@ -2375,12 +2375,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 49--51
  []
 
 [48])
-Underfull \hbox (badness 10000) in paragraph at lines 78--142
+Underfull \hbox (badness 10000) in paragraph at lines 78--143
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--142
+Underfull \hbox (badness 10000) in paragraph at lines 78--143
 
  []
 
@@ -2476,7 +2476,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11004b,2816s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_e24joy.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/RobotoMono-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (59 pages, 103305688 bytes).
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (59 pages, 103306766 bytes).
 PDF statistics:
  1497 PDF objects out of 1728 (max. 8388607)
  216 named destinations out of 1000 (max. 500000)

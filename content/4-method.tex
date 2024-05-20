@@ -11,7 +11,7 @@ trained and evaluated on the MVTecAD LOCO dataset and our novel dataset class in
 \label{sec:lcocsurveymethods}
 
 As discussed in the introductory chapter \ref{chap:introduction}, logical anomalies represent a significant part of image anomaly detection in modern
-manufacturing settings. The experiments also extensively compare SOTA methods for IAD versus recent approaches  
+manufacturing settings. The experiments also extensively compare state-of-the-art methods for IAD versus recent approaches  
 introduced with mind to logical anomalies, like GCAD \cite{LOCODentsAndScratchesBergmann2022}. 
 Moreover, for a qualitative evaluation of the performance change when using feature-level ensembles, one first needs to evaluate the base performance 
 of each relevant classifier of the set. 
@@ -22,7 +22,7 @@ with other combinations of model parameters. However, this work focuses on the r
 If the functionality to evaluate these metrics was already given, the inference results were taken from the original code. Otherwise, the according functionality 
 was implemented in this work and used to produce the according metrics. Moreover, the results investigate possible causes and effects regarding the segmentation/localization results of the 
 classifiers. This is not done according to an official metric but in a more descriptive sense.
-Papers whose approaches were evaluated using the MVTecAD LOCO dataset were: SimpleNet \cite{liu2023simplenet}, PatchCore \cite{patchCore2022}, \cite{csflow2022} and \cite{Zavrtanik_2021DRAEM}. 
+Papers whose approaches were evaluated using the MVTecAD LOCO dataset were: SimpleNet \cite{liu2023simplenet}, PatchCore \cite{patchCore2022}, Reverse Distillation \cite{revdist2023} and DRAEM \cite{Zavrtanik_2021DRAEM}. 
 These papers were discussed in more depth in the backgrounds section, and any specifics, such as 
 hyperparameters, can be viewed in the corresponding paper. Furthermore, all named classifiers included, among other variable measures, 
 a preprocessing step to resize the input image. This makes for variable model input and the ability to process rectangular images, 
@@ -40,7 +40,7 @@ code was added that pastes all masks belonging to one image into a single mask b
 %!BILD von pipeline machen!
 
 The following subsections deal with the individual components of our ensemble network pipeline, referencing concepts discussed in chapter \ref{chap:background}. Our Ensemble pipeline 
-consists of multiple parts(Fig. \ref{fig:ensemblepipeline}). Firstly, we leverage different feature representations to act as ensemble members, comprising 
+consists of multiple parts (Fig. \ref{fig:ensemblepipeline}). Firstly, we leverage different feature representations to act as ensemble members, comprising 
 different pretrained feature extractors combined with trained feature adapters. Section \ref{sec:ensemblecandidates} elaborates on the choices of candidate backbones. Next, the pipeline 
 utilizes concepts discussed in section \ref{sec:ensembles} to merge the different feature representations into one. Afterwards, we adopt the process of SimpleNet's \cite{liu2023simplenet} 
 approach to train a simple two-layer discriminator for differentiating between real features and ones altered by Gaussian noise. Before the merged features are input into the 

@@ -20,7 +20,8 @@ which in a manufacturing setting likely means meeting the company's quality stan
 \input{figures/introductionanomalies/introductionanomalies.tex}
 
 With IAD being a very recent and popular field, various deep-learning approaches have established themselves over 
-the last few years. The best-performing ones have generally been unsupervised learning approaches. This circumstance stems from the fact that 
+the last few years \cite{patchCore2022} \cite{liu2023simplenet} \cite{csflow2022} \cite{revdist2023} \cite{Zavrtanik_2021DRAEM} \cite{liu2024deep}. 
+The best-performing ones have generally been unsupervised learning approaches. This circumstance stems from the fact that 
 in any manufacturing setting, far fewer anomalous parts exist than regular ones, which creates a significant data imbalance. 
 Moreover, obtaining a large number of data points and great variance can be difficult since it is much work to 
 coordinate with adequate manufacturing facilities and implement the necessary infrastructure to take pictures. This problem is supported 
@@ -76,11 +77,11 @@ for future experiments in that area.
 The contributions mentioned firstly benefit faster research entry and an accelerated experimentation process, with an intuitive setup, 
 as well as potential industrial applications. 
 Furthermore, they give more insight into the capabilities of existing methods in an industrial setting and thus also provide a more 
-diverse and practical setting than the prior categories in the MVTecAD \cite{LOCODentsAndScratchesBergmann2022} dataset. The same methods are also tested on their limitations 
+diverse and practical setting than the prior categories in the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The same methods are also tested on their limitations 
 regarding logical anomalies, which were made to be a relevant aspect of anomaly detection in current manufacturing quality control 
 settings. Lastly, the use of a robust ensemble approach for potentially heterogeneous classifiers opens up possibilities for expanding 
 the range of application of state-of-the-art IAD methods to other domains with robust performance. It may also produce more usable results in real-world IAD settings. The presented network can also be used as a foundation for future experiments in 
-various directions. Possible outlooks based on this kind of multi-feature representation ensembles are discussed in section \ref{sec:finaloutlook}.
+various directions. Possible outlooks based on this kind of multi-feature representation ensembles are discussed in section \ref{subsec:FCoutlook}.
 \newline
 \newline
 
@@ -90,7 +91,7 @@ view them. Afterwards, sections \ref{sec:metrics} and \ref{sec:datasets} offer i
 section \ref{sec:modelcalibration} focus on background knowledge of common approaches regarding the ensemble model discussed before.\newline
 The third chapter presents the novel dataset category introduced in this paper.
 In chapter \ref{chap:method}, we present the concrete implementation of this work's contributions, starting with section \ref{sec:lcocsurveymethods} dealing with the survey on logical anomalies. 
-Section \ref{sec:ourensemblenetwork} concerns the realization of this ensemble approach.
+Section \ref{sec:ourensemblenetwork} concerns the realization of the ensemble approach.
 \newline 
 Chapters \ref{chap:results} and \ref{chap:conclusion} afterwards deal with an in-depth analysis of our findings as well as an outlook on how to interpret these results and what future research 
 in this topic may be.

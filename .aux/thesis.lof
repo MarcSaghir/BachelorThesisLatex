@@ -33,7 +33,7 @@
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Comparison of classifier results on the same image.}}{36}{figure.caption.37}%
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Example segmentations of DRAEM \cite {Zavrtanik_2021DRAEM}, showcasing its precise segmentation and weakness in localizing missing objects.}}{36}{figure.caption.38}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Exemplary segmentations of representation-based classifiers that showcase less precise segmentaions than reconstruction-based approaches like DRAEM \cite {Zavrtanik_2021DRAEM}.}}{37}{figure.caption.39}%
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Localization results of all IAd approaches on the novel flat connector class. One instance image for logial and structural anomalies each per approach.}}{38}{figure.caption.41}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Localization results of all IAD approaches on the novel flat connector class. One instance image for logial and structural anomalies each per approach.}}{38}{figure.caption.41}%
 \contentsline {figure}{\numberline {5.7}{\ignorespaces Results of using the Independent Transformation Block \cite {EnsembleHeller2023} for the ensemble process for the flat connector class. These results are also produced when just applying PCA to a single ensemble member and training with it.}}{39}{figure.caption.42}%
 \contentsline {figure}{\numberline {5.8}{\ignorespaces Resulting segmentations of ensemble network training when utilizing layer 4.}}{40}{figure.caption.45}%
 \contentsline {figure}{\numberline {5.9}{\ignorespaces Training metrics and loss of ensemble network training, utilizing layer 4.}}{40}{figure.caption.46}%

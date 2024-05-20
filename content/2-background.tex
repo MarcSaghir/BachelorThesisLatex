@@ -1,8 +1,10 @@
 \chapter{Background}
 \label{chap:background}
 
-This chapter provides the background knowledge necessary for further understanding. Topics include general categorization of IAD methods, detailed explanations of the relevant 
-state-of-the-art methods, and IAD-specific datasets. Lastly, it will cover relevant ensembling and calibration techniques, also utilized in later chapters.
+This chapter provides the background knowledge necessary for further understanding. Topics include general categorization of IAD methods (Section \ref{sec:IADcategs}), detailed explanations of the relevant 
+state-of-the-art methods (Section \ref{sec:IADmethods}), important metrics (Section \ref{sec:metrics}) and IAD-specific datasets (Section \ref{sec:datasets}). Lastly, in 
+sections \ref{sec:ensembles} and \ref{sec:modelcalibration}, 
+it will cover relevant ensembling and calibration techniques, also utilized in later chapters.
 
 
 
@@ -50,7 +52,7 @@ reconstruct anomaly-free images, the method is given a potentially noisy input i
 On the other hand, representation approaches use feature embedding methods to obtain feature representations of images and compare those. As shown in Fig. \ref{fig:recvsrep}, during training, the model is 
 learning to extract features of input images correctly. When given an anomalous sample during testing, the model then also extracts the features from the input data and compares those to its 
 prior feature-level representations of the class object. A decision is then made as well using a distance metric.\newline
-Both classes of IAD methods have been shown to produce state-of-the-art results. Nevertheless, more approaches are currently representation-based \cite{liu2024deep} as they have shown SOTA performance more 
+Both classes of IAD methods have been shown to produce state-of-the-art results. Nevertheless, more approaches are currently representation-based \cite{liu2024deep} as they have shown state-of-the-art performance more 
 consistently. However, it is reasonable to focus on both kinds of IAD, as they may excel in different regions of anomaly detection and evaluation criteria. Namely, reconstruction methods often show a notable performance at pixel-level anomaly detection compared to feature embedding/representation methods, as their principle is based on pixel-wise comparisons of input 
 and reconstructed data.
 
@@ -149,7 +151,7 @@ model.
 
 \section{Anomaly Detection Methods}
 \label{sec:IADmethods}
-In this section, we further dive into some of the IAD approaches that can be considered class representative. All following methods have demonstrated SOTA performance in 
+In this section, we further dive into some of the IAD approaches that can be considered class representative. All following methods have demonstrated state-of-the-art performance in 
 at least some categories and are subjects in the performance study on the MVTecAD LOCO dataset. In this work, we investigated the most widely popular categories of 
 IAD, namely memory bank, one-class classification, teacher-student and autoencoders.
 
@@ -213,7 +215,7 @@ extractor alongside the actual training.
 \subsection{SimpleNet}
 \label{subsec:simplenet}
 SimpleNet \cite{liu2023simplenet} is a recent one-class classification approach that has also been shown to compete with other state-of-the-art methods. Table \ref{tab:imageaurocmvtec} records its performance to be on the same standard as PatchCore 
-for most of the categories, %extra satz der es spezifiziert
+for most of the categories, even surpassing it in image classification. 
 Moreover, it was introduced by Liu et al. as an easy-to-use or application-friendly approach, being easy to implement and requiring very few models.
 
 \begin{figure}[H]
@@ -226,7 +228,7 @@ Moreover, it was introduced by Liu et al. as an easy-to-use or application-frien
 As a one-class classification or feature projection approach, SimpleNet utilizes a sub-network to project extracted features into another space to then find a decision criterion between normal and 
 abnormal features. The exact pipeline of SimpleNet is illustrated in Fig. \ref{fig:simplenetpipeline}. While training, a pre-trained feature extractor retrieves features from the input data. Notably, SimpleNet adopts PatchCore's approach of transforming extracted features into locally aware patches. This means that in Fig. \ref{fig:simplenetpipeline}, the blue tiled pane represents features in the form of patch vectors 
 that represent the characteristics of the image. Based on SimpleNet being a one-class classification approach, the features are projected in the next step, visually at the green tiled pane. 
-\cite{liu2023simplenet} conducts multiple ablation experiments on different implementations of the feature adapter. They conclude that a single fully connected layer network yields the best 
+Liu et al. \cite{liu2023simplenet} conduct multiple ablation experiments on different implementations of the feature adapter. They conclude that a single fully connected layer network yields the best 
 performance. The extracted features are then projected using the feature adapter, which is simultaneously trained during the training session. Before training the discriminator, the resulting 
 features are combined with Gaussian noise to produce fake features. This is done by adding the generated noise onto the features. Afterwards, the discriminator is trained by giving it 
 the normal patch vectors of the input data and the artificial fake features to learn to differentiate between them. For the discriminator, the paper reports the use of a two-layer 
@@ -246,9 +248,9 @@ Here $th^{+}$ and $th^{-}$ are truncation terms preventing potential overfitting
 At test time, the input image features undergo the described process, and the projected patch vectors are given to the discriminator, resulting in a score for each patch. Similar to 
 PatchCore, to generate segmentations, the scores are reshaped, bilinearly interpolated and smoothened. Also, the largest score acts as the image anomaly score.
 
-SimpleNet offers excellent results in anomaly detection and localization, as seen in tables \ref{tab:imageaurocmvtec} and \ref{tab:pixelaurocmvtec}. According to \cite{liu2023simplenet}, its inference speed is 79 frames per second (FPS) and 
+SimpleNet offers excellent results in anomaly detection and localization, as seen in tables \ref{tab:imageaurocmvtec} and \ref{tab:pixelaurocmvtec}. According to SimpleNet \cite{liu2023simplenet}, its inference speed is 79 frames per second (FPS) and 
 not only comparably slower than PatchCore \cite{patchCore2022} with only 10 FPS 
-and PaDiM \cite{Defard_2021PADIM} (1 FPS), all being representation-based approaches, but also slower than many reconstruction-based approaches like DRAEM with 67 FPS. As with other representation 
+and PaDiM \cite{Defard_2021PADIM} (1 FPS), all being representation-based approaches, but also slower than many reconstruction-based approaches like DRAEM \cite{Zavrtanik_2021DRAEM} with 67 FPS. As with other representation 
 approaches, its performance is also dependent on the quality of the backbone feature extractor.
 
 
@@ -301,7 +303,7 @@ reverse distillation.
 
 DRAEM \cite{Zavrtanik_2021DRAEM} is one of the reconstruction-based approaches selected for this work. This method is one of the more representative ones for the reconstruction branch of 
 IAD techniques. The method is based on the reconstruction abilities of autoencoders to recreate normal images from altered ones. While recent research showed that representation-based approaches did 
-show SOTA performance more often, DRAEM demonstrated that reconstruction-based methods can compete in the same region. Tables \ref{tab:imageaurocmvtec} and 
+show state-of-the-art performance more often, DRAEM demonstrated that reconstruction-based methods can compete in the same region. Tables \ref{tab:imageaurocmvtec} and 
 \ref{tab:pixelaurocmvtec} show DRAEMs results on the MVTecAD dataset as reported 
 in their paper.\newline
 

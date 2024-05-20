@@ -2,9 +2,13 @@ To-Dos:
 
 in chapter 3 wird eine subfigure nicht richtig zitiert
 
-appendix einfügen
+3.3.1 verkacktes zitat mit fragezeichen
 
-ensemble zahlen
+appendix einfügen mit mehr bildern von classifiern
+
+deutscher abstract
+
+normal flat connector images in appendix
 
 
 
