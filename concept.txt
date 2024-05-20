@@ -1,15 +1,11 @@
 To-Dos:
 
-in chapter 3 wird eine subfigure nicht richtig zitiert
-
-3.3.1 verkacktes zitat mit fragezeichen
-
 appendix einfügen mit mehr bildern von classifiern
 
 deutscher abstract
 
-normal flat connector images in appendix
 
+fig 5.1 und 5.2 sind sehr weit auseinander -> wichtig?
 
 
 

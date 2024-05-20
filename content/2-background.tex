@@ -392,14 +392,14 @@ region is segmented. Meanwhile, the conventional PRO metric is strictly rising b
 \label{sec:datasets}
 The datasets used in image anomaly detection are scarce, especially when it comes to anomaly detection in a manufacturing setting. Some many datasets and approaches specialize in certain materials \cite{FabricDataset_Tsang_2016} 
 \cite{SteeltubeDataset_Yang_2021} \cite{magnetictiles_Huang_2018}
-and often only one class. What currently stands out as a gold standard among IAD datasets is the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The authors created it  
+and often only one class. What currently stands out as a gold standard among IAD datasets is the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The authors created it 
 as a highly representative and standardized set of anomalous images and training images. It has 15 classes, from capsules to screws. Moreover, the dataset provides image labels and segmentation 
 ground truths, making it versatile and applicable to multiple algorithms. The masks come as black and white grayscale images, while the image labels are given through its folder structure. 
 Each class contains train images consisting of regular examples 
 and test images. The data among the testing images is categorized by a title describing the anomaly. The ground truth folder contains 
 ground truths on a pixel level.\newline
 Exemplary images of the dataset are to be seen in Fig. \ref{fig:mvtecexampleimages}. They typically are of rectangular shape and their resolutions range from 
-700x700 to 1024x1024. More specifications can be found in Bergmann et al. \cite{MVTEC_Bergmann_2021} and the whole dataset is publicly available at the official website\cite{mvtecdownload}.\newline
+700x700 to 1024x1024. More specifications can be found in Bergmann et al. \cite{MVTEC_Bergmann_2021} and the whole dataset is publicly available at the official website\cite{mvtecaddownload}.\newline
 The MVTecAD\cite{MVTEC_Bergmann_2021} dataset is regarded highly among IAD papers and has, since its introduction, been used in most relevant papers as a dataset 
 to benchmark the respective approaches. This is also likely to remain the trend since many state-of-the-art algorithms in recent years have primarily been benchmarked on it, forcing new approaches 
 to be benchmarked on this dataset to be comparable to the current highest performance holding approaches. Despite this work focusing on manufacturing settings, MVTecAD is one of only two datasets relevant to this work 
