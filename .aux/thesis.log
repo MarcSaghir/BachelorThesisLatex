@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  20 MAY 2024 00:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.3) (preloaded format=pdflatex 2023.11.19)  20 MAY 2024 01:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -2361,7 +2361,7 @@ Package pdftex.def Info: figures/difficultAnomalies/splicing_connectors_test_str
 ) [43
 
 ] [44 <./figures/difficultAnomalies/breakfast_box_test_logical_anomalies_011.png> <./figures/difficultAnomalies/juice_bottle_test_structural_anomalies_059.png> <./figures/difficultAnomalies/splicing_connectors_test_logical_anomalies_064.png> <./figures/difficultAnomalies/splicing_connectors_test_structural_anomalies_001.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 90--104
+Underfull \hbox (badness 10000) in paragraph at lines 91--105
 
  []
 
@@ -2476,7 +2476,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  122i,21n,121p,11004b,2816s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_e24joy.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/xcharter/xch_rydp4l.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_b5rac7.enc}{C:/Users/Marc/Documents/MikeTeX/fonts/enc/dvips/roboto/rbto_4jpen6.enc}<C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/Roboto-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/google/roboto/RobotoMono-Regular.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Bold.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Italic.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/xcharter/XCharter-Roman.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/Marc/Documents/MikeTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (59 pages, 103305580 bytes).
+Output written on c:\Users\Marc\Documents\GitHub\BachelorThesisLatex\.aux\thesis.pdf (59 pages, 103305688 bytes).
 PDF statistics:
  1497 PDF objects out of 1728 (max. 8388607)
  216 named destinations out of 1000 (max. 500000)

@@ -1,17 +1,18 @@
 \chapter{Discussion}
 \label{chap:results}
 
-After strictly presenting results in the last chapter, this one will discuss the results, more specifically, their implications and possible reasons. 
-The sequence of results to be discussed remains the same as before.
+After presenting results in the last chapter, this one will discuss the results, more specifically, their implications and possible reasons. 
+The sequence of results to be discussed remains the same as before, frist we will discuss the results of the survey. Afterwards, the results of the approaches on the novel dataset 
+category and lastly the ensemble pipeline results will be reviewed in depth.
 
 
 \section{MVTecAD LOCO Experiments}
 \label{sec:locoresultssota}
 
 When comparing the detection and localization results of the approaches analyzed in the last chapter, quality significantly drops. 
-Although the average in most cases is out of context still an acceptable result, it poses a poor performance compared with the prior 
+Although the average in most cases is still an average result, it poses a poor performance compared with the prior 
 IAD standards. Where on the MVTecAD \cite{MVTEC_Bergmann_2021} most approaches were strictly in a high-performance interval above 98 percent 
-instance classification and above 97 percent for anomaly localization, a drop of from 10 up to 30 percent in some classes is drastic and significant. 
+instance classification and above 97 percent for anomaly localization, a drop of from 10 up to 30 percent in some dataset classes is drastic and significant. 
 Combined with inferences from Fig. \ref{fig:structvslogic}, this information strongly suggests that the latest state-of-the-art anomaly detection approaches are not inherently practical when detecting logical anomalies. The poor sPRO results also support this. GCAD \cite{LOCODentsAndScratchesBergmann2022}, the approach uniting global and local representations introduced in its 
 paper, demonstrates an average sPRO of $0.701$ over all classes, which is significantly above the approaches analyzed here. This last argument is most important because this metric 
 is an effective way to observe segmentation capabilities. \newline
@@ -53,7 +54,7 @@ thicker than the anomalous region.
 \section{Ensemble Performance}
 \label{sec:ensemblediscussion}
 
-Ensembles in IAD are not a focus of current research. Some papers \cite{patchCore2022} provide homogeneous ensembles as a complementary option. 
+Ensembles in IAD have not yet been the primary focus of research. Some papers \cite{patchCore2022} provide homogeneous ensembles as a complementary option. 
 PatchCores ensemble is simple average voting, meaning multiple classifier instances are trained and evaluated on the same inputs. The outputs are then averaged on an image and pixel level. 
 This may lead to a slight performance improvement, as in this example. 
 With our approach, however, we aimed at transcending minor improvements, utilizing feature-level ensemble strategies to achieve even more robust anomaly localization performance.
@@ -64,7 +65,7 @@ Possible reasons for the shortcomings of each experiment are discussed in the fo
 \label{subsec:ITBfaildiscussion}
 
 During the experiments chapter \ref{chap:experiments}, it was observable that the independent transformation block \cite{EnsembleHeller2023} did not produce any usable results. 
-Since this method is reported to function as intended in Heller et al., there has to be some circumstance that is the root of the error. The transformation process is a 
+Since this method is reported to function as intended in Heller et al., there has to be a circumstance that is the root of this failure. The transformation process is a 
 pipeline with three steps: applying PCA, resizing the maps, and concatenating them. \newline
 The root cause of the failure is determined to be the PCA process. Further experiments applied PCA only to the standard feature map set from SimpleNet \cite{liu2023simplenet}, 
 keeping all principle components and training 
@@ -92,7 +93,7 @@ section \ref{subsec:stacking} the individual ensemble members produced each a be
 This suggests that the ensemble members are not at fault for this result, as the worst case would be for the features of one member to dominate the training process 
 and for the others to be unused, leading to the base performance of said member. Since this is not the case, the issue must lie within the feature ensembling process. 
 It is to be argued that stacking all channels without elimination results in too many channels, meaning too many inputs for the model to handle. This hypothesis is 
-supported by the ensemble's cleaner outputs utilizing 3072 channels at different hierarchy levels. Solutions would be to either 
+supported by the ensemble's cleaner outputs utilizing 3072 feature channels at different hierarchy levels. Solutions would be to either 
 increase model complexity or decrease the input dimension. Also, the stacking approach might not be optimal for combining different feature representations. 
 A solution would be to further investigate the problems that arose with the prior ensembling approach to achieve a more suited ensembling process after solving said 
 issues. \newline 
