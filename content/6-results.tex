@@ -44,8 +44,7 @@ As expected, the structural anomaly segmentations were much more precise overall
 missing holes were localized most precisely. This leads one to conclude that the methods used to fake such an anomaly were not applied perfectly. 
 Visual artifacts that are visible after such preprocessing of the class objects were unavoidable with the existing resources and  
 helped to detect the anomalies. The logical anomalies that posed the toughest challenge for most classifiers regarding localization 
-were the extra hole and the differently sized one. \newline
-Structural anomalies yielded a generally good segmentation if the classifier displayed overall sufficient performance. Cut-off edges were straightforward to localize, which is also to be expected since they very noticeably break the object's contour. Broken edges provided for 
+were the extra hole and the differently sized one. Structural anomalies yielded a generally good segmentation if the classifier displayed overall sufficient performance. Cut-off edges were straightforward to localize, which is also to be expected since they very noticeably break the object's contour. Broken edges provided for 
 varying performance depending on the classifier. Scratches mainly were detected correctly, although the segmentations were often 
 thicker than the anomalous region.
 
@@ -86,9 +85,8 @@ and kernel PCA \cite{Hoffmann_2007kernelPCA}.
 \label{subsec:stackingdiscussion}
 
 Both ensemble experiments returned results that showed learning behavior by the ensemble classifiers on easier classes. Using correct thresholding, one can achieve passable 
-anomaly localization on the flat connector class in many cases, and worse performance on other MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} classes.
-
-However, such a drastic drop in segmentation quality cannot be considered an improvement in robustness but rather the opposite. As we showcased in 
+anomaly localization on the flat connector class in many cases, and worse performance on other MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} classes.However, such a 
+drastic drop in segmentation quality cannot be considered an improvement in robustness but rather the opposite. As we showcased in 
 section \ref{subsec:stacking} the individual ensemble members produced each a better performance than the whole process. 
 This suggests that the ensemble members are not at fault for this result, as the worst case would be for the features of one member to dominate the training process 
 and for the others to be unused, leading to the base performance of said member. Since this is not the case, the issue must lie within the feature ensembling process. 
@@ -99,13 +97,8 @@ A solution would be to further investigate the problems that arose with the prio
 issues. \newline 
 A last observation from the ensemble experiments was the poor performance of higher-level features in the ensembling process. 
 Here, the fault is clearly with the respective ensemble members comparing Fig. \ref{fig:faillayersegments} and Fig. \ref{fig:ensemblehierarchy}. This behavior can be explained 
-by the specificity of higher-level features. The more complex the features, the more specific their representations. High-level feature extraction layers are too 
-convoluted to work on specific objects on which they were not explicitly trained. As they are pretrained extractors, lower-level features like edge representation can be of way 
-more efficient use for out-of-domain objects. \newline 
+by the specificity of higher-level features. The more complex the features, the more specific their representations. Thus high-level feature extraction layers are too 
+convoluted to work on unknwon objects, whereas low-level ones focus on features like contours, applicable anywhere. \newline 
 
-
-%Inspecting the performance of each classifier approach on the dataset, it is visible that
-
-%- also look at how the two experiments performed(hierarchy vs variety)\newline
 
 

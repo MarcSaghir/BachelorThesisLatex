@@ -49,19 +49,22 @@ MVTecAD \cite{MVTEC_Bergmann_2021} and the MVTecAD LOCO \cite{LOCODentsAndScratc
 PatchCore \cite{patchCore2022}, SimpleNet \cite{liu2023simplenet}, Reverse Distillation \cite{revdist2023} and DRAEM \cite{Zavrtanik_2021DRAEM} had a fall off 
 in image AUROC class average of respectively 0.174, 0.193, 0.208 and 0.213. Concerning the pixel-wise 
 AUROC, a decline of 0.064, 0.147, 0.218 and 0.174 emerged. \newline
-Fig. \ref{fig:structvslogic} shows exemplary metrics divided by structural and logical anomalies. The reported pixel AUROCs slightly differ from earlier reported results due to a different 
-evaluation split of good images, but they showcase a principal performance difference. Here, better performance is visible for the 
-class of structural anomalies, sometimes even by up to 29 percent, suggesting that logical anomalies are distinctively more challenging to segment correctly.
+
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{figures/structvslogic.png}
+    \includegraphics[width=0.45\textwidth]{figures/structvslogic.png}
     \caption{Exemplary pixel AUROC comparison of PatchCore \cite{patchCore2022} between structural and logical anomalies. For each evaluation class, all normal class images 
              are taken into calculation, resulting in deviating AUROCS from the original reported ones.}
     \label{fig:structvslogic}
 \end{figure}
 
-Additionally, below in Fig. \ref{fig:locoallapproaches} are representative images from multiple classes that showcase good and bad segmentation results. Results are taken from multiple approaches, and more results can be found in the appendix. The following subsection deals with the strengths and weaknesses of individual classifiers found when examining the images.
+Fig. \ref{fig:structvslogic} shows exemplary metrics divided by structural and logical anomalies. The reported pixel AUROCs slightly differ from earlier reported results due to a different 
+evaluation split of good images, but they showcase a principal performance difference. Here, better performance is visible for the 
+class of structural anomalies, sometimes even by up to 29 percent, suggesting that logical anomalies are distinctively more challenging to segment correctly.\newline
+Additionally, below in Fig. \ref{fig:locoallapproaches} are representative images from multiple classes that showcase good and bad segmentation results. 
+Results are taken from multiple approaches, and more results can be found in the appendix. The following subsection deals with the strengths and weaknesses of 
+individual classifiers found when examining the images.
 
 %\input{figures/locopatchcoreresults/locopatchcoreresultsBB.tex}
 %\input{figures/locosimplenetresults/simplenetJBresults.tex}

@@ -826,15 +826,15 @@ INPUT C:\Users\Marc\Documents\MikeTeX\fonts\tfm\public\xcharter\XCharter-Bold-tl
 INPUT .\algotable\mvtecpixelauroc.tex
 INPUT .\algotable\mvtecpixelauroc.tex
 INPUT algotable\mvtecpixelauroc.tex
-INPUT C:\Users\Marc\Documents\MikeTeX\fonts\vf\public\xcharter\XCharter-Bold-tlf-t1.vf
-INPUT C:\Users\Marc\Documents\MikeTeX\fonts\tfm\public\xcharter\XCharter-Bold-tlf-t1--base.tfm
-INPUT C:\Users\Marc\Documents\MikeTeX\fonts\vf\public\xcharter\XCharter-Roman-tlf-t1.vf
-INPUT C:\Users\Marc\Documents\MikeTeX\fonts\tfm\public\xcharter\XCharter-Roman-tlf-t1--base.tfm
 INPUT .\algotable\metrics_table.tex
 INPUT .\algotable\metrics_table.tex
 INPUT .\algotable\metrics_table.tex
 INPUT .\algotable\metrics_table.tex
 INPUT algotable\metrics_table.tex
+INPUT C:\Users\Marc\Documents\MikeTeX\fonts\vf\public\xcharter\XCharter-Bold-tlf-t1.vf
+INPUT C:\Users\Marc\Documents\MikeTeX\fonts\tfm\public\xcharter\XCharter-Bold-tlf-t1--base.tfm
+INPUT C:\Users\Marc\Documents\MikeTeX\fonts\vf\public\xcharter\XCharter-Roman-tlf-t1.vf
+INPUT C:\Users\Marc\Documents\MikeTeX\fonts\tfm\public\xcharter\XCharter-Roman-tlf-t1--base.tfm
 INPUT .\figures\spro_vs_pro_bergmann.png
 INPUT .\figures\spro_vs_pro_bergmann.png
 INPUT .\figures\spro_vs_pro_bergmann.png
@@ -1407,6 +1407,8 @@ INPUT .\algotable\ensemblepixelAUROC.tex
 INPUT .\algotable\ensemblepixelAUROC.tex
 INPUT algotable\ensemblepixelAUROC.tex
 INPUT C:\Users\Marc\Documents\MikeTeX\fonts\tfm\public\xcharter\XCharter-Bold-tlf-t1.tfm
+INPUT C:\Users\Marc\Documents\MikeTeX\fonts\vf\public\xcharter\XCharter-Bold-tlf-t1.vf
+INPUT C:\Users\Marc\Documents\MikeTeX\fonts\tfm\public\xcharter\XCharter-Bold-tlf-t1--base.tfm
 INPUT .\figures\faillayer34\faillayersegmentations.tex
 INPUT .\figures\faillayer34\faillayersegmentations.tex
 INPUT figures\faillayer34\faillayersegmentations.tex
@@ -1424,8 +1426,6 @@ INPUT .\figures\faillayer34\flat_connector_test_logical_anomalies_023.png
 INPUT .\figures\faillayer34\flat_connector_test_logical_anomalies_023.png
 INPUT .\figures\faillayer34\flat_connector_test_logical_anomalies_023.png
 INPUT .\figures\faillayer34\flat_connector_test_logical_anomalies_023.png
-INPUT C:\Users\Marc\Documents\MikeTeX\fonts\vf\public\xcharter\XCharter-Bold-tlf-t1.vf
-INPUT C:\Users\Marc\Documents\MikeTeX\fonts\tfm\public\xcharter\XCharter-Bold-tlf-t1--base.tfm
 INPUT .\figures\faillayer34\failmetricsandloss.tex
 INPUT .\figures\faillayer34\failmetricsandloss.tex
 INPUT figures\faillayer34\failmetricsandloss.tex

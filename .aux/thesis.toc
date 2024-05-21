@@ -10,15 +10,15 @@
 \contentsline {subsection}{\numberline {2.1.1}Unsupervised IAD}{6}{subsection.2.1.1}%
 \contentsline {subsection}{\numberline {2.1.2}Subcategories}{7}{subsection.2.1.2}%
 \contentsline {section}{\numberline {2.2}Anomaly Detection Methods}{10}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}PatchCore}{11}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}SimpleNet}{12}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}PatchCore}{10}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}SimpleNet}{11}{subsection.2.2.2}%
 \contentsline {subsection}{\numberline {2.2.3}RevDist}{13}{subsection.2.2.3}%
 \contentsline {subsection}{\numberline {2.2.4}DRAEM}{14}{subsection.2.2.4}%
 \contentsline {section}{\numberline {2.3}Metrics}{15}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Datasets}{17}{section.2.4}%
 \contentsline {section}{\numberline {2.5}Ensembles}{19}{section.2.5}%
 \contentsline {subsection}{\numberline {2.5.1}Heterogeneous Ensembles}{19}{subsection.2.5.1}%
-\contentsline {subsection}{\numberline {2.5.2}General Issues}{20}{subsection.2.5.2}%
+\contentsline {subsection}{\numberline {2.5.2}General Issues}{19}{subsection.2.5.2}%
 \contentsline {subsection}{\numberline {2.5.3}Multisource neural network feature map fusion}{20}{subsection.2.5.3}%
 \contentsline {section}{\numberline {2.6}Model Calibration}{21}{section.2.6}%
 \contentsline {chapter}{\numberline {3}Novel Dataset Class}{23}{chapter.3}%
@@ -38,26 +38,26 @@
 \contentsline {chapter}{\numberline {5}Experiments}{32}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Experimental Setup}{32}{section.5.1}%
 \contentsline {section}{\numberline {5.2}MVTecAD LOCO Experiments}{32}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Classifier Behavior}{35}{subsection.5.2.1}%
-\contentsline {section}{\numberline {5.3}Flat Connector Experiments}{37}{section.5.3}%
+\contentsline {subsection}{\numberline {5.2.1}Classifier Behavior}{34}{subsection.5.2.1}%
+\contentsline {section}{\numberline {5.3}Flat Connector Experiments}{36}{section.5.3}%
 \contentsline {section}{\numberline {5.4}Ensemble Network}{37}{section.5.4}%
-\contentsline {subsection}{\numberline {5.4.1}Independent Transformation Block}{37}{subsection.5.4.1}%
-\contentsline {subsection}{\numberline {5.4.2}Stacking Ensemble}{39}{subsection.5.4.2}%
-\contentsline {chapter}{\numberline {6}Discussion}{43}{chapter.6}%
-\contentsline {section}{\numberline {6.1}MVTecAD LOCO Experiments}{43}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Flat Connector}{43}{section.6.2}%
-\contentsline {section}{\numberline {6.3}Ensemble Performance}{44}{section.6.3}%
-\contentsline {subsection}{\numberline {6.3.1}Independent Transformation Block}{45}{subsection.6.3.1}%
-\contentsline {subsection}{\numberline {6.3.2}Stacking Ensemble}{45}{subsection.6.3.2}%
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{47}{chapter.7}%
-\contentsline {section}{\numberline {7.1}Conclusion}{47}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}IAD Approaches on MVTecAD LOCO}{47}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Flat Connector Class}{47}{subsection.7.1.2}%
-\contentsline {subsection}{\numberline {7.1.3}Ensemble}{48}{subsection.7.1.3}%
-\contentsline {subsection}{\numberline {7.1.4}Current State of the Pipeline}{48}{subsection.7.1.4}%
-\contentsline {section}{\numberline {7.2}Outlook}{48}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Current IAD Methods}{48}{subsection.7.2.1}%
-\contentsline {subsection}{\numberline {7.2.2}Novel Dataset Classes}{49}{subsection.7.2.2}%
-\contentsline {subsection}{\numberline {7.2.3}Ensemble}{49}{subsection.7.2.3}%
-\contentsline {chapter}{\numberline {A}Appendix}{54}{appendix.A}%
+\contentsline {subsection}{\numberline {5.4.1}Independent Transformation Block}{38}{subsection.5.4.1}%
+\contentsline {subsection}{\numberline {5.4.2}Stacking Ensemble}{38}{subsection.5.4.2}%
+\contentsline {chapter}{\numberline {6}Discussion}{42}{chapter.6}%
+\contentsline {section}{\numberline {6.1}MVTecAD LOCO Experiments}{42}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Flat Connector}{42}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Ensemble Performance}{43}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Independent Transformation Block}{44}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Stacking Ensemble}{44}{subsection.6.3.2}%
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{45}{chapter.7}%
+\contentsline {section}{\numberline {7.1}Conclusion}{45}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}IAD Approaches on MVTecAD LOCO}{45}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Flat Connector Class}{45}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.3}Ensemble}{46}{subsection.7.1.3}%
+\contentsline {subsection}{\numberline {7.1.4}Current State of the Pipeline}{46}{subsection.7.1.4}%
+\contentsline {section}{\numberline {7.2}Outlook}{46}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Current IAD Methods}{46}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.2}Novel Dataset Classes}{47}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.3}Ensemble}{47}{subsection.7.2.3}%
+\contentsline {chapter}{\numberline {A}Appendix}{52}{appendix.A}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
