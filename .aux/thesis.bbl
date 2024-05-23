@@ -65,15 +65,15 @@ K.~He, X.~Zhang, S.~Ren, and J.~Sun, ``Deep residual learning for image
   recognition,'' in {\em 2016 IEEE Conference on Computer Vision and Pattern
   Recognition (CVPR)}, IEEE, June 2016.
 
-\bibitem{csflow2022}
-M.~Rudolph, T.~Wehrbein, B.~Rosenhahn, and B.~Wandt, ``Fully convolutional
-  cross-scale-flows for image-based defect detection,'' in {\em Winter
-  Conference on Applications of Computer Vision (WACV)}, Jan. 2022.
-
 \bibitem{worldsteel}
 ``2023 world steel in figures.''
   \url{https://worldsteel.org/wp-content/uploads/World-Steel-in-Figures-2023-4.pdf}.
 \newblock Accessed: 2024-05-07.
+
+\bibitem{csflow2022}
+M.~Rudolph, T.~Wehrbein, B.~Rosenhahn, and B.~Wandt, ``Fully convolutional
+  cross-scale-flows for image-based defect detection,'' in {\em Winter
+  Conference on Applications of Computer Vision (WACV)}, Jan. 2022.
 
 \bibitem{Xie_2024benchmarking}
 G.~Xie, J.~Wang, J.~Liu, J.~Lyu, Y.~Liu, C.~Wang, F.~Zheng, and Y.~Jin,
@@ -155,8 +155,10 @@ Y.~Huang, C.~Qiu, Y.~Guo, X.~Wang, and K.~Yuan, ``Surface defect saliency of
   magnetic tile,'' in {\em 2018 IEEE 14th International Conference on
   Automation Science and Engineering (CASE)}, IEEE, Aug. 2018.
 
-\bibitem{mvtecdownload}
-``Download page of the mvtec ad dataset.''
+\bibitem{mvtecaddownload}
+``Download link to the mvtec ad dataset.''
+  \url{https://www.mvtec.com/company/research/datasets/mvtec-ad/downloads}.
+\newblock Accessed: 2024-04-30.
 
 \bibitem{Opitz_1999ensemblebasics}
 D.~Opitz and R.~Maclin, ``Popular ensemble methods: An empirical study,'' {\em

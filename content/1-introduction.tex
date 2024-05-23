@@ -1,7 +1,7 @@
 \chapter{Introduction}
 \label{chap:introduction}
 
-Image Anomaly detection (IAD) as a form of quality control is a widely prevalent practice in modern manufacturing processes. In the last 74 years, the steel production worldwide, 
+Image anomaly detection (IAD) as a form of quality control is a widely prevalent practice in modern manufacturing processes. In the last 74 years, the steel production worldwide, 
 has increased by more than ninefold \cite{worldsteel} due to innovation and the growing usage of metal in modern applications. 
 With these developments came a high need for quality 
 assurance alongside raised standards and requirements. These strict conditions serve, among other things, to avoid product failure that could cause fatal consequences. Quality control in the form of anomaly detection often 
@@ -14,13 +14,14 @@ alongside a constant striving of industries towards even higher reliability and 
 well-researched research field it is today.\newline 
 In our context, IAD is a subcategory of general anomaly detection 
 that aims to distinguish images of a category that conform to some chosen norm from anomalous images of the same category that do not. 
-An example would be creating a classifier that is given the image of a screw and can detect whether it conforms to our expectations, 
+An example would be creating a model that is given the image of a screw and can detect whether it conforms to our expectations, 
 which in a manufacturing setting likely means meeting the company's quality standards(Fig. \ref{fig:introscrew}).
 
 \input{figures/introductionanomalies/introductionanomalies.tex}
 
 With IAD being a very recent and popular field, various deep-learning approaches have established themselves over 
-the last few years. The best-performing ones have generally been unsupervised learning approaches. This circumstance stems from the fact that 
+the last few years \cite{patchCore2022} \cite{liu2023simplenet} \cite{csflow2022} \cite{revdist2023} \cite{Zavrtanik_2021DRAEM} \cite{liu2024deep}. 
+The best-performing ones have generally been unsupervised learning approaches. This circumstance stems from the fact that 
 in any manufacturing setting, far fewer anomalous parts exist than regular ones, which creates a significant data imbalance. 
 Moreover, obtaining a large number of data points and great variance can be difficult since it is much work to 
 coordinate with adequate manufacturing facilities and implement the necessary infrastructure to take pictures. This problem is supported 
@@ -30,14 +31,14 @@ in the background chapter. Regarding the kind of unsupervised anomaly detection 
 distinct strategy of differentiating between the classes. Still, most of them can be categorized into two classes: representation- 
 or reconstruction-based methods. While representation approaches aim at creating a feature representation to compare the features of new input images then, 
 reconstruction-based ones try to learn how to recreate the part shown in the image as an anomaly-free object and then compare the constructed product to the original input. 
-Both workflows are visualized in Fig. \ref{fig:vizofrecrepbased}, which showcases 
+Both workflows are visualized in Fig. \ref{fig:recvsrep}, which showcases 
 the individual steps of the respective methods as described. It is to be said that both approaches offer high-quality predictions, yet 
 feature representation methods have shown more frequently in latest research to achieve state-of-the-art results \cite{liu2024deep}. % \cite{Xie_2024benchmarking}.
 \newline
 The current state of IAD generally consists of very high-performing classifiers. Here, it is essential to differentiate between the 
 applications of those classifiers. There is anomaly detection in the form of image classification, which has already been mentioned. 
 Furthermore, there is anomaly localization, referring to the image segmentation process to point out the specific regions where 
-the detected anomaly occurs. Lastly, besides the applications, one can also categorize anomalies. The most researched anomaly types 
+the detected anomaly occurs. Lastly, anomaly detection methods can be categorized in regard to their specific process. The most researched anomaly types 
 are so-called structural anomalies, which can be described as superficial damages of the part's material or shape, i.e. a strongly 
 bent screw or one that is broken in the middle. However, recently, there has been a new dataset from the creators of MVTecAD that covers logical 
 anomalies, namely the MVTecAD LOCO \cite{LOCODentsAndScratchesBergmann2022} dataset. Logical anomalies denote ones that violate an abstract 
@@ -76,11 +77,11 @@ for future experiments in that area.
 The contributions mentioned firstly benefit faster research entry and an accelerated experimentation process, with an intuitive setup, 
 as well as potential industrial applications. 
 Furthermore, they give more insight into the capabilities of existing methods in an industrial setting and thus also provide a more 
-diverse and practical setting than the prior categories in the MVTecAD \cite{LOCODentsAndScratchesBergmann2022} dataset. The same methods are also tested on their limitations 
+diverse and practical setting than the prior categories in the MVTecAD \cite{MVTEC_Bergmann_2021} dataset. The same methods are also tested on their limitations 
 regarding logical anomalies, which were made to be a relevant aspect of anomaly detection in current manufacturing quality control 
 settings. Lastly, the use of a robust ensemble approach for potentially heterogeneous classifiers opens up possibilities for expanding 
 the range of application of state-of-the-art IAD methods to other domains with robust performance. It may also produce more usable results in real-world IAD settings. The presented network can also be used as a foundation for future experiments in 
-various directions. Possible outlooks based on this kind of multi-feature representation ensembles are discussed in section \ref{sec:finaloutlook}.
+various directions. Possible outlooks based on this kind of multi-feature representation ensembles are discussed in section \ref{subsec:FCoutlook}.
 \newline
 \newline
 
@@ -90,7 +91,7 @@ view them. Afterwards, sections \ref{sec:metrics} and \ref{sec:datasets} offer i
 section \ref{sec:modelcalibration} focus on background knowledge of common approaches regarding the ensemble model discussed before.\newline
 The third chapter presents the novel dataset category introduced in this paper.
 In chapter \ref{chap:method}, we present the concrete implementation of this work's contributions, starting with section \ref{sec:lcocsurveymethods} dealing with the survey on logical anomalies. 
-Section \ref{sec:ourensemblenetwork} concerns the realization of this ensemble approach.
+Section \ref{sec:ourensemblenetwork} concerns the realization of the ensemble approach.
 \newline 
 Chapters \ref{chap:results} and \ref{chap:conclusion} afterwards deal with an in-depth analysis of our findings as well as an outlook on how to interpret these results and what future research 
 in this topic may be.

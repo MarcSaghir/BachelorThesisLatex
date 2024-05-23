@@ -1,20 +1,22 @@
 \babel@toc {english}{}\relax 
 \babel@toc {ngerman}{}\relax 
 \babel@toc {english}{}\relax 
+\babel@toc {ngerman}{}\relax 
+\babel@toc {english}{}\relax 
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces Collection of image auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {csflow2022} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}}}{14}{table.caption.18}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}. The numbers for \cite {csflow2022} were not recorded.}}{15}{table.caption.19}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Display of popular metrics for IAD research. Table content is taken from \cite {liu2024deep}.}}{15}{table.caption.20}%
+\contentsline {table}{\numberline {2.1}{\ignorespaces Collection of image auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}}}{15}{table.caption.20}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD \cite {MVTEC_Bergmann_2021} dataset. The data was collected from \cite {liu2024deep} \cite {liu2023simplenet} \cite {Zavrtanik_2021DRAEM} \cite {revdist2023}.}}{15}{table.caption.21}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces Display of popular metrics for IAD research. Table content is taken from \cite {liu2024deep}.}}{16}{table.caption.22}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Collection of image auroc results of reviewed IAD methods on the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{31}{table.caption.31}%
-\contentsline {table}{\numberline {5.2}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{32}{table.caption.32}%
-\contentsline {table}{\numberline {5.3}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{32}{table.caption.33}%
-\contentsline {table}{\numberline {5.4}{\ignorespaces Results of this works IAD methods on the novel flat connector dataset class. Evaluates performance in regards to the metrics: image level AUROC, pixel level AUROC and sPRO}}{35}{table.caption.38}%
-\contentsline {table}{\numberline {5.5}{\ignorespaces Ensemble results on MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} by this works introduced ensemble approaches. The leftmost columns represents the ensemble constellation. The abbreviations denote the following: WR50 = wideresnet50, R50 = resnet50, R18 = resnet18. Lxy means an aggreation of layers x and y. Lastly the + sign shows that the listed abbreviations belong to one ensemble.}}{38}{table.caption.41}%
-\contentsline {table}{\numberline {5.6}{\ignorespaces Ensemble results on MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} by this works introduced ensemble approaches. The leftmost columns represents the ensemble constellation. The abbreviations denote the following: WR50 = wideresnet50, R50 = resnet50, R18 = resnet18. Lxy means an aggreation of layers x and y. Lastly the + sign shows that the listed abbreviations belong to one ensemble.}}{38}{table.caption.42}%
+\contentsline {table}{\numberline {5.1}{\ignorespaces Collection of image auroc results of reviewed IAD methods on the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{32}{table.caption.33}%
+\contentsline {table}{\numberline {5.2}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{33}{table.caption.34}%
+\contentsline {table}{\numberline {5.3}{\ignorespaces Collection of pixel auroc results of reviewed IAD methods on the MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} dataset.}}{33}{table.caption.35}%
+\contentsline {table}{\numberline {5.4}{\ignorespaces Results of this works IAD methods on the novel flat connector dataset class. Evaluates performance in regards to the metrics: image level AUROC, pixel level AUROC and sPRO}}{36}{table.caption.41}%
+\contentsline {table}{\numberline {5.5}{\ignorespaces Ensemble results on MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} by this works introduced ensemble approaches. The leftmost columns represents the ensemble constellation. The abbreviations denote the following: WR50 = wideresnet50, R50 = resnet50, R18 = resnet18. Lxy means an aggreation of layers x and y. Lastly the + sign shows that the listed abbreviations belong to one ensemble.}}{38}{table.caption.44}%
+\contentsline {table}{\numberline {5.6}{\ignorespaces Ensemble results on MVTecAD LOCO \cite {LOCODentsAndScratchesBergmann2022} by this works introduced ensemble approaches. The leftmost columns represents the ensemble constellation. The abbreviations denote the following: WR50 = wideresnet50, R50 = resnet50, R18 = resnet18. Lxy means an aggreation of layers x and y. Lastly the + sign shows that the listed abbreviations belong to one ensemble.}}{39}{table.caption.45}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
